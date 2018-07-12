@@ -1,0 +1,23 @@
+/* Logo & Navigation */
+
+.header{
+   height:50px;
+   background-color: #2c3742;
+}
+
+.header .logo h1{
+   font-size:30px;
+   margin:0px;
+   padding:10px 0px;
+}
+
+.header .logo h1 a{
+   color:#fff;
+   font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.header .logo h1 a:hover{
+   color:#fff;
+   text-decoration:none;
+   border:0px;
+}
