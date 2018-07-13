@@ -1,0 +1,271 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f7f7f7;
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* headerデザイン */
+.header{
+    position: relative;
+    height:70px;
+    background-color: #2c3742;
+}
+
+.header .login-ifno {
+    position: absolute;
+    right: 20px;
+    top:25px;
+}
+
+.header .login-ifno span{
+    color:#fff;
+    font-weight:bold;
+}
+
+
+.header h1 a{
+    font-size:30px;
+    color:#fff;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.header .logo h1{
+   font-size:30px;
+   margin:0px;
+   padding:10px 0px;
+}
+
+.header .logo h1 a{
+   color:#fff;
+   font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.header .logo h1 a:hover{
+   color:#fff;
+   text-decoration:none;
+   border:0px;
+}
+
+
+.header .form{
+   margin-top:10px;
+   width:100%;
+   max-width:300px;
+   margin:10px auto;
+}
+
+.header .navbar *{
+   box-shadow:none !important;
+}
+
+.header .navbar .label{
+   font-size:12px;
+   padding:4px 8px;
+   margin:0px 2px;
+   border-radius:15px !important;
+}
+
+.header .navbar{
+   background:none !important;
+   border:0px !important;
+}
+
+.header .navbar i{
+   margin-right:3px;
+}
+
+.header .navbar .nav > li > a{
+   color:#fff !important;
+   font-size:13px !important;
+   border-bottom:0px !important;
+   margin-top:0px !important;
+   font-weight:bold;
+}
+
+.header .navbar-nav>.open>a,.header  .navbar-nav>.open>a:hover,.header  .navbar-nav>.open>a:focus {
+   background:none !important;
+}
+
+.header .navbar-collapse{
+   border:0px !important;
+}
+
+.header .navbar-header{
+   width:43px;
+   margin:0 auto;
+}
+
+.header .navbar-header button{
+   color:#fff !important;
+   padding:5px 10px;
+}
+
+.header .navbar-toggle{
+   background-color: #1dc1da !important;
+   border:1px solid #0fa6bc !important;
+}
+
+.header .navbar-toggle:hover, .header .navbar-toggle:focus {
+   background-color: #0fa6bc !important;
+   border:1px solid #0fa6bc !important;
+}
+
+.header .dropdown-menu{
+   border-radius:6px !important;
+   background:#fff !important;
+   text-align: center;
+}
+
+.header .dropdown-menu li{
+   font-size:13px;
+   padding:6px 15px;
+   border-bottom:1px dashed #f3f3f3;
+}
+
+.header .dropdown-menu li a {
+   color:#428bca;
+   font-weight: bold;
+   /*padding-left:0px !important;*/
+}
+
+.header .dropdown-menu li:last-child{
+   border:0px;
+}
+
+.header .dropdown-menu li a:hover{
+   background:none !important;
+   color:#357ebd !important;
+   border:0px !important;
+}
+
+.header .dropdown-big{
+   min-width:300px;
+}
+
+.header .dropdown-big .dropdown-head{
+   padding:7px 15px;
+   background:#fcfcfc;
+   border-bottom:1px solid #ddd;
+   margin-top:-5px;
+   border-top-left-radius:5px;
+   border-top-right-radius:5px;
+}
+
+.header .dropdown-big .dropdown-title{
+   font-size:13px;
+   font-weight:bold;
+   color:#999;
+}
+
+.header .dropdown-big .dropdown-body{
+   background:#fff;
+}
+
+.header .dropdown-big .dropdown-foot{
+   padding:7px 15px;
+   background:#fcfcfc;
+   border-top:1px solid #ddd;
+   margin-bottom:-5px;
+   border-bottom-left-radius:5px;
+   border-bottom-right-radius:5px;
+   font-size:12px;
+}
+
+.header .dropdown-big .dropdown-foot a{
+   color:#888;
+}
+
+.header .dropdown-big .dropdown-foot a:hover{
+   color:#555;
+   border-bottom:0px;
+}
+
+.header .navbar-nav .caret{
+   border-top-color:#fff !important;
+   border-bottom-color:#fff !important;
+}
+
+.header .navbar-nav>.open>a .caret,.header  .navbar-nav>.open>a:hover .caret,.header  .navbar-nav>.open>a:focus .caret {
+   border-top-color: #fff !important;
+   border-bottom-color: #fff !important;
+}
+/* ログイン画面デザイン */
+.login-wrapper {
+    position: absolute;
+    left: 0;
+    right: 0;
+    box-shadow: rgba(0, 0, 0, 0.4) 0 1px 3px, rgba(0, 0, 0, 0.35) 0 0 1px;
+    background: #fff;
+    margin: 50px;
+    padding: 20px;
+
+}
+.login-wrapper  h4 {
+    color: #8c8c8c;
+
+}
+.login-wrapper .btn {
+    margin: 20px 10px 10px;
+}
+
+/* footerデザイン */
+footer{
+    position: relative;
+    top:0;
+    bottom: 100px;
+    background-color:#2c3742;
+    box-shadow:inset 0px 0px 3px #111;
+    color:#fff;
+    font-size:14px;
+    line-height:25px;
+    padding: 10px;
+    height: 50px;
+}
+footer a{
+    color: #fff;
+}
+
+/* keyVisualデザイン */
+#keyVisual {
+
+	padding-top: 70px;
+	height: 350px;
+	background: url('images/kv_img.jpg') no-repeat;
+	background-size: cover;
+}
+/* keyTextデザイン */
+#keyText {
+	font-family: Georgia;
+	font-style:italic;
+	font-size: 64px;
+	color: #2c3742;
+	float: left;
+}
+
+#bottom{
+    /*top:1000px;*/
+    margin-top: 200px;
+}
+
+.control-label{
+    padding-top: 15px;
+}
+
+input[type="submit"]{
+    margin-right: 20px;
+}
+
+.required{
+    color:red;
+}
+
+.error{
+    color: red;
+    font-size: 0.8em;
+}
+
+.col{
+    padding :5px;
+}

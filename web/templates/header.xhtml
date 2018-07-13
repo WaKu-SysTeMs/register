@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <head>
+        <title>header</title>
+        <link rel="stylesheet" type="text/css" href="/resources/css/mystyle.css"/>
+    </head>
+    <body>
+        <ui:composition>
+
+            <div class="header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <!-- Logo -->
+                            <div class="logo">
+                                <h1>
+                                    <a href="Top"><i class="glyphicon glyphicon-info-sign"></i> HCSビデオレンタル</a>
+                                </h1>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="navbar navbar-inverse" role="banner">
+                                <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
+                                    <ul class="nav navbar-nav">
+                                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="glyphicon glyphicon-user"></i> アカウント情報<b
+                                                    class="caret"></b>
+                                            </a>
+                                            <ul class="dropdown-menu animated fadeInUp">
+                                                <li>${loginSession.syainNo}</li>
+                                                <li>${loginSession.syainName}</li>
+                                                <li>${loginSession.role}</li>
+                                                <li><a href="Logout"><i class="glyphicon glyphicon-log-out"></i>Logout</a></li>
+                                            </ul></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ui:composition> 
+    </body>
+</html>
+
