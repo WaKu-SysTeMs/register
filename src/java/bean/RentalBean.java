@@ -20,31 +20,31 @@ import javax.inject.Named;
  * @author s20163037
  */
 @Named
-@ConversationScoped
+//@ConversationScoped
 public class RentalBean implements Serializable {
-
-
-    @EJB
-    RentalDb rentalDb;
-    @Inject
-    transient Logger log;
-
-    @Inject
-    Conversation conv;
-
-    @PostConstruct
-    public void start() {
-        if (!conv.isTransient()) {
-            log.info(log.getName() + "| 会話スコープ終了");
-            conv.end();
-        }
-    }
-
-    public String create() {
-        log.info(log.getName() + "| 貸出情報登録画面");
-        if (conv.isTransient()) {
-            conv.begin();
-        }
-        return "/pages/rental/create.xhtml";
-    }
+//
+//
+//    @EJB
+//    RentalDb rentalDb;
+//    @Inject
+//    transient Logger log;
+//
+//    @Inject
+//    Conversation conv;
+//
+//    @PostConstruct
+//    public void start() {
+//        if (!conv.isTransient()) {
+//            log.info(log.getName() + "| 会話スコープ終了");
+//            conv.end();
+//        }
+//    }
+//
+//    public String create() {
+//        log.info(log.getName() + "| 貸出情報登録画面");
+//        if (conv.isTransient()) {
+//            conv.begin();
+//        }
+//        return "/pages/rental/create.xhtml";
+//    }
 }
