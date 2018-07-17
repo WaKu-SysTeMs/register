@@ -1,2 +1,0 @@
-# register
-HCSビデオレンタル　レジ
