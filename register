@@ -1,0 +1,10 @@
+tree f22bffb30f4e309bf0f77c28d1d51a88e7b71cd7
+parent f73e5703ee2a7f88488c356cd1185aecddb1963a
+author s20163060 <s20163060@HCS23137.stdlan.hcs.local> 1531790484 +0900
+committer s20163060 <s20163060@HCS23137.stdlan.hcs.local> 1531790484 +0900
+
+Merge origin/master
+
+Conflicts:
+	web/WEB-INF/web.xml
+	web/top.xhtml
