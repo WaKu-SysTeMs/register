@@ -25,7 +25,33 @@
                     <div id="staff">店員名：XXX</div>
                 </h1>
 
-                <div id="time">20XX/XX/XX HH:MM</div>
+                <div id="time"><span id="viewTime"></span>
+
+                    <script type="text/javascript">
+                    timer = setInterval('clock()',1000); //時刻の更新
+
+                    function clock() {
+                            document.getElementById("viewTime").innerHTML = getNow();
+                    }
+
+                    function getNow() {
+                            var now = new Date();
+                            var year = now.getFullYear();
+                            //var mon = now.getMonth()+1; //１を足すこと
+                            var mon = ("0"+(now.getMonth() + 1)).slice(-2);
+                            //var day = now.getDate();
+                            var day = ("0"+(now.getDate())).slice(-2);
+                            //var hour = now.getHours();
+                            var hour = ("0"+(now.getHours())).slice(-2);
+                            //var min = now.getMinutes();
+                            var min = ("0"+(now.getMinutes())).slice(-2);
+
+                            //出力用
+                            var s = year + "/" + mon + "/" + day + " " +  hour + ":" + min;
+                            return s;
+                    }
+                    </script>
+                </div>
             </div>
         </div>
 
