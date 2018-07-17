@@ -1,2 +1,2 @@
-# register
-HCSビデオレンタル　レジ
+# head-office
+HCSビデオレンタル　本社システム用
