@@ -168,7 +168,7 @@ div #space2{                /* 2行目 画面幅調整用 */
     margin-bottom: 10px;
 }
 
-#button4 {                          /* 返却処理ボタン */
+.button4 {                          /* 返却処理ボタン */
     position: relative;
     display: inline-block;
     background-image:-webkit-linear-gradient(top,#89c997 0,#89c997 100%);

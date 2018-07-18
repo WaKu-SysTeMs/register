@@ -59,100 +59,97 @@
     </h:head>
 
     <h:body>
+        <h:form>
+            <!--1行目-->
+            <div class="container-fluid">
+                <div class="row">
 
-        <!--1行目-->
-        <div class="container-fluid">
-            <div class="row">
+                    <div class="col-lg-1" id="space1" ></div>
 
-                <div class="col-lg-1" id="space1" ></div>
+                    <div class="col-lg-3">
+   
+                            <button id="button3">
+                                <span class="glyphicon glyphicon-shopping-cart" id="cart"></span><br/>
+                                貸出処理
+                            </button>
 
-                <div class="col-lg-3">
-                    <form method="post" action="#{rentalBean.create()}">
-                        <button id="button3">
-                            <span class="glyphicon glyphicon-shopping-cart" id="cart"></span><br/>
-                            貸出処理
-                        </button>
-                    </form>
+                    </div>
+
+                    <div class="col-lg-3">
+
+                        <h:commandButton styleClass="button4" value="返却処理" action="/pages/return/update.xhtml">
+                            <span class="glyphicon glyphicon-inbox"></span>
+                        </h:commandButton>
+
+                    </div>
+
+
+                    <div class="col-lg-1" id="extend">
+
+                            <button id="button5">
+                                <span class="glyphicon glyphicon-shopping-cart" id="cart"></span><br/>
+                                レジ〆
+                            </button>
+
+                    </div>
+
+                    <div class="col-lg-1" id="extend2">
+                            <button id="button6">
+                                <span class="glyphicon glyphicon-briefcase" id="cart"></span><br/>
+                                金庫収納
+                            </button>
+
+                    </div>
+
+                    <div class="col-lg-3">
+                            <button id="logout">
+                                <span class="glyphicon glyphicon-log-out"></span>
+                                ログアウト
+                            </button>
+
+                    </div>
+
+
                 </div>
 
-                <div class="col-lg-3">
-                    <form method="post" action="pages/return/update.xhtml">
-                        <button id="button4">
-                            <span class="glyphicon glyphicon-inbox" id="cart"></span><br/>
-                            返却処理
-                        </button>
-                    </form>
+                <!-- 2行目 -->
+                <div class="row">
+
+
+                    <div class="col-lg-1" id="space2"></div>
+
+                    <div class="col-lg-3">
+                        <div class="list-group">
+                            <label class="list-group-item active text-center">マスタ管理</label>
+                            <a href="#" class="list-group-item">1. 貸出情報一覧</a>
+                            <a href="#" class="list-group-item">2. 在庫情報一覧</a>
+                            <a href="#" class="list-group-item">3. 商品情報一覧</a>
+                            <a href="#" class="list-group-item">4. DVD情報一覧</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="list-group">
+
+                            <label class="list-group-item active text-center">会員管理</label>
+                            <a href="#" class="list-group-item">1. 入会処理</a>
+                            <a href="#" class="list-group-item">2. 会員情報一覧</a>
+                            <a href="#" class="list-group-item">3. 退会処理</a>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="list-group">
+                            <label class="list-group-item active text-center">セール</label>
+                            <a href="#" class="list-group-item">1. セール情報一覧</a>
+                            <a href="#" class="list-group-item">2. セール対象商品一覧</a>
+                        </div>
+                    </div>
+
                 </div>
-
-
-                <div class="col-lg-1" id="extend">
-                    <form method="post" action="#">
-                        <button id="button5">
-                            <span class="glyphicon glyphicon-shopping-cart" id="cart"></span><br/>
-                            レジ〆
-                        </button>
-                    </form>
-                </div>
-
-                <div class="col-lg-1" id="extend2">
-                    <form method="post" action="#">
-                        <button id="button6">
-                            <span class="glyphicon glyphicon-briefcase" id="cart"></span><br/>
-                            金庫収納
-                        </button>
-                    </form>
-                </div>
-
-                <div class="col-lg-3">
-                    <form method="post" action="#">
-                        <button id="logout">
-                            <span class="glyphicon glyphicon-log-out"></span>
-                            ログアウト
-                        </button>
-                    </form>
-                </div>
-
-
             </div>
-
-            <!-- 2行目 -->
-            <div class="row">
-
-
-                <div class="col-lg-1" id="space2"></div>
-
-                <div class="col-lg-3">
-                    <div class="list-group">
-                        <label class="list-group-item active text-center">マスタ管理</label>
-                        <a href="#" class="list-group-item">1. 貸出情報一覧</a>
-                        <a href="#" class="list-group-item">2. 在庫情報一覧</a>
-                        <a href="#" class="list-group-item">3. 商品情報一覧</a>
-                        <a href="#" class="list-group-item">4. DVD情報一覧</a>
-                    </div>
-                </div>
-
-                <div class="col-lg-3">
-                    <div class="list-group">
-
-                        <label class="list-group-item active text-center">会員管理</label>
-                        <a href="#" class="list-group-item">1. 入会処理</a>
-                        <a href="#" class="list-group-item">2. 会員情報一覧</a>
-                        <a href="#" class="list-group-item">3. 退会処理</a>
-
-                    </div>
-                </div>
-
-                <div class="col-lg-3">
-                    <div class="list-group">
-                        <label class="list-group-item active text-center">セール</label>
-                        <a href="#" class="list-group-item">1. セール情報一覧</a>
-                        <a href="#" class="list-group-item">2. セール対象商品一覧</a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
+        </h:form>
     </h:body>
 </html>
 
