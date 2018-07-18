@@ -1,0 +1,281 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f7f7f7;
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* headerデザイン */
+.header{
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.header div #time{                              /*現在時刻表示*/
+    position: static;
+    float: right;
+    right: 20px;
+    top:25px;
+}
+
+.header h1 i{                               /*メニューリンク*/
+    float: left;
+    font-size:18px;
+    top: 25px;
+    color:#0000cd;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.header h1 i:hover{
+    text-decoration-line: underline;
+}
+
+.header div #regiNum{                           /*レジ番号*/
+    position: static;
+    float:  left;
+    margin-right: 10px;
+    font-size:15px;
+    color:#111;
+}
+
+.header div #staff{                           /*店員名*/
+    position: static;
+    float:  left;
+    margin-right: 10px;
+    font-size:15px;
+    color:#111;
+}
+
+/* ログイン画面デザイン */
+.login-wrapper {
+    position: absolute;
+    left: 0;
+    right: 0;
+    box-shadow: rgba(0, 0, 0, 0.4) 0 1px 3px, rgba(0, 0, 0, 0.35) 0 0 1px;
+    background: #fff;
+    margin: 50px;
+    padding: 20px;
+
+}
+.login-wrapper  h4 {
+    color: #8c8c8c;
+
+}
+.login-wrapper .btn {
+    margin: 20px 10px 10px;
+}
+
+/* footerデザイン */
+footer{
+    position: relative;
+    top:0;
+    bottom: 100px;
+    background-color:#2c3742;
+    box-shadow:inset 0px 0px 3px #111;
+    color:#fff;
+    font-size:14px;
+    line-height:25px;
+    padding: 10px;
+    height: 50px;
+}
+
+footer a{
+    color: #fff;
+}
+
+/* keyVisualデザイン */
+#keyVisual {
+
+    padding-top: 70px;
+    height: 350px;
+    background: url('images/kv_img.jpg') no-repeat;
+    background-size: cover;
+}
+
+/* keyTextデザイン */
+#keyText {
+    font-family: Georgia;
+    font-style:italic;
+    font-size: 64px;
+    color: #2c3742;
+    float: left;
+}
+
+#bottom{
+    /*top:1000px;*/
+    margin-top: 200px;
+}
+
+.control-label{
+    padding-top: 15px;
+}
+
+input[type="submit"]{
+    margin-right: 20px;
+}
+
+.required{
+    color:red;
+}
+
+.error{
+    color: red;
+    font-size: 0.8em;
+}
+
+.col{
+    padding :5px;
+}
+
+/*TOP画面 contentデザイン*/
+div #space1{                /* 1行目 画面幅調整用 */
+    margin: 0 12px;
+}
+
+div #space2{                /* 2行目 画面幅調整用 */
+    margin: 0 12px;
+}
+
+
+#button3 {                   /* 貸出処理ボタン */
+    position: relative;
+    display: inline-block;
+    background-image:-webkit-linear-gradient(top,#89c997 0,#89c997 100%);
+    background-image:-o-linear-gradient(top,#89c997 0,#89c997 100%);
+    background-image:-webkit-gradient(linear,left top,left bottom,from(#89c997));
+    background-repeat:repeat-x;
+    border-color:#89c997;             /* 緑系 */
+    border-bottom: solid 3px #69b076; /*少し濃い目の緑系色に 影用*/
+    border-radius: 4px;               /*角の丸み*/
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+    color: #fff;
+    height: 300px;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px; 
+    font-family: メイリオ;
+    font-weight: bolder;
+    letter-spacing: 5px;
+    padding: 0.25em 0.5em;
+    margin-bottom: 10px;
+    outline: none;
+}
+
+#cart{                 /* 貸出ボタン　アイコン　調整用 */
+    font-size: 70px;
+    margin-bottom: 10px;
+}
+
+.button4 {                          /* 返却処理ボタン */
+    position: relative;
+    display: inline-block;
+    background-image:-webkit-linear-gradient(top,#89c997 0,#89c997 100%);
+    background-image:-o-linear-gradient(top,#89c997 0,#89c997 100%);
+    background-image:-webkit-gradient(linear,left top,left bottom,from(#89c997));
+    background-repeat:repeat-x;
+    border-color:#89c997;             /* 緑系 */
+    border-bottom: solid 3px #69b076; /*少し濃い目の緑系色に 影用*/
+    border-radius: 4px;               /*角の丸み*/
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+    color: #fff;
+    height: 300px;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px; 
+    font-family: メイリオ;
+    font-weight: bolder;
+    letter-spacing: 5px;
+    padding: 0.25em 0.5em;
+    margin-bottom: 10px;
+    outline: none;
+}
+
+#button5 {                                 /* レジ〆ボタン */
+    position: relative;
+    display: inline-block;
+    background-image:-webkit-linear-gradient(top,#84b9cb 0,#84b9cb 100%);
+    background-image:-o-linear-gradient(top,#84b9cb 0,#84b9cb 100%);
+    background-image:-webkit-gradient(linear,left top,left bottom,from(#84b9cb));
+    background-repeat:repeat-x;
+    border-color:#84b9cb;             /* 青系 */
+    border-bottom: solid 3px #719bad; /*少し濃い目の青系色に 影用*/
+    border-radius: 4px;               /*角の丸み*/
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+    color: #fff;
+    height: 150px;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px; 
+    font-family: メイリオ;
+    font-weight: bolder;
+    letter-spacing: 5px;
+    outline: none;
+}
+
+div #extend{                      /* レジ〆ボタン　width調整用 */
+    width: 169px;
+}
+
+
+
+#button6 {                                     /* 金庫収納登録ボタン */
+    position: relative;
+    display: inline-block;
+    background-image:-webkit-linear-gradient(top,#84b9cb 0,#84b9cb 100%);
+    background-image:-o-linear-gradient(top,#84b9cb 0,#84b9cb 100%);
+    background-image:-webkit-gradient(linear,left top,left bottom,from(#84b9cb));
+    background-repeat:repeat-x;
+    border-color:#84b9cb;             /* 青系 */
+    border-bottom: solid 3px #719bad; /*少し濃い目の青系色に 影用*/
+    border-radius: 4px;               /*角の丸み*/
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+    color: #fff;
+    height: 150px;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px; 
+    font-family: メイリオ;
+    font-weight: bolder;
+    letter-spacing: 5px;
+    outline: none;
+}
+
+div #extend2{                      /* 金庫収納ボタン　width調整用 */
+    width: 169px;
+}
+
+#logout {                                     /* ログアウトボタン */
+    position: relative;
+    display: inline-block;
+    background-image:-webkit-linear-gradient(top,#84b9cb 0,#84b9cb 100%);
+    background-image:-o-linear-gradient(top,#84b9cb 0,#84b9cb 100%);
+    background-image:-webkit-gradient(linear,left top,left bottom,from(#84b9cb));
+    background-repeat:repeat-x;
+    border-color:#84b9cb;             /* 青系 */
+    border-bottom: solid 3px #719bad; /*少し濃い目の青系色に 影用*/
+    border-radius: 4px;               /*角の丸み*/
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+    color: #fff;
+    height: 130px;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px; 
+    font-family: メイリオ;
+    font-weight: bolder;
+    letter-spacing: 5px;
+    padding: 0.25em 0.5em;
+    margin-top: 20px;
+    outline: none;
+}
+
+
+
+div#space{
+    margin: 0 20px 0 20px ;
+}
