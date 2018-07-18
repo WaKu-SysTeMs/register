@@ -10,5 +10,5 @@
         <property name="URL" value="jdbc:oracle:thin:@10.11.39.214:1521:HCS1"/>
         <property name="driverClass" value="oracle.jdbc.OracleDriver"/>
     </jdbc-connection-pool>
-    <jdbc-resource enabled="true" jndi-name="jdbc/mydb" object-type="user" pool-name="oracle-thin_HCS1_h20163037Pool"/>
+    <jdbc-resource enabled="true" jndi-name="jdbc/Oracle" object-type="user" pool-name="myjdbc_oracle-pool"/>
 </resources>

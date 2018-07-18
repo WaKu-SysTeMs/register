@@ -20,39 +20,40 @@
                     HCSビデオレンタル
                 </h2>
 
-                <h1>
+                <h3>
                     <div id="regiNum">レジ：01</div>
                     <div id="staff">店員名：XXX</div>
-                </h1>
 
-                <div id="time"><span id="viewTime"></span>
 
-                    <script type="text/javascript">
-                        timer = setInterval('clock()', 1000); //時刻の更新
+                    <div id="time"><span id="viewTime"></span>
 
-                        function clock() {
-                            document.getElementById("viewTime").innerHTML = getNow();
-                        }
+                        <script type="text/javascript">
+                            timer = setInterval('clock()', 1000); //時刻の更新
 
-                        function getNow() {
-                            var now = new Date();
-                            var year = now.getFullYear();
-                            //var mon = now.getMonth()+1; //１を足すこと
-                            var mon = ("0" + (now.getMonth() + 1)).slice(-2);
-                            //var day = now.getDate();
-                            var day = ("0" + (now.getDate())).slice(-2);
-                            //var hour = now.getHours();
-                            var hour = ("0" + (now.getHours())).slice(-2);
-                            //var min = now.getMinutes();
-                            var min = ("0" + (now.getMinutes())).slice(-2);
+                            function clock() {
+                                document.getElementById("viewTime").innerHTML = getNow();
+                            }
 
-                            //出力用
-                            var s = year + "/" + mon + "/" + day + " " + hour + ":" + min;
-                            return s;
+                            function getNow() {
+                                var now = new Date();
+                                var year = now.getFullYear();
+                                //var mon = now.getMonth()+1; //１を足すこと
+                                var mon = ("0" + (now.getMonth() + 1)).slice(-2);
+                                //var day = now.getDate();
+                                var day = ("0" + (now.getDate())).slice(-2);
+                                //var hour = now.getHours();
+                                var hour = ("0" + (now.getHours())).slice(-2);
+                                //var min = now.getMinutes();
+                                var min = ("0" + (now.getMinutes())).slice(-2);
 
-                        }
-                    </script>
-                </div>
+                                //出力用
+                                var s = year + "/" + mon + "/" + day + " " + hour + ":" + min;
+                                return s;
+
+                            }
+                        </script>
+                    </div>
+                </h3>
             </div>
         </div>
 
@@ -67,44 +68,50 @@
                     <div class="col-lg-1" id="space1" ></div>
 
                     <div class="col-lg-3">
-   
-                        <h:commandButton styleClass="button4" value="貸出処理" action="/pages/rental/create.xhtml">
-                            <span class="glyphicon glyphicon-shopping-cart"></span>
-                        </h:commandButton>
+
+                        <h:commandLink styleClass="button4" action="/pages/rental/create.xhtml">
+                            <span class="glyphicon glyphicon-shopping-cart" id="cart"></span><br/>
+                            貸出処理
+                        </h:commandLink>
 
                     </div>
 
                     <div class="col-lg-3">
 
-                        <h:commandButton styleClass="button4" value="返却処理" action="/pages/return/update.xhtml">
-                            <span class="glyphicon glyphicon-inbox"></span>
-                        </h:commandButton>
+                        <h:commandLink styleClass="button4" action="/pages/return/update.xhtml">
+                            <span class="glyphicon glyphicon-inbox" id="cart"></span><br/>
+                            返却処理
+                        </h:commandLink>
 
                     </div>
 
 
                     <div class="col-lg-1" id="extend">
 
-                            <button id="button5">
-                                <span class="glyphicon glyphicon-shopping-cart" id="cart"></span><br/>
-                                レジ〆
-                            </button>
+                        <h:commandLink styleClass="button5" action="#">
+                            <span class="glyphicon glyphicon-shopping-cart" id=""></span><br/>
+                            レジ〆
+                        </h:commandLink>
 
                     </div>
 
                     <div class="col-lg-1" id="extend2">
-                            <button id="button6">
-                                <span class="glyphicon glyphicon-briefcase" id="cart"></span><br/>
-                                金庫収納
-                            </button>
+
+
+                        <h:commandLink styleClass="button6" action="#">
+                            <span class="glyphicon glyphicon-briefcase" id=""></span><br/>
+                            金庫収納
+                        </h:commandLink>
 
                     </div>
 
                     <div class="col-lg-3">
-                            <button id="logout">
-                                <span class="glyphicon glyphicon-log-out"></span>
-                                ログアウト
-                            </button>
+
+                        <h:commandLink styleClass="logout" action="#">
+                            <span class="glyphicon glyphicon-log-out"></span><br/>
+                            ログアウト
+                        </h:commandLink>
+
 
                     </div>
 

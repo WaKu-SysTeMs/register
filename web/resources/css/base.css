@@ -17,6 +17,7 @@ body {
     float: right;
     right: 20px;
     top:25px;
+    font-size:15px;
 }
 
 .header h1 i{                               /*メニューリンク*/
@@ -129,6 +130,11 @@ input[type="submit"]{
 }
 
 /*TOP画面 contentデザイン*/
+a:hover{
+    color: white;
+    text-decoration: none;
+}
+
 div #space1{                /* 1行目 画面幅調整用 */
     margin: 0 12px;
 }
@@ -138,7 +144,7 @@ div #space2{                /* 2行目 画面幅調整用 */
 }
 
 
-#button3 {                   /* 貸出処理ボタン */
+.button3 {                   /* 貸出処理ボタン */
     position: relative;
     display: inline-block;
     background-image:-webkit-linear-gradient(top,#89c997 0,#89c997 100%);
@@ -166,7 +172,9 @@ div #space2{                /* 2行目 画面幅調整用 */
 #cart{                 /* 貸出ボタン　アイコン　調整用 */
     font-size: 70px;
     margin-bottom: 10px;
+    margin-top: 60px;
 }
+
 
 .button4 {                          /* 返却処理ボタン */
     position: relative;
@@ -193,7 +201,8 @@ div #space2{                /* 2行目 画面幅調整用 */
     outline: none;
 }
 
-#button5 {                                 /* レジ〆ボタン */
+
+.button5 {                                 /* レジ〆ボタン */
     position: relative;
     display: inline-block;
     background-image:-webkit-linear-gradient(top,#84b9cb 0,#84b9cb 100%);
@@ -222,7 +231,7 @@ div #extend{                      /* レジ〆ボタン　width調整用 */
 
 
 
-#button6 {                                     /* 金庫収納登録ボタン */
+.button6 {                                     /* 金庫収納登録ボタン */
     position: relative;
     display: inline-block;
     background-image:-webkit-linear-gradient(top,#84b9cb 0,#84b9cb 100%);
@@ -249,7 +258,7 @@ div #extend2{                      /* 金庫収納ボタン　width調整用 */
     width: 169px;
 }
 
-#logout {                                     /* ログアウトボタン */
+.logout {                                     /* ログアウトボタン */
     position: relative;
     display: inline-block;
     background-image:-webkit-linear-gradient(top,#84b9cb 0,#84b9cb 100%);
