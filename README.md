@@ -1,2 +1,2 @@
-# head-office
-HCSビデオレンタル　本社システム用
+# register
+HCSビデオレンタル　DVDレンタルシステム
