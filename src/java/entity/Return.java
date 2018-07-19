@@ -10,8 +10,6 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.SecondaryTable;
-import javax.persistence.SecondaryTables;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -26,7 +24,7 @@ import javax.persistence.Transient;
     @NamedQuery(name = Return.Qdvd_num,
             query = "SELECT r.dvd_num FROM Return r WHERE r.dvd_num = :dvd_num"),
     @NamedQuery(name = Return.Qreturn,
-            query = "SELECT r FROM Return r WHERE ")
+            query = "SELECT r FROM Return r")
 })
 @Entity
 @Table(name = "RENTAL_DETAIL")

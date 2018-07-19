@@ -7,7 +7,10 @@ package bean;
 
 import com.sun.faces.application.annotation.ConfigAnnotationHandler;
 import db.ReturnDb;
+import entity.Return;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Logger;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
@@ -39,5 +42,5 @@ public class ReturnBean implements Serializable{
             conv.end();
         }
     }
-    
+
 }
