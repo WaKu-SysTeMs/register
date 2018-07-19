@@ -7,7 +7,8 @@ and open the template in the editor.
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://java.sun.com/jsf/facelets">
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>TODO supply a title</title>
         <link rel="stylesheet" type="text/css" href="/resources/css/mystayle.css"/>
@@ -17,7 +18,12 @@ and open the template in the editor.
             <ui:define name="content">
                 <h:form>
                     <fieldset>
-                        <h:dataTable value="#{}">
+                        <h:dataTable value="#{rentalListBean}" var="item"
+                                     styleClass="table table-striped table-bordered table-hover">
+                            <h:column>
+                                <f:facet name="header">貸出番号</f:facet>
+                                <h:outputText value="#{item}"
+                            </h:column>
                             
                         </h:dataTable>
                     </fieldset>

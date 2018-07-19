@@ -11,14 +11,16 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.logging.Logger;
 import javax.ejb.EJB;
-import javax.ejb.Stateless;
+import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
+import javax.inject.Named;
 
 /**
  *
  * @author s20163037
  */
-@Stateless
+@Named
+@SessionScoped
 public class RentalListBean implements Serializable {
 
     private List<Rental> rentalList;
