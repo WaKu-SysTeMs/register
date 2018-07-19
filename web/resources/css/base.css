@@ -130,7 +130,7 @@ input[type="submit"]{
 }
 
 /*TOP画面 contentデザイン*/
-a:hover{
+a:hover{                 /* h:commandLink、aタグの下線・色変更阻止 */
     color: white;
     text-decoration: none;
 }
@@ -143,8 +143,7 @@ div #space2{                /* 2行目 画面幅調整用 */
     margin: 0 12px;
 }
 
-
-.button3 {                   /* 貸出処理ボタン */
+div .col-lg-3 .button1 {                   /* 貸出・返却処理ボタン */
     position: relative;
     display: inline-block;
     background-image:-webkit-linear-gradient(top,#89c997 0,#89c997 100%);
@@ -161,7 +160,6 @@ div #space2{                /* 2行目 画面幅調整用 */
     text-align: center;
     text-decoration: none;
     font-size: 20px; 
-    font-family: メイリオ;
     font-weight: bolder;
     letter-spacing: 5px;
     padding: 0.25em 0.5em;
@@ -169,40 +167,13 @@ div #space2{                /* 2行目 画面幅調整用 */
     outline: none;
 }
 
-#cart{                 /* 貸出ボタン　アイコン　調整用 */
+div .button1 span{                 /* 貸出・返却処理ボタン アイコン 調整用 */
     font-size: 70px;
     margin-bottom: 10px;
-    margin-top: 60px;
+    margin-top: 80px;
 }
 
-
-.button4 {                          /* 返却処理ボタン */
-    position: relative;
-    display: inline-block;
-    background-image:-webkit-linear-gradient(top,#89c997 0,#89c997 100%);
-    background-image:-o-linear-gradient(top,#89c997 0,#89c997 100%);
-    background-image:-webkit-gradient(linear,left top,left bottom,from(#89c997));
-    background-repeat:repeat-x;
-    border-color:#89c997;             /* 緑系 */
-    border-bottom: solid 3px #69b076; /*少し濃い目の緑系色に 影用*/
-    border-radius: 4px;               /*角の丸み*/
-    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
-    color: #fff;
-    height: 300px;
-    width: 100%;
-    text-align: center;
-    text-decoration: none;
-    font-size: 20px; 
-    font-family: メイリオ;
-    font-weight: bolder;
-    letter-spacing: 5px;
-    padding: 0.25em 0.5em;
-    margin-bottom: 10px;
-    outline: none;
-}
-
-
-.button5 {                                 /* レジ〆ボタン */
+div .col-lg-1 .button2 {                                 /* レジ〆・金庫収納ボタン */
     position: relative;
     display: inline-block;
     background-image:-webkit-linear-gradient(top,#84b9cb 0,#84b9cb 100%);
@@ -223,42 +194,21 @@ div #space2{                /* 2行目 画面幅調整用 */
     font-weight: bolder;
     letter-spacing: 5px;
     outline: none;
+}
+div .button2 span{                 /* レジ〆・金庫収納ボタン アイコン 調整用 */
+    font-size: 45px;
+    margin-top: 30px;
 }
 
 div #extend{                      /* レジ〆ボタン　width調整用 */
-    width: 169px;
-}
-
-
-
-.button6 {                                     /* 金庫収納登録ボタン */
-    position: relative;
-    display: inline-block;
-    background-image:-webkit-linear-gradient(top,#84b9cb 0,#84b9cb 100%);
-    background-image:-o-linear-gradient(top,#84b9cb 0,#84b9cb 100%);
-    background-image:-webkit-gradient(linear,left top,left bottom,from(#84b9cb));
-    background-repeat:repeat-x;
-    border-color:#84b9cb;             /* 青系 */
-    border-bottom: solid 3px #719bad; /*少し濃い目の青系色に 影用*/
-    border-radius: 4px;               /*角の丸み*/
-    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
-    color: #fff;
-    height: 150px;
-    width: 100%;
-    text-align: center;
-    text-decoration: none;
-    font-size: 20px; 
-    font-family: メイリオ;
-    font-weight: bolder;
-    letter-spacing: 5px;
-    outline: none;
+    width: 170px;
 }
 
 div #extend2{                      /* 金庫収納ボタン　width調整用 */
-    width: 169px;
+    width: 170px;
 }
 
-.logout {                                     /* ログアウトボタン */
+div .col-lg-3 .logout {                                     /* ログアウトボタン */
     position: relative;
     display: inline-block;
     background-image:-webkit-linear-gradient(top,#84b9cb 0,#84b9cb 100%);
@@ -274,8 +224,7 @@ div #extend2{                      /* 金庫収納ボタン　width調整用 */
     width: 100%;
     text-align: center;
     text-decoration: none;
-    font-size: 20px; 
-    font-family: メイリオ;
+    font-size: 20px;
     font-weight: bolder;
     letter-spacing: 5px;
     padding: 0.25em 0.5em;
@@ -283,8 +232,7 @@ div #extend2{                      /* 金庫収納ボタン　width調整用 */
     outline: none;
 }
 
-
-
-div#space{
-    margin: 0 20px 0 20px ;
+div .logout span{          /* ログアウトボタン アイコン 調整用 */
+    font-size: 30px;
+    margin-top: 30px;
 }
