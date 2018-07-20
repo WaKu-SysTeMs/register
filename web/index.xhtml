@@ -28,7 +28,7 @@
                     <div id="time"><span id="viewTime"></span>
 
                         <script type="text/javascript">
-                            timer = setInterval('clock()', 1000); //時刻の更新
+                            timer = setInterval('clock()', 50); //時刻の更新
 
                             function clock() {
                                 document.getElementById("viewTime").innerHTML = getNow();
@@ -69,7 +69,7 @@
 
                     <div class="col-lg-3">
 
-                        <h:commandLink styleClass="button1" action="#{rentalBean.create()}">
+                        <h:commandLink styleClass="button1" action="/pages/rental/create.xhtml">
                             <span class="glyphicon glyphicon-shopping-cart"></span><br/>
                             貸出処理
                         </h:commandLink>
