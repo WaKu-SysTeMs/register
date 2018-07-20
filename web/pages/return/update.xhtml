@@ -10,24 +10,29 @@
     <h:body>
         <ui:composition template="/templates/template01.xhtml">
             <ui:define name="content">
-                <h:dataTable value="#{returnBean.test}" var="t">
-                    <h:column>
-                        <f:facet name="header">作品名</f:facet>
-                        #{t.product_name}
-                    </h:column> 
-                    <h:column>
-                        <f:facet name="header">貸出年月日</f:facet>
-                        #{t.rental_date}
-                    </h:column> 
-                    <h:column>
-                        <f:facet name="header">返却予定日</f:facet>
-                        #{t.return_plan}
-                    </h:column> 
-                    <h:column>
-                        <f:facet name="header">延滞金</f:facet>
-                        #{t.delay}
-                    </h:column> 
-                </h:dataTable>
+                <div id="1">
+                    会員名：<h:outputText id="member_name"/> DVD番号：<h:inputText id="dvd_num"/>
+                </div>
+                <div id="2">
+                    <h:dataTable value="#{returnBean.test}" var="t">
+                        <h:column>
+                            <f:facet name="header">作品名</f:facet>
+                            #{t.product_name}
+                        </h:column> 
+                        <h:column>
+                            <f:facet name="header">貸出年月日</f:facet>
+                            #{t.rental_date}
+                        </h:column> 
+                        <h:column>
+                            <f:facet name="header">返却予定日</f:facet>
+                            #{t.return_plan}
+                        </h:column> 
+                        <h:column>
+                            <f:facet name="header">延滞金</f:facet>
+                            #{t.delay}
+                        </h:column> 
+                    </h:dataTable>
+                </div>
             </ui:define>
         </ui:composition>
     </h:body>
