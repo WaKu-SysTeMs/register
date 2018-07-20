@@ -4,7 +4,7 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
     <head>
-        <title>header</title>
+        <title>HCS</title>
         <link rel="stylesheet" type="text/css" href="/resources/css/mystayle.css"/>
     </head>
     <body>
@@ -12,13 +12,17 @@
             <div class="header">
                 <div class="container">
 
-                    <h2><span class="glyphicon glyphicon-film"></span>
+                    <div class="col-lg-12" style="font-size: 30px;"><span class="glyphicon glyphicon-film"></span>
                         HCSビデオレンタル
-                    </h2>
 
-                    <h3>
-                        <h:link outcome="../index.xhtml"><i>メニューへ</i></h:link>
-                        <div id="staff">店員名：</div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <h:link id="menu"  outcome="/index.xhtml"><i>メニューへ</i></h:link>
+
+
+                        <div id="regiNum">レジ：01</div>
+                        <div id="staff">店員名：XXX</div>
 
 
 
@@ -48,8 +52,8 @@
                                     return s;
                                 }
                             </script>
-                        </div>
-                    </h3>
+                        </div> 
+                    </div>
                 </div>
             </div>
         </ui:composition>

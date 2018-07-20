@@ -9,21 +9,24 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <h:outputStylesheet name="bootstrap/css/bootstrap.min.css" />
-        <h:outputStylesheet library="css" name="base.css" />
+        <h:outputStylesheet library="css" name="common.css" />
+        <h:outputStylesheet library="css" name="mystyle.css" />
         <h:outputScript library="js" name="jquery-3.2.0.min.js" />
         <h:outputScript name="bootstrap/js/bootstrap.min.js" />
-        <title>register -index-</title>
+        <title>HCSビデオレンタル-top-</title>
 
         <div class="header">
             <div class="container">
-                <h2><span class="glyphicon glyphicon-film"></span>
+                <div class="col-lg-12" style="font-size: 30px;">
+                    <span class="glyphicon glyphicon-film"></span>
                     HCSビデオレンタル
-                </h2>
 
-                <h3>
+
+                </div>
+
+                <div class="col-lg-12">
                     <div id="regiNum">レジ：01</div>
                     <div id="staff">店員名：XXX</div>
-
 
                     <div id="time"><span id="viewTime"></span>
 
@@ -53,7 +56,7 @@
                             }
                         </script>
                     </div>
-                </h3>
+                </div>
             </div>
         </div>
 
@@ -149,6 +152,13 @@
                             <label class="list-group-item active text-center">セール</label>
                             <a href="#" class="list-group-item">1. セール情報一覧</a>
                             <a href="#" class="list-group-item">2. セール対象商品一覧</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="list-group">
+                            <a href="#" class="list-group-item" style="text-align: center;">
+                                <span class="glyphicon glyphicon-trash"></span> 廃棄処理</a>
                         </div>
                     </div>
 
