@@ -21,16 +21,29 @@ and open the template in the editor.
                 <div class="container">
                     
                     <h:form>
-                        <h:panelGrid columns="5">
+                        <h:panelGrid columns="7" border="2">
                             <div class="form-group">
-                                
+
                                 <h:outputLabel styleClass="control-label">会員番号：</h:outputLabel>
                                 <span class="required">*</span>
                                 
                                 <h:inputText id="memberNum" required="true" value="#"
-                                             label="会員番号：" styleClass="form-control" />&msp;
+                                             label="会員番号：" styleClass="form-control" />　
                                 <h:commandButton styleClass="btn btn-default" value="検 索" action="#"/>
                                 <h:message for="memberNum" errorClass="error"/>
+                                
+                                <h:outputLabel styleClass="control-label">会員名：</h:outputLabel>
+                                <h:outputText id="memberName" value="XX XXX" />
+                                
+                                <h:outputLabel styleClass="control-label">商品番号：</h:outputLabel>
+                                <span class="required">*</span>
+                                
+                                <h:inputText id="productNum" required="true" value="#"
+                                             label="商品番号：" styleClass="form-control" />
+                                <h:commandButton styleClass="btn btn-default" value="追 加" action="#" />
+                                <h:message for="productNum" errorClass="error" />
+                                
+
                             </div>
                         </h:panelGrid><br/>
                         
