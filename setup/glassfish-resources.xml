@@ -11,4 +11,5 @@
         <property name="driverClass" value="oracle.jdbc.OracleDriver"/>
     </jdbc-connection-pool>
     <jdbc-resource enabled="true" jndi-name="jdbc/Oracle" object-type="user" pool-name="myjdbc_oracle-pool"/>
+    <jdbc-resource enabled="true" jndi-name="jdbc/mydb" object-type="user" pool-name="myjdbc_oracle-pool"/>
 </resources>
