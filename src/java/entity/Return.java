@@ -6,7 +6,7 @@
 package entity;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.sql.Date;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
@@ -64,4 +64,86 @@ public class Return implements Serializable{
         this.discount_flg = discount_flg;
         this.invalid_flg = invalid_flg;
     }
+
+    public Number getRental_num() {
+        return rental_num;
+    }
+
+    public void setRental_num(Number rental_num) {
+        this.rental_num = rental_num;
+    }
+
+    public Number getDetail_num() {
+        return detail_num;
+    }
+
+    public void setDetail_num(Number detail_num) {
+        this.detail_num = detail_num;
+    }
+
+    public Number getDvd_num() {
+        return dvd_num;
+    }
+
+    public void setDvd_num(Number dvd_num) {
+        this.dvd_num = dvd_num;
+    }
+
+    public String getRelease_kbn() {
+        return release_kbn;
+    }
+
+    public void setRelease_kbn(String release_kbn) {
+        this.release_kbn = release_kbn;
+    }
+
+    public Date getReturn_plan() {
+        return return_plan;
+    }
+
+    public void setReturn_plan(Date return_plan) {
+        this.return_plan = return_plan;
+    }
+
+    public Date getReturn_date() {
+        return return_date;
+    }
+
+    public void setReturn_date(Date return_date) {
+        this.return_date = return_date;
+    }
+
+    public String getSale_id() {
+        return sale_id;
+    }
+
+    public void setSale_id(String sale_id) {
+        this.sale_id = sale_id;
+    }
+
+    public String getStay_num() {
+        return stay_num;
+    }
+
+    public void setStay_num(String stay_num) {
+        this.stay_num = stay_num;
+    }
+
+    public String getDiscount_flg() {
+        return discount_flg;
+    }
+
+    public void setDiscount_flg(String discount_flg) {
+        this.discount_flg = discount_flg;
+    }
+
+    public String getInvalid_flg() {
+        return invalid_flg;
+    }
+
+    public void setInvalid_flg(String invalid_flg) {
+        this.invalid_flg = invalid_flg;
+    }
+    
+    
 }
