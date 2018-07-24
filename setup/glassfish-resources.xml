@@ -5,11 +5,10 @@
         <property name="serverName" value="10.11.39.214"/>
         <property name="portNumber" value="1521"/>
         <property name="databaseName" value="HCS1"/>
-        <property name="User" value="h20163037"/>
+        <property name="User" value="h20163060"/>
         <property name="Password" value="oraclemaster"/>
         <property name="URL" value="jdbc:oracle:thin:@10.11.39.214:1521:HCS1"/>
         <property name="driverClass" value="oracle.jdbc.OracleDriver"/>
     </jdbc-connection-pool>
-    <jdbc-resource enabled="true" jndi-name="jdbc/Oracle" object-type="user" pool-name="myjdbc_oracle-pool"/>
     <jdbc-resource enabled="true" jndi-name="jdbc/mydb" object-type="user" pool-name="myjdbc_oracle-pool"/>
 </resources>
