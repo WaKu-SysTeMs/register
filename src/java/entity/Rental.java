@@ -36,6 +36,7 @@
 //
 //    private int amount;
 //
+//    @Temporal(javax.persistence.TemporalType.DATE)
 //    private Date rentalDate;
 //    
 //    @Transient

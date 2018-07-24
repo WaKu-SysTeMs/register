@@ -24,10 +24,10 @@
 //
 //    @Id
 //    @Size(max = 3)
-//    private String category_id;
+//    private String category_id;         // ジャンルID
 //
 //    @Size(max = 20)
-//    private String category_name;
+//    private String category_name;       // ジャンル名
 //    
 //    @OneToMany(mappedBy = "fav_category", cascade = CascadeType.ALL)
 //    private List<Member> member;

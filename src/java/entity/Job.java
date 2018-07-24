@@ -25,10 +25,10 @@
 //    private static final long serialVersionUID = 1L; // シリアライズ
 //    
 //    @Id
-//    private String job_id;
+//    private String job_id;      // 職業ID
 //    
 //    @Size(max = 20)
-//    private String job_name;
+//    private String job_name;    // 職業名
 //    
 //    @OneToMany(mappedBy = "job_id", cascade = CascadeType.ALL)
 //    private List<Member> member;
