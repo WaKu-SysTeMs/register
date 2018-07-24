@@ -5,7 +5,7 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Facelet Title</title>
+        <link rel="stylesheet" type="text/css" href="/resources/css/mystyle.css"/>
     </h:head>
     <h:body>
         <ui:composition template="/templates/template01.xhtml">
@@ -13,26 +13,32 @@
             <ui:define name="content">
                 <div class="container">
                     
-                    <h:form>
-                        <h:panelGrid columns="6" border="1">
-                            <div class="form-group">
+                    <h:form><div class="form-group">
+                            <h:panelGrid columns="6" border="1">
+                           
                                 <h:outputLabel styleClass="control-label">会員名：</h:outputLabel>
                                 <h:outputText id="memberName" value="XX XXX" />
-                                <h:outputLabel styleClass="control-label">　　　　　　　　　　DVD番号：</h:outputLabel>
+                                <h:outputText value="　　　　　　　　　　　　" />
+                                <h:outputLabel styleClass="control-label">DVD番号：</h:outputLabel>
                                 <h:inputText id="productNum" required="true" value="#"
                                              label="DVD番号：" styleClass="form-control" />
                                 <h:commandButton styleClass="btn btn-default" value="追 加" action="#" />
                                 <h:message for="productNum" errorClass="error" />
-                            </div>
+                            
                         </h:panelGrid><br/>
-                    </h:form>
+                    </div></h:form>
                 </div>
                 <div class="container">
-                    <h:form>
+                    <h:form><div class="form-group">
                         <h:panelGrid columns="6" border="1">
-                            <h:outputText value="TEST"/>:
+                            <h:outputLabel styleClass="control-label">番号</h:outputLabel>
+                            <h:outputLabel styleClass="control-label">作品名</h:outputLabel>
+                            <h:outputLabel styleClass="control-label">貸出年月日</h:outputLabel>
+                            <h:outputLabel styleClass="control-label">返却予定日</h:outputLabel>
+                            <h:outputLabel styleClass="control-label">延滞金</h:outputLabel>
+                                <h:commandButton styleClass="btn btn-default" value="削 除" action="#" />
                         </h:panelGrid>
-                    </h:form>
+                        </div></h:form>
                 </div>
             </ui:define>
         </ui:composition>
