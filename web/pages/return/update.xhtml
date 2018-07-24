@@ -9,29 +9,30 @@
     </h:head>
     <h:body>
         <ui:composition template="/templates/template01.xhtml">
+            <ui:define name="title">HCSビデオレンタル-返却-</ui:define>
             <ui:define name="content">
-                <div id="1">
-                    会員名：<h:outputText id="member_name"/> DVD番号：<h:inputText id="dvd_num"/>
+                <div class="container">
+                    
+                    <h:form>
+                        <h:panelGrid columns="6" border="1">
+                            <div class="form-group">
+                                <h:outputLabel styleClass="control-label">会員名：</h:outputLabel>
+                                <h:outputText id="memberName" value="XX XXX" />
+                                <h:outputLabel styleClass="control-label">　　　　　　　　　　DVD番号：</h:outputLabel>
+                                <h:inputText id="productNum" required="true" value="#"
+                                             label="DVD番号：" styleClass="form-control" />
+                                <h:commandButton styleClass="btn btn-default" value="追 加" action="#" />
+                                <h:message for="productNum" errorClass="error" />
+                            </div>
+                        </h:panelGrid><br/>
+                    </h:form>
                 </div>
-                <div id="2">
-                    <h:dataTable value="#{returnBean.test}" var="t">
-                        <h:column>
-                            <f:facet name="header">作品名</f:facet>
-                            #{t.product_name}
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">貸出年月日</f:facet>
-                            #{t.rental_date}
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">返却予定日</f:facet>
-                            #{t.return_plan}
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">延滞金</f:facet>
-                            #{t.delay}
-                        </h:column>
-                    </h:dataTable>
+                <div class="container">
+                    <h:form>
+                        <h:panelGrid columns="6" border="1">
+                            <h:outputText value="TEST"/>:
+                        </h:panelGrid>
+                    </h:form>
                 </div>
             </ui:define>
         </ui:composition>
