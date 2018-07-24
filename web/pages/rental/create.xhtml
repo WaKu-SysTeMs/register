@@ -34,7 +34,7 @@ and open the template in the editor.
                                 <h:message for="memberNum" errorClass="error"/>
 
                                 <h:outputLabel styleClass="control-label">会員名：</h:outputLabel>
-                                <h:outputText id="memberName" value="XX XXX"  />
+                                <h:outputText id="memberName" value="XX XXX" />
 
                                 <h:outputLabel styleClass="control-label">商品番号：</h:outputLabel>
                                 <span class="required">*</span>
@@ -49,9 +49,11 @@ and open the template in the editor.
                             </h:panelGrid><br/>
                         </div>
 
-                        <div class="container panel-body">
+                        
+                        <div class="container panel-body form-horizontal">
                             <fieldset>
                                 <h:dataTable value="#" var="item" styleClass="table table-striped table-bordered table-hover">
+                                    
                                     <h:column>
                                         <f:facet name="header">番号</f:facet>
                                         <h:outputText value="1"/>
@@ -64,29 +66,31 @@ and open the template in the editor.
 
                                     <h:column>
                                         <f:facet name="header">新旧区分</f:facet>
-
+                                        <h:outputText value="新作"/>
                                     </h:column>
 
                                     <h:column>
                                         <f:facet name="header">泊数</f:facet>
-
+                                        <h:selectOneMenu id="stay" required="true" value="#" label="泊数" styleClass="form-control">
+                                            <f:selectItems />
+                                        </h:selectOneMenu>
                                     </h:column>
 
 
                                     <h:column>
                                         <f:facet name="header">割引</f:facet>
-
+                                        <h:selectBooleanCheckbox value="#"/>
                                     </h:column>
 
                                     <h:column>
                                         <f:facet name="header">セールID</f:facet>
-
+                                        <h:outputText value="01"/>
                                     </h:column>
 
 
                                     <h:column>
                                         <f:facet name="header">///</f:facet>
-
+                                        <h:commandButton styleClass="btn btn-danger btn-xs" value="削 除" action="#"/>
                                     </h:column>
 
                                 </h:dataTable>
