@@ -39,5 +39,13 @@ public class MemberBean implements Serializable{
             conv.end();
         }
     }
+    
+        public String create() {
+        log.info(log.getName() + "| 会員登録画面");
+        if (conv.isTransient()) {
+            conv.begin();
+        }
+        return "";
+    }
 
 }

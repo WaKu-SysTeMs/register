@@ -20,6 +20,7 @@ import javax.persistence.SecondaryTables;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.Transient;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 /**
@@ -44,7 +45,7 @@ public class Member implements Serializable {
     public static final String MemberQAll = "MemberQAll";
     public static final String MemberQName = "MemberQName";
 
-    @Id
+    @Id @NotNull
     @Size(max = 12)
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer member_num;     // 会員番号

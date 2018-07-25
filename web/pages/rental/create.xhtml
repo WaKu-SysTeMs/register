@@ -22,7 +22,7 @@ and open the template in the editor.
 
                     <h:form><div class="form-group">
                             <h:panelGrid columns="7">
-                              
+
 
                                 <h:outputLabel styleClass="control-label">会員番号：</h:outputLabel>
                                 <span class="required">*</span>
@@ -44,17 +44,20 @@ and open the template in the editor.
                                 </h:inputText>
                                 <h:commandButton styleClass="btn btn-default" value="追 加" action="#" />
                                 <h:message for="productNum" errorClass="error" />
+                                
+                                <h:outputLabel styleClass="control-label">貸出上限数：</h:outputLabel>
+                                <h:outputText id="rentalMax" value="XX枚" />
 
 
                             </h:panelGrid><br/>
                         </div>
 
-                        
+
                         <div class="container panel-body form-horizontal">
                             <fieldset>
-                                
+
                                 <h:dataTable value="#" var="item" styleClass="table table-striped table-bordered table-hover">
-                                   
+
                                     <h:column>
                                         <f:facet name="header">番号</f:facet>
                                         <h:outputText value="1"/>
@@ -91,7 +94,7 @@ and open the template in the editor.
 
                                     <h:column >
                                         <f:facet name="header">////</f:facet>
-                                        <h:commandButton styleClass="btn btn-danger btn-xs" value="削 除" action="#"/>
+                                        <h:commandButton styleClass="btn btn-danger" value="削 除" action="#"/>
                                     </h:column>
 
                                 </h:dataTable>
