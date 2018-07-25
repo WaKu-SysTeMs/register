@@ -13,7 +13,6 @@
 //import javax.persistence.Table;
 //import javax.persistence.Temporal;
 //import javax.persistence.Transient;
-//import javax.persistence.UniqueConstraint;
 //import javax.validation.constraints.NotNull;
 //
 ///**
@@ -25,7 +24,7 @@
 //            query = "SELECT e FROM Rental e")
 //})
 //@Entity
-//@Table(name = "RENTAL_INFO", uniqueConstraints = @UniqueConstraint(columnNames = "RENTALNUM"))
+//@Table(name = "RENTAL_INFO")
 //public class Rental implements Serializable {
 //
 //    public static final String RentalQAll = "RentalQAll";

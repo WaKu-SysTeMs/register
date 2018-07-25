@@ -5,20 +5,10 @@
         <property name="serverName" value="10.11.39.214"/>
         <property name="portNumber" value="1521"/>
         <property name="databaseName" value="HCS1"/>
-        <property name="User" value="h20163037"/>
-        <property name="Password" value="oraclemaster"/>
-        <property name="URL" value="jdbc:oracle:thin:@10.11.39.214:1521:HCS1"/>
-        <property name="driverClass" value="oracle.jdbc.OracleDriver"/>
-    </jdbc-connection-pool>
-    <jdbc-resource enabled="true" jndi-name="jdbc/Oracle" object-type="user" pool-name="myjdbc_oracle-pool"/>
-    <jdbc-connection-pool allow-non-component-callers="false" associate-with-thread="false" connection-creation-retry-attempts="0" connection-creation-retry-interval-in-seconds="10" connection-leak-reclaim="false" connection-leak-timeout-in-seconds="0" connection-validation-method="auto-commit" datasource-classname="oracle.jdbc.pool.OracleDataSource" fail-all-connections="false" idle-timeout-in-seconds="300" is-connection-validation-required="false" is-isolation-level-guaranteed="true" lazy-connection-association="false" lazy-connection-enlistment="false" match-connections="false" max-connection-usage-count="0" max-pool-size="32" max-wait-time-in-millis="60000" name="oracle-thin_HCS1_h20163060Pool" non-transactional-connections="false" pool-resize-quantity="2" res-type="javax.sql.DataSource" statement-timeout-in-seconds="-1" steady-pool-size="8" validate-atmost-once-period-in-seconds="0" wrap-jdbc-objects="false">
-        <property name="serverName" value="10.11.39.214"/>
-        <property name="portNumber" value="1521"/>
-        <property name="databaseName" value="HCS1"/>
         <property name="User" value="h20163060"/>
         <property name="Password" value="oraclemaster"/>
         <property name="URL" value="jdbc:oracle:thin:@10.11.39.214:1521:HCS1"/>
         <property name="driverClass" value="oracle.jdbc.OracleDriver"/>
     </jdbc-connection-pool>
-    <jdbc-resource enabled="true" jndi-name="jcdb/mydb" object-type="user" pool-name="oracle-thin_HCS1_h20163060Pool"/>
+    <jdbc-resource enabled="true" jndi-name="jdbc/mydb" object-type="user" pool-name="myjdbc_oracle-pool"/>
 </resources>
