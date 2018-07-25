@@ -5,18 +5,18 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <link rel="stylesheet" type="text/css" href="/resources/css/mystyle.css"/>
+        <link rel="stylesheet" type="text/css" href="../../resources/css/mystyle.css"/>
     </h:head>
     <h:body>
-        <ui:composition template="/templates/template01.xhtml">
+        <ui:composition template="../../templates/template01.xhtml">
             <ui:define name="title">HCSビデオレンタル-返却-</ui:define>
             <ui:define name="content">
                 <div class="container">
                     
                     <h:form><div class="form-group">
-                            <h:panelGrid columns="6" border="1">
+                            <h:panelGrid columns="6" border="0">
                            
-                                <h:outputLabel styleClass="control-label">会員名：</h:outputLabel>
+                                <h:outputLabel styleClass="control-label" id="hoge1">会員名：</h:outputLabel>
                                 <h:outputText id="memberName" value="XX XXX" />
                                 <h:outputText value="　　　　　　　　　　　　" />
                                 <h:outputLabel styleClass="control-label">DVD番号：</h:outputLabel>
@@ -28,7 +28,7 @@
                             
                         </h:panelGrid><br/>
                     </div>
-                        <div class="container panel-body">
+                        <div class="container panel-body" style="height:auto; width:auto; overflow-x: auto;">
                             <fieldset>
                                 <h:dataTable value="#" var="item" styleClass="table table-striped table-bordered table-hover" width="500">
                                     <h:column>
@@ -38,7 +38,7 @@
 
                                     <h:column>
                                         <f:facet name="header">作品名</f:facet>
-                                        <h:outputText value="苔 辞典wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww" styleClass="hoge1"  />
+                                        <h:outputText value="苔 辞典wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww" />
                                     </h:column>
 
                                     <h:column>
@@ -60,15 +60,14 @@
 
                                     <h:column>
                                         <f:facet name="header">///</f:facet>
-                                        <h:commandButton styleClass="btn btn-primary btn-xs" value="削 除" action="#"/>
+                                        <h:commandButton styleClass="btn btn-danger btn-xs" value="削 除" action="#"/>
                                     </h:column>
 
                                 </h:dataTable>
                             </fieldset>
                         </div>
-                        <h:commandButton styleClass="btn btn-primary" value="延滞金清算へ" action="#"/>
-                        <div class="col-lg-2">
-                            <h:commandButton styleClass="btn btn-primary btn-block" value="次 へ" action="#"/></div>
+                        <h:commandButton styleClass="btn btn-primary btn-lg" value="延滞金清算へ" action="update_delay"/>
+                            <h:commandButton styleClass="btn btn-primary btn-lg" value="次 へ" action="#"/>
                     </h:form>
                 </div>
             </ui:define>

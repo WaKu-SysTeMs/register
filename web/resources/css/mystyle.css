@@ -110,3 +110,26 @@ div .logout span{          /* ログアウトボタン アイコン 調整用 */
     font-size: 30px;
     margin-top: 30px;
 }
+
+div .hoge1{
+    font-size: 150%;
+    width: 450px;
+    height: 0px;
+    top: 400px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    margin: auto;
+}
+
+div .hoge2{
+    width: 250px;
+    height: 0px;
+    top: 700px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    margin: auto;
+}
