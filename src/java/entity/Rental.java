@@ -7,6 +7,7 @@
 //import java.util.Date;
 //import javax.persistence.Entity;
 //import javax.persistence.Id;
+//import javax.persistence.JoinColumn;
 //import javax.persistence.ManyToMany;
 //import javax.persistence.NamedQueries;
 //import javax.persistence.NamedQuery;
@@ -31,13 +32,15 @@
 //
 //    @Id
 //    @NotNull
-//    private Integer rentalNum;
-//
-//    private int amount;
+//    private Integer rentalNum;          // 貸出番号
+//    
+//    @JoinColumn(table = "member_info")
+//    private Member member_info;
 //
 //    @Temporal(javax.persistence.TemporalType.DATE)
 //    private Date rentalDate;
 //    
+//    private int amount;
 //    @Transient
 //    private boolean editable;
 //

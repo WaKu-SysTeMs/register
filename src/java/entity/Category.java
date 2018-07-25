@@ -8,6 +8,7 @@ package entity;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
@@ -23,37 +24,40 @@ public class Category implements Serializable {
     private static final long serialVersionUID = 1L; // シリアライズ
 
     @Id
-    @Size(max = 3)
-    private String category_id;         // ジャンルID
+    @Size(max = 3) @Column(name = "category_id")
+    private String categoryId;         // ジャンルID
 
-    @Size(max = 20)
-    private String category_name;       // ジャンル名
+    @Size(max = 20) @Column(name = "category_name")
+    private String categoryName;       // ジャンル名
     
-    @OneToMany(mappedBy = "fav_category", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "favCategory", cascade = CascadeType.ALL)
     private List<Member> member;
 
+    /* コンストラクタ */
     public Category() {
     }
 
-    public Category(String category_id, String category_name) {
-        this.category_id = category_id;
-        this.category_name = category_name;
+    public Category(String categoryId, String categoryName) {
+        this.categoryId = categoryId;
+        this.categoryName = categoryName;
     }
 
-    public String getCategory_id() {
-        return category_id;
+    
+    /* セッター、ゲッター */
+    public String getCategoryId() {
+        return categoryId;
     }
 
-    public void setCategory_id(String category_id) {
-        this.category_id = category_id;
+    public void setCategoryId(String categoryId) {
+        this.categoryId = categoryId;
     }
 
-    public String getCategory_name() {
-        return category_name;
+    public String getCategoryName() {
+        return categoryName;
     }
 
-    public void setCategory_name(String category_name) {
-        this.category_name = category_name;
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
     }
 
     public List<Member> getMember() {
@@ -63,7 +67,6 @@ public class Category implements Serializable {
     public void setMember(List<Member> member) {
         this.member = member;
     }
-    
-    
+
 
 }
