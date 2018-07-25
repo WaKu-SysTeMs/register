@@ -6,7 +6,7 @@
 package bean;
 
 import db.RentalDb;
-import entity.Rental;
+//import entity.Rental;
 import java.io.Serializable;
 import java.util.List;
 import java.util.logging.Logger;
@@ -23,7 +23,7 @@ import javax.inject.Named;
 @SessionScoped
 public class RentalListBean implements Serializable {
 
-    private List<Rental> rentalList;
+//    private List<Rental> rentalList;
 
     @EJB
     RentalDb rentalDb;

@@ -18,9 +18,9 @@ import javax.persistence.TypedQuery;
 @Stateless
 public class MemberDb {
 
-//    @PersistenceContext(unitName = "regiPU")
-//    private EntityManager em;  // エンティティマネージャ
-//
+    @PersistenceContext(unitName = "regiPU")
+    private EntityManager em;  // エンティティマネージャ
+
 //    public void create(Member member) {  // 作成・登録
 //        em.persist(member);
 //    }
