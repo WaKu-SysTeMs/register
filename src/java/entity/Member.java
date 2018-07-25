@@ -7,6 +7,7 @@ package entity;
 
 import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -48,91 +49,90 @@ public class Member implements Serializable {
     @NotNull
     @Size(max = 12)
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer memberNum;     // 会員番号
+    private Integer member_num;     // 会員番号
 
-    private String memberName;     // 会員名
+    private String member_name;     // 会員名
 
-    private String memberRuby;     // 会員名 かな表記
+    private String member_ruby;     // 会員名 かな表記
 
     @Temporal(javax.persistence.TemporalType.DATE)
-    private Date birthDate;        // 生年月日
+    private Date birth_date;        // 生年月日
 
     private String sex;             // 性別
 
-    private String postalCode;     // 郵便番号
+    private String postal_code;     // 郵便番号
 
-    private String memberAdd;      // 住所
+    private String member_add;      // 住所
 
-    private String addRuby;        // 住所 かな表記
+    private String add_ruby;        // 住所 かな表記
 
-    private String memberPhone;    // 携帯番号
+    private String member_phone;    // 携帯番号
 
-    private String memberMail;     // メールアドレス
+    private String member_mail;     // メールアドレス
 
     @JoinColumn(table = "job_list")
-    private Job jobId;          // 職業ID
+    private Job job_id;          // 職業ID(FK)
 
-    @JoinColumn(table = "category", name = "fav_category")
-    private Category favCategory;    // 好みのジャンル
+    @JoinColumn(table = "category")
+    private Category fav_category;    // 好みのジャンル(FK)
 
-    private char tempFlg;          // 仮会員フラグ
+    private char temp_flg;          // 仮会員フラグ
 
     @Transient                  // シリアライズしない
     private boolean editable;
 
+    /* コンストラクタ */
     public Member() {
     }
 
-    public Member(Integer memberNum, String memberName, String memberRuby,
-            Date birthDate, String sex, String postalCode, String memberAdd, String addRuby, 
-            String memberPhone, String memberMail, Job jobId, Category favCategory, char tempFlg, boolean editable) {
-        this.memberNum = memberNum;
-        this.memberName = memberName;
-        this.memberRuby = memberRuby;
-        this.birthDate = birthDate;
+    public Member(Integer member_num, String member_name, String member_ruby,
+            Date birth_date, String sex, String postal_code, String member_add,
+            String add_ruby, String member_phone, Job job_id, Category fav_category, char temp_flg) {
+        this.member_num = member_num;
+        this.member_name = member_name;
+        this.member_ruby = member_ruby;
+        this.birth_date = birth_date;
         this.sex = sex;
-        this.postalCode = postalCode;
-        this.memberAdd = memberAdd;
-        this.addRuby = addRuby;
-        this.memberPhone = memberPhone;
-        this.memberMail = memberMail;
-        this.jobId = jobId;
-        this.favCategory = favCategory;
-        this.tempFlg = tempFlg;
-        this.editable = editable;
+        this.postal_code = postal_code;
+        this.member_add = member_add;
+        this.add_ruby = add_ruby;
+        this.member_phone = member_phone;
+        this.job_id = job_id;
+        this.fav_category = fav_category;
+        this.temp_flg = temp_flg;
     }
 
     /* ゲッター、セッター */
-    public Integer getMemberNum() {
-        return memberNum;
+    public Integer getMember_num() {
+        return member_num;
     }
 
-    public void setMemberNum(Integer memberNum) {
-        this.memberNum = memberNum;
+    public void setMember_num(Integer member_num) {
+        this.member_num = member_num;
     }
 
-    public String getMemberName() {
-        return memberName;
+    public String getMember_name() {
+        return member_name;
     }
 
-    public void setMemberName(String memberName) {
-        this.memberName = memberName;
+    public void setMember_name(String member_name) {
+        this.member_name = member_name;
     }
 
-    public String getMemberRuby() {
-        return memberRuby;
+    public String getMember_ruby() {
+        return member_ruby;
     }
 
-    public void setMemberRuby(String memberRuby) {
-        this.memberRuby = memberRuby;
+    public void setMember_ruby(String member_ruby) {
+        this.member_ruby = member_ruby;
     }
 
-    public Date getBirthDate() {
-        return birthDate;
+    public Date getBirth_date() {
+        return birth_date;
     }
 
-    public void setBirthDate(Date birthDate) {
-        this.birthDate = birthDate;
+    public void setBirth_date(Date birth_date) {
+        this.birth_date = birth_date;
     }
 
     public String getSex() {
@@ -143,68 +143,68 @@ public class Member implements Serializable {
         this.sex = sex;
     }
 
-    public String getPostalCode() {
-        return postalCode;
+    public String getPostal_code() {
+        return postal_code;
     }
 
-    public void setPostalCode(String postalCode) {
-        this.postalCode = postalCode;
+    public void setPostal_code(String postal_code) {
+        this.postal_code = postal_code;
     }
 
-    public String getMemberAdd() {
-        return memberAdd;
+    public String getMember_add() {
+        return member_add;
     }
 
-    public void setMemberAdd(String memberAdd) {
-        this.memberAdd = memberAdd;
+    public void setMember_add(String member_add) {
+        this.member_add = member_add;
     }
 
-    public String getAddRuby() {
-        return addRuby;
+    public String getAdd_ruby() {
+        return add_ruby;
     }
 
-    public void setAddRuby(String addRuby) {
-        this.addRuby = addRuby;
+    public void setAdd_ruby(String add_ruby) {
+        this.add_ruby = add_ruby;
     }
 
-    public String getMemberPhone() {
-        return memberPhone;
+    public String getMember_phone() {
+        return member_phone;
     }
 
-    public void setMemberPhone(String memberPhone) {
-        this.memberPhone = memberPhone;
+    public void setMember_phone(String member_phone) {
+        this.member_phone = member_phone;
     }
 
-    public String getMemberMail() {
-        return memberMail;
+    public String getMember_mail() {
+        return member_mail;
     }
 
-    public void setMemberMail(String memberMail) {
-        this.memberMail = memberMail;
+    public void setMember_mail(String member_mail) {
+        this.member_mail = member_mail;
     }
 
-    public Job getJobId() {
-        return jobId;
+    public Job getJob_id() {
+        return job_id;
     }
 
-    public void setJobId(Job jobId) {
-        this.jobId = jobId;
+    public void setJob_id(Job job_id) {
+        this.job_id = job_id;
     }
 
-    public Category getFavCategory() {
-        return favCategory;
+    public Category getFav_category() {
+        return fav_category;
     }
 
-    public void setFavCategory(Category favCategory) {
-        this.favCategory = favCategory;
+    public void setFav_category(Category fav_category) {
+        this.fav_category = fav_category;
     }
 
-    public char getTempFlg() {
-        return tempFlg;
+    public char getTemp_flg() {
+        return temp_flg;
     }
 
-    public void setTempFlg(char tempFlg) {
-        this.tempFlg = tempFlg;
+    public void setTemp_flg(char temp_flg) {
+        this.temp_flg = temp_flg;
     }
 
     public boolean isEditable() {
