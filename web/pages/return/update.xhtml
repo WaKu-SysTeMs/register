@@ -5,33 +5,71 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Facelet Title</title>
+        <link rel="stylesheet" type="text/css" href="/resources/css/mystyle.css"/>
     </h:head>
     <h:body>
         <ui:composition template="/templates/template01.xhtml">
+            <ui:define name="title">HCSビデオレンタル-返却-</ui:define>
             <ui:define name="content">
-                <div id="1">
-                    会員名：<h:outputText id="member_name"/> DVD番号：<h:inputText id="dvd_num"/>
-                </div>
-                <div id="2">
-                    <h:dataTable value="#{returnBean.test}" var="t">
-                        <h:column>
-                            <f:facet name="header">作品名</f:facet>
-                            #{t.product_name}
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">貸出年月日</f:facet>
-                            #{t.rental_date}
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">返却予定日</f:facet>
-                            #{t.return_plan}
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">延滞金</f:facet>
-                            #{t.delay}
-                        </h:column>
-                    </h:dataTable>
+                <div class="container">
+                    
+                    <h:form><div class="form-group">
+                            <h:panelGrid columns="6" border="1">
+                           
+                                <h:outputLabel styleClass="control-label">会員名：</h:outputLabel>
+                                <h:outputText id="memberName" value="XX XXX" />
+                                <h:outputText value="　　　　　　　　　　　　" />
+                                <h:outputLabel styleClass="control-label">DVD番号：</h:outputLabel>
+                                
+                                <h:inputText id="productNum" required="true" value="#"
+                                             label="DVD番号：" styleClass="form-control" />
+                                <h:commandButton styleClass="btn btn-default" value="追 加" action="#" />
+                                <h:message for="productNum" errorClass="error" />
+                            
+                        </h:panelGrid><br/>
+                    </div>
+                        <div class="container panel-body">
+                            <fieldset>
+                                <h:dataTable value="#" var="item" styleClass="table table-striped table-bordered table-hover" width="500">
+                                    <h:column>
+                                        <f:facet name="header">番号</f:facet>
+                                        <h:outputText value="1"/>
+                                    </h:column>
+
+                                    <h:column>
+                                        <f:facet name="header">作品名</f:facet>
+                                        <h:outputText value="苔 辞典wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww" styleClass="hoge1"  />
+                                    </h:column>
+
+                                    <h:column>
+                                        <f:facet name="header">貸出年月日</f:facet>
+                                        <h:outputText value="2018/07/22" />
+                                    </h:column>
+
+                                    <h:column>
+                                        <f:facet name="header">返却予定日</f:facet>
+                                        <h:outputText value="2018/07/23" />
+                                    </h:column>
+
+
+                                    <h:column>
+                                        <f:facet name="header">延滞金</f:facet>
+                                        <h:outputText value="300" />
+                                    </h:column>
+
+
+                                    <h:column>
+                                        <f:facet name="header">///</f:facet>
+                                        <h:commandButton styleClass="btn btn-primary btn-xs" value="削 除" action="#"/>
+                                    </h:column>
+
+                                </h:dataTable>
+                            </fieldset>
+                        </div>
+                        <h:commandButton styleClass="btn btn-primary" value="延滞金清算へ" action="#"/>
+                        <div class="col-lg-2">
+                            <h:commandButton styleClass="btn btn-primary btn-block" value="次 へ" action="#"/></div>
+                    </h:form>
                 </div>
             </ui:define>
         </ui:composition>
