@@ -12,6 +12,7 @@
 //import javax.persistence.GeneratedValue;
 //import javax.persistence.GenerationType;
 //import javax.persistence.Id;
+//import javax.persistence.JoinColumn;
 //import javax.persistence.NamedQueries;
 //import javax.persistence.NamedQuery;
 //import javax.persistence.SecondaryTable;
@@ -66,10 +67,10 @@
 //
 //    private String member_mail;     // メールアドレス
 //
-//    @Column(table = "job_list")
+//    @JoinColumn(table = "job_list")
 //    private Job job_id;          // 職業ID
 //
-//    @Column(table = "category")
+//    @JoinColumn(table = "category", name = "fav_category")
 //    private Category fav_category;    // 好みのジャンル
 //
 //    private char temp_flg;          // 仮会員フラグ

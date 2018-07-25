@@ -18,13 +18,13 @@
 //@Stateless
 //public class RentalDb {
 //
-////    @PersistenceContext
-////    private EntityManager em;  // エンティティマネージャ
-////
-////    public void create(Rental rental) {  // 作成・登録
-////        em.persist(rental);
-////    }
-////
+//    @PersistenceContext
+//    private EntityManager em;  // エンティティマネージャ
+//
+//    public void create(Rental rental) {  // 作成・登録
+//        em.persist(rental);
+//    }
+//
 ////    public void update(Rental rental) {  // 更新
 ////        em.merge(rental);
 ////    }

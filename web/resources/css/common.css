@@ -12,6 +12,12 @@ body {
     padding: 0px;
 }
 
+.table > tbody > tr > td,
+.table > thead > tr > th {
+  vertical-align: middle;
+  text-align: center;
+}
+
 /* headerデザイン */
 .header{
         position: relative;
