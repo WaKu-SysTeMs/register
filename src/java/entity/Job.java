@@ -13,6 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 /**
@@ -26,6 +27,8 @@ public class Job implements Serializable {
     private static final long serialVersionUID = 1L; // シリアライズ
 
     @Id
+    @NotNull
+    @Size(max = 1)
     private String job_id;      // 職業ID
 
     @Size(max = 20)
@@ -46,7 +49,6 @@ public class Job implements Serializable {
         this.job_name = job_name;
     }
 
-    
     /* セッター、ゲッター */
     public String getJob_id() {
         return job_id;

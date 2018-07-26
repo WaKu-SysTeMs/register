@@ -51,31 +51,43 @@ public class Member implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer member_num;     // 会員番号
 
+    @Size(max = 30)
     private String member_name;     // 会員名
 
+    @Size(max = 40)
     private String member_ruby;     // 会員名 かな表記
 
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date birth_date;        // 生年月日
 
+    @Size(max = 1)
     private String sex;             // 性別
 
+    @Size(max = 8)
     private String postal_code;     // 郵便番号
 
+    @Size(max = 80)
     private String member_add;      // 住所
 
+    @Size(max = 200)
     private String add_ruby;        // 住所 かな表記
 
+    @Size(max = 20)
     private String member_phone;    // 携帯番号
 
+    @Size(max = 40)
     private String member_mail;     // メールアドレス
 
+    @NotNull
+    @Size(max = 1)
     @JoinColumn(table = "job_list")
     private Job job_id;          // 職業ID(FK)
 
+    @Size(max = 3)
     @JoinColumn(table = "category")
     private Category fav_category;    // 好みのジャンル(FK)
 
+    @Size(max = 1)
     private char temp_flg;          // 仮会員フラグ
 
     @Transient                  // シリアライズしない
