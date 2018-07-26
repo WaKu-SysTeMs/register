@@ -7,12 +7,8 @@ package entity;
 
 import java.io.Serializable;
 import java.util.List;
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Transient;
-import javax.validation.constraints.Size;
+import javax.persistence.*;
+import javax.validation.constraints.*;
 
 /**
  *
@@ -21,9 +17,9 @@ import javax.validation.constraints.Size;
 @Entity
 public class Category implements Serializable {
 
-    private static final long serialVersionUID = 1L; // シリアライズ
+    private static final long serialVersionUID = 1L;  // シリアルバージョンUIDのバージョン管理
 
-    @Id
+    @Id @NotNull
     @Size(max = 3)
     private String category_id;         // ジャンルID
 

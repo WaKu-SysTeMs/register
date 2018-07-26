@@ -7,13 +7,8 @@ package entity;
 
 import java.io.Serializable;
 import java.util.List;
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-import javax.persistence.Transient;
-import javax.validation.constraints.Size;
+import javax.persistence.*;
+import javax.validation.constraints.*;
 
 /**
  *
@@ -23,9 +18,11 @@ import javax.validation.constraints.Size;
 @Table(name = "job_list")
 public class Job implements Serializable {
 
-    private static final long serialVersionUID = 1L; // シリアライズ
+    private static final long serialVersionUID = 1L; // シリアルバージョンUIDのバージョン管理
 
     @Id
+    @NotNull
+    @Size(max = 1)
     private String job_id;      // 職業ID
 
     @Size(max = 20)
@@ -46,7 +43,6 @@ public class Job implements Serializable {
         this.job_name = job_name;
     }
 
-    
     /* セッター、ゲッター */
     public String getJob_id() {
         return job_id;
