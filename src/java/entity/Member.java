@@ -7,21 +7,8 @@ package entity;
 
 import java.io.Serializable;
 import java.util.Date;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.SecondaryTable;
-import javax.persistence.SecondaryTables;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.Transient;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.persistence.*;
+import javax.validation.constraints.*;
 
 /**
  *
@@ -40,7 +27,7 @@ import javax.validation.constraints.Size;
 })
 public class Member implements Serializable {
 
-    private static final long serialVersionUID = 1L; // シリアライズ
+    private static final long serialVersionUID = 1L;  // シリアルバージョンUIDのバージョン管理
 
     public static final String MemberQAll = "MemberQAll";
     public static final String MemberQName = "MemberQName";
