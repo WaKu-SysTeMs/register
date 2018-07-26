@@ -6,6 +6,7 @@
 package entity;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
@@ -15,6 +16,7 @@ import javax.validation.constraints.*;
  */
 @Entity
 @Table(name = "register")
+@SecondaryTable(name = "store_info")
 public class Register implements Serializable {
 
     private static final long serialVersionUID = 1L;  // シリアルバージョンUIDのバージョン管理
@@ -30,6 +32,9 @@ public class Register implements Serializable {
 
     @Size(max = 7)
     private Integer register_amt;           // レジ内金額
+
+    @OneToMany(mappedBy = "register_id", cascade = CascadeType.ALL)
+    private List<Rental> rental;
 
     @Transient                           // シリアライズしない
     private boolean editable;

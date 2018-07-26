@@ -6,6 +6,7 @@
 package entity;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
@@ -34,6 +35,9 @@ public class Store implements Serializable {
 
     @Size(max = 40)
     private String store_mail;          // メールアドレス
+
+    @OneToMany(mappedBy = "store_id", cascade = CascadeType.ALL)
+    private List<Employee> employee;
 
     @Transient
     private boolean editable;           // シリアライズしない
@@ -89,6 +93,14 @@ public class Store implements Serializable {
 
     public void setStore_mail(String store_mail) {
         this.store_mail = store_mail;
+    }
+
+    public List<Employee> getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(List<Employee> employee) {
+        this.employee = employee;
     }
 
     public boolean isEditable() {

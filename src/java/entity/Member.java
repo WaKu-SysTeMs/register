@@ -7,6 +7,7 @@ package entity;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
@@ -76,6 +77,9 @@ public class Member implements Serializable {
 
     @Size(max = 1)
     private char temp_flg;          // 仮会員フラグ
+
+    @OneToMany(mappedBy = "member_num", cascade = CascadeType.ALL)
+    private List<Rental> rental;
 
     @Transient                  // シリアライズしない
     private boolean editable;
@@ -204,6 +208,14 @@ public class Member implements Serializable {
 
     public void setTemp_flg(char temp_flg) {
         this.temp_flg = temp_flg;
+    }
+
+    public List<Rental> getRental() {
+        return rental;
+    }
+
+    public void setRental(List<Rental> rental) {
+        this.rental = rental;
     }
 
     public boolean isEditable() {

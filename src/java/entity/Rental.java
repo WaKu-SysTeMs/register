@@ -18,6 +18,11 @@ import javax.validation.constraints.*;
 })
 @Entity
 @Table(name = "rental_info")
+@SecondaryTables({
+    @SecondaryTable(name = "member_info"),
+    @SecondaryTable(name = "register"),
+    @SecondaryTable(name = "emp_info")
+})
 public class Rental implements Serializable {
 
     private static final long serialVersionUID = 1L;  // シリアルバージョンUIDのバージョン管理

@@ -15,6 +15,10 @@ import javax.validation.constraints.*;
  */
 @Entity
 @Table(name = "emp_info")
+@SecondaryTables({
+    @SecondaryTable(name = "role_info"),
+    @SecondaryTable(name = "store_info")
+})
 public class Employee implements Serializable {
 
     private static final long serialVersionUID = 1L; // シリアルバージョンUIDのバージョン管理
