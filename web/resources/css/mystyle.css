@@ -111,11 +111,34 @@ div .logout span{          /* ログアウトボタン アイコン 調整用 */
     margin-top: 30px;
 }
 
-div .hoge1{
-    font-size: 150%;
+div .hoge11{                 /* div調整用 */
+    font-size: 180%;
     width: 450px;
     height: 0px;
-    top: 400px;
+    top: 250px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    margin: auto;
+}
+div .hoge12{                 /* div調整用 */
+    font-size: 180%;
+    width: 450px;
+    height: 0px;
+    top: 450px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    margin: auto;
+    float: left;
+}
+
+div .hoge14{                 /* ボタン調整用 */
+    width: 250px;
+    height: 0px;
+    top: 900px;
     bottom: 0;
     left: 0;
     right: 0;
@@ -123,13 +146,24 @@ div .hoge1{
     margin: auto;
 }
 
-div .hoge2{
-    width: 250px;
-    height: 0px;
-    top: 700px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    position: absolute;
-    margin: auto;
+.hoge13{                     /* inputtext調整用 */
+    display:block;
+    width:148px;
+    height:34px;
+    padding:6px 12px;
+    margin-left: 50px;
+    font-size: 100%;
+    line-height:1.42857143;
+    color:#555;
+    background-color:#fff;
+    background-image:none;
+    border:1px solid #ccc;
+    border-radius:4px;
+    -webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow:inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition:border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    text-align: center;
+    display: inline-block;
 }

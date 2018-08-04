@@ -5,15 +5,8 @@ package entity;
 
 import java.io.Serializable;
 import java.util.Date;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.Transient;
-import javax.validation.constraints.NotNull;
+import javax.persistence.*;
+import javax.validation.constraints.*;
 
 /**
  *
@@ -25,9 +18,14 @@ import javax.validation.constraints.NotNull;
 })
 @Entity
 @Table(name = "rental_info")
+@SecondaryTables({
+    @SecondaryTable(name = "member_info"),
+    @SecondaryTable(name = "register"),
+    @SecondaryTable(name = "emp_info")
+})
 public class Rental implements Serializable {
 
-    private static final long serialVersionUID = 1L; // シリアライズ
+    private static final long serialVersionUID = 1L;  // シリアルバージョンUIDのバージョン管理
 
     public static final String RentalQAll = "RentalQAll";
 
@@ -35,21 +33,27 @@ public class Rental implements Serializable {
     @NotNull
     private Integer rental_num;          // 貸出番号
 
+    @NotNull
+    @Size(max = 12)
     @JoinColumn(table = "member_info")
     private Member member_num;           // 会員番号(FK)
 
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date rental_date;            // 貸出年月日
 
-    private int amount;                 // 合計金額
+    @Size(max = 6)
+    private Integer amount;                  // 合計金額
 
+    @NotNull
+    @Size(max = 4)
     @JoinColumn(table = "register")
-    private Register register_id;         // レジ番号(FK)
+    private Register register_id;        // レジ番号(FK)
 
+    @Size(max = 10)
     @JoinColumn(table = "emp_info")
-    private Employee emp_num;               // 社員番号(FK)
+    private Employee emp_num;            // 社員番号(FK)
 
-    @Transient                              // シリアライズしない
+    @Transient                           // シリアライズしない
     private boolean editable;
 
     /* コンストラクタ */
