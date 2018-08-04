@@ -41,11 +41,11 @@ public class RentalBean implements Serializable {
         }
     }
 
-//    public String create() {
-//        log.info(log.getName() + "| 貸出情報登録画面");
-//        if (conv.isTransient()) {
-//            conv.begin();
-//        }
-//        return "/pages/rental/create.xhtml";
-//    }
+    public String create() {
+        log.info(log.getName() + "| 貸出情報登録画面");
+        if (conv.isTransient()) {
+            conv.begin();
+        }
+        return "/pages/rental/create.xhtml";
+    }
 }
