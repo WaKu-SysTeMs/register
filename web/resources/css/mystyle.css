@@ -134,6 +134,18 @@ div .hoge12{                 /* div調整用 */
     margin: auto;
     float: left;
 }
+div .hoge15{                 /* div調整用 */
+    font-size: 180%;
+    width: 550px;
+    height: 0px;
+    top: 650px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    margin: auto;
+    float: left;
+}
 
 div .hoge14{                 /* ボタン調整用 */
     width: 250px;

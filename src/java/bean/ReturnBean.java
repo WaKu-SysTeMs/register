@@ -31,12 +31,22 @@ public class ReturnBean implements Serializable{
     @Inject
     Conversation conv;
     
+    
+    
     @PostConstruct
     public void start(){
         if(!conv.isTransient()){
             log.info(log.getName() + "￤ 会話スコープ終了");
             conv.end();
         }
+    }
+    
+    public String create() {
+        log.info(log.getName() + "| 返却情報変更画面");
+        if (conv.isTransient()) {
+            conv.begin();
+        }
+        return "/pages/returnl/update.xhtml";
     }
 
 }
