@@ -36,7 +36,9 @@ public class ReturnBean implements Serializable{
     private List <Test> test;
     {
         test = new ArrayList<>();
-        test.add(new Test(1,"","","",300));
+        test.add(new Test(1,"test1","test2","test3",300));
+        test.add(new Test(2,"test4","test5","test6",600));
+        test.add(new Test(3,"test7","test8","test9",900));
     }
     
     
@@ -56,5 +58,15 @@ public class ReturnBean implements Serializable{
         }
         return "/pages/returnl/update.xhtml";
     }
+
+    public List<Test> getTest() {
+        return test;
+    }
+
+    public void setTest(List<Test> test) {
+        this.test = test;
+    }
+    
+    
 
 }
