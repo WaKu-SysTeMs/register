@@ -7,6 +7,8 @@ package bean;
 
 import db.ReturnDb;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Logger;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
@@ -32,6 +34,16 @@ public class ReturnBean implements Serializable{
     @Inject
     Conversation conv;
     
+    private List <Test> test;
+    {
+        test = new ArrayList<>();
+        test.add(new Test(1,"test1","test2","test3",300));
+        test.add(new Test(2,"test4","test5","test6",600));
+        test.add(new Test(3,"test7","test8","test9",900));
+    }
+    
+    
+    
     @PostConstruct
     public void start(){
         if(!conv.isTransient()){
@@ -39,5 +51,23 @@ public class ReturnBean implements Serializable{
             conv.end();
         }
     }
+    
+    public String create() {
+        log.info(log.getName() + "| 返却情報変更画面");
+        if (conv.isTransient()) {
+            conv.begin();
+        }
+        return "/pages/returnl/update.xhtml";
+    }
+
+    public List<Test> getTest() {
+        return test;
+    }
+
+    public void setTest(List<Test> test) {
+        this.test = test;
+    }
+    
+    
 
 }
