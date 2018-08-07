@@ -7,6 +7,8 @@ package bean;
 
 import db.ReturnDb;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Logger;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
@@ -30,6 +32,12 @@ public class ReturnBean implements Serializable{
     
     @Inject
     Conversation conv;
+    
+    private List <Test> test;
+    {
+        test = new ArrayList<>();
+        test.add(new Test(1,"","","",300));
+    }
     
     
     
