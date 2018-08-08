@@ -12,11 +12,12 @@
             <ui:define name="title">HCSビデオレンタル-返却-</ui:define>
             <ui:define name="content">
                 <div class="container">
+                    <br/>
                     
                     <h:form><div class="form-group">
                             <h:panelGrid columns="6" border="0">
                            
-                                <h:outputLabel styleClass="control-label" id="hoge1">会員名：</h:outputLabel>
+                                <h:outputLabel styleClass="control-label">会員名：</h:outputLabel>
                                 <h:outputText id="memberName" value="XX XXX" />
                                 <h:outputText value="　　　　　　　　　　　　" />
                                 <h:outputLabel styleClass="control-label">DVD番号：</h:outputLabel>
@@ -26,39 +27,39 @@
                                 <h:commandButton styleClass="btn btn-default" value="追 加" action="#" />
                                 <h:message for="productNum" errorClass="error" />
                             
-                        </h:panelGrid><br/>
+                        </h:panelGrid>
                     </div>
-                        <div class="container panel-body" style="height:auto; width:auto; overflow-x: auto;">
+                        <div class="container panel-body hogeTest" >
                             <fieldset>
-                                <h:dataTable value="#" var="item" styleClass="table table-striped table-bordered table-hover" width="500">
-                                    <h:column>
+                                <h:dataTable class="hogehogehoge" value="#{returnBean.test}" var="t" styleClass="table table-striped table-bordered table-hover" columnClasses="hoge200,hoge201,hoge202,hoge202,hoge203,hoge210">
+                                    <h:column headerClass="hoge200">
                                         <f:facet name="header">番号</f:facet>
-                                        <h:outputText value="1"/>
+                                        #{t.num}
                                     </h:column>
 
-                                    <h:column>
+                                    <h:column headerClass="hoge201">
                                         <f:facet name="header">作品名</f:facet>
-                                        <h:outputText value="苔 辞典wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww" />
+                                        #{t.name}
                                     </h:column>
 
-                                    <h:column>
+                                    <h:column headerClass="hoge202">
                                         <f:facet name="header">貸出年月日</f:facet>
-                                        <h:outputText value="2018/07/22" />
+                                        #{t.date1}
                                     </h:column>
 
-                                    <h:column>
+                                    <h:column headerClass="hoge202">
                                         <f:facet name="header">返却予定日</f:facet>
-                                        <h:outputText value="2018/07/23" />
+                                        #{t.date2}
                                     </h:column>
 
 
-                                    <h:column>
+                                    <h:column headerClass="hoge203">
                                         <f:facet name="header">延滞金</f:facet>
-                                        <h:outputText value="300" />
+                                        #{t.money}
                                     </h:column>
 
 
-                                    <h:column>
+                                    <h:column headerClass="hoge210">
                                         <f:facet name="header">///</f:facet>
                                         <h:commandButton styleClass="btn btn-danger btn-xs" value="削 除" action="#"/>
                                     </h:column>
@@ -66,7 +67,7 @@
                                 </h:dataTable>
                             </fieldset>
                         </div>
-                        <div class="hege01">
+                        <div class="hoge204">
                         <h:commandButton styleClass="btn btn-primary btn-lg" value="延滞金清算へ" action="update_delay.xhtml?faces-redirect=true"/>
                             <h:commandButton styleClass="btn btn-primary btn-lg" value="次 へ" action="#"/>
                         </div>

@@ -134,6 +134,18 @@ div .hoge12{                 /* div調整用 */
     margin: auto;
     float: left;
 }
+div .hoge15{                 /* div調整用 */
+    font-size: 180%;
+    width: 550px;
+    height: 0px;
+    top: 650px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    margin: auto;
+    float: left;
+}
 
 div .hoge14{                 /* ボタン調整用 */
     width: 250px;
@@ -166,4 +178,42 @@ div .hoge14{                 /* ボタン調整用 */
     transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;
     text-align: center;
     display: inline-block;
+}
+
+.hoge200{
+    width: 60px;
+}
+
+.hoge201{
+    width: 538px;
+}
+
+.hoge202{
+    width: 200px;
+}
+
+.hoge203{
+    width: 150px;
+}
+
+.hoge204{
+    text-align: right;
+}
+
+thead, tbody {
+  display: block;
+}
+
+.hogeTest{
+    font-size: 120%;
+}
+
+div .hogeTest tbody{
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 300px;
+}
+
+.hoge210{
+    width: 100px;
 }

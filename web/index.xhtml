@@ -91,7 +91,7 @@
 
                     <div class="col-lg-1" id="extend">
 
-                        <h:commandLink styleClass="button2" action="#">
+                        <h:commandLink styleClass="button2" action="/pages/inspection/create.xhtml">
                             <span class="glyphicon glyphicon-yen"></span><br/>
                             レジ〆
                         </h:commandLink>
@@ -101,16 +101,16 @@
                     <div class="col-lg-1" id="extend2">
 
 
-                        <h:commandLink styleClass="button2" action="#">
+                        <h:commandLink styleClass="button2" action="/pages/safe/create.xhtml">
                             <span class="glyphicon glyphicon-briefcase"></span><br/>
-                            金庫収納
+                            現金収納
                         </h:commandLink>
 
                     </div>
 
                     <div class="col-lg-3">
 
-                        <h:commandLink styleClass="logout" action="#">
+                        <h:commandLink styleClass="logout" action="/pages/login/login.xhtml">
                             <span class="glyphicon glyphicon-log-out"></span><br/>
                             ログアウト
                         </h:commandLink>
@@ -129,10 +129,10 @@
                     <div class="col-lg-3">
                         <div class="list-group">
                             <label class="list-group-item active text-center">マスタ管理</label>
-                            <a href="#" class="list-group-item">1. 貸出情報一覧</a>
-                            <a href="#" class="list-group-item">2. 在庫情報一覧</a>
-                            <a href="#" class="list-group-item">3. 商品情報一覧</a>
-                            <a href="#" class="list-group-item">4. DVD情報一覧</a>
+                            <a href="/pages/rental/list.xhtml" class="list-group-item">1. 貸出情報一覧</a>
+                            <a href="/pages/stock/list.xhtml" class="list-group-item">2. 在庫情報一覧</a>
+                            <a href="/pages/product/list.xhtml" class="list-group-item">3. 商品情報一覧</a>
+                            <a href="/pages/dvd/list.xhtml" class="list-group-item">4. DVD情報一覧</a>
                         </div>
                     </div>
 
@@ -140,9 +140,9 @@
                         <div class="list-group">
 
                             <label class="list-group-item active text-center">会員管理</label>
-                            <a href="#" class="list-group-item">1. 入会処理</a>
-                            <a href="#" class="list-group-item">2. 会員情報一覧</a>
-                            <a href="#" class="list-group-item">3. 退会処理</a>
+                            <a href="/pages/member/create.xhtml" class="list-group-item">1. 入会処理</a>
+                            <a href="/pages/member/list.xhtml" class="list-group-item">2. 会員情報一覧</a>
+                            <a href="/pages/member/delete.xhtml" class="list-group-item">3. 退会処理</a>
 
                         </div>
                     </div>
@@ -150,14 +150,14 @@
                     <div class="col-lg-3">
                         <div class="list-group">
                             <label class="list-group-item active text-center">セール</label>
-                            <a href="#" class="list-group-item">1. セール情報一覧</a>
-                            <a href="#" class="list-group-item">2. セール対象商品一覧</a>
+                            <a href="/pages/sale/list.xhtml" class="list-group-item">1. セール情報一覧</a>
+                            <a href="/pages/sale/target_list.xhtml" class="list-group-item">2. セール対象商品一覧</a>
                         </div>
                     </div>
 
                     <div class="col-lg-3">
                         <div class="list-group">
-                            <a href="#" class="list-group-item" style="text-align: center;">
+                            <a href="/pages/stock/delete.xhtml" class="list-group-item" style="text-align: center;">
                                 <span class="glyphicon glyphicon-trash"></span> 廃棄処理</a>
                         </div>
                     </div>
