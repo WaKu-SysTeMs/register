@@ -17,7 +17,7 @@
                     <h:form><div class="form-group">
                             <h:panelGrid columns="6" border="0">
                            
-                                <h:outputLabel styleClass="control-label" id="hoge1">会員名：</h:outputLabel>
+                                <h:outputLabel styleClass="control-label">会員名：</h:outputLabel>
                                 <h:outputText id="memberName" value="XX XXX" />
                                 <h:outputText value="　　　　　　　　　　　　" />
                                 <h:outputLabel styleClass="control-label">DVD番号：</h:outputLabel>
@@ -29,9 +29,9 @@
                             
                         </h:panelGrid>
                     </div>
-                        <div class="container panel-body" style="height:350px; width:auto; overflow-x: auto;">
+                        <div class="container panel-body hogeTest" >
                             <fieldset>
-                                <h:dataTable value="#{returnBean.test}" var="t" styleClass="table table-striped table-bordered table-hover" width="500">
+                                <h:dataTable class="hogehogehoge" value="#{returnBean.test}" var="t" styleClass="table table-striped table-bordered table-hover" columnClasses="hoge200,hoge201,hoge202,hoge202,hoge203,hoge210">
                                     <h:column headerClass="hoge200">
                                         <f:facet name="header">番号</f:facet>
                                         #{t.num}
@@ -59,7 +59,7 @@
                                     </h:column>
 
 
-                                    <h:column>
+                                    <h:column headerClass="hoge210">
                                         <f:facet name="header">///</f:facet>
                                         <h:commandButton styleClass="btn btn-danger btn-xs" value="削 除" action="#"/>
                                     </h:column>
