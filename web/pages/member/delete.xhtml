@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+
+        <link rel="stylesheet" type="text/css" href="/resources/css/mystayle.css"/>
+    </h:head>
+    <h:body>
+        <h1>退会する会員番号を入力してください</h1>
+        <h:form>
+            <h:panelGrid columns="2" cellspacing="0" cellpadding="0" columnClasses="c10,c20" rowClasses="row_odd, row_even">
+                <div class="form-group">
+                    <h:outputLabel styleClass="control-label">
+                        会員番号</h:outputLabel><span class="required">*</span>
+                        <h:inputText id="" required="true" value="#" label="会員番号"
+                                     styleClass="form-control" p:placeholder=""/>
+                        <h:message for="" errorClass=""/>
+                </div>
+            </h:panelGrid><br/>
+            <h:commandButton styleClass="btn btn-primary"
+                             value="退会確認へ" action=""/>
+            <h:commandButton styleClass="btn btn-default"
+                             value="戻　る" action=""/>
+            
+        </h:form>
+    </h:body>
+</html>

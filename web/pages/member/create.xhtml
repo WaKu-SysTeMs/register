@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+
+        <link rel="stylesheet" type="text/css" href="/resources/css/mystayle.css"/>
+    </h:head>
+    <h:body>
+        <h1>会員新規登録</h1>
+        <h:form>
+            <h:panelGrid columns="2" cellspacing="0" cellpadding="0" columnClasses="c10,c20" rowClasses="row_odd, row_even">
+                会員名
+                <h:panelGroup>
+                    <h:inputText id="name" value="#{bb.name}" required="true" requiredMessage="★必須" size="10"  styleClass="tx"/>
+                    <h:message for="name" styleClass="errors"/>
+                </h:panelGroup>
+                会員名（かな）
+                <h:panelGroup>
+                    <h:inputText id="name" value="#{bb.name}" required="true" requiredMessage="★必須" size="10"  styleClass="tx"/>
+                    <h:message for="name" styleClass="errors"/>
+                </h:panelGroup>
+                生年月日
+                <h:panelGroup>
+                    <h:inputText value="" p:type="date">
+                        <f:convertDateTime pattern="yyyy-M-d" timeZone="Asia/Tokyo"/>
+                    </h:inputText> 
+                </h:panelGroup>
+               性別
+               <h:panelGroup>
+                   <h:selectOneRadio value="" styleClass="">
+                       <f:selectItems value=""/>
+                   </h:selectOneRadio>
+               </h:panelGroup>
+               郵便番号
+                <h:panelGroup>
+                    <h:inputText id="name" value="#{bb.name}" required="true" requiredMessage="★必須" size="10"  styleClass="tx"/>
+                    <h:message for="name" styleClass="errors"/>
+                </h:panelGroup>
+               住所
+                <h:panelGroup>
+                    <h:inputText id="name" value="#{bb.name}" required="true" requiredMessage="★必須" size="10"  styleClass="tx"/>
+                    <h:message for="name" styleClass="errors"/>
+                </h:panelGroup>
+               住所（かな）
+                <h:panelGroup>
+                    <h:inputText id="name" value="#{bb.name}" required="true" requiredMessage="★必須" size="10"  styleClass="tx"/>
+                    <h:message for="name" styleClass="errors"/>
+                </h:panelGroup>
+               携帯電話番号
+                <h:panelGroup>
+                    <h:inputText id="name" value="#{bb.name}" required="true" requiredMessage="★必須" size="10"  styleClass="tx"/>
+                    <h:message for="name" styleClass="errors"/>
+                </h:panelGroup>
+               メールアドレス
+                <h:panelGroup>
+                    <h:inputText id="name" value="#{bb.name}" required="true" requiredMessage="★必須" size="10"  styleClass="tx"/>
+                    <h:message for="name" styleClass="errors"/>
+                </h:panelGroup>
+               職業
+                <h:panelGroup>
+                   <h:selectOneRadio value="" styleClass="">
+                       <f:selectItems value=""/>
+                   </h:selectOneRadio>
+               </h:panelGroup>
+               好みのジャンル
+               <h:selectManyCheckbox>
+                   <f:selectItem itemValue="1" itemLabel=""/>
+               </h:selectManyCheckbox>
+            </h:panelGrid>
+            <p>※この記述を消してここに記入する</p>
+            <h:commandButton value="送　信"  action="#{bb.next()}" styleClass="btn"/>
+        </h:form>
+    </h:body>
+</html>
