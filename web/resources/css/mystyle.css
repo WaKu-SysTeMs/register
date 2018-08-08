@@ -185,7 +185,7 @@ div .hoge14{                 /* ボタン調整用 */
 }
 
 .hoge201{
-    width: 550px;
+    width: 538px;
 }
 
 .hoge202{
@@ -198,4 +198,22 @@ div .hoge14{                 /* ボタン調整用 */
 
 .hoge204{
     text-align: right;
+}
+
+thead, tbody {
+  display: block;
+}
+
+.hogeTest{
+    font-size: 120%;
+}
+
+div .hogeTest tbody{
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 300px;
+}
+
+.hoge210{
+    width: 100px;
 }
