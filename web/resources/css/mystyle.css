@@ -179,3 +179,19 @@ div .hoge14{                 /* ボタン調整用 */
     text-align: center;
     display: inline-block;
 }
+
+.hoge200{
+    width: 60px;
+}
+
+.hoge201{
+    width: 550px;
+}
+
+.hoge202{
+    width: 200px;
+}
+
+.hoge203{
+    width: 150px;
+}
