@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+
+        <link rel="stylesheet" type="text/css" href="/resources/css/mystayle.css"/>
+    </h:head>
+    <h:body>
+        <ui:define name="title">新規会員登録確認</ui:define>
+        <ui:define name="content">
+            <div class="container">
+                <h3>新規会員登録確認 <span class="glyphicon glyphicon-check" /></h3>
+                <br/>
+                <h:form>
+                    <h:panelGrid columns="2" columnClasses="conf"
+                                 styleClass="">
+                        <f:facet name="header">登録内容確認</f:facet>
+                        <h:outputLabel value="会員番号："></h:outputLabel>
+                        <h:outputText value="#"/>
+                        <h:outputLabel value="会員名："></h:outputLabel>
+                        <h:outputText value="#"/>
+                        <h:outputLabel value="会員名（かな）："></h:outputLabel>
+                        <h:outputText value="#"/>
+                        <h:outputLabel value="生年月日："></h:outputLabel>
+                        <h:outputText value="#"/>
+                        <h:outputLabel value="性別："></h:outputLabel>
+                        <h:outputText value="#"/>
+                        <h:outputLabel value="郵便番号："></h:outputLabel>
+                        <h:outputText value="#"/>
+                        <h:outputLabel value="メールアドレス："></h:outputLabel>
+                        <h:outputText value="#"/>
+                        <h:outputLabel value="住所："></h:outputLabel>
+                        <h:outputText value="#"/>
+                        <h:outputLabel value="住所（かな）："></h:outputLabel>
+                        <h:outputText value="#"/>
+                        <h:outputLabel value="携帯電話番号："></h:outputLabel>
+                        <h:outputText value="#"/>
+                        <h:outputLabel value="職業："></h:outputLabel>
+                        <h:outputText value="#"/>
+                        <h:outputLabel value="好みのジャンル："></h:outputLabel>
+                        <h:outputText value="#"/>
+                    </h:panelGrid>
+                    <br/>
+                    <h:commandButton styleClass="btn btn-primary"
+                                     value="登　録" action="#"/>
+                    <h:commandButton styleClass="btn btn-default"
+                                     value="戻る" action="#"/>
+                </h:form>
+            </div>
+        </ui:define>
+    </h:body>
+</html>
