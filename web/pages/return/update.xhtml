@@ -31,7 +31,7 @@
                     </div>
                         <div class="container panel-body hogeTest" >
                             <fieldset>
-                                <h:dataTable class="hogehogehoge" value="#{returnBean.test}" var="t" styleClass="table table-striped table-bordered table-hover" columnClasses="hoge200,hoge201,hoge202,hoge202,hoge203,hoge210">
+                                <h:dataTable value="#{returnBean.test}" var="t" styleClass="table table-striped table-bordered table-hover" columnClasses="hoge200,hoge201,hoge202,hoge202,hoge203,hoge210">
                                     <h:column headerClass="hoge200">
                                         <f:facet name="header">番号</f:facet>
                                         #{t.num}
@@ -60,7 +60,7 @@
 
 
                                     <h:column headerClass="hoge210">
-                                        <f:facet name="header">///</f:facet>
+                                        <f:facet name="header"></f:facet>
                                         <h:commandButton styleClass="btn btn-danger btn-xs" value="削 除" action="#"/>
                                     </h:column>
 
@@ -68,7 +68,7 @@
                             </fieldset>
                         </div>
                         <div class="hoge204">
-                        <h:commandButton styleClass="btn btn-primary btn-lg" value="延滞金清算へ" action="update_delay.xhtml?faces-redirect=true"/>
+                        <h:commandButton styleClass="btn btn-primary btn-lg" value="延滞金清算へ" action="update_delay_1.xhtml?faces-redirect=true"/>
                             <h:commandButton styleClass="btn btn-primary btn-lg" value="次 へ" action="#"/>
                         </div>
                     </h:form>

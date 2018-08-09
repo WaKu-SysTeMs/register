@@ -40,16 +40,6 @@ public class ReturnBean implements Serializable{
         test = new ArrayList<>();
         test.add(new Test(x++,"苔大全","2018/07/31","2018/08/01",300));
         test.add(new Test(x++,"本当にあった祝いのビデオ～episode2194～","2018/07/31","2018/08/02",0));
-        test.add(new Test(x++,"和田豊名場面集 vol.2","2018/08/01","2018/08/02",0));
-        test.add(new Test(x++,"苔大全","2018/07/31","2018/08/01",300));
-        test.add(new Test(x++,"本当にあった祝いのビデオ～episode2194～","2018/07/31","2018/08/02",0));
-        test.add(new Test(x++,"和田豊名場面集 vol.2","2018/08/01","2018/08/02",0));
-        test.add(new Test(x++,"苔大全","2018/07/31","2018/08/01",300));
-        test.add(new Test(x++,"本当にあった祝いのビデオ～episode2194～","2018/07/31","2018/08/02",0));
-        test.add(new Test(x++,"和田豊名場面集 vol.2","2018/08/01","2018/08/02",0));
-        test.add(new Test(x++,"苔大全","2018/07/31","2018/08/01",300));
-        test.add(new Test(x++,"本当にあった祝いのビデオ～episode2194～","2018/07/31","2018/08/02",0));
-        test.add(new Test(x++,"和田豊名場面集 vol.2","2018/08/01","2018/08/02",0));
     }
     
     

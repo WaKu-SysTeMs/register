@@ -45,7 +45,7 @@ public class MemberBean implements Serializable{
         if (conv.isTransient()) {
             conv.begin();
         }
-        return "";
+        return "/pages/member/create.xhtml";
     }
 
 }

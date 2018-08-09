@@ -162,8 +162,6 @@ div .hoge14{                 /* ボタン調整用 */
     display:block;
     width:148px;
     height:34px;
-    padding:6px 12px;
-    margin-left: 50px;
     font-size: 100%;
     line-height:1.42857143;
     color:#555;
@@ -180,40 +178,56 @@ div .hoge14{                 /* ボタン調整用 */
     display: inline-block;
 }
 
-.hoge200{
+.hoge200{               /* 番号調整 */
     width: 60px;
 }
 
-.hoge201{
+.hoge201{               /* 商品名調整 */
     width: 538px;
 }
 
-.hoge202{
+.hoge202{               /* 貸出年月日・返却予定日調整 */
     width: 200px;
 }
 
-.hoge203{
+.hoge203{               /* 延滞金調整 */
     width: 150px;
 }
 
-.hoge204{
+.hoge204{               /* ボタン調整 */
     text-align: right;
 }
 
-thead, tbody {
+thead, tbody {          /* ヘッダー調整 */
   display: block;
 }
 
-.hogeTest{
+.hogeTest{              /* フォントサイズ調整 */
     font-size: 120%;
 }
 
-div .hogeTest tbody{
+div .hogeTest tbody{    /* スクロール調整 */
   overflow-x: hidden;
   overflow-y: scroll;
   height: 300px;
 }
 
-.hoge210{
+.hoge210{               /* 削除ボタン調整 */
     width: 100px;
+}
+
+.hoge210 .hoge210_1{               /* 削除ボタン調整 */
+    background-color: black;
+}
+
+.hoge300{               /* 延滞金清算画面調整 */
+    font-size: 150%;
+}
+
+.test1{
+    text-align: left;
+}
+
+.test2{
+    text-align: center;
 }
