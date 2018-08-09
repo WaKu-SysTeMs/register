@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * MEMBER_INFO
  */
 package entity;
 
@@ -79,7 +77,7 @@ public class Member implements Serializable {
     private char temp_flg;          // 仮会員フラグ
 
     @OneToMany(mappedBy = "member_num", cascade = CascadeType.ALL)
-    private List<Rental> rental;
+    private List<RentalInfo> rental;
 
     @Transient                  // シリアライズしない
     private boolean editable;
@@ -210,11 +208,11 @@ public class Member implements Serializable {
         this.temp_flg = temp_flg;
     }
 
-    public List<Rental> getRental() {
+    public List<RentalInfo> getRental() {
         return rental;
     }
 
-    public void setRental(List<Rental> rental) {
+    public void setRental(List<RentalInfo> rental) {
         this.rental = rental;
     }
 

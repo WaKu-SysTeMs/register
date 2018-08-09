@@ -1,11 +1,11 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * EMP_INFO
  */
 package entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
@@ -16,7 +16,6 @@ import javax.validation.constraints.*;
 @Entity
 @Table(name = "emp_info")
 @SecondaryTables({
-    @SecondaryTable(name = "role_info"),
     @SecondaryTable(name = "store_info")
 })
 public class Employee implements Serializable {
@@ -32,16 +31,17 @@ public class Employee implements Serializable {
 
     @Size(max = 1)
     @NotNull
-    @JoinColumn(table = "role_info")
-    private Role role_id;               // ロールID(FK)
+    private RoleInfo role_id;               // ロールID(FK)
 
     @Size(max = 20)
     private String passwd;              // パスワード
 
     @NotNull
     @Size(max = 3)
-    @JoinColumn(table = "store_info")
-    private Store store_id;             // 勤務地(FK：店舗ID)
+    private StoreInfo store_id;             // 勤務地(FK：店舗ID)
+
+    @OneToMany(mappedBy = "emp_num", cascade = CascadeType.ALL)
+    private List<Inspection> inspection = new ArrayList();
 
     @Transient                           // シリアライズしない
     private boolean editable;
@@ -50,7 +50,7 @@ public class Employee implements Serializable {
     public Employee() {
     }
 
-    public Employee(Integer emp_num, String emp_name, Role role_id, String passwd, Store store_id) {
+    public Employee(Integer emp_num, String emp_name, RoleInfo role_id, String passwd, StoreInfo store_id) {
         this.emp_num = emp_num;
         this.emp_name = emp_name;
         this.role_id = role_id;
@@ -75,11 +75,11 @@ public class Employee implements Serializable {
         this.emp_name = emp_name;
     }
 
-    public Role getRole_id() {
+    public RoleInfo getRole_id() {
         return role_id;
     }
 
-    public void setRole_id(Role role_id) {
+    public void setRole_id(RoleInfo role_id) {
         this.role_id = role_id;
     }
 
@@ -91,11 +91,11 @@ public class Employee implements Serializable {
         this.passwd = passwd;
     }
 
-    public Store getStore_id() {
+    public StoreInfo getStore_id() {
         return store_id;
     }
 
-    public void setStore_id(Store store_id) {
+    public void setStore_id(StoreInfo store_id) {
         this.store_id = store_id;
     }
 
