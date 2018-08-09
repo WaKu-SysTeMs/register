@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * REGISTER
  */
 package entity;
 
@@ -16,7 +14,6 @@ import javax.validation.constraints.*;
  */
 @Entity
 @Table(name = "register")
-@SecondaryTable(name = "store_info")
 public class Register implements Serializable {
 
     private static final long serialVersionUID = 1L;  // シリアルバージョンUIDのバージョン管理
@@ -27,14 +24,13 @@ public class Register implements Serializable {
 
     @NotNull
     @Size(max = 3)
-    @JoinColumn(table = "store_info")
-    private Store store_id;             // 店舗ID(FK)
+    private StoreInfo store_id;             // 店舗ID(FK)
 
     @Size(max = 7)
     private Integer register_amt;           // レジ内金額
 
     @OneToMany(mappedBy = "register_id", cascade = CascadeType.ALL)
-    private List<Rental> rental;
+    private List<RentalInfo> rental;
 
     @Transient                           // シリアライズしない
     private boolean editable;
@@ -43,7 +39,7 @@ public class Register implements Serializable {
     public Register() {
     }
 
-    public Register(String register_id, Store store_id, Integer register_amt) {
+    public Register(String register_id, StoreInfo store_id, Integer register_amt) {
         this.register_id = register_id;
         this.store_id = store_id;
         this.register_amt = register_amt;
@@ -58,11 +54,11 @@ public class Register implements Serializable {
         this.register_id = register_id;
     }
 
-    public Store getStore_id() {
+    public StoreInfo getStore_id() {
         return store_id;
     }
 
-    public void setStore_id(Store store_id) {
+    public void setStore_id(StoreInfo store_id) {
         this.store_id = store_id;
     }
 

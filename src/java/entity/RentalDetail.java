@@ -1,7 +1,5 @@
 ///*
-// * To change this license header, choose License Headers in Project Properties.
-// * To change this template file, choose Tools | Templates
-// * and open the template in the editor.
+// * RENTAL_DETAIL
 // */
 //package entity;
 //
@@ -27,14 +25,12 @@
 //})
 //public class RentalDetail implements Serializable {
 //
+//    private static final long serialVersionUID = 1L;  // シリアルバージョンUIDのバージョン管理
+//
 //    public static final String RentalDetailQAll = "RentalDetailQAll";
 //
 //    @EmbeddedId
-//    private Rental rental_num;          //貸出番号(FK)
-//
-//    @Id
-//    @Size(max = 2)
-//    private Integer detail_num;          //明細番号
+//    private RenalDetailPK rental_num;          //貸出番号(FK)
 //
 //    @NotNull
 //    @Size(max = 14)
@@ -52,6 +48,7 @@
 //    @Temporal(javax.persistence.TemporalType.DATE)
 //    private Date return_date;           //返却年月日
 //
+//    @NotNull
 //    @Size(max = 7)
 //    @JoinColumn(table = "sale_info")
 //    private SaleInfo sale_id;           //SALE_ID(FK)
@@ -72,14 +69,12 @@
 //    @Transient                          // シリアライズしない
 //    private boolean editable;
 //
-//    
 //    /* コンストラクタ */
 //    public RentalDetail() {
 //    }
 //
-//    public RentalDetail(Rental rental_num, Integer detail_num, DvdInfo dvd_num, Price release_kbn, Date return_plan, Date return_date, SaleInfo sale_id, Price stay_num, char discount_flg, Integer subtotal, char invalid_flg) {
+//    public RentalDetail(RenalDetailPK rental_num, DvdInfo dvd_num, Price release_kbn, Date return_plan, Date return_date, SaleInfo sale_id, Price stay_num, char discount_flg, Integer subtotal, char invalid_flg) {
 //        this.rental_num = rental_num;
-//        this.detail_num = detail_num;
 //        this.dvd_num = dvd_num;
 //        this.release_kbn = release_kbn;
 //        this.return_plan = return_plan;
@@ -90,23 +85,14 @@
 //        this.subtotal = subtotal;
 //        this.invalid_flg = invalid_flg;
 //    }
-//    
-//    /* ゲッター、セッター */
 //
-//    public Rental getRental_num() {
+//    /* ゲッター、セッター */
+//    public RenalDetailPK getRental_num() {
 //        return rental_num;
 //    }
 //
-//    public void setRental_num(Rental rental_num) {
+//    public void setRental_num(RenalDetailPK rental_num) {
 //        this.rental_num = rental_num;
-//    }
-//
-//    public Integer getDetail_num() {
-//        return detail_num;
-//    }
-//
-//    public void setDetail_num(Integer detail_num) {
-//        this.detail_num = detail_num;
 //    }
 //
 //    public DvdInfo getDvd_num() {
@@ -188,7 +174,5 @@
 //    public void setEditable(boolean editable) {
 //        this.editable = editable;
 //    }
-//    
-//
 //
 //}
