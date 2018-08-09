@@ -20,15 +20,16 @@
                             <h:outputText value="300"/>
                             <h:outputLabel styleClass="control-label">円</h:outputLabel>
                             <h:outputLabel styleClass="control-label">現金支払額</h:outputLabel>
-                            <h:inputText id="money" required="true" label="money" class="hoge13">
-                                    <f:ajax event="change" execute="@this" listener="#"/>
-                            </h:inputText>
+                            <h:outputText value="300"/>
+                            <h:outputLabel styleClass="control-label">円</h:outputLabel>
+                            <h:outputLabel styleClass="control-label">おつり</h:outputLabel>
+                            <h:outputText value="0"/>
                             <h:outputLabel styleClass="control-label">円</h:outputLabel>
                         </h:panelGrid>
                         </div>
                             <div class="hoge14">
                             <h:commandButton styleClass="btn btn-primary btn-lg" value="戻 る" action="update.xhtml?faces-redirect=true" immediate="true"/>
-                                <h:commandButton styleClass="btn btn-primary btn-lg" value="清 算" action="update_delay_check_1.xhtml?faces-redirect=true"/>
+                                <h:commandButton styleClass="btn btn-primary btn-lg" value="清 算" action="update_delay_check.xhtml?faces-redirect=true"/>
                             </div>
                     </h:form>
                 </div>

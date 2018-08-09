@@ -112,7 +112,6 @@ div .logout span{          /* ログアウトボタン アイコン 調整用 */
 }
 
 div .hoge11{                 /* div調整用 */
-    font-size: 180%;
     width: 450px;
     height: 0px;
     top: 250px;
@@ -121,6 +120,7 @@ div .hoge11{                 /* div調整用 */
     right: 0;
     position: absolute;
     margin: auto;
+    padding: 0px 20px 0px;
 }
 div .hoge12{                 /* div調整用 */
     font-size: 180%;
@@ -221,7 +221,9 @@ div .hogeTest tbody{    /* スクロール調整 */
 }
 
 .hoge300{               /* 延滞金清算画面調整 */
-    font-size: 150%;
+    font-size: 180%;
+    line-height:50px;
+    border-spacing: 0px 100px;
 }
 
 .test1{
