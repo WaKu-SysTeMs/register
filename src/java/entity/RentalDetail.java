@@ -1,5 +1,5 @@
 ///*
-// * RENTAL_DETAIL
+// * 貸出明細 RENTAL_DETAIL
 // */
 //package entity;
 //

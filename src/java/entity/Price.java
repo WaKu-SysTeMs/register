@@ -1,5 +1,5 @@
 ///*
-// * PRICE_LIST
+// * 料金 PRICE_LIST
 // */
 //package entity;
 //

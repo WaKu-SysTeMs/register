@@ -13,7 +13,7 @@ import javax.validation.constraints.*;
  */
 @Entity
 @Table(name = "black_mgr")
-public class BrackMgr implements Serializable {
+public class BlackMgr implements Serializable {
 
     private static final long serialVersionUID = 1L;  // シリアルバージョンUIDのバージョン管理
 
@@ -31,10 +31,10 @@ public class BrackMgr implements Serializable {
     private boolean editable;
 
     /* コンストラクタ */
-    public BrackMgr() {
+    public BlackMgr() {
     }
 
-    public BrackMgr(Member member_num, Integer delay_cnt, char blk_flg) {
+    public BlackMgr(Member member_num, Integer delay_cnt, char blk_flg) {
         this.member_num = member_num;
         this.delay_cnt = delay_cnt;
         this.blk_flg = blk_flg;
