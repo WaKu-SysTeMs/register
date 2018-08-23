@@ -4,6 +4,8 @@
 //package entity;
 //
 //import java.io.Serializable;
+//import java.util.List;
+//import java.util.Objects;
 //import javax.persistence.*;
 //import javax.validation.constraints.*;
 //
@@ -22,9 +24,9 @@
 //
 //    @Size(max = 3)
 //    private Integer price;                  // 料金
-////
-////    @OneToMany(mappedBy = "stay_num", cascade = CascadeType.ALL)
-////    private List<RentalDetail> rentalDetail;
+//
+//    @OneToMany(mappedBy = "stay_num", cascade = CascadeType.ALL)
+//    private List<RentalDetail> rentalDetail;
 //    
 //  
 //    private StayList staylist;
@@ -60,14 +62,14 @@
 //    public void setPrice(Integer price) {
 //        this.price = price;
 //    }
-////
-////    public List<RentalDetail> getRentalDetail() {
-////        return rentalDetail;
-////    }
-////
-////    public void setRentalDetail(List<RentalDetail> rentalDetail) {
-////        this.rentalDetail = rentalDetail;
-////    }
+//
+//    public List<RentalDetail> getRentalDetail() {
+//        return rentalDetail;
+//    }
+//
+//    public void setRentalDetail(List<RentalDetail> rentalDetail) {
+//        this.rentalDetail = rentalDetail;
+//    }
 //
 //    public boolean isEditable() {
 //        return editable;
@@ -78,23 +80,9 @@
 //    }
 //
 //}
-///*
-// * To change this license header, choose License Headers in Project Properties.
-// * To change this template file, choose Tools | Templates
-// * and open the template in the editor.
-// */
-//import java.io.Serializable;
-//import java.util.Objects;
-//import javax.persistence.*;
-//import javax.validation.constraints.NotNull;
-//import javax.validation.constraints.Size;
 //
-///**
-// *
-// * @author sakura＊
-// */
 //@Embeddable
-//public class PricePK implements Serializable {
+//class PricePK implements Serializable {
 //
 //    private static final long serialVersionUID = 1L;  // シリアルバージョンUIDのバージョン管理
 //
@@ -160,4 +148,4 @@
 //    }
 //
 //}
-
+//

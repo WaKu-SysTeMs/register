@@ -74,36 +74,23 @@
 //
 //}
 //
-///*
-// * 
-// */
 //
-///**
-// *
-// * @author sakura＊
-// */
 //@Embeddable
-//@SecondaryTables({
-//    @SecondaryTable(name = "product_info"),
-//    @SecondaryTable(name = "store_info")
-//})
 //class StockPK implements Serializable {
 //
 //    private static final long serialVersionUID = 1L;  // シリアルバージョンUIDのバージョン管理
 //
 //    @Size(max = 13)
-//    @JoinColumn(table = "product_info")
 //    private ProductInfo product_num;       // 商品番号
 //
 //    @Size(max = 3)
-//    @JoinColumn(table = "store_info")
-//    private Store store_id;                 // 店舗ID
+//    private StoreInfo store_id;                 // 店舗ID
 //
 //    /* コンストラクタ */
 //    public StockPK() {
 //    }
 //
-//    public StockPK(ProductInfo product_num, Store store_id) {
+//    public StockPK(ProductInfo product_num, StoreInfo store_id) {
 //        this.product_num = product_num;
 //        this.store_id = store_id;
 //    }
@@ -138,7 +125,6 @@
 //    }
 //
 //    /* ゲッター、セッター */
-//
 //    public ProductInfo getProduct_info() {
 //        return product_num;
 //    }
@@ -147,14 +133,11 @@
 //        this.product_num = product_num;
 //    }
 //
-//    public Store getStore_id() {
+//    public StoreInfo getStore_id() {
 //        return store_id;
 //    }
 //
-//    public void setStore_id(Store store_id) {
+//    public void setStore_id(StoreInfo store_id) {
 //        this.store_id = store_id;
 //    }
-//
-//    
-//
 //}
