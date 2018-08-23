@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <link rel="stylesheet" type="text/css" href="../../resources/css/mystyle.css"/>
+    </h:head>
+    <h:body>
+        <ui:composition template="../../templates/template01.xhtml">
+            <ui:define name="title">HCSビデオレンタル-返却-</ui:define>
+            <ui:define name="content">
+                <div class="container">
+                    <br/>
+                    
+                    <h:form><div class="form-group">
+                            <h:panelGrid columns="6" border="0">
+                           
+                                <h:outputLabel styleClass="control-label">会員名：</h:outputLabel>
+                                <h:outputText id="memberName" value="XX XXX" />
+                                <h:outputText value="　　　　　　　　　　　　" />
+                                <h:outputLabel styleClass="control-label">DVD番号：</h:outputLabel>
+                                
+                                <h:inputText id="productNum" required="true" value="#"
+                                             label="DVD番号：" styleClass="form-control" />
+                                <h:commandButton styleClass="btn btn-default" value="追 加" action="#" />
+                                <h:message for="productNum" errorClass="error" />
+                            
+                        </h:panelGrid>
+                    </div>
+                        <div class="container panel-body return_main" >
+                            <fieldset>
+                                <h:dataTable value="#{returnBean.test2}" var="t" styleClass="table table-striped table-bordered table-hover" 
+                                             columnClasses="return_main_num,return_main_name,return_list_adjust,return_main_date,return_main_date,return_list_adjust">
+                                    <h:column headerClass="return_main_num">
+                                        <f:facet name="header">番号</f:facet>
+                                        #{t.num}
+                                    </h:column>
+
+                                    <h:column headerClass="return_main_name">
+                                        <f:facet name="header">作品名</f:facet>
+                                        #{t.name}
+                                    </h:column>
+                                    
+                                    <h:column headerClass="return_list_adjust">
+                                        <f:facet name="header">店舗名</f:facet>
+                                        #{t.shop}
+                                    </h:column>
+
+                                    <h:column headerClass="return_main_date">
+                                        <f:facet name="header">貸出年月日</f:facet>
+                                        #{t.date1}
+                                    </h:column>
+
+                                    <h:column headerClass="return_main_date">
+                                        <f:facet name="header">返却予定日</f:facet>
+                                        #{t.date2}
+                                    </h:column>
+
+
+                                    <h:column headerClass="return_list_adjust">
+                                        <f:facet name="header">延滞金</f:facet>
+                                        #{t.money}
+                                    </h:column>
+
+                                </h:dataTable>
+                            </fieldset>
+                        </div>
+                        <div class="return_update_button">
+                            <h:commandButton styleClass="btn btn-primary btn-lg" value="戻 る" action="update.xhtml?faces-redirect=true"/>
+                        </div>
+                    </h:form>
+                </div>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

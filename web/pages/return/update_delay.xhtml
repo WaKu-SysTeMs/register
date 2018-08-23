@@ -14,21 +14,19 @@
                 <div class="container">
                     
                     <h:form>
-                            <div class="hoge11">
-                                <h:outputLabel styleClass="control-label">延滞料金合計</h:outputLabel>
-                                <h:outputText value="　　　"/>
-                                <h:outputText id="delay" value="300"/>
-                                <h:outputText value="　　　"/>
-                                <h:outputLabel styleClass="control-label">円</h:outputLabel>
-                            </div>
-                            <div class="hoge12">
-                                <h:outputLabel styleClass="control-label">現金支払額</h:outputLabel>
-                                <h:inputText id="money" required="true" label="money" class="hoge13">
+                        <div class="return_delay_main">
+                            <h:panelGrid columns="3" class="return_delay_display" columnClasses=",return_output_money">
+                            <h:outputLabel  styleClass="control-label">延滞料金合計</h:outputLabel>
+                            <h:outputText value="300"/>
+                            <h:outputLabel styleClass="control-label">円</h:outputLabel>
+                            <h:outputLabel styleClass="control-label">現金支払額</h:outputLabel>
+                            <h:inputText id="money" required="true" label="money" class="return_input_delay">
                                     <f:ajax event="change" execute="@this" listener="#"/>
-                                </h:inputText>
-                                <h:outputLabel styleClass="control-label">　円</h:outputLabel>
-                            </div>
-                            <div class="hoge14">
+                            </h:inputText>
+                            <h:outputLabel styleClass="control-label">円</h:outputLabel>
+                        </h:panelGrid>
+                        </div>
+                            <div class="return_delay_button">
                             <h:commandButton styleClass="btn btn-primary btn-lg" value="戻 る" action="update.xhtml?faces-redirect=true" immediate="true"/>
                                 <h:commandButton styleClass="btn btn-primary btn-lg" value="清 算" action="update_delay_check.xhtml?faces-redirect=true"/>
                             </div>

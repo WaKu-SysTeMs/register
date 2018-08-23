@@ -111,7 +111,7 @@ div .logout span{          /* ログアウトボタン アイコン 調整用 */
     margin-top: 30px;
 }
 
-div .hoge11{                 /* div調整用 */
+div .return_delay_main{                 /* 返却メイン画面div調整用 */
     width: 450px;
     height: 0px;
     top: 250px;
@@ -122,32 +122,9 @@ div .hoge11{                 /* div調整用 */
     margin: auto;
     padding: 0px 20px 0px;
 }
-div .hoge12{                 /* div調整用 */
-    font-size: 180%;
-    width: 450px;
-    height: 0px;
-    top: 450px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    position: absolute;
-    margin: auto;
-    float: left;
-}
-div .hoge15{                 /* div調整用 */
-    font-size: 180%;
-    width: 550px;
-    height: 0px;
-    top: 650px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    position: absolute;
-    margin: auto;
-    float: left;
-}
 
-div .hoge14{                 /* ボタン調整用 */
+
+div .return_delay_button{                 /* 返却メイン画面ボタン調整用 */
     width: 250px;
     height: 0px;
     top: 900px;
@@ -158,7 +135,7 @@ div .hoge14{                 /* ボタン調整用 */
     margin: auto;
 }
 
-.hoge13{                     /* inputtext調整用 */
+.return_input_delay{                     /* 返却延滞金清算画面inputtext調整用 */
     display:block;
     width:148px;
     height:34px;
@@ -178,58 +155,66 @@ div .hoge14{                 /* ボタン調整用 */
     display: inline-block;
 }
 
-.hoge200{               /* 番号調整 */
+.return_main_num{               /* 返却メイン画面番号調整 */
     width: 60px;
 }
 
-.hoge201{               /* 商品名調整 */
+.return_main_name{               /* 返却メイン画面商品名調整 */
     width: 538px;
 }
 
-.hoge202{               /* 貸出年月日・返却予定日調整 */
+.return_main_date{               /* 返却メイン画面貸出年月日・返却予定日調整 */
     width: 200px;
 }
 
-.hoge203{               /* 延滞金調整 */
+.return_main_delay{               /* 返却メイン画面延滞金調整 */
     width: 150px;
 }
 
-.hoge204{               /* ボタン調整 */
+.return_update_button{               /* 返却メイン画面ボタン調整 */
     text-align: right;
 }
 
-thead, tbody {          /* ヘッダー調整 */
+thead, tbody {          /* 返却メイン画面ヘッダー調整 */
   display: block;
 }
 
-.hogeTest{              /* フォントサイズ調整 */
+.return_main{              /* 返却メイン画面フォントサイズ調整 */
     font-size: 120%;
 }
 
-div .hogeTest tbody{    /* スクロール調整 */
+div .return_main tbody{    /* 返却メイン画面スクロール調整 */
   overflow-x: hidden;
   overflow-y: scroll;
   height: 300px;
 }
 
-.hoge210{               /* 削除ボタン調整 */
+.return_main_delete{               /* 返却メイン画面削除ボタン調整 */
     width: 100px;
 }
 
-.hoge210 .hoge210_1{               /* 削除ボタン調整 */
-    background-color: black;
-}
-
-.hoge300{               /* 延滞金清算画面調整 */
+.return_delay_display{               /* 返却延滞金清算画面調整 */
     font-size: 180%;
     line-height:50px;
-    border-spacing: 0px 100px;
+    padding-bottom: 100px
 }
 
-.test1{
-    text-align: left;
-}
 
-.test2{
+
+.return_output_money{                     /* 返却延滞金清算画面outputtext調整用 */
     text-align: center;
+}
+
+.return_output_delay{                     /* 返却延滞金清算画面outputtext調整用 */
+    display:block;
+    width:148px;
+    height:34px;
+    font-size: 100%;
+    line-height:1.42857143;
+    text-align: center;
+    display: inline-block;
+}
+
+.return_list_adjust{
+    width: 125px;
 }
