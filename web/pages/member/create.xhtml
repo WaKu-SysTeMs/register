@@ -14,65 +14,90 @@ and open the template in the editor.
         <link rel="stylesheet" type="text/css" href="../../resources/css/mystyle.css"/>
     </h:head>
     <h:body>
-        <ui:composition template="../../templates/template01.xhtml">
-             <ui:define name="title">HCSビデオレンタル-入会処理-</ui:define>
+        <ui:composition template="/templates/template01.xhtml">
+            <ui:define name="title">HCSビデオレンタル-入会処理-</ui:define>
             <ui:define name="content">
                 <div class="container">
                     <br/>
-                    
-                    <h:form><div class="form-group">
-                    <h:panelGrid columns="6" border="0">
-                    <h:outputLabel styleClass="control-label">会員名：</h:outputLabel>
-                                
-                                <h:inputText id="" required="true" value="#"
-                                             label="会員名：" styleClass="form-control" />
-                                
-                    <h:outputLabel styleClass="control-label">会員名（かな）</h:outputLabel>
-                                
-                                <h:inputText id="" required="true" value="#"
-                                             label="会員名（かな）：" styleClass="form-control" />
-                    
-                    <h:outputLabel styleClass="control-label">生年月日：</h:outputLabel>        
-                        <h:inputText value="" p:type="date" required="true" label="生年月日：" styleClass="form-control">
-                            <f:convertDateTime pattern="yyyy-M-d" timeZone="Asia/Tokyo"/>
-                        </h:inputText>     
-                   
-                     <h:outputLabel styleClass="control-label">性別：</h:outputLabel>
-                        <h:selectOneRadio value="" styleClass="">
-                            <f:selectItems value=""/>
-                        </h:selectOneRadio>
-                                    
-                    <h:outputLabel styleClass="control-label">郵便番号：</h:outputLabel>  
-                                <h:inputText id="" required="true" value="#"
-                                             label="郵便番号：" styleClass="form-control" />
-                                
-                   <h:outputLabel styleClass="control-label">住所：</h:outputLabel>
-                                
-                                <h:inputText id="" required="true" value="#"
-                                             label="住所：" styleClass="form-control" />
-                                
-                    <h:outputLabel styleClass="control-label">住所（かな）：</h:outputLabel>
-                                
-                                <h:inputText id="" required="true" value="#"
-                                             label="住所（かな）：" styleClass="form-control" />
-                                
-                    <h:outputLabel styleClass="control-label">携帯電話番号：</h:outputLabel>
-                                
-                                <h:inputText id="" required="true" value="#"
-                                             label="会員名：" styleClass="form-control" />
-                                
-                    <h:outputLabel styleClass="control-label">会員名：</h:outputLabel>
-                                
-                                <h:inputText id="" required="true" value="#"
-                                             label="会員名：" styleClass="form-control" />
 
-                </h:panelGrid>
+                    <h:form>
+                        <div class="form-group">
+                            <h:panelGrid columns="2" border="0">
+
+                                <h:outputLabel styleClass="control-label">会員名：</h:outputLabel>
+                                <h:panelGroup>
+                                    <h:inputText id="memberNum" required="true" value="#"
+                                                 label="会員名：" styleClass="form-control" />
+                                </h:panelGroup>
+
+                                <h:outputLabel styleClass="control-label">会員名（かな）</h:outputLabel>
+                                <h:panelGroup>
+                                    <h:inputText id="memberRuby" required="true" value="#"
+                                                 label="会員名（かな）：" styleClass="form-control" />
+                                </h:panelGroup>
+
+                                <h:outputLabel styleClass="control-label">生年月日：</h:outputLabel>   
+                                <h:panelGroup>
+                                    <h:inputText p:type="date" required="true" label="生年月日：" styleClass="form-control">
+                                        <f:convertDateTime pattern="yyyy-M-d" timeZone="Asia/Tokyo"/>
+                                    </h:inputText> 
+                                </h:panelGroup>
+
+
+
+                                <h:outputLabel styleClass="control-label">性別：</h:outputLabel>
+                                <h:panelGroup>
+                                    <h:selectOneRadio value="#{moriTest.test}" required="true" label="性別：">
+                                        <f:selectItems value="#{moriTest.langs}" />
+                                    </h:selectOneRadio>
+                                </h:panelGroup>
+
+
+                                <h:outputLabel styleClass="control-label">郵便番号：</h:outputLabel>  
+                                <h:panelGroup>
+                                    <h:inputText id="test1" required="true" value="#"
+                                                 label="郵便番号：" styleClass="form-control" />
+                                </h:panelGroup>
+
+
+
+                                <h:outputLabel styleClass="control-label">住所：</h:outputLabel>
+                                <h:panelGroup>
+                                    <h:inputText id="test2" required="true" value="#"
+                                                 label="住所：" styleClass="form-control" />
+                                </h:panelGroup>
+
+
+                                <h:outputLabel styleClass="control-label">住所（かな）：</h:outputLabel>
+                                <h:panelGroup>
+                                    <h:inputText id="test3" required="true" value="#"
+                                                 label="住所（かな）：" styleClass="form-control" />
+                                </h:panelGroup>
+
+
+                                <h:outputLabel styleClass="control-label">携帯電話番号：</h:outputLabel>
+                                <h:panelGroup>
+                                    <h:inputText id="test4" required="true" value="#"
+                                                 label="会員名：" styleClass="form-control" />
+                                </h:panelGroup>
+
+
+                                <h:outputLabel styleClass="control-label">会員名：</h:outputLabel>
+                                <h:panelGroup>
+                                    <h:inputText id="memberName" required="true" value="#"
+                                                 label="会員名：" styleClass="form-control" />
+                                </h:panelGroup>
+                            </h:panelGrid>
+                        </div>
+
+                        <h:commandButton value="送　信"  action="#" styleClass="btn"/>
+
+                    </h:form>
+
                 </div>
-                <h:commandButton value="送　信"  action="#" styleClass="btn"/>
-            </h:form>
-             </div>
-                
-          </ui:define>
+
+
+            </ui:define>
         </ui:composition>
     </h:body>
 </html>
