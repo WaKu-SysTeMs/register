@@ -1,5 +1,5 @@
 /*
- * STORE_INFO
+ * 店舗情報 STORE_INFO
  */
 package entity;
 
@@ -34,15 +34,17 @@ public class StoreInfo implements Serializable {
     @Size(max = 40)
     private String store_mail;          // メールアドレス
 
-    @OneToMany(mappedBy = "store_id",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "store_id", cascade = CascadeType.ALL)
     private List<Employee> employee;
-    
-    @OneToMany(mappedBy = "store_id")
+
+    @OneToMany(mappedBy = "store_id", cascade = CascadeType.ALL)
     private List<Register> register;
+
+    @OneToMany(mappedBy = "store_id", cascade = CascadeType.ALL)
+    private List<DvdInfo> dvdInfo;
 
 //    @OneToMany(mappedBy = "store_id", cascade = CascadeType.ALL)
 //    private List<Stock> stock;
-
     @Transient
     private boolean editable;           // シリアライズしない
 
@@ -105,6 +107,22 @@ public class StoreInfo implements Serializable {
 
     public void setEmployee(List<Employee> employee) {
         this.employee = employee;
+    }
+
+    public List<Register> getRegister() {
+        return register;
+    }
+
+    public void setRegister(List<Register> register) {
+        this.register = register;
+    }
+
+    public List<DvdInfo> getDvdInfo() {
+        return dvdInfo;
+    }
+
+    public void setDvdInfo(List<DvdInfo> dvdInfo) {
+        this.dvdInfo = dvdInfo;
     }
 
     public boolean isEditable() {

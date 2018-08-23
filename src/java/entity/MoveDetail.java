@@ -1,5 +1,5 @@
 ///*
-// * MOVE_DETAIL
+// * 在庫移動詳細 MOVE_DETAIL
 // */
 //package entity;
 //

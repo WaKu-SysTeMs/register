@@ -1,5 +1,5 @@
 /*
- *  JOB_LIST
+ * 職業 JOB_LIST
  */
 package entity;
 

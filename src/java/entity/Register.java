@@ -1,5 +1,5 @@
 /*
- * REGISTER
+ * レジ REGISTER
  */
 package entity;
 

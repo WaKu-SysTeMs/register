@@ -1,5 +1,5 @@
 ///*
-// * TARGET_STORE
+// * 対象店舗 TARGET_STORE
 // */
 //package entity;
 //

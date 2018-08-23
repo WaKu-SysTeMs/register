@@ -1,5 +1,5 @@
 ///*
-// * MOVE_HISTORY
+// * 在庫移動履歴 MOVE_HISTORY
 // */
 //package entity;
 //

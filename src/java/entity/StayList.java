@@ -1,5 +1,5 @@
 ///*
-// * STAY_LIST
+// * 泊数 STAY_LIST
 // */
 //package entity;
 //

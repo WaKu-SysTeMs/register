@@ -1,5 +1,5 @@
 /*
- * EMP_INFO
+ * 社員情報 EMP_INFO
  */
 package entity;
 
