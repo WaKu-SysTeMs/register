@@ -1,5 +1,5 @@
 /*
- * ROLE_INFO
+ * ロール情報 ROLE_INFO
  */
 package entity;
 

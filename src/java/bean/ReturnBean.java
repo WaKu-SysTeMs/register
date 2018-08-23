@@ -38,9 +38,16 @@ public class ReturnBean implements Serializable{
     
     private List <Test> test;
     {
-        test = new ArrayList<>();
+        test = new ArrayList<>();x=1;
         test.add(new Test(x++,"苔大全","2018/07/31","2018/08/01",300));
         test.add(new Test(x++,"本当にあった祝いのビデオ～episode2194～","2018/07/31","2018/08/02",0));
+    }
+    
+    private List <Test2> test2;
+    {
+        test2 = new ArrayList<>();x=1;
+        test2.add(new Test2(x++,"絶望を与える守備集～倉本前安打～","菊水店","2018/07/30","2018/07/31",600));
+        test2.add(new Test2(x++,"本当にあったような怖い話","旭川店","2018/07/31","2018/08/01",300));
     }
     
     
@@ -67,6 +74,14 @@ public class ReturnBean implements Serializable{
 
     public void setTest(List<Test> test) {
         this.test = test;
+    }
+
+    public List<Test2> getTest2() {
+        return test2;
+    }
+
+    public void setTest2(List<Test2> test2) {
+        this.test2 = test2;
     }
     
     

@@ -1,5 +1,5 @@
 /*
- * 貸出処理　エンティティ RENTAL_INFO
+ * 貸出処理 RENTAL_INFO
  */
 package entity;
 

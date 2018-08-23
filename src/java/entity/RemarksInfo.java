@@ -1,5 +1,5 @@
 /*
- * REMARKS_INFO
+ * 備考情報 REMARKS_INFO
  */
 package entity;
 

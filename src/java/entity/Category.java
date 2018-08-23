@@ -1,5 +1,5 @@
 /*
- * CATEGORY
+ * ジャンル CATEGORY
  */
 package entity;
 
@@ -17,7 +17,8 @@ public class Category implements Serializable {
 
     private static final long serialVersionUID = 1L;  // シリアルバージョンUIDのバージョン管理
 
-    @Id @NotNull
+    @Id
+    @NotNull
     @Size(max = 3)
     private String category_id;         // ジャンルID
 
@@ -26,6 +27,9 @@ public class Category implements Serializable {
 
     @OneToMany(mappedBy = "fav_category", cascade = CascadeType.ALL)
     private List<Member> member;
+
+    @OneToMany(mappedBy = "category_id", cascade = CascadeType.ALL)
+    private List<ProductInfo> productInfo;
 
     @Transient                  // シリアライズしない
     private boolean editable;
@@ -62,6 +66,14 @@ public class Category implements Serializable {
 
     public void setMember(List<Member> member) {
         this.member = member;
+    }
+
+    public List<ProductInfo> getProductInfo() {
+        return productInfo;
+    }
+
+    public void setProductInfo(List<ProductInfo> productInfo) {
+        this.productInfo = productInfo;
     }
 
     public boolean isEditable() {

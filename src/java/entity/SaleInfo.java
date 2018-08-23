@@ -1,5 +1,5 @@
 ///*
-// * SALE_INFO
+// * SALE情報 SALE_INFO
 // */
 //package entity;
 //

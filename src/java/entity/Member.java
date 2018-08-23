@@ -1,5 +1,5 @@
 /*
- * MEMBER_INFO
+ * 会員情報 MEMBER_INFO
  */
 package entity;
 
@@ -66,11 +66,9 @@ public class Member implements Serializable {
 
     @NotNull
     @Size(max = 1)
-    @JoinColumn(table = "job_list")
     private Job job_id;          // 職業ID(FK)
 
     @Size(max = 3)
-    @JoinColumn(table = "category")
     private Category fav_category;    // 好みのジャンル(FK)
 
     @Size(max = 1)
@@ -78,6 +76,15 @@ public class Member implements Serializable {
 
     @OneToMany(mappedBy = "member_num", cascade = CascadeType.ALL)
     private List<RentalInfo> rental;
+
+    @OneToMany(mappedBy = "member_num", cascade = CascadeType.ALL)
+    private List<BlackMgr> blkMgrList;
+
+    @OneToMany(mappedBy = "member_num", cascade = CascadeType.ALL)
+    private List<RemarksInfo> remarksInfoList;
+
+    @OneToMany(mappedBy = "member_num", cascade = CascadeType.ALL)
+    private List<RentalMax> rentalMaxList;
 
     @Transient                  // シリアライズしない
     private boolean editable;

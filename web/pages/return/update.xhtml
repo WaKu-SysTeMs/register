@@ -29,37 +29,38 @@
                             
                         </h:panelGrid>
                     </div>
-                        <div class="container panel-body hogeTest" >
+                        <div class="container panel-body return_main" >
                             <fieldset>
-                                <h:dataTable value="#{returnBean.test}" var="t" styleClass="table table-striped table-bordered table-hover" columnClasses="hoge200,hoge201,hoge202,hoge202,hoge203,hoge210">
-                                    <h:column headerClass="hoge200">
+                                <h:dataTable value="#{returnBean.test}" var="t" styleClass="table table-striped table-bordered table-hover" 
+                                             columnClasses="return_main_num,return_main_name,return_main_date,return_main_date,return_main_delay,return_main_delete">
+                                    <h:column headerClass="return_main_num">
                                         <f:facet name="header">番号</f:facet>
                                         #{t.num}
                                     </h:column>
 
-                                    <h:column headerClass="hoge201">
+                                    <h:column headerClass="return_main_name">
                                         <f:facet name="header">作品名</f:facet>
                                         #{t.name}
                                     </h:column>
 
-                                    <h:column headerClass="hoge202">
+                                    <h:column headerClass="return_main_date">
                                         <f:facet name="header">貸出年月日</f:facet>
                                         #{t.date1}
                                     </h:column>
 
-                                    <h:column headerClass="hoge202">
+                                    <h:column headerClass="return_main_date">
                                         <f:facet name="header">返却予定日</f:facet>
                                         #{t.date2}
                                     </h:column>
 
 
-                                    <h:column headerClass="hoge203">
+                                    <h:column headerClass="return_main_delay">
                                         <f:facet name="header">延滞金</f:facet>
                                         #{t.money}
                                     </h:column>
 
 
-                                    <h:column headerClass="hoge210">
+                                    <h:column headerClass="return_main_delete">
                                         <f:facet name="header"></f:facet>
                                         <h:commandButton styleClass="btn btn-danger btn-xs" value="削 除" action="#"/>
                                     </h:column>
@@ -67,9 +68,9 @@
                                 </h:dataTable>
                             </fieldset>
                         </div>
-                        <div class="hoge204">
-                        <h:commandButton styleClass="btn btn-primary btn-lg" value="延滞金清算へ" action="update_delay_1.xhtml?faces-redirect=true"/>
-                            <h:commandButton styleClass="btn btn-primary btn-lg" value="次 へ" action="#"/>
+                        <div class="return_update_button">
+                        <h:commandButton styleClass="btn btn-primary btn-lg" value="延滞金清算へ" action="update_delay.xhtml?faces-redirect=true"/>
+                            <h:commandButton styleClass="btn btn-primary btn-lg" value="次 へ" action="update_not_returned_list.xhtml?faces-redirect=true"/>
                         </div>
                     </h:form>
                 </div>
