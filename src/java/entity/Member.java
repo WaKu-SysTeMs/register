@@ -20,10 +20,6 @@ import javax.validation.constraints.*;
 
 @Entity
 @Table(name = "member_info")
-@SecondaryTables({
-    @SecondaryTable(name = "job_list"),
-    @SecondaryTable(name = "category")
-})
 public class Member implements Serializable {
 
     private static final long serialVersionUID = 1L;  // シリアルバージョンUIDのバージョン管理

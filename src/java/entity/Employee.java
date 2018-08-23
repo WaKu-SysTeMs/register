@@ -15,9 +15,6 @@ import javax.validation.constraints.*;
  */
 @Entity
 @Table(name = "emp_info")
-@SecondaryTables({
-    @SecondaryTable(name = "store_info")
-})
 public class Employee implements Serializable {
 
     private static final long serialVersionUID = 1L; // シリアルバージョンUIDのバージョン管理
@@ -41,7 +38,10 @@ public class Employee implements Serializable {
     private StoreInfo store_id;             // 勤務地(FK：店舗ID)
 
     @OneToMany(mappedBy = "emp_num", cascade = CascadeType.ALL)
-    private List<Inspection> inspection = new ArrayList();
+    private List<Inspection> inspection;
+    
+    @OneToMany(mappedBy = "emp_num", cascade = CascadeType.ALL)
+    private List<RentalInfo> rentalInfo;
 
     @Transient                           // シリアライズしない
     private boolean editable;
@@ -98,6 +98,24 @@ public class Employee implements Serializable {
     public void setStore_id(StoreInfo store_id) {
         this.store_id = store_id;
     }
+
+    public List<Inspection> getInspection() {
+        return inspection;
+    }
+
+    public void setInspection(List<Inspection> inspection) {
+        this.inspection = inspection;
+    }
+
+    public List<RentalInfo> getRentalInfo() {
+        return rentalInfo;
+    }
+
+    public void setRentalInfo(List<RentalInfo> rentalInfo) {
+        this.rentalInfo = rentalInfo;
+    }
+    
+    
 
     public boolean isEditable() {
         return editable;

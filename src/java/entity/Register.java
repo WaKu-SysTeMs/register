@@ -31,6 +31,9 @@ public class Register implements Serializable {
 
     @OneToMany(mappedBy = "register_id", cascade = CascadeType.ALL)
     private List<RentalInfo> rental;
+    
+    @OneToMany(mappedBy = "register_id", cascade = CascadeType.ALL)
+    private List<Inspection> inspection;
 
     @Transient                           // シリアライズしない
     private boolean editable;

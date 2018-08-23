@@ -45,9 +45,9 @@ public class ProductInfo implements Serializable {
 
     @OneToMany(mappedBy = "product_num", cascade = CascadeType.ALL)
     private List<DvdInfo> dvdInfo;
-//
-//    @OneToMany(mappedBy = "stock_id", cascade = CascadeType.ALL)
-//    private List<Stock> stock;
+
+    @OneToMany(mappedBy = "stock_id", cascade = CascadeType.ALL)
+    private List<Stock> stock;
 
     @Transient
     private boolean editable;           // シリアライズしない
@@ -130,18 +130,14 @@ public class ProductInfo implements Serializable {
     public void setDvdInfo(List<DvdInfo> dvdInfo) {
         this.dvdInfo = dvdInfo;
     }
-    
-    
 
-//    public List<Stock> getStock() {
-//        return stock;
-//    }
-//
-//    public void setStock(List<Stock> stock) {
-//        this.stock = stock;
-//    }
-//    
-    
+    public List<Stock> getStock() {
+        return stock;
+    }
+
+    public void setStock(List<Stock> stock) {
+        this.stock = stock;
+    }
 
     public boolean isEditable() {
         return editable;
