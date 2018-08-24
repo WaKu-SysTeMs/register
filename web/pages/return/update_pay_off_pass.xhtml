@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <link rel="stylesheet" type="text/css" href="../../resources/css/mystyle.css"/>
+    </h:head>
+    <h:body>
+        <ui:composition template="../../templates/template01.xhtml">
+            <ui:define name="title">HCSビデオレンタル-返却-</ui:define>
+            <ui:define name="content">
+                <div class="return_pay_off_button">
+                    <h:commandButton styleClass="btn btn-primary btn-lg" value="未返却DVD一覧へ" action="update_not_returned_list.xhtml?faces-redirect=true"/>
+                    <h:commandButton styleClass="btn btn-primary btn-lg" value="返却処理へ" action="update.xhtml?faces-redirect=true"/>
+                </div>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+
