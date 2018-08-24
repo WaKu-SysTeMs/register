@@ -218,3 +218,41 @@ div .return_main tbody{    /* 返却メイン画面スクロール調整 */
 .return_list_adjust{
     width: 125px;
 }
+
+.return_pay_off_main{
+    height: 458px;
+    width: 1349px;
+    text-align: center;
+    line-height: 350px;
+    font-size: 250%;
+}
+
+.return_pay_off_main .hogehoge{
+    height: 458px;
+    width: 1349px;
+    display: table-cell;
+    text-align: center;
+vertical-align: middle;
+}
+
+.return_pay_off_button{
+    position: fixed;
+    margin-left: 973px;
+    margin-top: 10px;
+}
+
+
+.rental_main_kbn{
+    color: blue;
+    width: 100px;
+}
+
+.rental_main_stay{
+    color: red;
+    width: 100px;
+}
+
+.rental_main_saleid{
+    color: purple;
+    width: 60px;
+}

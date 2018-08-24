@@ -7,6 +7,8 @@ package bean;
 
 import db.RentalDb;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Logger;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
@@ -32,6 +34,15 @@ public class RentalBean implements Serializable {
 
     @Inject
     Conversation conv;
+    
+    private int x = 1;
+    
+    private List <TestRental> test;
+    {
+        test = new ArrayList<>();x=1;
+        test.add(new TestRental(x++,"クソ松くん","旧作","01"));
+        test.add(new TestRental(x++,"クソ松さん","新作","-"));
+    }
 
     @PostConstruct
     public void start() {
@@ -48,4 +59,14 @@ public class RentalBean implements Serializable {
         }
         return "/pages/rental/create.xhtml";
     }
+
+    public List<TestRental> getTest() {
+        return test;
+    }
+
+    public void setTest(List<TestRental> test) {
+        this.test = test;
+    }
+    
+    
 }

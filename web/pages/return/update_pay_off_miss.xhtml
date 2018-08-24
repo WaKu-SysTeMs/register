@@ -3,11 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
-    <f:metadata>
-        <f:viewParam name="flg" value="#{test3.flg}"/>
-    </f:metadata>
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <link rel="stylesheet" type="text/css" href="../../resources/css/mystyle.css"/>
     </h:head>
@@ -17,10 +13,9 @@
             <ui:define name="content">
                 <h:form>
                     <div class="return_pay_off_main">
-                        <p>正常に処理を完了しました。</p>
+                        <span class="hogehoge">データベースに格納できませんでした。<br/>もう一度返却処理を行ってください</span>
                     </div>
                     <div class="return_pay_off_button">
-                            <h:commandButton styleClass="btn btn-primary btn-lg" value="未返却DVD一覧へ" action="update_not_returned_list.xhtml?faces-redirect=true"/>
                             <h:commandButton styleClass="btn btn-primary btn-lg" value="返却処理へ" action="update.xhtml?faces-redirect=true"/>
                     </div>
                     
