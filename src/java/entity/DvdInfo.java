@@ -33,9 +33,9 @@ public class DvdInfo implements Serializable {
     @Size(max = 1)                          // もしくは@patternで
     private char rental_status; // 貸出状況
 
-//    @OneToMany(mappedBy = "dvd_num", cascade = CascadeType.ALL)
-//    private List<RentalDetail> rental_detail;
-//    
+    @OneToMany(mappedBy = "dvd_num", cascade = CascadeType.ALL)
+    private List<RentalDetail> rental_detail;
+    
 //    @OneToMany(mappedBy = "dvd_info", cascade = CascadeType.ALL)
 //    private List<MoveDetail> move_detail;
     @Transient                           // シリアライズしない
@@ -84,6 +84,18 @@ public class DvdInfo implements Serializable {
     public void setRental_status(char rental_status) {
         this.rental_status = rental_status;
     }
+
+
+    public List<RentalDetail> getRental_detail() {
+        return rental_detail;
+    }
+
+
+    public void setRental_detail( List<RentalDetail> rental_detail ) {
+        this.rental_detail = rental_detail;
+    }
+    
+    
 
     public boolean isEditable() {
         return editable;

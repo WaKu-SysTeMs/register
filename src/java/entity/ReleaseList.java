@@ -28,6 +28,8 @@ public class ReleaseList implements Serializable {
     @OneToMany(mappedBy = "release_kbn", cascade = CascadeType.ALL)
     private List<ProductInfo> productInfo;
 
+    @OneToMany(mappedBy = "release_kbn", cascade = CascadeType.ALL)
+    private List<PriceList> priceList;
 
     @Transient                           // シリアライズしない
     private boolean editable;
@@ -58,6 +60,22 @@ public class ReleaseList implements Serializable {
         this.release_name = release_name;
     }
 
+    public List<ProductInfo> getProductInfo() {
+        return productInfo;
+    }
+
+    public void setProductInfo(List<ProductInfo> productInfo) {
+        this.productInfo = productInfo;
+    }
+
+    public List<PriceList> getPriceList() {
+        return priceList;
+    }
+
+    public void setPriceList(List<PriceList> priceList) {
+        this.priceList = priceList;
+    }
+
     public boolean isEditable() {
         return editable;
     }
@@ -65,5 +83,6 @@ public class ReleaseList implements Serializable {
     public void setEditable(boolean editable) {
         this.editable = editable;
     }
+
 
 }
