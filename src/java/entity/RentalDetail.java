@@ -5,6 +5,7 @@ package entity;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
@@ -62,6 +63,9 @@ public class RentalDetail implements Serializable {
 
     @Size(max = 1)
     private char invalid_flg;           //無効フラグ
+    
+    @OneToMany(mappedBy = "detail_num", cascade = CascadeType.ALL)
+    private List<DelayList> relayList;
 
     @Transient                          // シリアライズしない
     private boolean editable;
