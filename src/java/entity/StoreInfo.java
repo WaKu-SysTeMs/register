@@ -43,7 +43,7 @@ public class StoreInfo implements Serializable {
     @OneToMany(mappedBy = "store_id", cascade = CascadeType.ALL)
     private List<DvdInfo> dvdInfo;
 
-    @OneToMany(mappedBy = "stock_id", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "store_id", cascade = CascadeType.ALL)
     private List<Stock> stock;
     
     @Transient
