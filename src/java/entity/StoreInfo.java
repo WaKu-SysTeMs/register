@@ -45,7 +45,10 @@ public class StoreInfo implements Serializable {
 
     @OneToMany(mappedBy = "store_id", cascade = CascadeType.ALL)
     private List<Stock> stock;
-    
+
+    @OneToMany(mappedBy = "store_id", cascade = CascadeType.ALL)
+    private List<TargetStore> targetStore;
+
     @Transient
     private boolean editable;           // シリアライズしない
 

@@ -49,6 +49,9 @@ public class ProductInfo implements Serializable {
     @OneToMany(mappedBy = "product_num", cascade = CascadeType.ALL)
     private List<Stock> stock;
 
+    @OneToMany(mappedBy = "product_num", cascade = CascadeType.ALL)
+    private List<TargetProduct> targetProduct;
+
     @Transient
     private boolean editable;           // シリアライズしない
 

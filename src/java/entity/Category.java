@@ -31,6 +31,9 @@ public class Category implements Serializable {
     @OneToMany(mappedBy = "category_id", cascade = CascadeType.ALL)
     private List<ProductInfo> productInfo;
 
+    @OneToMany(mappedBy = "category_id", cascade = CascadeType.ALL)
+    private List<TargetCategory> targetCategory;
+
     @Transient                  // シリアライズしない
     private boolean editable;
 
