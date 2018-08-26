@@ -82,8 +82,8 @@ public class Member implements Serializable {
     @OneToMany(mappedBy = "member_num", cascade = CascadeType.ALL)
     private List<RentalMax> rentalMaxList;
     
-    @OneToMany(mappedBy = "member_num", cascade = CascadeType.ALL)
-    private List<DelayList> delayList;
+//    @OneToMany(mappedBy = "member_num", cascade = CascadeType.ALL)
+//    private List<DelayList> delayList;
 
     @Transient                  // シリアライズしない
     private boolean editable;

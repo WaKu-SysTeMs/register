@@ -64,8 +64,8 @@ public class RentalDetail implements Serializable {
     @Size(max = 1)
     private char invalid_flg;           //無効フラグ
     
-    @OneToMany(mappedBy = "detail_num", cascade = CascadeType.ALL)
-    private List<DelayList> relayList;
+//    @OneToMany(mappedBy = "detail_num", cascade = CascadeType.ALL)
+//    private List<DelayList> relayList;
 
     @Transient                          // シリアライズしない
     private boolean editable;
