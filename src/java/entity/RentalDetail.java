@@ -5,7 +5,6 @@ package entity;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
@@ -28,6 +27,7 @@ public class RentalDetail implements Serializable {
     public static final String RentalDetailQAll = "RentalDetailQAll";
 
     @Id
+    @JoinColumn(name = "rental_num")
     private RentalInfo rental_num;              // 貸出番号(FK) 
 
     @Id
@@ -36,6 +36,7 @@ public class RentalDetail implements Serializable {
 
     @NotNull
     @Size(max = 14)
+    @JoinColumn(name = "dvd_num")
     private DvdInfo dvd_num;             //DVD番号(FK)
 
     @NotNull
@@ -50,11 +51,11 @@ public class RentalDetail implements Serializable {
 
     @NotNull
     @Size(max = 7)
+    @JoinColumn(name = "sale_id")
     private SaleInfo sale_id;           //SALE_ID(FK)
 
 //    @Size(max = 1)
 //    private PriceList stay_num;             //泊数ID(FK)
-    
     @Size(max = 1)
     private char discount_flg;          //割引フラグ
 
@@ -63,15 +64,25 @@ public class RentalDetail implements Serializable {
 
     @Size(max = 1)
     private char invalid_flg;           //無効フラグ
-    
-//    @OneToMany(mappedBy = "detail_num", cascade = CascadeType.ALL)
-//    private List<DelayList> relayList;
 
     @Transient                          // シリアライズしない
     private boolean editable;
 
     /* コンストラクタ */
     public RentalDetail() {
+    }
+
+    public RentalDetail(RentalInfo rental_num, Integer detail_num, DvdInfo dvd_num, PriceList release_kbn, Date return_plan, Date return_date, SaleInfo sale_id, char discount_flg, Integer subtotal, char invalid_flg) {
+        this.rental_num = rental_num;
+        this.detail_num = detail_num;
+        this.dvd_num = dvd_num;
+        this.release_kbn = release_kbn;
+        this.return_plan = return_plan;
+        this.return_date = return_date;
+        this.sale_id = sale_id;
+        this.discount_flg = discount_flg;
+        this.subtotal = subtotal;
+        this.invalid_flg = invalid_flg;
     }
 
     /* ゲッター、セッター */

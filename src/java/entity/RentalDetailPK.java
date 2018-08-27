@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * 貸出明細 RENTAL_DETAIL(複合主キー)
  */
 package entity;
 
@@ -19,6 +17,11 @@ public class RentalDetailPK implements Serializable {
 
     /* コンストラクタ */
     public RentalDetailPK() {
+    }
+
+    public RentalDetailPK(Integer rental_num, Integer detail_num) {
+        this.rental_num = rental_num;
+        this.detail_num = detail_num;
     }
 
     /* hash、equals */
@@ -47,20 +50,15 @@ public class RentalDetailPK implements Serializable {
         }
         return true;
     }
-    
+
     /* ゲッター、セッター */
-
-
     public Integer getRental_num() {
         return rental_num;
     }
 
-
-    public void setRental_num( Integer rental_num ) {
+    public void setRental_num(Integer rental_num) {
         this.rental_num = rental_num;
     }
-
-
 
     public Integer getDetail_num() {
         return detail_num;
@@ -69,7 +67,5 @@ public class RentalDetailPK implements Serializable {
     public void setDetail_num(Integer detail_num) {
         this.detail_num = detail_num;
     }
-    
 
 }
-

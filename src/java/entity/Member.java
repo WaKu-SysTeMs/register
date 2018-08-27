@@ -9,6 +9,7 @@ import java.util.List;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
+
 /**
  *
  * @author s20163037
@@ -17,7 +18,6 @@ import javax.validation.constraints.*;
     @NamedQuery(name = Member.MemberQAll, query = "SELECT e FROM Member e"),
     @NamedQuery(name = Member.MemberQName, query = "SELECT e.member_name FROM Member e WHERE e.member_num = ?1")
 })
-
 @Entity
 @Table(name = "member_info")
 public class Member implements Serializable {
@@ -42,10 +42,10 @@ public class Member implements Serializable {
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date birth_date;        // 生年月日
 
-    @Size(max = 1)
+    @Size(max = 1)                   // もしくは@patternで
     private String sex;             // 性別
 
-    @Size(max = 8)
+    @Size(max = 8)                   // もしくは@patternで
     private String postal_code;     // 郵便番号
 
     @Size(max = 80)
@@ -62,9 +62,11 @@ public class Member implements Serializable {
 
     @NotNull
     @Size(max = 1)
+    @JoinColumn(name = "job_id")
     private Job job_id;          // 職業ID(FK)
 
     @Size(max = 3)
+    @JoinColumn(name = "fav_category")
     private Category fav_category;    // 好みのジャンル(FK)
 
     @Size(max = 1)
@@ -81,9 +83,9 @@ public class Member implements Serializable {
 
     @OneToMany(mappedBy = "member_num", cascade = CascadeType.ALL)
     private List<RentalMax> rentalMaxList;
-    
-//    @OneToMany(mappedBy = "member_num", cascade = CascadeType.ALL)
-//    private List<DelayList> delayList;
+
+    @OneToMany(mappedBy = "member_num", cascade = CascadeType.ALL)
+    private List<DelayList> delayList;
 
     @Transient                  // シリアライズしない
     private boolean editable;
@@ -220,6 +222,38 @@ public class Member implements Serializable {
 
     public void setRental(List<RentalInfo> rental) {
         this.rental = rental;
+    }
+
+    public List<BlackMgr> getBlkMgrList() {
+        return blkMgrList;
+    }
+
+    public void setBlkMgrList(List<BlackMgr> blkMgrList) {
+        this.blkMgrList = blkMgrList;
+    }
+
+    public List<RemarksInfo> getRemarksInfoList() {
+        return remarksInfoList;
+    }
+
+    public void setRemarksInfoList(List<RemarksInfo> remarksInfoList) {
+        this.remarksInfoList = remarksInfoList;
+    }
+
+    public List<RentalMax> getRentalMaxList() {
+        return rentalMaxList;
+    }
+
+    public void setRentalMaxList(List<RentalMax> rentalMaxList) {
+        this.rentalMaxList = rentalMaxList;
+    }
+
+    public List<DelayList> getDelayList() {
+        return delayList;
+    }
+
+    public void setDelayList(List<DelayList> delayList) {
+        this.delayList = delayList;
     }
 
     public boolean isEditable() {

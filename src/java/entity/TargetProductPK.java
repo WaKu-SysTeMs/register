@@ -1,13 +1,10 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * 対象商品 TARGET_PRODUCT(複合主キー)
  */
 package entity;
 
 import java.io.Serializable;
 import java.util.Objects;
-import java.util.logging.Logger;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
@@ -20,10 +17,9 @@ public class TargetProductPK implements Serializable {
     private static final long serialVersionUID = 1L;  // シリアルバージョンUIDのバージョン管理
 
     @Size(max = 7)
-    private String sale_id;         // SALE ID
+    private String sale_id;         // SALE ID(FK)
 
     @Size(max = 13)
-    @Column(name = "product_num")
     private Integer product_num;    // 商品番号(FK)
 
     /* コンストラクタ */

@@ -8,6 +8,7 @@ import java.util.Date;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
+
 /**
  *
  * @author sakura＊
@@ -20,6 +21,7 @@ public class JoinList implements Serializable {
 
     @Id
     @Size(max = 12)
+    @JoinColumn(name = "member_num")
     private Member member_num;          // 会員番号(FK)
 
     @NotNull
@@ -30,7 +32,7 @@ public class JoinList implements Serializable {
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date resign_plan;           // 退会予定年月日
 
-    @Size(max = 1)
+    @Size(max = 1)                   // もしくは@patternで
     private char resign_flg;            // 退会フラグ
 
     @Transient                           // シリアライズしない

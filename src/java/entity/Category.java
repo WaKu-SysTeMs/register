@@ -79,6 +79,14 @@ public class Category implements Serializable {
         this.productInfo = productInfo;
     }
 
+    public List<TargetCategory> getTargetCategory() {
+        return targetCategory;
+    }
+
+    public void setTargetCategory(List<TargetCategory> targetCategory) {
+        this.targetCategory = targetCategory;
+    }
+
     public boolean isEditable() {
         return editable;
     }
@@ -86,5 +94,7 @@ public class Category implements Serializable {
     public void setEditable(boolean editable) {
         this.editable = editable;
     }
+
+    
 
 }

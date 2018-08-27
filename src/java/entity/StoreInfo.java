@@ -8,6 +8,7 @@ import java.util.List;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
+
 /**
  *
  * @author s20163037
@@ -48,6 +49,9 @@ public class StoreInfo implements Serializable {
 
     @OneToMany(mappedBy = "store_id", cascade = CascadeType.ALL)
     private List<TargetStore> targetStore;
+
+    @OneToMany(mappedBy = "before_store_id", cascade = CascadeType.ALL)
+    private List<MoveDetail> moveDetail;
 
     @Transient
     private boolean editable;           // シリアライズしない
@@ -135,6 +139,22 @@ public class StoreInfo implements Serializable {
 
     public void setStock(List<Stock> stock) {
         this.stock = stock;
+    }
+
+    public List<TargetStore> getTargetStore() {
+        return targetStore;
+    }
+
+    public void setTargetStore(List<TargetStore> targetStore) {
+        this.targetStore = targetStore;
+    }
+
+    public List<MoveDetail> getMoveDetail() {
+        return moveDetail;
+    }
+
+    public void setMoveDetail(List<MoveDetail> moveDetail) {
+        this.moveDetail = moveDetail;
     }
 
     public boolean isEditable() {

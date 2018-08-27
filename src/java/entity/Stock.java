@@ -7,6 +7,7 @@ import java.io.Serializable;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
+
 /**
  *
  * @author sakura＊
@@ -19,10 +20,12 @@ public class Stock implements Serializable {
 
     @Id
     @Size(max = 13)
+    @JoinColumn(name = "product_num")
     private ProductInfo product_num;            // 商品番号
 
     @Id
     @Size(max = 3)
+    @JoinColumn(name = "store_id")
     private StoreInfo store_id;                 // 店舗ID
 
     @Size(max = 2)
@@ -45,8 +48,7 @@ public class Stock implements Serializable {
         this.rental_cnt = rental_cnt;
     }
 
-
-
+    /* ゲッター、セッター */
     public ProductInfo getProduct_num() {
         return product_num;
     }
@@ -59,7 +61,6 @@ public class Stock implements Serializable {
         return store_id;
     }
 
-    /* ゲッター、セッター */
     public void setStore_id(StoreInfo store_id) {
         this.store_id = store_id;
     }
@@ -89,4 +90,3 @@ public class Stock implements Serializable {
     }
 
 }
-

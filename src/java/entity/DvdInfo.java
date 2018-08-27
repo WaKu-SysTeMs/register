@@ -8,6 +8,7 @@ import java.util.List;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
+
 /**
  *
  * @author s20163037
@@ -20,24 +21,27 @@ public class DvdInfo implements Serializable {
 
     @Id
     @Size(max = 14)
-    private Integer dvd_num; // DVD番号
+    private Integer dvd_num;            // DVD番号
 
     @NotNull
     @Size(max = 13)
-    private ProductInfo product_num; // 商品番号(FK)
+    @JoinColumn(name = "product_num")
+    private ProductInfo product_num;    // 商品番号(FK)
 
     @NotNull
     @Size(max = 3)
-    private StoreInfo store_id; // 店舗ID(FK)
+    @JoinColumn(name = "store_id")
+    private StoreInfo store_id;          // 店舗ID(FK)
 
     @Size(max = 1)                          // もしくは@patternで
     private char rental_status; // 貸出状況
 
     @OneToMany(mappedBy = "dvd_num", cascade = CascadeType.ALL)
     private List<RentalDetail> rental_detail;
-    
-//    @OneToMany(mappedBy = "dvd_info", cascade = CascadeType.ALL)
-//    private List<MoveDetail> move_detail;
+
+    @OneToMany(mappedBy = "dvd_num", cascade = CascadeType.ALL)
+    private List<MoveDetail> move_detail;
+
     @Transient                           // シリアライズしない
     private boolean editable;
 
@@ -85,17 +89,21 @@ public class DvdInfo implements Serializable {
         this.rental_status = rental_status;
     }
 
-
     public List<RentalDetail> getRental_detail() {
         return rental_detail;
     }
 
-
-    public void setRental_detail( List<RentalDetail> rental_detail ) {
+    public void setRental_detail(List<RentalDetail> rental_detail) {
         this.rental_detail = rental_detail;
     }
-    
-    
+
+    public List<MoveDetail> getMove_detail() {
+        return move_detail;
+    }
+
+    public void setMove_detail(List<MoveDetail> move_detail) {
+        this.move_detail = move_detail;
+    }
 
     public boolean isEditable() {
         return editable;

@@ -8,6 +8,7 @@ import java.util.List;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
+
 /**
  *
  * @author sakura＊
@@ -24,7 +25,7 @@ public class ReleaseList implements Serializable {
 
     @Size(max = 6)
     private String release_name;         // 区分名
-    
+
     @OneToMany(mappedBy = "release_kbn", cascade = CascadeType.ALL)
     private List<ProductInfo> productInfo;
 
@@ -83,6 +84,5 @@ public class ReleaseList implements Serializable {
     public void setEditable(boolean editable) {
         this.editable = editable;
     }
-
 
 }

@@ -7,6 +7,7 @@ import java.io.Serializable;
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 
+
 /**
  *
  * @author s20163037
@@ -30,9 +31,8 @@ public class TargetProduct implements Serializable {
 
     @Transient                           // シリアライズしない
     private boolean editable;
-    
-    /* コンストラクタ */
 
+    /* コンストラクタ */
     public TargetProduct() {
     }
 
@@ -40,9 +40,8 @@ public class TargetProduct implements Serializable {
         this.sale_id = sale_id;
         this.product_num = product_num;
     }
-    
-    /* ゲッター、セッター */
 
+    /* ゲッター、セッター */
     public SaleInfo getSale_id() {
         return sale_id;
     }

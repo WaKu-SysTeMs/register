@@ -7,6 +7,7 @@ import java.io.Serializable;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
+
 /**
  *
  * @author sakura＊
@@ -20,9 +21,11 @@ public class TargetCategory implements Serializable {
 
     @Id
     @Size(max = 7)
-    private SaleInfo sale_id;           // SALE ID
+    @JoinColumn(name = "sale_id")
+    private SaleInfo sale_id;           // SALE ID(FK)
 
     @Id
+    @JoinColumn(name = "category_id")
     private Category category_id;       // ジャンルID
 
     @Transient                           // シリアライズしない

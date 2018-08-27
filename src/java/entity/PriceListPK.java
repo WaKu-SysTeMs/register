@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * 料金 PRICE_LIST(複合主キー)
  */
 package entity;
 
@@ -24,6 +22,7 @@ public class PriceListPK implements Serializable {
     @Size(max = 1)
     private String stay_num;        // 泊数ID(FK)
 
+    
     /* コンストラクタ */
     public PriceListPK() {
     }
@@ -32,6 +31,8 @@ public class PriceListPK implements Serializable {
         this.release_kbn = release_kbn;
         this.stay_num = stay_num;
     }
+    
+    
     /* ゲッター、セッター */
 
     public String getRelease_kbn() {

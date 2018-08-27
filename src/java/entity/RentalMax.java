@@ -7,6 +7,7 @@ import java.io.Serializable;
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 
+
 /**
  *
  * @author sakura＊
@@ -19,6 +20,7 @@ public class RentalMax implements Serializable {
 
     @Id
     @Size(max = 12)
+    @JoinColumn(name = "member_num")
     private Member member_num;          // 会員番号
 
     @Size(max = 2)
