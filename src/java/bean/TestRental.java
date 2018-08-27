@@ -5,10 +5,15 @@
  */
 package bean;
 
+import javax.faces.bean.RequestScoped;
+import javax.inject.Named;
+
 /**
  *
  * @author s20163060
  */
+@Named
+@RequestScoped
 public class TestRental {
     
     private Integer num;

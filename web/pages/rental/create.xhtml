@@ -17,7 +17,7 @@ and open the template in the editor.
     <h:body>
         <ui:composition template="/templates/template01.xhtml">
             <ui:define name="title">HCSビデオレンタル-貸出c-</ui:define>>
-            <ui:define name="content">
+            <ui:define name="content"><br/>
                 <div class="container">
 
                     <h:form><div class="form-group">
@@ -49,22 +49,20 @@ and open the template in the editor.
                                 <h:outputText id="rentalMax" value="XX枚" />
 
 
-                            </h:panelGrid><br/>
+                            </h:panelGrid>
                         </div>
 
 
-                        <div class="container panel-body return_main">
+                        <div class="container panel-body rental_main" >
                             <fieldset>
-
-                                <h:dataTable value="#{rentalBean.test}" var="t" styleClass="table table-striped table-bordered table-hover"
-                                             columnClasses="return_main_num,return_main_name,rental_main_kbn,rental_main_stay,return_main_num,rental_main_saleid,return_main_delete">
-
-                                    <h:column headerClass="return_main_num">
+                                <h:dataTable value="#{rentalBean.test}" var="t" styleClass="table table-striped table-bordered table-hover" 
+                                             columnClasses="rental_main_num,rental_main_name,rental_main_kbn,rental_main_stay,rental_main_discount,rental_main_delete">
+                                    <h:column headerClass="rental_main_num">
                                         <f:facet name="header">番号</f:facet>
                                         #{t.num}
                                     </h:column>
 
-                                    <h:column headerClass="return_main_name">
+                                    <h:column headerClass="rental_main_name">
                                         <f:facet name="header">作品名</f:facet>
                                         #{t.name}
                                     </h:column>
@@ -76,34 +74,30 @@ and open the template in the editor.
 
                                     <h:column headerClass="rental_main_stay">
                                         <f:facet name="header">泊数</f:facet>
-                                        <h:selectOneMenu id="stay" required="true" value="#" label="泊数" styleClass="form-control">
-                                            <f:selectItems />
+                                        <h:selectOneMenu value="#" styleClass="sel">
+                                            <f:selectItems value="#{rentalBean.items}"/>
                                         </h:selectOneMenu>
                                     </h:column>
 
 
-                                    <h:column headerClass="return_main_num">
+                                    <h:column headerClass="rental_main_discount">
                                         <f:facet name="header">割引</f:facet>
-                                        <h:selectBooleanCheckbox value="#"/>
-                                    </h:column>
-
-                                    <h:column headerClass="rental_main_saleid">
-                                        <f:facet name="header">セールID</f:facet>
-                                        #{t.saleId}
+                                        <h:selectBooleanCheckbox value="#" styleClass="inp"/>
                                     </h:column>
 
 
-                                    <h:column headerClass="return_main_delete">
-                                        <f:facet name="header">////</f:facet>
-                                        <h:commandButton styleClass="btn btn-danger" value="削 除" action="#"/>
+                                    <h:column headerClass="rental_main_delete">
+                                        <f:facet name="header"></f:facet>
+                                        <h:commandButton styleClass="btn btn-danger btn-xs" value="削 除" action="#"/>
                                     </h:column>
 
                                 </h:dataTable>
                             </fieldset>
                         </div>
 
-
-                        <h:commandButton styleClass="btn btn-primary" value="次　へ" action="#"/>
+                        <div class="return_update_button">
+                            <h:commandButton styleClass="btn btn-primary btn-lg" value="次 へ" action="#"/>
+                        </div>
                     </h:form>
                 </div>
             </ui:define>

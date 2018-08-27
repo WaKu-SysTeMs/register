@@ -160,7 +160,7 @@ div .return_delay_button{                 /* 返却メイン画面ボタン調�
 }
 
 .return_main_name{               /* 返却メイン画面商品名調整 */
-    width: 538px;
+    width: 540px;
 }
 
 .return_main_date{               /* 返却メイン画面貸出年月日・返却予定日調整 */
@@ -220,39 +220,62 @@ div .return_main tbody{    /* 返却メイン画面スクロール調整 */
 }
 
 .return_pay_off_main{
-    height: 458px;
-    width: 1349px;
+    display: table-cell;
+    width: 1366px;
+    height: 500px;
+    vertical-align: middle;
     text-align: center;
-    line-height: 350px;
+}
+
+.return_pay_off_main p{
+    display: inline-block;
+    text-align: center;
     font-size: 250%;
 }
 
-.return_pay_off_main .hogehoge{
-    height: 458px;
-    width: 1349px;
-    display: table-cell;
-    text-align: center;
-vertical-align: middle;
-}
-
-.return_pay_off_button{
+.return_pay_off_pass_button{
     position: fixed;
     margin-left: 973px;
-    margin-top: 10px;
+    margin-top: -32px;
 }
 
+.return_pay_off_miss_button{
+    position: fixed;
+    margin-left: 1174px;
+    margin-top: -32px;
+}
+
+.rental_main{              /* 返却メイン画面フォントサイズ調整 */
+    font-size: 120%;
+}
+
+div .rental_main tbody{    /* 返却メイン画面スクロール調整 */
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 260px;
+}
+
+.rental_main_num{
+    width: 60px;
+}
+
+.rental_main_name{
+    width: 650px;
+}
 
 .rental_main_kbn{
-    color: blue;
-    width: 100px;
+    width: 140px;
 }
 
 .rental_main_stay{
-    color: red;
+    width: 180px;
+}
+
+.rental_main_discount{
     width: 100px;
 }
 
-.rental_main_saleid{
-    color: purple;
-    width: 60px;
+.rental_main_delete{
+    width: 120px;
 }
+
