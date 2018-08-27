@@ -28,7 +28,7 @@ public class RentalDetail implements Serializable {
     public static final String RentalDetailQAll = "RentalDetailQAll";
 
     @Id
-    private RentalInfo rental_num;              // 貸出番号(FK)
+    private RentalInfo rental_num;              // 貸出番号(FK) 
 
     @Id
     @Size(max = 2)
