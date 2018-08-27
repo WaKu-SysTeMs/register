@@ -8,6 +8,7 @@ import java.util.List;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
+
 /**
  *
  * @author s20163037
@@ -24,6 +25,7 @@ public class Register implements Serializable {
 
     @NotNull
     @Size(max = 3)
+    @JoinColumn(name = "store_id")
     private StoreInfo store_id;             // 店舗ID(FK)
 
     @Size(max = 7)
@@ -31,7 +33,7 @@ public class Register implements Serializable {
 
     @OneToMany(mappedBy = "register_id", cascade = CascadeType.ALL)
     private List<RentalInfo> rental;
-    
+
     @OneToMany(mappedBy = "register_id", cascade = CascadeType.ALL)
     private List<Inspection> inspection;
 
@@ -71,6 +73,22 @@ public class Register implements Serializable {
 
     public void setRegister_amt(Integer register_amt) {
         this.register_amt = register_amt;
+    }
+
+    public List<RentalInfo> getRental() {
+        return rental;
+    }
+
+    public void setRental(List<RentalInfo> rental) {
+        this.rental = rental;
+    }
+
+    public List<Inspection> getInspection() {
+        return inspection;
+    }
+
+    public void setInspection(List<Inspection> inspection) {
+        this.inspection = inspection;
     }
 
     public boolean isEditable() {

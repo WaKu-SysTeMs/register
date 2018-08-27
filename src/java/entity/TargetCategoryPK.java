@@ -1,13 +1,12 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * 対象ジャンル TARGET_CATEGORY(複合主キー)
  */
 package entity;
 
 import java.io.Serializable;
 import java.util.Objects;
 import javax.validation.constraints.*;
+
 
 /**
  *
@@ -16,11 +15,12 @@ import javax.validation.constraints.*;
 public class TargetCategoryPK implements Serializable {
 
     private static final long serialVersionUID = 1L;  // シリアルバージョンUIDのバージョン管理
+
     @Size(max = 7)
-    private String sale_id;         // SALE ID
+    private String sale_id;         // SALE ID(FK)
 
     @Size(max = 3)
-    private String category_id;         // ジャンルID
+    private String category_id;         // ジャンルID(FK)
 
     /* コンストラクタ */
     public TargetCategoryPK() {
@@ -30,8 +30,8 @@ public class TargetCategoryPK implements Serializable {
         this.sale_id = sale_id;
         this.category_id = category_id;
     }
-    /* ゲッター、セッター */
 
+    /* ゲッター、セッター */
     public String getSale_id() {
         return sale_id;
     }
@@ -52,8 +52,8 @@ public class TargetCategoryPK implements Serializable {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 59 * hash + Objects.hashCode(this.sale_id);
-        hash = 59 * hash + Objects.hashCode(this.category_id);
+        hash = 29 * hash + Objects.hashCode(this.sale_id);
+        hash = 29 * hash + Objects.hashCode(this.category_id);
         return hash;
     }
 

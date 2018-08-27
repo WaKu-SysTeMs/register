@@ -7,6 +7,7 @@ import java.io.Serializable;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
+
 /**
  *
  * @author sakura＊
@@ -19,6 +20,7 @@ public class RemarksInfo implements Serializable {
 
     @Id
     @Size(max = 12)
+    @JoinColumn(name = "member_num")
     private Member member_num;          // 会員番号
 
     @Size(max = 200)
@@ -28,13 +30,14 @@ public class RemarksInfo implements Serializable {
     private boolean editable;
 
     /* コンストラクタ */
+    public RemarksInfo() {
+    }
+
     public RemarksInfo(Member member_num, String remarks) {
         this.member_num = member_num;
         this.remarks = remarks;
     }
 
-    public RemarksInfo() {
-    }
 
     /* ゲッター、セッター */
     public Member getMember_num() {

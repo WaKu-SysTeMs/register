@@ -1,3 +1,6 @@
+/*
+ * 在庫 STOCK(複合主キー)
+ */
 package entity;
 
 import java.io.Serializable;

@@ -4,10 +4,10 @@
 package entity;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.*;
 import javax.validation.constraints.*;
+
 
 /**
  *
@@ -26,8 +26,9 @@ public class Employee implements Serializable {
     @Size(max = 30)
     private String emp_name;            // 社員名
 
-    @Size(max = 1)
+    @Size(max = 1)                   // もしくは@patternで
     @NotNull
+    @JoinColumn(name = "role_id")
     private RoleInfo role_id;               // ロールID(FK)
 
     @Size(max = 20)
@@ -35,13 +36,17 @@ public class Employee implements Serializable {
 
     @NotNull
     @Size(max = 3)
+    @JoinColumn(name = "store_id")
     private StoreInfo store_id;             // 勤務地(FK：店舗ID)
 
     @OneToMany(mappedBy = "emp_num", cascade = CascadeType.ALL)
     private List<Inspection> inspection;
-    
+
     @OneToMany(mappedBy = "emp_num", cascade = CascadeType.ALL)
     private List<RentalInfo> rentalInfo;
+
+    @OneToMany(mappedBy = "emp_num", cascade = CascadeType.ALL)
+    private List<MoveHistory> moveHistory;
 
     @Transient                           // シリアライズしない
     private boolean editable;
@@ -114,8 +119,14 @@ public class Employee implements Serializable {
     public void setRentalInfo(List<RentalInfo> rentalInfo) {
         this.rentalInfo = rentalInfo;
     }
-    
-    
+
+    public List<MoveHistory> getMoveHistory() {
+        return moveHistory;
+    }
+
+    public void setMoveHistory(List<MoveHistory> moveHistory) {
+        this.moveHistory = moveHistory;
+    }
 
     public boolean isEditable() {
         return editable;

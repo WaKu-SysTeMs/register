@@ -9,6 +9,7 @@ import java.util.List;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
+
 /**
  *
  * @author sakura＊
@@ -28,6 +29,7 @@ public class ProductInfo implements Serializable {
 
     @NotNull
     @Size(max = 3)
+    @JoinColumn(name = "category_id")
     private Category category_id;   // ジャンルID(FK)
 
     @Temporal(javax.persistence.TemporalType.DATE)
@@ -41,7 +43,8 @@ public class ProductInfo implements Serializable {
 
     @NotNull
     @Size(max = 1)
-    private ReleaseList release_kbn;    // 新旧区分
+    @JoinColumn(name = "release_kbn")
+    private ReleaseList release_kbn;    // 新旧区分(FK)
 
     @OneToMany(mappedBy = "product_num", cascade = CascadeType.ALL)
     private List<DvdInfo> dvdInfo;
@@ -51,6 +54,9 @@ public class ProductInfo implements Serializable {
 
     @OneToMany(mappedBy = "product_num", cascade = CascadeType.ALL)
     private List<TargetProduct> targetProduct;
+
+    @OneToMany(mappedBy = "product_num", cascade = CascadeType.ALL)
+    private List<MoveHistory> moveHistory;
 
     @Transient
     private boolean editable;           // シリアライズしない
@@ -140,6 +146,22 @@ public class ProductInfo implements Serializable {
 
     public void setStock(List<Stock> stock) {
         this.stock = stock;
+    }
+
+    public List<TargetProduct> getTargetProduct() {
+        return targetProduct;
+    }
+
+    public void setTargetProduct(List<TargetProduct> targetProduct) {
+        this.targetProduct = targetProduct;
+    }
+
+    public List<MoveHistory> getMoveHistory() {
+        return moveHistory;
+    }
+
+    public void setMoveHistory(List<MoveHistory> moveHistory) {
+        this.moveHistory = moveHistory;
     }
 
     public boolean isEditable() {

@@ -8,6 +8,7 @@ import java.util.Date;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
+
 /**
  *
  * @author sakura＊
@@ -23,6 +24,7 @@ public class Inspection implements Serializable {
 
     @NotNull
     @Size(max = 4)
+    @JoinColumn(name = "register_id")
     private Register register_id;           // レジID(FK)
 
     @Temporal(javax.persistence.TemporalType.DATE)
@@ -37,6 +39,7 @@ public class Inspection implements Serializable {
     private Integer misc_pl_amt;            // 雑損益額
 
     @Size(max = 10)
+    @JoinColumn(name = "emp_num")
     private Employee emp_num;               // 社員番号(FK)
 
     @Transient                           // シリアライズしない

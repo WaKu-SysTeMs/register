@@ -7,6 +7,7 @@ import java.io.Serializable;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
+
 /**
  *
  * @author sakura＊
@@ -18,10 +19,12 @@ public class TargetStore implements Serializable {
 
     @Id
     @Size(max = 7)
+    @JoinColumn(name = "sale_id")
     private SaleInfo sale_id;       // SALE ID(FK)
 
     @Id
     @Size(max = 3)
+    @JoinColumn(name = "store_id")
     private StoreInfo store_id;        // 店舗ID(FK)
 
     @Transient                           // シリアライズしない
@@ -36,10 +39,7 @@ public class TargetStore implements Serializable {
         this.store_id = store_id;
     }
 
-
-
     /* ゲッター、セッター */
-
     public SaleInfo getSale_id() {
         return sale_id;
     }
@@ -63,6 +63,5 @@ public class TargetStore implements Serializable {
     public void setEditable(boolean editable) {
         this.editable = editable;
     }
-
 
 }

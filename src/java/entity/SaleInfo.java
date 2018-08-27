@@ -9,6 +9,7 @@ import java.util.List;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
+
 /**
  *
  * @author s20163037
@@ -135,14 +136,30 @@ public class SaleInfo implements Serializable {
     public void setRentalDetail(List<RentalDetail> rentalDetail) {
         this.rentalDetail = rentalDetail;
     }
-//
-//    public List<TargetStore> getTargetStore() {
-//        return targetStore;
-//    }
-//
-//    public void setTargetStore(List<TargetStore> targetStore) {
-//        this.targetStore = targetStore;
-//    }
+
+    public List<TargetStore> getTargetStore() {
+        return targetStore;
+    }
+
+    public void setTargetStore(List<TargetStore> targetStore) {
+        this.targetStore = targetStore;
+    }
+
+    public List<TargetProduct> getTargetProduct() {
+        return targetProduct;
+    }
+
+    public void setTargetProduct(List<TargetProduct> targetProduct) {
+        this.targetProduct = targetProduct;
+    }
+
+    public List<TargetCategory> getTargetCategory() {
+        return targetCategory;
+    }
+
+    public void setTargetCategory(List<TargetCategory> targetCategory) {
+        this.targetCategory = targetCategory;
+    }
 
     public boolean isEditable() {
         return editable;

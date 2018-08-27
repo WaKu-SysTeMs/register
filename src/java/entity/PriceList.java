@@ -22,22 +22,24 @@ public class PriceList implements Serializable {
 
     @Id
     @Size(max = 1)
+    @JoinColumn(name = "release_kbn")
     private ReleaseList release_kbn;           // 新旧区分(FK)
 
     @Id
     @Size(max = 1)
+    @JoinColumn(name = "stay_num")
     private StayList stay_num;                 // 泊数ID(FK)
 
     @Size(max = 3)
     private Integer price;                     // 料金
 
     @OneToMany(mappedBy = "release_kbn", cascade = CascadeType.ALL)
-    private List<RentalDetail> rentalKbn;
+    private List<RentalDetail> rentalDetail;
 
-   
     @Transient                           // シリアライズしない
     private boolean editable;
 
+    
     /* コンストラクタ */
     public PriceList() {
     }
@@ -65,6 +67,7 @@ public class PriceList implements Serializable {
     public void setStay_num(StayList stay_num) {
         this.stay_num = stay_num;
     }
+
     public Integer getPrice() {
         return price;
     }
@@ -73,6 +76,13 @@ public class PriceList implements Serializable {
         this.price = price;
     }
 
+    public List<RentalDetail> getRentalDetail() {
+        return rentalDetail;
+    }
+
+    public void setRentalDetail(List<RentalDetail> rentalDetail) {
+        this.rentalDetail = rentalDetail;
+    }
 
     public boolean isEditable() {
         return editable;
