@@ -12,6 +12,10 @@ import javax.validation.constraints.*;
  *
  * @author s20163037
  */
+//@NamedQueries({
+//    @NamedQuery(name = Category.CategoryQAll, query = "SELECT e FROM Category e"),
+//    @NamedQuery(name =Category.CategoryQName, query = "SELECT e.category_id FROM Category e WHERE e. = ?1")
+//})
 @Entity
 public class Category implements Serializable {
 

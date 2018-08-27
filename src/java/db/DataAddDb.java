@@ -1,7 +1,6 @@
 package db;
 
 import entity.Category;
-import entity.Member;
 import entity.ProductInfo;
 import java.util.List;
 import javax.ejb.Stateless;
@@ -36,16 +35,16 @@ public class DataAddDb {
 //        em.remove(em.merge(member));
 //    }
 
-//    public Member find(Integer key) {  // 検索
-//        return em.find(Member.class, key);
+//    public Category find(String key) {  // 検索
+//        return em.find(Category.class, key);
 //    }
 
-//    public List<Member> find(String name) {  // の検索
-//        TypedQuery<Member> q = em.createNamedQuery(Member.MemberQName, Member.class);
+//    public List<Category> find(String name) {  // の検索
+//        TypedQuery<Category> q = em.createNamedQuery(Category.CategoryQName, Category.class);
 //        q.setParameter(1, name);
 //        return q.getResultList();
 //    }
-//
+////
 //    public List<Member> getAll() {  // 会員データ全件取得
 //        return em.createNamedQuery(Member.MemberQAll, Member.class).getResultList();
 //    }

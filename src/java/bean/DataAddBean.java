@@ -43,6 +43,9 @@ public class DataAddBean implements Serializable {
         db.createCate(new Category("J13", "ドキュメント"));
         db.createCate(new Category("J14", "スポーツ"));
 
+        db.createProduct(new ProductInfo(1111111111, "苔大全", null,null, null, "佐々木 春樹", null));
     }
+    
+
 
 }
