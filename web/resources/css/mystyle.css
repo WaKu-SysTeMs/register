@@ -123,6 +123,10 @@ div .return_delay_main{                 /* 返却メイン画面div調整用 */
     padding: 0px 20px 0px;
 }
 
+.return_delay_main table{
+    line-height: 65px;
+}
+
 
 div .return_delay_button{                 /* 返却メイン画面ボタン調整用 */
     width: 250px;
@@ -133,6 +137,7 @@ div .return_delay_button{                 /* 返却メイン画面ボタン調�
     right: 0;
     position: absolute;
     margin: auto;
+    text-align: center;
 }
 
 .return_input_delay{                     /* 返却延滞金清算画面inputtext調整用 */
@@ -215,11 +220,11 @@ div .return_main tbody{    /* 返却メイン画面スクロール調整 */
     display: inline-block;
 }
 
-.return_list_adjust{
+.return_list_adjust{               /*  */
     width: 125px;
 }
 
-.return_pay_off_main{
+.return_pay_off_main{               /*  */
     display: table-cell;
     width: 1366px;
     height: 500px;
@@ -227,19 +232,19 @@ div .return_main tbody{    /* 返却メイン画面スクロール調整 */
     text-align: center;
 }
 
-.return_pay_off_main p{
+.return_pay_off_main p{               /*  */
     display: inline-block;
     text-align: center;
     font-size: 250%;
 }
 
-.return_pay_off_pass_button{
+.return_pay_off_pass_button{               /*  */
     position: fixed;
     margin-left: 973px;
     margin-top: -32px;
 }
 
-.return_pay_off_miss_button{
+.return_pay_off_miss_button{               /*  */
     position: fixed;
     margin-left: 1174px;
     margin-top: -32px;
@@ -255,27 +260,49 @@ div .rental_main tbody{    /* 返却メイン画面スクロール調整 */
   height: 260px;
 }
 
-.rental_main_num{
+.rental_main_num{               /* 貸出メイン画面調整 */
     width: 60px;
 }
 
-.rental_main_name{
+.rental_main_name{               /* 貸出メイン画面調整 */
     width: 650px;
 }
 
-.rental_main_kbn{
+.rental_main_kbn{               /* 貸出メイン画面調整 */
     width: 140px;
 }
 
-.rental_main_stay{
+.rental_main_stay{               /* 貸出メイン画面調整 */
     width: 180px;
 }
 
-.rental_main_discount{
+.rental_main_discount{               /* 貸出メイン画面調整 */
     width: 100px;
 }
 
-.rental_main_delete{
+.rental_main_delete{               /* 貸出メイン画面調整 */
     width: 120px;
 }
 
+div .rental_payment_main{                 /*  */
+    width: 400px;
+    height: 0px;
+    top: 200px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    margin: auto;
+    padding: 0px 20px 0px;
+}
+
+.rental_payment_main table{
+    text-align: left;
+    line-height: 40px;
+}
+
+.return_pay_off_pass_button{               /*  */
+    position: fixed;
+    margin-left: 994px;
+    margin-top: -32px;
+}
