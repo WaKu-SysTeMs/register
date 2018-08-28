@@ -35,7 +35,7 @@ public class ProductInfo implements Serializable {
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date rental_start_date; // 貸出開始年月日
 
-    @Size(max = 3)
+    @Size(min=1,max = 3)
     private String play_time;       // 再生時間
 
     @Size(max = 30)
@@ -74,6 +74,14 @@ public class ProductInfo implements Serializable {
         this.director = director;
         this.release_kbn = release_kbn;
     }
+    public ProductInfo(Integer product_num, String product_name, Date rental_start_date, String play_time, String director) {
+        this.product_num = product_num;
+        this.product_name = product_name;
+        this.rental_start_date = rental_start_date;
+        this.play_time = play_time;
+        this.director = director;
+    }
+
 
     /* ゲッター、セッター */
     public Integer getProduct_num() {

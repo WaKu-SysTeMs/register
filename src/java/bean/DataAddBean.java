@@ -8,10 +8,13 @@ package bean;
 import db.DataAddDb;
 import entity.Category;
 import entity.ProductInfo;
+import entity.ReleaseList;
 import java.io.Serializable;
+import java.util.logging.Logger;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
 
 
@@ -25,9 +28,13 @@ public class DataAddBean implements Serializable {
 
     @EJB
     DataAddDb db;
+    
+    @Inject
+    transient Logger log;
 
-    @PostConstruct
-    public void pCate() {
+//    @PostConstruct
+    public String pCate() {
+        try{
         db.createCate(new Category("J01", "洋画(ホラー、オカルト)"));
         db.createCate(new Category("J02", "洋画(SF、ファンタジー)"));
         db.createCate(new Category("J03", "洋画(アクション)"));
@@ -42,8 +49,17 @@ public class DataAddBean implements Serializable {
         db.createCate(new Category("J12", "ジブリ"));
         db.createCate(new Category("J13", "ドキュメント"));
         db.createCate(new Category("J14", "スポーツ"));
+        
+        db.createRL(new ReleaseList("1", "新作"));
+        db.createRL(new ReleaseList("2", "準新作"));
+        db.createRL(new ReleaseList("3", "旧作"));
 
-        db.createProduct(new ProductInfo(1111111111, "苔大全", null,null, null, "佐々木 春樹", null));
+        db.createProduct(new ProductInfo(10234, "苔大全", null, null, null));
+        
+        }catch(Exception e){
+            log.fine("■"+"DataAddBean"+e.getMessage());
+        }
+        return null;
     }
     
 
