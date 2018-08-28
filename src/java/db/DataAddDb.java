@@ -2,6 +2,7 @@ package db;
 
 import entity.Category;
 import entity.ProductInfo;
+import entity.ReleaseList;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -20,6 +21,9 @@ public class DataAddDb {
     private EntityManager em;  // エンティティマネージャ
 
     public void createProduct(ProductInfo p) {  // 作成・登録
+        em.persist(p);
+    }
+    public void createRL(ReleaseList p) {  // 作成・登録
         em.persist(p);
     }
     
