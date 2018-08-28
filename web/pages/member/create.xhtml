@@ -22,6 +22,7 @@ and open the template in the editor.
 
                     <h:form>
                         <div class="form-group">
+                            <div class="member_admission">
                             <h:panelGrid columns="2" border="0">
 
                                 <h:outputLabel styleClass="control-label">会員名：</h:outputLabel>
@@ -30,7 +31,7 @@ and open the template in the editor.
                                                  label="会員名：" styleClass="form-control" />
                                 </h:panelGroup>
 
-                                <h:outputLabel styleClass="control-label">会員名（かな）</h:outputLabel>
+                                <h:outputLabel styleClass="control-label">会員名（かな）：</h:outputLabel>
                                 <h:panelGroup>
                                     <h:inputText id="memberRuby" required="true" value="#"
                                                  label="会員名（かな）：" styleClass="form-control" />
@@ -82,15 +83,29 @@ and open the template in the editor.
                                 </h:panelGroup>
 
 
-                                <h:outputLabel styleClass="control-label">会員名：</h:outputLabel>
+                                <h:outputLabel styleClass="control-label">メールアドレス：</h:outputLabel>
                                 <h:panelGroup>
-                                    <h:inputText id="memberName" required="true" value="#"
+                                    <h:inputText id="mail" required="true" value="#"
                                                  label="会員名：" styleClass="form-control" />
                                 </h:panelGroup>
+                                
+                                <h:outputLabel styleClass="control-label">職業：</h:outputLabel>
+                                <h:panelGroup>
+                                    <div class="hogehoge">
+                                    <h:selectOneRadio value="#{moriTest.test2}" required="true" label="職業：">
+                                        <label><f:selectItems value="#{moriTest.langs2}" /></label>
+                                    </h:selectOneRadio>
+                                    </div>
+                                </h:panelGroup>
+                                
+                                
                             </h:panelGrid>
+                            </div>
                         </div>
 
-                        <h:commandButton value="送　信"  action="#" styleClass="btn"/>
+                        <div class="member_admission_button">
+                            <h:commandButton value="送　信"  action="createconfirm.xhtml?faces-redirect=true" styleClass="btn btn-primary btn-lg"/>
+                        </div>
 
                     </h:form>
 

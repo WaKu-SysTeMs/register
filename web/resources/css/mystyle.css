@@ -306,3 +306,33 @@ div .rental_payment_main{                 /*  */
     margin-left: 994px;
     margin-top: -32px;
 }
+
+div .member_admission{
+    width: 400px;
+    height: 0px;
+    top: 100px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    margin: auto;
+    padding: 0px 20px 0px;
+    line-height: 10px;
+    text-align: right;
+}
+
+.member_admission_button{
+    width: 250px;
+    height: 0px;
+    top: 950px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+}
+
+.hogehoge label{
+    display: inline-block;
+}
