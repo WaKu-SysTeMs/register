@@ -29,9 +29,11 @@ public class Stock implements Serializable {
     private StoreInfo store_id;                 // 店舗ID
 
     @Size(max = 2)
+    @Column(length = 2)
     private Integer stock_cnt;                  // 在庫総数
 
     @Size(max = 2)
+    @Column(length = 2)
     private Integer rental_cnt;                 // 貸出枚数
 
     @Transient                           // シリアライズしない

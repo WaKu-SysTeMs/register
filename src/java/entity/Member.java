@@ -30,34 +30,43 @@ public class Member implements Serializable {
     @Id
     @NotNull
     @Size(max = 12)
+    @Column(length = 12)
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer member_num;     // 会員番号
 
     @Size(max = 30)
+    @Column(length = 30)
     private String member_name;     // 会員名
 
     @Size(max = 40)
+    @Column(length = 40)
     private String member_ruby;     // 会員名 かな表記
 
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date birth_date;        // 生年月日
 
-    @Size(max = 1)                   // もしくは@patternで
+    @Size(max = 2)                   // もしくは@patternで
+    @Column(length = 2)
     private String sex;             // 性別
 
     @Size(max = 8)                   // もしくは@patternで
+    @Column(length = 8)
     private String postal_code;     // 郵便番号
 
     @Size(max = 80)
+    @Column(length = 80)
     private String member_add;      // 住所
 
     @Size(max = 200)
+    @Column(length = 200)
     private String add_ruby;        // 住所 かな表記
 
     @Size(max = 20)
+    @Column(length = 20)
     private String member_phone;    // 携帯番号
 
     @Size(max = 40)
+    @Column(length = 40)
     private String member_mail;     // メールアドレス
 
     @NotNull
@@ -70,6 +79,7 @@ public class Member implements Serializable {
     private Category fav_category;    // 好みのジャンル(FK)
 
     @Size(max = 1)
+    @Column(length = 1)
     private char temp_flg;          // 仮会員フラグ
 
     @OneToMany(mappedBy = "member_num", cascade = CascadeType.ALL)

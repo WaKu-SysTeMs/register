@@ -24,6 +24,7 @@ public class RemarksInfo implements Serializable {
     private Member member_num;          // 会員番号
 
     @Size(max = 200)
+    @Column(length = 200)
     private String remarks;         // 備考
 
     @Transient                           // シリアライズしない

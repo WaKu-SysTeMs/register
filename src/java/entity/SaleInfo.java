@@ -22,9 +22,11 @@ public class SaleInfo implements Serializable {
 
     @Id
     @Size(max = 7)
+    @Column(length = 7)
     private String sale_id;         // SALE ID
 
     @Size(max = 50)
+    @Column(length = 50)
     private String sale_name;       // SALE名
 
     @NotNull
@@ -35,12 +37,15 @@ public class SaleInfo implements Serializable {
     private Date end_date;          // 終了日時
 
     @Size(max = 3)
+    @Column(length = 3)
     private Integer discount_rate;  // 割引内容
 
     @Size(max = 1)
+    @Column(length = 1)
     private char discount_flg;      // 割引フラグ
 
     @Size(max = 2)
+    @Column(length = 2)
     private Integer discount_cnt;   // 割引カウンター
 
     @OneToMany(mappedBy = "sale_id", cascade = CascadeType.ALL)

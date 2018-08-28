@@ -25,6 +25,7 @@ public class MoveDetail implements Serializable {
 
     @Id
     @Size(max = 2)
+    @Column(length = 2)
     private Integer move_detail_num;     // 移動明細番号
 
     @NotNull

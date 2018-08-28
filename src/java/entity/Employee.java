@@ -21,9 +21,11 @@ public class Employee implements Serializable {
 
     @Id
     @Size(max = 10)
+    @Column(length = 10)
     private Integer emp_num;            // 社員番号
 
     @Size(max = 30)
+    @Column(length = 30)
     private String emp_name;            // 社員名
 
     @Size(max = 1)                   // もしくは@patternで
@@ -32,6 +34,7 @@ public class Employee implements Serializable {
     private RoleInfo role_id;               // ロールID(FK)
 
     @Size(max = 20)
+    @Column(length = 20)
     private String passwd;              // パスワード
 
     @NotNull

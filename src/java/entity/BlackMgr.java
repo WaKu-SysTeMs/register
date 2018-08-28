@@ -7,6 +7,7 @@ import java.io.Serializable;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
+
 /**
  *
  * @author sakura＊
@@ -23,9 +24,11 @@ public class BlackMgr implements Serializable {
     private Member member_num;          // 会員番号(FK)
 
     @Size(max = 2)
+    @Column(length = 2)
     private Integer delay_cnt;          // 遅延カウンター
 
-    @Size(max = 1)          // patternのほうがいいかも
+    @Size(max = 1)
+    @Column(length = 1)
     private char blk_flg;               // ブラックフラグ
 
     @Transient                           // シリアライズしない

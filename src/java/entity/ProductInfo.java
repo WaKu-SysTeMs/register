@@ -22,9 +22,11 @@ public class ProductInfo implements Serializable {
 
     @Id
     @Size(max = 13)
+    @Column(length = 13)
     private Integer product_num;    // 商品番号
 
     @Size(max = 100)
+    @Column(length = 100)
     private String product_name;    // 作品名
 
     @NotNull
@@ -36,9 +38,11 @@ public class ProductInfo implements Serializable {
     private Date rental_start_date; // 貸出開始年月日
 
     @Size(min=1,max = 3)
+    @Column(length = 3)
     private String play_time;       // 再生時間
 
     @Size(max = 30)
+    @Column(length = 30)
     private String director;        // 監督
 
     @NotNull

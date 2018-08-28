@@ -21,18 +21,23 @@ public class StoreInfo implements Serializable {
 
     @Id
     @Size(max = 3)
+    @Column(length = 3)
     private String store_id;            // 店舗ID
 
     @Size(max = 20)
+    @Column(length = 20)
     private String store_name;          // 店舗名
 
     @Size(max = 60)
+    @Column(length = 60)
     private String store_add;           // 店舗住所
 
     @Size(max = 20)
+    @Column(length = 20)
     private String store_phone;         // 電話番号
 
     @Size(max = 40)
+    @Column(length = 40)
     private String store_mail;          // メールアドレス
 
     @OneToMany(mappedBy = "store_id", cascade = CascadeType.ALL)
