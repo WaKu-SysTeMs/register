@@ -308,6 +308,7 @@ div .rental_payment_main{                 /*  */
 }
 
 div .member_admission{
+    font-size: 120%;
     width: 400px;
     height: 0px;
     top: 100px;
@@ -348,4 +349,19 @@ div .member_admission{
 
 .hoge1 {
 	overflow: hidden;
+}
+
+div .member_createconfirm{
+    font-size: 120%;
+    width: 400px;
+    height: 0px;
+    top: 100px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    margin: auto;
+    padding: 0px 20px 0px;
+    line-height: 10px;
+    text-align: right;
 }

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+
+        <link rel="stylesheet" type="text/css" href="../../resources/css/mystyle.css"/>
+    </h:head>
+    <h:body>
+        <ui:composition template="/templates/template01.xhtml">
+            <ui:define name="title">HCSビデオレンタル-貸出c-</ui:define>>
+            <ui:define name="content"><br/>
+                <div class="container">
+
+                    <h:form><div class="form-group">
+                            <h:panelGrid columns="5">
+
+
+                                <h:outputLabel styleClass="control-label">DVD番号：</h:outputLabel>
+
+                                <h:inputText id="memberNum" required="true" value="#" label="DVD番号：" styleClass="form-control">
+                                    <f:ajax event="change" execute="@this" listener="#"/>
+                                </h:inputText>
+
+
+                                <h:outputLabel styleClass="control-label">商品番号：</h:outputLabel>
+
+                                <h:inputText id="storeId" required="true" value="#" label="商品番号：" styleClass="form-control">
+                                    <f:ajax event="change" execute="@this" listener="#"/>
+                                </h:inputText>
+                                <h:outputText/>
+
+
+                                <h:outputLabel styleClass="control-label">作品名：</h:outputLabel>
+
+                                <h:inputText id="rentalDate" required="true" value="#" label="作品名：" styleClass="form-control">
+                                    <f:ajax event="change" execute="@this" listener="#"/>
+                                </h:inputText>
+
+
+                                <h:outputLabel styleClass="control-label">店舗名：</h:outputLabel>
+
+                                <h:inputText id="rentalStatus" required="true" value="#" label="店舗名：" styleClass="form-control">
+                                    <f:ajax event="change" execute="@this" listener="#"/>
+                                </h:inputText>
+
+
+                                <h:commandButton styleClass="btn btn-default" value="検 索" action="#"/>
+
+
+                            </h:panelGrid>
+                        </div>
+
+
+                        <div class="container panel-body rental_main" >
+                            <fieldset>
+                                <h:dataTable value="#" var="t" styleClass="table table-striped table-bordered table-hover" 
+                                             columnClasses="">
+                                    <h:column headerClass="rental_main_num">
+                                        <f:facet name="header">貸出番号</f:facet>
+                                            #{t.num}
+                                    </h:column>
+
+                                    <h:column headerClass="rental_main_name">
+                                        <f:facet name="header">会員番号</f:facet>
+                                            #{t.name}
+                                    </h:column>
+
+                                    <h:column headerClass="rental_main_kbn">
+                                        <f:facet name="header">店舗名</f:facet>
+                                            #{t.kbn}
+                                    </h:column>
+
+                                    <h:column headerClass="rental_main_stay">
+                                        <f:facet name="header">貸出年月日</f:facet>
+                                    </h:column>
+
+
+                                    <h:column headerClass="rental_main_discount">
+                                        <f:facet name="header">返却予定日</f:facet>
+                                    </h:column>
+
+                                    
+                                    <h:column headerClass="rental_main_discount">
+                                        <f:facet name="header">社員番号</f:facet>
+                                    </h:column>
+
+                                    
+                                    <h:column headerClass="rental_main_discount">
+                                        <f:facet name="header">合計金額</f:facet>
+                                    </h:column>
+
+                                    
+                                    <h:column headerClass="rental_main_discount">
+                                        <f:facet name="header">貸出状況</f:facet>
+                                    </h:column>
+
+                                </h:dataTable>
+                            </fieldset>
+                        </div>
+
+                        <div class="return_update_button">
+                            <h:commandButton styleClass="btn btn-primary btn-lg" value="次 へ" action="create_payment.xhtml?faces-redirect=true"/>
+                        </div>
+                    </h:form>
+                </div>
+            </ui:define>
+
+        </ui:composition>
+    </h:body>
+</html>
