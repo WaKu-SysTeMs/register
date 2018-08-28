@@ -17,11 +17,12 @@
                     <h:form><div class="form-group">
                             <h:panelGrid columns="6" border="0">
                            
-                                <h:outputLabel styleClass="control-label">会員番号：</h:outputLabel>
+                                <h:outputLabel styleClass="control-label">貸出番号：</h:outputLabel>
                                 <h:outputText id="memberName" value="XXXXXXXX" />
-                                <h:outputText value="　　　　　　　　　　　　" />
                                 <h:outputLabel styleClass="control-label">会員名：</h:outputLabel>
                                 <h:outputText id="memberName" value="XX XXX" />
+                                <h:outputLabel styleClass="control-label">貸出日付：</h:outputLabel>
+                                <h:outputText id="memberName" value="XXXX/XX/XX" />
                             
                         </h:panelGrid>
                     </div>
@@ -39,27 +40,39 @@
                                         #{t.name}
                                     </h:column>
                                     
-                                    <h:column headerClass="return_list_adjust">
-                                        <f:facet name="header">店舗名</f:facet>
-                                        #{t.shop}
+                                    <h:column headerClass="">
+                                        <f:facet name="header"></f:facet>
                                     </h:column>
 
-                                    <h:column headerClass="return_main_date">
-                                        <f:facet name="header">貸出年月日</f:facet>
-                                        #{t.date1}
+                                    <h:column headerClass="">
+                                        <f:facet name="header"></f:facet>
                                     </h:column>
 
-                                    <h:column headerClass="return_main_date">
-                                        <f:facet name="header">返却予定日</f:facet>
-                                        #{t.date2}
+                                    <h:column headerClass="">
+                                        <f:facet name="header"></f:facet>
                                     </h:column>
 
-
-                                    <h:column headerClass="return_list_adjust">
-                                        <f:facet name="header">延滞金</f:facet>
-                                        #{t.money}
+                                    <h:column headerClass="">
+                                        <f:facet name="header"></f:facet>
                                     </h:column>
-
+　
+                                    <h:column headerClass="">
+                                        <f:facet name="header"></f:facet>
+                                    </h:column>
+　
+                                    <h:column headerClass="">
+                                        <f:facet name="header"></f:facet>
+                                    </h:column>
+　
+                                    <h:column headerClass="">
+                                        <f:facet name="header"></f:facet>
+                                    </h:column>
+                                    
+                                    <h:column headerClass="">
+                                        <f:facet name="header"></f:facet>
+                                        <h:commandButton styleClass="btn btn-danger btn-xs" value="無 効" action="#"/>
+                                    </h:column>
+                                    
                                 </h:dataTable>
                             </fieldset>
                         </div>
