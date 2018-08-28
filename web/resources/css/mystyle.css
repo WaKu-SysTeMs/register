@@ -336,3 +336,16 @@ div .member_admission{
 .hogehoge label{
     display: inline-block;
 }
+
+.hoge999 table{
+    width: 350px;
+}
+
+.test1 {
+	float: left;
+        margin: 0 20px;
+}
+
+.hoge1 {
+	overflow: hidden;
+}
