@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <link rel="stylesheet" type="text/css" href="../../resources/css/mystyle.css"/>
+    </h:head>
+    <h:body>
+        <ui:composition template="/templates/template01.xhtml">
+            <ui:define name="title">HCSビデオレンタル-返却-</ui:define>
+            <ui:define name="content">
+                <div class="container">
+                    <br/>
+                    
+                    <h:form><div class="form-group">
+                            <h:panelGrid columns="6" border="0" class="hoge999">
+                           
+                                <h:outputLabel styleClass="control-label">会員番号：</h:outputLabel>
+                                <h:inputText id="memberNum" required="true" value="#"
+                                             label="会員番号：" styleClass="form-control" />
+                                
+                                <h:outputLabel styleClass="control-label">会員名：</h:outputLabel>
+                                <h:inputText id="memberName" required="true" value="#"
+                                             label="会員名：" styleClass="form-control" />
+                                
+                                <h:outputLabel styleClass="control-label">生年月日：</h:outputLabel>   
+                                <h:panelGroup>
+                                    <h:inputText p:type="date" required="true" label="生年月日：" styleClass="form-control">
+                                        <f:convertDateTime pattern="yyyy-M-d" timeZone="Asia/Tokyo"/>
+                                    </h:inputText> 
+                                </h:panelGroup>
+                                         
+                        </h:panelGrid>
+                            <div class="hoge1">
+                                <div class="test1">
+                            <h:outputLabel styleClass="control-label">性別：</h:outputLabel>
+                            <h:panelGroup>
+                                    <h:selectOneRadio value="#{moriTest.test}" required="true" label="性別：">
+                                        <f:selectItems value="#{moriTest.langs}" />
+                                    </h:selectOneRadio>
+                            </h:panelGroup></div>
+                                <div class="test1">
+                                <h:outputLabel styleClass="control-label">会員状態：</h:outputLabel>
+                                <h:panelGroup>
+                                    <h:selectOneRadio value="#{moriTest.test3}" required="true" label="会員状態：">
+                                        <f:selectItems value="#{moriTest.langs3}" />
+                                    </h:selectOneRadio>
+                                </h:panelGroup></div>
+                                <div class="test1">
+                                <h:outputLabel styleClass="control-label">会員状況：</h:outputLabel>
+                                <h:panelGroup>
+                                    <h:selectOneRadio value="#{moriTest.test4}" required="true" label="会員状況：">
+                                        <f:selectItems value="#{moriTest.langs4}" />
+                                    </h:selectOneRadio>
+                                </h:panelGroup></div>
+                                <div class="test1">
+                                <h:outputLabel styleClass="control-label">仮入会：</h:outputLabel>
+                                <h:panelGroup>
+                                    <h:selectOneRadio value="#{moriTest.test5}" required="true" label="仮入会：">
+                                        <f:selectItems value="#{moriTest.langs5}" />
+                                    </h:selectOneRadio>
+                                </h:panelGroup></div><br/><div class="test1">
+                                <h:commandButton styleClass="btn btn-default" value="検 索" action="#" />
+                                </div>
+                            </div>
+                            
+                    </div>
+                        <div class="container panel-body return_main" >
+                            <fieldset>
+                                <h:dataTable value="#{returnBean.test}" var="t" styleClass="table table-striped table-bordered table-hover" 
+                                             columnClasses="return_main_num,return_main_name,return_main_date,return_main_date,return_main_delay,return_main_delete">
+                                    <h:column headerClass="return_main_num">
+                                        <f:facet name="header">番号</f:facet>
+                                        #{t.num}
+                                    </h:column>
+
+                                    <h:column headerClass="return_main_name">
+                                        <f:facet name="header">作品名</f:facet>
+                                        #{t.name}
+                                    </h:column>
+
+                                    <h:column headerClass="return_main_date">
+                                        <f:facet name="header">貸出年月日</f:facet>
+                                        #{t.date1}
+                                    </h:column>
+
+                                    <h:column headerClass="return_main_date">
+                                        <f:facet name="header">返却予定日</f:facet>
+                                        #{t.date2}
+                                    </h:column>
+
+
+                                    <h:column headerClass="return_main_delay">
+                                        <f:facet name="header">延滞金</f:facet>
+                                        #{t.money}
+                                    </h:column>
+
+
+                                    <h:column headerClass="return_main_delete">
+                                        <f:facet name="header"></f:facet>
+                                        <h:commandButton styleClass="btn btn-danger btn-xs" value="削 除" action="#"/>
+                                    </h:column>
+
+                                </h:dataTable>
+                            </fieldset>
+                        </div>
+                        <div class="return_update_button">
+                            <h:commandButton styleClass="btn btn-primary btn-lg" value="延滞金清算へ" action="update_delay.xhtml?faces-redirect=true"/>
+                            <h:commandButton styleClass="btn btn-primary btn-lg" value="次 へ" action="update_pay_off_miss.xhtml?faces-redirect=true"/>
+                        </div>
+                    </h:form>
+                </div>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

@@ -130,9 +130,9 @@
                         <div class="list-group">
                             <label class="list-group-item active text-center">マスタ管理</label>
                             <h:commandLink action="/pages/rental/list.xhtml" class="list-group-item">1. 貸出情報一覧</h:commandLink>
-                            <a href="pages/stock/list.xhtml" class="list-group-item">2. 在庫情報一覧</a>
-                            <a href="pages/product/list.xhtml" class="list-group-item">3. 商品情報一覧</a>
-                            <a href="pages/dvd/list.xhtml" class="list-group-item">4. DVD情報一覧</a>
+                            <h:commandLink action="/pages/stock/list.xhtml" class="list-group-item">2. 在庫情報一覧</h:commandLink>
+                            <h:commandLink action="/pages/product/list.xhtml?faces-redirect=true" class="list-group-item">3. 商品情報一覧</h:commandLink>
+                            <h:commandLink action="/pages/dvd/list.xhtml?faces-redirect=true" class="list-group-item">4. DVD情報一覧</h:commandLink>
                         </div>
                     </div>
 
@@ -150,15 +150,16 @@
                     <div class="col-lg-3">
                         <div class="list-group">
                             <label class="list-group-item active text-center">セール</label>
-                            <a href="pages/sale/list.xhtml" class="list-group-item">1. セール情報一覧</a>
-                            <a href="pages/sale/target_list.xhtml" class="list-group-item">2. セール対象商品一覧</a>
+                            <h:commandLink action="pages/sale/list.xhtml" class="list-group-item">1. セール情報一覧</h:commandLink>
+                            <h:commandLink action="pages/sale/target_list.xhtml" class="list-group-item">2. セール対象商品一覧</h:commandLink>
                         </div>
                     </div>
 
                     <div class="col-lg-3">
                         <div class="list-group">
-                            <a href="pages/stock/delete.xhtml" class="list-group-item" style="text-align: center;">
-                                <span class="glyphicon glyphicon-trash"></span> 廃棄処理</a>
+                            <h:commandLink action="pages/stock/delete.xhtml" class="list-group-item" style="text-align: center;">
+                                <span class="glyphicon glyphicon-trash"></span> 廃棄処理
+                            </h:commandLink>
                         </div>
                     </div>
                     
