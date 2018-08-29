@@ -309,7 +309,7 @@ div .rental_payment_main{                 /*  */
 
 div .member_admission{
     font-size: 120%;
-    width: 400px;
+    width: 800px;
     height: 0px;
     top: 100px;
     bottom: 0;
@@ -321,6 +321,7 @@ div .member_admission{
     line-height: 10px;
     text-align: right;
 }
+
 
 .member_admission_button{
     width: 250px;
@@ -334,8 +335,8 @@ div .member_admission{
     text-align: center;
 }
 
-.hogehoge label{
-    display: inline-block;
+.member_create_checkbox{
+    text-align: left;
 }
 
 .hoge999 table{

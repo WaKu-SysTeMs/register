@@ -24,31 +24,31 @@ and open the template in the editor.
                             <h:panelGrid columns="5">
 
 
-                                <h:outputLabel styleClass="control-label">作品名　：</h:outputLabel>
+                                <h:outputLabel styleClass="control-label">作品名：</h:outputLabel>
 
-                                <h:inputText id="title" required="true" value="#" label="作品名　：" styleClass="form-control">
+                                <h:inputText id="memberNum" required="true" value="#" label="作品名：" styleClass="form-control">
                                     <f:ajax event="change" execute="@this" listener="#"/>
                                 </h:inputText>
 
 
-                                <h:outputLabel styleClass="control-label">監　督　：</h:outputLabel>
+                                <h:outputLabel styleClass="control-label">商品番号：</h:outputLabel>
 
-                                <h:inputText id="director" required="true" value="#" label="監　督　：" styleClass="form-control">
+                                <h:inputText id="storeId" required="true" value="#" label="商品番号：" styleClass="form-control">
                                     <f:ajax event="change" execute="@this" listener="#"/>
                                 </h:inputText>
                                 <h:outputText/>
 
 
-                                <h:outputLabel styleClass="control-label">商品番号：</h:outputLabel>
+                                <h:outputLabel styleClass="control-label">ジャンル：</h:outputLabel>
 
-                                <h:inputText id="productNum" required="true" value="#" label="商品番号：" styleClass="form-control">
+                                <h:inputText id="rentalDate" required="true" value="#" label="ジャンル：" styleClass="form-control">
                                     <f:ajax event="change" execute="@this" listener="#"/>
                                 </h:inputText>
 
 
-                                <h:outputLabel styleClass="control-label">ジャンル：</h:outputLabel>
+                                <h:outputLabel styleClass="control-label">店舗名　：</h:outputLabel>
 
-                                <h:inputText id="genre" required="true" value="#" label="ジャンル：" styleClass="form-control">
+                                <h:inputText id="rentalStatus" required="true" value="#" label="店舗名　：" styleClass="form-control">
                                     <f:ajax event="change" execute="@this" listener="#"/>
                                 </h:inputText>
 
@@ -63,37 +63,31 @@ and open the template in the editor.
                         <div class="container panel-body manyList" >
                             <fieldset>
                                 <h:dataTable value="#" var="t" styleClass="table table-striped table-bordered table-hover" 
-                                             columnClasses="product_list_productNum,product_list_title,product_list_genre,product_list_playtime,product_list_director,product_list_kbn">
-                                    <h:column headerClass="product_list_productNum">
-                                        <f:facet name="header">商品番号</f:facet>
+                                             columnClasses="dvd_list_dvdNum,dvd_list_title,dvd_list_storeName,dvd_list_productNum,dvd_list_states">
+                                    <h:column headerClass="dvd_list_dvdNum">
+                                        <f:facet name="header">DVD番号</f:facet>
                                     </h:column>
 
-                                    <h:column headerClass="product_list_title">
+                                    <h:column headerClass="dvd_list_title">
                                         <f:facet name="header">作品名</f:facet>
                                     </h:column>
 
-                                    <h:column headerClass="product_list_genre">
-                                        <f:facet name="header">ジャンル</f:facet>
+                                    <h:column headerClass="dvd_list_storeName">
+                                        <f:facet name="header">店舗名</f:facet>
                                     </h:column>
 
-                                    <h:column headerClass="product_list_playtime">
-                                        <f:facet name="header">再生時間</f:facet>
+                                    <h:column headerClass="dvd_list_productNum">
+                                        <f:facet name="header">商品番号</f:facet>
                                     </h:column>
 
-
-                                    <h:column headerClass="product_list_director">
-                                        <f:facet name="header">監督</f:facet>
-                                    </h:column>
-
-                                    
-                                    <h:column headerClass="product_list_kbn">
-                                        <f:facet name="header">新旧区分</f:facet>
+                                    <h:column headerClass="dvd_list_states">
+                                        <f:facet name="header">貸出状況</f:facet>
                                     </h:column>
 
                                 </h:dataTable>
                             </fieldset>
                         </div>
-
+                        
                     </h:form>
                 </div>
             </ui:define>

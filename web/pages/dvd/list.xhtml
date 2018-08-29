@@ -24,9 +24,9 @@ and open the template in the editor.
                             <h:panelGrid columns="5">
 
 
-                                <h:outputLabel styleClass="control-label">DVD番号：</h:outputLabel>
+                                <h:outputLabel styleClass="control-label">ＤＶＤ番号：</h:outputLabel>
 
-                                <h:inputText id="memberNum" required="true" value="#" label="DVD番号：" styleClass="form-control">
+                                <h:inputText id="memberNum" required="true" value="#" label="ＤＶＤ番号：" styleClass="form-control">
                                     <f:ajax event="change" execute="@this" listener="#"/>
                                 </h:inputText>
 
@@ -39,16 +39,16 @@ and open the template in the editor.
                                 <h:outputText/>
 
 
-                                <h:outputLabel styleClass="control-label">作品名　：</h:outputLabel>
+                                <h:outputLabel styleClass="control-label">作　品　名：</h:outputLabel>
 
-                                <h:inputText id="rentalDate" required="true" value="#" label="作品名：" styleClass="form-control">
+                                <h:inputText id="rentalDate" required="true" value="#" label="作　品　名：" styleClass="form-control">
                                     <f:ajax event="change" execute="@this" listener="#"/>
                                 </h:inputText>
 
 
                                 <h:outputLabel styleClass="control-label">店舗名　：</h:outputLabel>
 
-                                <h:inputText id="rentalStatus" required="true" value="#" label="店舗名：" styleClass="form-control">
+                                <h:inputText id="rentalStatus" required="true" value="#" label="店舗名　：" styleClass="form-control">
                                     <f:ajax event="change" execute="@this" listener="#"/>
                                 </h:inputText>
 
@@ -60,7 +60,7 @@ and open the template in the editor.
                         </div>
 
 
-                        <div class="container panel-body rental_main" >
+                        <div class="container panel-body manyList" >
                             <fieldset>
                                 <h:dataTable value="#" var="t" styleClass="table table-striped table-bordered table-hover" 
                                              columnClasses="dvd_list_dvdNum,dvd_list_title,dvd_list_storeName,dvd_list_productNum,dvd_list_states">
@@ -79,7 +79,6 @@ and open the template in the editor.
                                     <h:column headerClass="dvd_list_productNum">
                                         <f:facet name="header">商品番号</f:facet>
                                     </h:column>
-
 
                                     <h:column headerClass="dvd_list_states">
                                         <f:facet name="header">貸出状況</f:facet>

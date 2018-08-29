@@ -23,7 +23,7 @@ and open the template in the editor.
                     <h:form>
                         <div class="form-group">
                             <div class="member_admission">
-                            <h:panelGrid columns="2" border="0">
+                                <h:panelGrid columns="2" border="0" columnClasses="hoge10,hoge11">
 
                                 <h:outputLabel styleClass="control-label">会員名：</h:outputLabel>
                                 <h:panelGroup>
@@ -91,13 +91,12 @@ and open the template in the editor.
                                 
                                 <h:outputLabel styleClass="control-label">職業：</h:outputLabel>
                                 <h:panelGroup>
-                                    <div class="hogehoge">
-                                    <h:selectOneRadio value="#{moriTest.test2}" required="true" label="職業：">
-                                        <label><f:selectItems value="#{moriTest.langs2}" /></label>
-                                    </h:selectOneRadio>
+                                    <div class="member_create_checkbox">
+                                        <h:selectOneRadio value="#{moriTest.test2}" required="true" label="職業：" layout="pageDirection">
+                                            <f:selectItems value="#{moriTest.langs2}" />
+                                        </h:selectOneRadio>
                                     </div>
                                 </h:panelGroup>
-                                
                                 
                             </h:panelGrid>
                                 
