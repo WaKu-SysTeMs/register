@@ -1,7 +1,7 @@
 /*
  * DB処理用　汎用クラス(継承)
  */
-package db;
+package util;
 
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -28,11 +28,11 @@ public abstract class SuperDb<T> {
         em.persist(entity);
     }
 
-    public void update(T entity) {      // 更新
+    public void edit(T entity) {      // 更新
         em.merge(entity);
     }
 
-    public void delete(T entity) {      // 削除
+    public void remove(T entity) {      // 削除
         em.remove(em.merge(entity));
     }
 
