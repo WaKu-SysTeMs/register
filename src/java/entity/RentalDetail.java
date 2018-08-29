@@ -32,6 +32,7 @@ public class RentalDetail implements Serializable {
 
     @Id
     @Size(max = 2)
+    @Column(length = 2)
     private Integer detail_num;                 // 明細番号
 
     @NotNull
@@ -57,12 +58,15 @@ public class RentalDetail implements Serializable {
 //    @Size(max = 1)
 //    private PriceList stay_num;             //泊数ID(FK)
     @Size(max = 1)
+    @Column(length = 1)
     private char discount_flg;          //割引フラグ
 
     @Size(max = 3)
+    @Column(length = 3)
     private Integer subtotal;           // 小計
 
     @Size(max = 1)
+    @Column(length = 1)
     private char invalid_flg;           //無効フラグ
 
     @Transient                          // シリアライズしない

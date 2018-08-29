@@ -31,6 +31,7 @@ public class PriceList implements Serializable {
     private StayList stay_num;                 // 泊数ID(FK)
 
     @Size(max = 3)
+    @Column(length = 3)
     private Integer price;                     // 料金
 
     @OneToMany(mappedBy = "release_kbn", cascade = CascadeType.ALL)

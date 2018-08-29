@@ -24,6 +24,7 @@ public class RentalMax implements Serializable {
     private Member member_num;          // 会員番号
 
     @Size(max = 2)
+    @Column(length = 2)
     private Integer borrowing_cnt;      // 借入枚数
 
     @Transient                           // シリアライズしない

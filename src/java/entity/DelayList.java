@@ -30,6 +30,7 @@ public class DelayList implements Serializable {
     private Date payment_date;             // 支払日
 
     @Size(max = 9)
+    @Column(length = 9)
     private Integer delay;                 // 延滞料金
 
     @Transient                  // シリアライズしない

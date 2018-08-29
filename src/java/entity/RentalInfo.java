@@ -39,6 +39,7 @@ public class RentalInfo implements Serializable {
     private Date rental_date;            // 貸出年月日
 
     @Size(max = 6)
+    @Column(length = 6)
     private Integer amount;                  // 合計金額
 
     @NotNull

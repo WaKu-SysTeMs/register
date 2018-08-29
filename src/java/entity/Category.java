@@ -8,6 +8,7 @@ import java.util.List;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
+
 /**
  *
  * @author s20163037
@@ -24,9 +25,11 @@ public class Category implements Serializable {
     @Id
     @NotNull
     @Size(max = 3)
+    @Column(length = 3)
     private String category_id;         // ジャンルID
 
-    @Size(max = 20)
+    @Size(max = 30)
+    @Column(length = 30)
     private String category_name;       // ジャンル名
 
     @OneToMany(mappedBy = "fav_category", cascade = CascadeType.ALL)
@@ -98,7 +101,5 @@ public class Category implements Serializable {
     public void setEditable(boolean editable) {
         this.editable = editable;
     }
-
-    
 
 }

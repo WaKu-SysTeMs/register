@@ -5,12 +5,7 @@ package entity;
 
 import java.io.Serializable;
 import java.util.List;
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-import javax.persistence.Transient;
+import javax.persistence.*;
 import javax.validation.constraints.Size;
 
 /**
@@ -25,9 +20,11 @@ public class StayList implements Serializable {
 
     @Id
     @Size(max = 1)
+    @Column(length = 1)
     private String stay_num;        // 泊数ID
 
     @Size(max = 4)
+    @Column(length = 4)
     private String stay_name;       // 泊数名
 
     @OneToMany(mappedBy = "stay_num", cascade = CascadeType.ALL)

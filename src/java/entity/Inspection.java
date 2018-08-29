@@ -20,6 +20,7 @@ public class Inspection implements Serializable {
     private static final long serialVersionUID = 1L;  // シリアルバージョンUIDのバージョン管理
 
     @Id
+    @Min(1)
     private Integer inspection_num;         // レジ〆番号
 
     @NotNull
@@ -32,10 +33,12 @@ public class Inspection implements Serializable {
 
     @NotNull
     @Size(max = 7)
+    @Column(length = 7)
     private Integer inspection_sum;         // レジ〆金額合計
 
     @NotNull
     @Size(max = 6)
+    @Column(length = 6)
     private Integer misc_pl_amt;            // 雑損益額
 
     @Size(max = 10)

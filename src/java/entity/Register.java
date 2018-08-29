@@ -21,6 +21,7 @@ public class Register implements Serializable {
 
     @Id
     @Size(max = 4)
+    @Column(length = 4)
     private String register_id;         // レジID
 
     @NotNull
@@ -29,6 +30,7 @@ public class Register implements Serializable {
     private StoreInfo store_id;             // 店舗ID(FK)
 
     @Size(max = 7)
+    @Column(length = 7)
     private Integer register_amt;           // レジ内金額
 
     @OneToMany(mappedBy = "register_id", cascade = CascadeType.ALL)

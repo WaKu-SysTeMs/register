@@ -8,30 +8,33 @@ import java.util.List;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
+
 /**
  *
  * @author s20163037
  */
 @Entity
-@Table(name="role_info")
+@Table(name = "role_info")
 public class RoleInfo implements Serializable {
 
     private static final long serialVersionUID = 1L;  // シリアルバージョンUIDのバージョン管理
-    
-    @Id @Size(max=1)
+
+    @Id
+    @Size(max = 1)
+    @Column(length = 1)
     private String role_id;         // ロールID
-    
-    @Size(max=7)
+
+    @Size(max = 7)
+    @Column(length = 7)
     private String role_name;       // 役職
-    
+
     @OneToMany(mappedBy = "role_id", cascade = CascadeType.ALL)
     private List<Employee> employee;
-    
+
     @Transient                           // シリアライズしない
     private boolean editable;
-    
-    /* コンストラクタ */
 
+    /* コンストラクタ */
     public RoleInfo() {
     }
 
@@ -39,9 +42,8 @@ public class RoleInfo implements Serializable {
         this.role_id = role_id;
         this.role_name = role_name;
     }
-    
-    /* ゲッター、セッター */
 
+    /* ゲッター、セッター */
     public String getRole_id() {
         return role_id;
     }
@@ -73,5 +75,5 @@ public class RoleInfo implements Serializable {
     public void setEditable(boolean editable) {
         this.editable = editable;
     }
-    
+
 }
