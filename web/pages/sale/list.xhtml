@@ -16,45 +16,52 @@ and open the template in the editor.
     </h:head>
     <h:body>
         <ui:composition template="/templates/template01.xhtml">
-            <ui:define name="title">HCSビデオレンタル-貸出c-</ui:define>>
+            <ui:define name="title">HCSビデオレンタル-セール-</ui:define>
             <ui:define name="content"><br/>
                 <div class="container">
 
                     <h:form><div class="form-group">
-                            <h:panelGrid columns="5">
+                            <h:panelGrid columns="7">
+                                
+                                <h:outputLabel styleClass="control-label">セールＩＤ：</h:outputLabel>
 
+                                <h:inputText id="saleId" required="true" value="#" label="セールＩＤ：" styleClass="form-control">
+                                    <f:ajax event="change" execute="@this" listener="#"/>
+                                </h:inputText>
+                                
+                                <h:outputLabel styleClass="control-label">セール名　：</h:outputLabel>
 
-                                <h:outputLabel styleClass="control-label">会員番号　：</h:outputLabel>
-
-                                <h:inputText id="memberNum" required="true" value="#" label="会員番号：" styleClass="form-control">
+                                <h:inputText id="saleName" required="true" value="#" label="セール名　：" styleClass="form-control">
                                     <f:ajax event="change" execute="@this" listener="#"/>
                                 </h:inputText>
 
+                                <h:outputLabel styleClass="control-label">作　品　名：</h:outputLabel>
 
-                                <h:outputLabel styleClass="control-label">店舗名　：</h:outputLabel>
-
-                                <h:inputText id="storeId" required="true" value="#" label="店舗名：" styleClass="form-control">
+                                <h:inputText id="title" required="true" value="#" label="作　品　名：" styleClass="form-control">
                                     <f:ajax event="change" execute="@this" listener="#"/>
                                 </h:inputText>
                                 <h:outputText/>
 
-
-                                <h:outputLabel styleClass="control-label">貸出年月日：</h:outputLabel>
-
-                                <h:inputText id="rentalDate" required="true" value="#" label="貸出年月日：" styleClass="form-control">
-                                    <f:ajax event="change" execute="@this" listener="#"/>
-                                </h:inputText>
-
-
-                                <h:outputLabel styleClass="control-label">貸出状況：</h:outputLabel>
-
-                                <h:inputText id="rentalStatus" required="true" value="#" label="貸出状況：" styleClass="form-control">
-                                    <f:ajax event="change" execute="@this" listener="#"/>
-                                </h:inputText>
-
-
+                                <h:outputLabel styleClass="control-label">開始年月日：</h:outputLabel>
+                                <h:panelGroup>
+                                    <h:inputText p:type="date" required="true" label="開始年月日：" styleClass="form-control">
+                                        <f:convertDateTime pattern="yyyy-M-d" timeZone="Asia/Tokyo"/>
+                                    </h:inputText> 
+                                </h:panelGroup>
+                                
+                                <h:outputLabel styleClass="control-label">終了年月日：</h:outputLabel>
+                                <h:panelGroup>
+                                    <h:inputText p:type="date" required="true" label="終了年月日：" styleClass="form-control">
+                                        <f:convertDateTime pattern="yyyy-M-d" timeZone="Asia/Tokyo"/>
+                                    </h:inputText> 
+                                </h:panelGroup>
+                                
+                                <h:outputLabel styleClass="control-label">店　舗　名：</h:outputLabel>
+                                <h:selectOneMenu value="#{moriTest.test6}" styleClass="sel" class="test5">
+                                    <f:selectItems value="#{moriTest.langs6}"/>
+                                </h:selectOneMenu>
+                                
                                 <h:commandButton styleClass="btn btn-default" value="検 索" action="#"/>
-
 
                             </h:panelGrid>
                         </div>
