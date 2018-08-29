@@ -39,14 +39,14 @@ and open the template in the editor.
                                 <h:outputText/>
 
 
-                                <h:outputLabel styleClass="control-label">作品名：</h:outputLabel>
+                                <h:outputLabel styleClass="control-label">作品名　：</h:outputLabel>
 
                                 <h:inputText id="rentalDate" required="true" value="#" label="作品名：" styleClass="form-control">
                                     <f:ajax event="change" execute="@this" listener="#"/>
                                 </h:inputText>
 
 
-                                <h:outputLabel styleClass="control-label">店舗名：</h:outputLabel>
+                                <h:outputLabel styleClass="control-label">店舗名　：</h:outputLabel>
 
                                 <h:inputText id="rentalStatus" required="true" value="#" label="店舗名：" styleClass="form-control">
                                     <f:ajax event="change" execute="@this" listener="#"/>
@@ -63,53 +63,32 @@ and open the template in the editor.
                         <div class="container panel-body rental_main" >
                             <fieldset>
                                 <h:dataTable value="#" var="t" styleClass="table table-striped table-bordered table-hover" 
-                                             columnClasses="">
-                                    <h:column headerClass="rental_main_num">
-                                        <f:facet name="header">貸出番号</f:facet>
-                                            #{t.num}
+                                             columnClasses="dvd_list_dvdNum,dvd_list_title,dvd_list_storeName,dvd_list_productNum,dvd_list_states">
+                                    <h:column headerClass="dvd_list_dvdNum">
+                                        <f:facet name="header">DVD番号</f:facet>
                                     </h:column>
 
-                                    <h:column headerClass="rental_main_name">
-                                        <f:facet name="header">会員番号</f:facet>
-                                            #{t.name}
+                                    <h:column headerClass="dvd_list_title">
+                                        <f:facet name="header">作品名</f:facet>
                                     </h:column>
 
-                                    <h:column headerClass="rental_main_kbn">
+                                    <h:column headerClass="dvd_list_storeName">
                                         <f:facet name="header">店舗名</f:facet>
-                                            #{t.kbn}
                                     </h:column>
 
-                                    <h:column headerClass="rental_main_stay">
-                                        <f:facet name="header">貸出年月日</f:facet>
+                                    <h:column headerClass="dvd_list_productNum">
+                                        <f:facet name="header">商品番号</f:facet>
                                     </h:column>
 
 
-                                    <h:column headerClass="rental_main_discount">
-                                        <f:facet name="header">返却予定日</f:facet>
-                                    </h:column>
-
-                                    
-                                    <h:column headerClass="rental_main_discount">
-                                        <f:facet name="header">社員番号</f:facet>
-                                    </h:column>
-
-                                    
-                                    <h:column headerClass="rental_main_discount">
-                                        <f:facet name="header">合計金額</f:facet>
-                                    </h:column>
-
-                                    
-                                    <h:column headerClass="rental_main_discount">
+                                    <h:column headerClass="dvd_list_states">
                                         <f:facet name="header">貸出状況</f:facet>
                                     </h:column>
 
                                 </h:dataTable>
                             </fieldset>
                         </div>
-
-                        <div class="return_update_button">
-                            <h:commandButton styleClass="btn btn-primary btn-lg" value="次 へ" action="create_payment.xhtml?faces-redirect=true"/>
-                        </div>
+                        
                     </h:form>
                 </div>
             </ui:define>

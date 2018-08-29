@@ -16,7 +16,7 @@
                     <br/>
                     
                     <h:form><div class="form-group">
-                            <h:panelGrid columns="6" border="0" class="hoge999">
+                            <h:panelGrid columns="4" border="0" class="hoge999">
                            
                                 <h:outputLabel styleClass="control-label">会員番号：</h:outputLabel>
                                 <h:inputText id="memberNum" required="true" value="#"
@@ -32,6 +32,10 @@
                                         <f:convertDateTime pattern="yyyy-M-d" timeZone="Asia/Tokyo"/>
                                     </h:inputText> 
                                 </h:panelGroup>
+                                
+                                <h:outputLabel styleClass="control-label">会員名（かな）：</h:outputLabel>
+                                <h:inputText id="memberNamePhonetic" required="true" value="#"
+                                             label="会員名（かな）：" styleClass="form-control" />
                                          
                         </h:panelGrid>
                             <div class="hoge1">
@@ -68,49 +72,38 @@
                             </div>
                             
                     </div>
-                        <div class="container panel-body return_main" >
+                        <div class="container panel-body memberList" >
                             <fieldset>
-                                <h:dataTable value="#{returnBean.test}" var="t" styleClass="table table-striped table-bordered table-hover" 
-                                             columnClasses="return_main_num,return_main_name,return_main_date,return_main_date,return_main_delay,return_main_delete">
-                                    <h:column headerClass="return_main_num">
-                                        <f:facet name="header">番号</f:facet>
-                                        #{t.num}
+                                <h:dataTable value="#" var="t" styleClass="table table-striped table-bordered table-hover" 
+                                             columnClasses="">
+                                    <h:column headerClass="member_list_memberNum">
+                                        <f:facet name="header">会員番号</f:facet>
                                     </h:column>
 
-                                    <h:column headerClass="return_main_name">
-                                        <f:facet name="header">作品名</f:facet>
-                                        #{t.name}
+                                    <h:column headerClass="member_list_memberName">
+                                        <f:facet name="header">会員名</f:facet>
                                     </h:column>
 
-                                    <h:column headerClass="return_main_date">
-                                        <f:facet name="header">貸出年月日</f:facet>
-                                        #{t.date1}
+                                    <h:column headerClass="member_list_memberNamePhonetic">
+                                        <f:facet name="header">会員名（かな）</f:facet>
                                     </h:column>
 
-                                    <h:column headerClass="return_main_date">
-                                        <f:facet name="header">返却予定日</f:facet>
-                                        #{t.date2}
+                                    <h:column headerClass="member_list_birthday">
+                                        <f:facet name="header">生年月日</f:facet>
                                     </h:column>
 
-
-                                    <h:column headerClass="return_main_delay">
-                                        <f:facet name="header">延滞金</f:facet>
-                                        #{t.money}
+                                    <h:column headerClass="member_list_sex">
+                                        <f:facet name="header">性別</f:facet>
                                     </h:column>
-
-
-                                    <h:column headerClass="return_main_delete">
-                                        <f:facet name="header"></f:facet>
-                                        <h:commandButton styleClass="btn btn-danger btn-xs" value="削 除" action="#"/>
+                                    
+                                    <h:column headerClass="member_list_quit">
+                                        <f:facet name="header">会員状況</f:facet>
                                     </h:column>
-
+                                    
                                 </h:dataTable>
                             </fieldset>
                         </div>
-                        <div class="return_update_button">
-                            <h:commandButton styleClass="btn btn-primary btn-lg" value="延滞金清算へ" action="update_delay.xhtml?faces-redirect=true"/>
-                            <h:commandButton styleClass="btn btn-primary btn-lg" value="次 へ" action="update_pay_off_miss.xhtml?faces-redirect=true"/>
-                        </div>
+                        
                     </h:form>
                 </div>
             </ui:define>
