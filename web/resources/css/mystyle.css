@@ -375,3 +375,47 @@ div .memberList tbody{    /* 返却メイン画面スクロール調整 */
   overflow-y: scroll;
   height: 268px;
 }
+
+.dvd_list_dvdNum{           /* DVD情報一覧画面調整用 */
+    width: 175px;
+}
+
+.dvd_list_title{           /* DVD情報一覧画面調整用 */
+    width: 580px;
+}
+
+.dvd_list_storeName{           /* DVD情報一覧画面調整用 */
+    width: 160px;
+}
+
+.dvd_list_productNum{           /* DVD情報一覧画面調整用 */
+    width: 175px;
+}
+
+.dvd_list_states{           /* DVD情報一覧画面調整用 */
+    width: 160px;
+}
+
+.product_list_productNum{           /* 商品情報一覧画面調整用 */
+    width: 175px;
+}
+
+.product_list_title{           /* 商品情報一覧画面調整用 */
+    width: 500px;
+}
+
+.product_list_genre{           /* 商品情報一覧画面調整用 */
+    width: 200px;
+}
+
+.product_list_playtime{           /* 商品情報一覧画面調整用 */
+    width: 125px;
+}
+
+.product_list_director{           /* 商品情報一覧画面調整用 */
+    width: 125px;
+}
+
+.product_list_kbn{           /* 商品情報一覧画面調整用 */
+    width: 125px;
+}
