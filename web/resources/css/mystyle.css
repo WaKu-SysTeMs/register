@@ -365,3 +365,13 @@ div .member_createconfirm{
     line-height: 10px;
     text-align: right;
 }
+
+.memberList{              /* 返却メイン画面フォントサイズ調整 */
+    font-size: 120%;
+}
+
+div .memberList tbody{    /* 返却メイン画面スクロール調整 */
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 268px;
+}
