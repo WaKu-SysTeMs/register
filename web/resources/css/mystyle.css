@@ -373,5 +373,5 @@ div .member_createconfirm{
 div .memberList tbody{    /* 返却メイン画面スクロール調整 */
   overflow-x: hidden;
   overflow-y: scroll;
-  height: 270px;
+  height: 268px;
 }
