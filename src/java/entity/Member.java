@@ -46,8 +46,8 @@ public class Member implements Serializable {
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date birth_date;        // 生年月日
 
-    @Size(max = 2)                   // もしくは@patternで
-    @Column(length = 2)
+    @Size(max = 3)                   // もしくは@patternで
+    @Column(length = 3)
     private String sex;             // 性別
 
     @Size(max = 8)                   // もしくは@patternで
