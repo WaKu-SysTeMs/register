@@ -63,43 +63,36 @@ and open the template in the editor.
                         <div class="container panel-body rental_main" >
                             <fieldset>
                                 <h:dataTable value="#{rentalBean.test}" var="t" styleClass="table table-striped table-bordered table-hover" 
-                                             columnClasses="">
-                                    <h:column headerClass="rental_main_num">
+                                             columnClasses="rental_list_rentalNum,renta_list_memberNum,rental_list_storeName,rental_list_rentalDate,rental_list_planDate,rental_list_employeeNum,rental_list_amount,rental_list_states">
+                                    <h:column headerClass="rental_list_rentalNum">
                                         <f:facet name="header">貸出番号</f:facet>
-                                            #{t.num}
                                     </h:column>
 
-                                    <h:column headerClass="rental_main_name">
+                                    <h:column headerClass="renta_list_memberNum">
                                         <f:facet name="header">会員番号</f:facet>
-                                            #{t.name}
                                     </h:column>
 
-                                    <h:column headerClass="rental_main_kbn">
+                                    <h:column headerClass="rental_list_storeName">
                                         <f:facet name="header">店舗名</f:facet>
-                                            #{t.kbn}
                                     </h:column>
 
-                                    <h:column headerClass="rental_main_stay">
+                                    <h:column headerClass="rental_list_rentalDate">
                                         <f:facet name="header">貸出年月日</f:facet>
                                     </h:column>
 
-
-                                    <h:column headerClass="rental_main_discount">
+                                    <h:column headerClass="rental_list_planDate">
                                         <f:facet name="header">返却予定日</f:facet>
                                     </h:column>
-
-                                    
-                                    <h:column headerClass="rental_main_discount">
+                           
+                                    <h:column headerClass="rental_list_employeeNum">
                                         <f:facet name="header">社員番号</f:facet>
                                     </h:column>
-
                                     
-                                    <h:column headerClass="rental_main_discount">
+                                    <h:column headerClass="rental_list_amount">
                                         <f:facet name="header">合計金額</f:facet>
                                     </h:column>
-
                                     
-                                    <h:column headerClass="rental_main_discount">
+                                    <h:column headerClass="rental_list_states">
                                         <f:facet name="header">貸出状況</f:facet>
                                     </h:column>
 
@@ -107,9 +100,6 @@ and open the template in the editor.
                             </fieldset>
                         </div>
 
-                        <div class="return_update_button">
-                            <h:commandButton styleClass="btn btn-primary btn-lg" value="次 へ" action="create_payment.xhtml?faces-redirect=true"/>
-                        </div>
                     </h:form>
                 </div>
             </ui:define>

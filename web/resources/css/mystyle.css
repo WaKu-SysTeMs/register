@@ -401,7 +401,7 @@ div .memberList tbody{    /* 返却メイン画面スクロール調整 */
 }
 
 .product_list_title{           /* 商品情報一覧画面調整用 */
-    width: 500px;
+    width: 450px;
 }
 
 .product_list_genre{           /* 商品情報一覧画面調整用 */
@@ -413,9 +413,41 @@ div .memberList tbody{    /* 返却メイン画面スクロール調整 */
 }
 
 .product_list_director{           /* 商品情報一覧画面調整用 */
-    width: 125px;
+    width: 175px;
 }
 
 .product_list_kbn{           /* 商品情報一覧画面調整用 */
     width: 125px;
+}
+
+.rental_list_rentalNum{
+    width: 150px;
+}
+
+.renta_list_memberNum{
+    width: 150px;
+}
+
+.rental_list_storeName{
+    width: 150px;
+}
+
+.rental_list_rentalDate{
+    width: 175px;
+}
+
+.rental_list_planDate{
+    width: 175px;
+}
+
+.rental_list_employeeNum{
+    width: 150px;
+}
+
+.rental_list_amount{
+    width: 150px;
+}
+
+.rental_list_states{
+    width: 150px;
 }
