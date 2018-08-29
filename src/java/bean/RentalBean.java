@@ -6,6 +6,7 @@
 package bean;
 
 import db.RentalDb;
+import entity.RentalInfo;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -26,6 +27,8 @@ import javax.enterprise.context.ConversationScoped;
 @Named
 @ConversationScoped
 public class RentalBean implements Serializable {
+    
+
 
 
     @EJB
@@ -38,6 +41,8 @@ public class RentalBean implements Serializable {
     Conversation conv;
     
     private int x = 1;
+    
+    private List<RentalInfo> rental;
     
     private List <TestRental> test;
     {

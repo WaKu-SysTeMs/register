@@ -7,6 +7,7 @@
       xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
     <h:head>
         <link rel="stylesheet" type="text/css" href="../../resources/css/mystyle.css"/>
+        <link rel="stylesheet" type="text/css" href="../../resources/css/common.css"/>
     </h:head>
     <h:body>
         <ui:composition template="/templates/template01.xhtml">
@@ -14,96 +15,103 @@
             <ui:define name="content">
                 <div class="container">
                     <br/>
-                    
+
                     <h:form><div class="form-group">
                             <h:panelGrid columns="4" border="0" class="hoge999">
-                           
+
                                 <h:outputLabel styleClass="control-label">会員番号：</h:outputLabel>
                                 <h:inputText id="memberNum" required="true" value="#"
                                              label="会員番号：" styleClass="form-control" />
-                                
+
                                 <h:outputLabel styleClass="control-label">会員名：</h:outputLabel>
                                 <h:inputText id="memberName" required="true" value="#"
                                              label="会員名：" styleClass="form-control" />
-                                
+
                                 <h:outputLabel styleClass="control-label">生年月日：</h:outputLabel>   
                                 <h:panelGroup>
                                     <h:inputText p:type="date" required="true" label="生年月日：" styleClass="form-control">
                                         <f:convertDateTime pattern="yyyy-M-d" timeZone="Asia/Tokyo"/>
                                     </h:inputText> 
                                 </h:panelGroup>
-                                
+
                                 <h:outputLabel styleClass="control-label">会員名（かな）：</h:outputLabel>
                                 <h:inputText id="memberNamePhonetic" required="true" value="#"
                                              label="会員名（かな）：" styleClass="form-control" />
-                                         
-                        </h:panelGrid>
+
+                            </h:panelGrid>
                             <div class="hoge1">
                                 <div class="test1">
-                            <h:outputLabel styleClass="control-label">性別：</h:outputLabel>
-                            <h:panelGroup>
-                                    <h:selectOneRadio value="#{moriTest.test}" required="true" label="性別：">
-                                        <f:selectItems value="#{moriTest.langs}" />
-                                    </h:selectOneRadio>
-                            </h:panelGroup></div>
+                                    <h:outputLabel styleClass="control-label">性別：</h:outputLabel>
+                                    <h:panelGroup>
+                                        <h:selectOneRadio value="#{moriTest.test}" required="true" label="性別：">
+                                            <f:selectItems value="#{moriTest.langs}" />
+                                        </h:selectOneRadio>
+                                    </h:panelGroup></div>
                                 <div class="test1">
-                                <h:outputLabel styleClass="control-label">会員状態：</h:outputLabel>
-                                <h:panelGroup>
-                                    <h:selectOneRadio value="#{moriTest.test3}" required="true" label="会員状態：">
-                                        <f:selectItems value="#{moriTest.langs3}" />
-                                    </h:selectOneRadio>
-                                </h:panelGroup></div>
+                                    <h:outputLabel styleClass="control-label">会員状態：</h:outputLabel>
+                                    <h:panelGroup>
+                                        <h:selectOneRadio value="#{moriTest.test3}" required="true" label="会員状態：">
+                                            <f:selectItems value="#{moriTest.langs3}" />
+                                        </h:selectOneRadio>
+                                    </h:panelGroup></div>
                                 <div class="test1">
-                                <h:outputLabel styleClass="control-label">会員状況：</h:outputLabel>
-                                <h:panelGroup>
-                                    <h:selectOneRadio value="#{moriTest.test4}" required="true" label="会員状況：">
-                                        <f:selectItems value="#{moriTest.langs4}" />
-                                    </h:selectOneRadio>
-                                </h:panelGroup></div>
+                                    <h:outputLabel styleClass="control-label">会員状況：</h:outputLabel>
+                                    <h:panelGroup>
+                                        <h:selectOneRadio value="#{moriTest.test4}" required="true" label="会員状況：">
+                                            <f:selectItems value="#{moriTest.langs4}" />
+                                        </h:selectOneRadio>
+                                    </h:panelGroup></div>
                                 <div class="test1">
-                                <h:outputLabel styleClass="control-label">仮入会：</h:outputLabel>
-                                <h:panelGroup>
-                                    <h:selectOneRadio value="#{moriTest.test5}" required="true" label="仮入会：">
-                                        <f:selectItems value="#{moriTest.langs5}" />
-                                    </h:selectOneRadio>
-                                </h:panelGroup></div><br/><div class="test1">
-                                <h:commandButton styleClass="btn btn-default" value="検 索" action="#" />
+                                    <h:outputLabel styleClass="control-label">仮入会：</h:outputLabel>
+                                    <h:panelGroup>
+                                        <h:selectOneRadio value="#{moriTest.test5}" required="true" label="仮入会：">
+                                            <f:selectItems value="#{moriTest.langs5}" />
+                                        </h:selectOneRadio>
+                                    </h:panelGroup></div><br/><div class="test1">
+                                    <h:commandButton styleClass="btn btn-default" value="検 索" action="#" />
                                 </div>
                             </div>
-                            
-                    </div>
-                        <div class="container panel-body memberList" >
+
+                        </div>
+                        <div class="container panel-body columHeader" >
                             <fieldset>
-                                <h:dataTable value="#" var="t" styleClass="table table-striped table-bordered table-hover" 
-                                             columnClasses="">
-                                    <h:column headerClass="member_list_memberNum">
+                                <h:dataTable value="#{memberBean.all}" var="item" styleClass="table table-striped table-bordered table-hover">
+                                    <h:column>
                                         <f:facet name="header">会員番号</f:facet>
+                                        <h:outputText value="#{item.member_num}"/>
                                     </h:column>
 
-                                    <h:column headerClass="member_list_memberName">
+                                    <h:column>
                                         <f:facet name="header">会員名</f:facet>
+                                        <h:outputText value="#{item.member_name}"/>
                                     </h:column>
 
-                                    <h:column headerClass="member_list_memberNamePhonetic">
+                                    <h:column>
                                         <f:facet name="header">会員名（かな）</f:facet>
+                                        <h:outputText value="#{item.member_ruby}"/>
                                     </h:column>
 
-                                    <h:column headerClass="member_list_birthday">
+                                    <h:column>
                                         <f:facet name="header">生年月日</f:facet>
+                                        <h:outputText value="#{item.birth_date}">
+                                            <f:convertDateTime pattern="yyyy月MM月dd日"/>
+                                        </h:outputText>
                                     </h:column>
 
-                                    <h:column headerClass="member_list_sex">
+                                    <h:column>
                                         <f:facet name="header">性別</f:facet>
+                                        <h:outputText value="#{item.sex}"/>
                                     </h:column>
-                                    
-                                    <h:column headerClass="member_list_quit">
+
+                                    <h:column>
                                         <f:facet name="header">会員状況</f:facet>
+                                        <h:outputText value="#"/>
                                     </h:column>
-                                    
+
                                 </h:dataTable>
                             </fieldset>
                         </div>
-                        
+
                     </h:form>
                 </div>
             </ui:define>

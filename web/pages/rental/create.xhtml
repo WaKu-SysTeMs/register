@@ -13,6 +13,7 @@ and open the template in the editor.
     <h:head>
 
         <link rel="stylesheet" type="text/css" href="../../resources/css/mystyle.css"/>
+        <link rel="stylesheet" type="text/css" href="../../resources/css/common.css"/>
     </h:head>
     <h:body>
         <ui:composition template="/templates/template01.xhtml">
@@ -34,7 +35,7 @@ and open the template in the editor.
                                 <h:message for="memberNum" errorClass="error"/>
 
                                 <h:outputLabel styleClass="control-label">会員名：</h:outputLabel>
-                                <h:outputText id="memberName" value="XX XXX" />
+                                <h:outputText id="memberName" value="#{mem}" />
 
                                 <h:outputLabel styleClass="control-label">商品番号：</h:outputLabel>
                                 <span class="required">*</span>
@@ -53,7 +54,7 @@ and open the template in the editor.
                         </div>
 
 
-                        <div class="container panel-body rental_main" >
+                        <div class="container panel-body rental_main columHeader" >
                             <fieldset>
                                 <h:dataTable value="#{rentalBean.test}" var="t" styleClass="table table-striped table-bordered table-hover" 
                                              columnClasses="rental_main_num,rental_main_name,rental_main_kbn,rental_main_stay,rental_main_discount,rental_main_delete">

@@ -12,9 +12,14 @@ import javax.validation.constraints.*;
  *
  * @author sakura＊
  */
+@NamedQueries({
+    @NamedQuery(name = BlackMgr.BlackMgrQFlg, query = "SELECT e.blk_flg FROM BlackMgr e WHERE e.member_num = ?1")
+})
 @Entity
 @Table(name = "black_mgr")
 public class BlackMgr implements Serializable {
+
+    public static final String BlackMgrQFlg = "BlackMgrQFlg";
 
     private static final long serialVersionUID = 1L;  // シリアルバージョンUIDのバージョン管理
 

@@ -16,6 +16,7 @@ body {
 .table > thead > tr > th {
     vertical-align: middle;
     text-align: center;
+
 }
 
 .header-fixed {
@@ -48,6 +49,24 @@ body {
 .header-fixed > thead > tr > th {
     width: 20%;
     float: left;
+}
+
+.columHeader{
+    font-size: 120%;
+}
+
+.columHeader > thead >tr{
+    width: 100%;
+}
+
+.columHeader tbody{
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 268px;
+}
+.columHeader tbody tr{
+
+    width: 100%;
 }
 
 /* headerデザイン */

@@ -15,17 +15,18 @@ import javax.validation.constraints.*;
  * @author s20163037
  */
 @NamedQueries({
-    @NamedQuery(name = Member.MemberQAll, query = "SELECT e FROM Member e"),
-    @NamedQuery(name = Member.MemberQName, query = "SELECT e.member_name FROM Member e WHERE e.member_num = ?1")
+    @NamedQuery(name = Member.QAll, query = "SELECT e FROM Member e"),
+    @NamedQuery(name = Member.QName, query = "SELECT e.member_name FROM Member e WHERE e.member_num = ?1")
 })
 @Entity
 @Table(name = "member_info")
 public class Member implements Serializable {
+    
+    public static final String QAll = "QAll";
+    public static final String QName = "QName";
 
     private static final long serialVersionUID = 1L;  // シリアルバージョンUIDのバージョン管理
 
-    public static final String MemberQAll = "MemberQAll";
-    public static final String MemberQName = "MemberQName";
 
     @Id
     @NotNull

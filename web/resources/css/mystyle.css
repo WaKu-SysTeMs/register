@@ -181,7 +181,7 @@ div .return_delay_button{                 /* 返却メイン画面ボタン調�
 }
 
 thead, tbody {          /* 返却メイン画面ヘッダー調整 */
-  display: block;
+    display: block;
 }
 
 .return_main{              /* 返却メイン画面フォントサイズ調整 */
@@ -189,9 +189,9 @@ thead, tbody {          /* 返却メイン画面ヘッダー調整 */
 }
 
 div .return_main tbody{    /* 返却メイン画面スクロール調整 */
-  overflow-x: hidden;
-  overflow-y: scroll;
-  height: 300px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 300px;
 }
 
 .return_main_delete{               /* 返却メイン画面削除ボタン調整 */
@@ -255,9 +255,9 @@ div .return_main tbody{    /* 返却メイン画面スクロール調整 */
 }
 
 div .rental_main tbody{    /* 返却メイン画面スクロール調整 */
-  overflow-x: hidden;
-  overflow-y: scroll;
-  height: 260px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 260px;
 }
 
 .rental_main_num{               /* 貸出メイン画面調整 */
@@ -343,12 +343,12 @@ div .member_admission{
 }
 
 .test1 {
-	float: left;
-        margin: 0 20px;
+    float: left;
+    margin: 0 20px;
 }
 
 .hoge1 {
-	overflow: hidden;
+    overflow: hidden;
 }
 
 div .member_createconfirm{
@@ -366,12 +366,31 @@ div .member_createconfirm{
     text-align: right;
 }
 
-.memberList{              /* 返却メイン画面フォントサイズ調整 */
-    font-size: 120%;
+
+
+/* 会員一覧　画面 */
+.MLMemberNum {
+    width: 10%;
+    position:  relative;
 }
 
-div .memberList tbody{    /* 返却メイン画面スクロール調整 */
-  overflow-x: hidden;
-  overflow-y: scroll;
-  height: 268px;
+.MLMemberName {
+    width: 20%;
+    position:  relative;
+}
+.MLMemberRuby {
+    width: 20%;
+    position:  relative;
+}
+.MLBirthDate {
+    width: 20%;
+    position:  relative;
+}
+.MLSex {
+    width: 10%;
+    position:  relative;
+}
+.MLBlackFlg {
+    width: 10%;
+    position:  relative;
 }
