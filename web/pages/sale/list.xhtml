@@ -35,7 +35,7 @@ and open the template in the editor.
                                     <f:ajax event="change" execute="@this" listener="#"/>
                                 </h:inputText>
 
-                                <h:outputLabel styleClass="control-label">作　品　名：</h:outputLabel>
+                                <h:outputLabel styleClass="control-label">作品名：</h:outputLabel>
 
                                 <h:inputText id="title" required="true" value="#" label="作　品　名：" styleClass="form-control">
                                     <f:ajax event="change" execute="@this" listener="#"/>
@@ -56,8 +56,8 @@ and open the template in the editor.
                                     </h:inputText> 
                                 </h:panelGroup>
                                 
-                                <h:outputLabel styleClass="control-label">店　舗　名：</h:outputLabel>
-                                <h:selectOneMenu value="#{moriTest.test6}" styleClass="sel" class="test5">
+                                <h:outputLabel styleClass="control-label">店舗名：</h:outputLabel>
+                                <h:selectOneMenu value="#{moriTest.test6}" styleClass="sel" class="form-control">
                                     <f:selectItems value="#{moriTest.langs6}"/>
                                 </h:selectOneMenu>
                                 
@@ -70,39 +70,27 @@ and open the template in the editor.
                         <div class="container panel-body manyList" >
                             <fieldset>
                                 <h:dataTable value="#" var="t" styleClass="table table-striped table-bordered table-hover" 
-                                             columnClasses="rental_list_rentalNum,renta_list_memberNum,rental_list_storeName,rental_list_rentalDate,rental_list_planDate,rental_list_employeeNum,rental_list_amount,rental_list_states">
-                                    <h:column headerClass="rental_list_rentalNum">
-                                        <f:facet name="header">貸出番号</f:facet>
+                                             columnClasses="sale_list_saleId,sale_list_saleName,sale_list_startDate,sale_list_endDate,sale_list_discount">
+                                    <h:column headerClass="sale_list_saleId">
+                                        <f:facet name="header">セールＩＤ</f:facet>
                                     </h:column>
 
-                                    <h:column headerClass="renta_list_memberNum">
-                                        <f:facet name="header">会員番号</f:facet>
+                                    <h:column headerClass="sale_list_saleName">
+                                        <f:facet name="header">セール名</f:facet>
                                     </h:column>
 
-                                    <h:column headerClass="rental_list_storeName">
-                                        <f:facet name="header">店舗名</f:facet>
+                                    <h:column headerClass="sale_list_startDate">
+                                        <f:facet name="header">開始日時</f:facet>
                                     </h:column>
 
-                                    <h:column headerClass="rental_list_rentalDate">
-                                        <f:facet name="header">貸出年月日</f:facet>
+                                    <h:column headerClass="sale_list_endDate">
+                                        <f:facet name="header">終了日時</f:facet>
                                     </h:column>
 
-                                    <h:column headerClass="rental_list_planDate">
-                                        <f:facet name="header">返却予定日</f:facet>
-                                    </h:column>
-                           
-                                    <h:column headerClass="rental_list_employeeNum">
-                                        <f:facet name="header">社員番号</f:facet>
+                                    <h:column headerClass="sale_list_discount">
+                                        <f:facet name="header">割引併用</f:facet>
                                     </h:column>
                                     
-                                    <h:column headerClass="rental_list_amount">
-                                        <f:facet name="header">合計金額</f:facet>
-                                    </h:column>
-                                    
-                                    <h:column headerClass="rental_list_states">
-                                        <f:facet name="header">貸出状況</f:facet>
-                                    </h:column>
-
                                 </h:dataTable>
                             </fieldset>
                         </div>
