@@ -13,5 +13,5 @@ import javax.ejb.Stateless;
  */
 @Stateless
 public class ReturnDb {
-    private String kari = "むりぽ";
+    
 }
