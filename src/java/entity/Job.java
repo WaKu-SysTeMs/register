@@ -13,10 +13,15 @@ import javax.validation.constraints.*;
  *
  * @author s20163037
  */
+//@NamedQueries({
+//    @NamedQuery(name = Job.Qall, query = "SELECT * FROM JOB_LIST")
+//})
 @Entity
 @Table(name = "job_list")
 public class Job implements Serializable {
-
+    
+    public static final String Qall = "Qall";
+    
     private static final long serialVersionUID = 1L; // シリアルバージョンUIDのバージョン管理
 
     @Id

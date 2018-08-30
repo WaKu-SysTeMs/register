@@ -12,9 +12,14 @@ import javax.validation.constraints.*;
  *
  * @author sakura＊
  */
+//@NamedQueries({
+//    @NamedQuery(name = RemarksInfo.Qall, query = "SELECT * FROM REMARKS_INFO")
+//})
 @Entity
 @Table(name = "remarks_info")
 public class RemarksInfo implements Serializable {
+    
+    public static final String Qall = "Qall";
 
     private static final long serialVersionUID = 1L;  // シリアルバージョンUIDのバージョン管理
 

@@ -19,6 +19,9 @@ import javax.validation.constraints.*;
 //})
 @Entity
 public class Category implements Serializable {
+    
+    public static final String CategoryQAll = "CategoryQAll";
+    public static final String CategoryQName = "CategoryQName";
 
     private static final long serialVersionUID = 1L;  // シリアルバージョンUIDのバージョン管理
 

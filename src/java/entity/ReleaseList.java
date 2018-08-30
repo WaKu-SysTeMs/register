@@ -13,11 +13,16 @@ import javax.validation.constraints.*;
  *
  * @author sakura＊
  */
+//@NamedQueries({
+//    @NamedQuery(name = ReleaseList.Qall, query = "SELECT * FROM RELEASE_LIST")
+//})
 @Entity
 @Table(name = "release_list")
 public class ReleaseList implements Serializable {
 
     private static final long serialVersionUID = 1L;  // シリアルバージョンUIDのバージョン管理
+    
+    public static final String Qall = "Qall";
 
     @Id
     @Size(max = 1)

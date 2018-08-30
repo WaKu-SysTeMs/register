@@ -12,9 +12,14 @@ import javax.validation.constraints.Size;
  *
  * @author sakura＊
  */
+//@NamedQueries({
+//    @NamedQuery(name = RentalMax.Qall, query = "SELECT * FROM RENTAL_MAX")
+//})
 @Entity
 @Table(name = "rental_max")
 public class RentalMax implements Serializable {
+    
+    public static final String Qall = "Qall";
 
     private static final long serialVersionUID = 1L;  // シリアルバージョンUIDのバージョン管理
 

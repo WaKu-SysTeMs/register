@@ -13,9 +13,14 @@ import javax.validation.constraints.*;
  *
  * @author s20163037
  */
+//@NamedQueries({
+//    @NamedQuery(name = Register.Qall, query = "SELECT * FROM REGISTER")
+//})
 @Entity
 @Table(name = "register")
 public class Register implements Serializable {
+    
+    public static final String Qall = "Qall";
 
     private static final long serialVersionUID = 1L;  // シリアルバージョンUIDのバージョン管理
 

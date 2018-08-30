@@ -1,6 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scene Scope="Project" version="2">
     <Scope Scope="Faces Configuration Only"/>
-    <Scope Scope="Project"/>
+    <Scope Scope="Project">
+        <Node id="pages/product/list.xhtml" x="1150" y="300" zoom="true"/>
+        <Node id="templates/menu.xhtml" x="900" y="150" zoom="true"/>
+        <Node id="pages/rental/create_pay_off_miss.xhtml" x="150" y="300" zoom="true"/>
+        <Node id="pages/dvd/list.xhtml" x="1150" y="150" zoom="true"/>
+        <Node id="pages/rental/create_pay_check.xhtml" x="150" y="750" zoom="true"/>
+        <Node id="pages/member/deletecomplete.xhtml" x="150" y="150" zoom="true"/>
+        <Node id="pages/stock/list.xhtml" x="650" y="600" zoom="true"/>
+        <Node id="pages/rental/create.xhtml" x="650" y="150" zoom="true"/>
+        <Node id="pages/return/update_pay_off_miss.xhtml" x="400" y="750" zoom="true"/>
+        <Node id="templates/menu_user.xhtml" x="650" y="300" zoom="true"/>
+        <Node id="pages/return/update_delay.xhtml" x="400" y="600" zoom="true"/>
+        <Node id="templates/header.xhtml" x="1650" y="150" zoom="true"/>
+        <Node id="index.xhtml" x="1150" y="450" zoom="true"/>
+        <Node id="pages/member/create.xhtml" x="1900" y="150" zoom="true"/>
+        <Node id="pages/sale/list.xhtml" x="1650" y="300" zoom="true"/>
+        <Node id="pages/rental/list.xhtml" x="400" y="450" zoom="true"/>
+        <Node id="pages/rental/create_pay_off_pass.xhtml" x="1400" y="150" zoom="true"/>
+        <Node id="pages/return/update_pay_off_pass.xhtml" x="400" y="150" zoom="true"/>
+        <Node id="pages/member/delete.xhtml" x="650" y="450" zoom="true"/>
+        <Node id="templates/template01.xhtml" x="900" y="600" zoom="true"/>
+        <Node id="pages/member/deleteconfirm.xhtml" x="150" y="1050" zoom="true"/>
+        <Node id="pages/member/createconfirm.xhtml" x="900" y="300" zoom="true"/>
+        <Node id="pages/return/update.xhtml" x="1400" y="450" zoom="true"/>
+        <Node id="pages/sale/target_list.xhtml" x="400" y="300" zoom="true"/>
+        <Node id="pages/rental/list_detail.xhtml" x="650" y="750" zoom="true"/>
+        <Node id="pages/return/update_delay_check.xhtml" x="400" y="900" zoom="true"/>
+        <Node id="pages/return/update_not_returned_list.xhtml" x="150" y="450" zoom="true"/>
+        <Node id="pages/member/list.xhtml" x="900" y="450" zoom="true"/>
+        <Node id="templates/footer.xhtml" x="150" y="600" zoom="true"/>
+        <Node id="pages/rental/create_payment.xhtml" x="1400" y="300" zoom="true"/>
+        <Node id="pages/member/createcomplete.xhtml" x="150" y="900" zoom="true"/>
+    </Scope>
     <Scope Scope="All Faces Configurations"/>
 </Scene>

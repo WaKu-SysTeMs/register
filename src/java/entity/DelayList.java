@@ -13,10 +13,15 @@ import javax.validation.constraints.*;
  *
  * @author s20163037
  */
+//@NamedQueries({
+//    @NamedQuery(name = DelayList.Qall, query = "SELECT * FROM DELAY_LIST")
+//})
 @Entity
 @Table(name = "delay_list")
 @IdClass(value = DelayListPK.class)
 public class DelayList implements Serializable {
+    
+    public static final String Qall = "Qall";
 
     private static final long serialVersionUID = 1L;  // シリアルバージョンUIDのバージョン管理
 

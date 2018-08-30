@@ -13,9 +13,14 @@ import javax.validation.constraints.*;
  *
  * @author sakura＊
  */
+//@NamedQueries({
+//    @NamedQuery(name = JoinList.Qall, query = "SELECT * FROM JOIN_LIST")
+//})
 @Entity
 @Table(name = "join_list")
 public class JoinList implements Serializable {
+    
+    public static final String Qall = "Qall";
 
     private static final long serialVersionUID = 1L;  // シリアルバージョンUIDのバージョン管理
 
