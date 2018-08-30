@@ -29,7 +29,6 @@ public class Member implements Serializable {
 
 
     @Id
-    @NotNull
     @Size(max = 12)
     @Column(length = 12)
     @GeneratedValue(strategy = GenerationType.AUTO)

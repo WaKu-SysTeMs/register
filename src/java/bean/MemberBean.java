@@ -5,7 +5,6 @@ package bean;
 
 import db.BlackMgrDb;
 import db.MemberDb;
-import entity.BlackMgr;
 import entity.Category;
 import entity.Job;
 import entity.Member;
@@ -20,7 +19,6 @@ import javax.inject.*;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
-
 /**
  *
  * @author s20163037
@@ -29,10 +27,6 @@ import javax.validation.constraints.*;
 @SessionScoped
 public class MemberBean implements Serializable {
 
-    @NotNull
-    @Size(max = 12)
-    @Max(Long.MAX_VALUE)
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer member_num;     // 会員番号
 
     @Size(max = 30)
@@ -109,21 +103,20 @@ public class MemberBean implements Serializable {
         return null;
     }
 
-        public Member search(){
-            log.info("--------------------------------------------------------------------");
-            Member m = (Member) memberDb.search(member_num);
-            if(m!=null){
-                this.member_name = m.getMember_name();
-            }
-            log.info(member_name + "*************************************************************************************");
-            return null;
+    public Member search() {
+        Member m = (Member) memberDb.search(member_num);
+        if (m != null) {
+            this.member_name = m.getMember_name();
         }
+        log.info(member_name + "*************************************************************************************");
+        return null;
+    }
 
-
-    public List<Member> getAll() {
+    public List<Member> getAll() {          // MemberInfo 全件取得
         return memberDb.getAll();
     }
 
+    /* ゲッター、セッター */
     public Integer getMember_num() {
         return member_num;
     }

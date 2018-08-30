@@ -31,8 +31,8 @@ public class Category implements Serializable {
     @Column(length = 3)
     private String category_id;         // ジャンルID
 
-    @Size(max = 30)
-    @Column(length = 30)
+    @Size(max = 32)
+    @Column(length = 32)
     private String category_name;       // ジャンル名
 
     @OneToMany(mappedBy = "fav_category", cascade = CascadeType.ALL)
