@@ -13,9 +13,14 @@ import javax.validation.constraints.*;
  *
  * @author sakura＊
  */
+//@NamedQueries({
+//    @NamedQuery(name = Inspection.Qall, query = "SELECT * FROM INSPECTION")
+//})
 @Entity
 @Table(name = "inspection")
 public class Inspection implements Serializable {
+    
+    public static final String Qall = "Qall";
 
     private static final long serialVersionUID = 1L;  // シリアルバージョンUIDのバージョン管理
 

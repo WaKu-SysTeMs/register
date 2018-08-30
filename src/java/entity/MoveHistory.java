@@ -13,9 +13,14 @@ import javax.validation.constraints.*;
  *
  * @author sakura＊
  */
+//@NamedQueries({
+//    @NamedQuery(name = MoveHistory.Qall, query = "SELECT * FROM MOVE_HISTORY")
+//})
 @Entity
 @Table(name = "move_history")
 public class MoveHistory implements Serializable {
+    
+    public static final String Qall = "Qall";
 
     private static final long serialVersionUID = 1L;  // シリアルバージョンUIDのバージョン管理
 

@@ -13,10 +13,15 @@ import javax.validation.constraints.*;
  *
  * @author s20163037
  */
+//@NamedQueries({
+//    @NamedQuery(name = PriceList.Qall, query = "SELECT * FROM PRICE_LIST")
+//})
 @Entity
 @Table(name = "price_list")
 @IdClass(value = PriceListPK.class)
 public class PriceList implements Serializable {
+    
+    public static final String Qall = "Qall";
 
     private static final long serialVersionUID = 1L;  // シリアルバージョンUIDのバージョン管理
 

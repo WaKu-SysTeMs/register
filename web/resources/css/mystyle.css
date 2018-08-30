@@ -322,6 +322,14 @@ div .member_admission{
     text-align: right;
 }
 
+.ma_left{
+    width: 150px;
+}
+
+.ma_right{
+    width: 600px;
+}
+
 
 .member_admission_button{
     width: 250px;

@@ -12,10 +12,15 @@ import javax.validation.constraints.*;
  *
  * @author sakura＊
  */
+//@NamedQueries({
+//    @NamedQuery(name = MoveDetail.Qall, query = "SELECT * FROM MOVE_DETAIL")
+//})
 @Entity
 @Table(name = "move_detail")
 @IdClass(value = MoveDetailPK.class)
 public class MoveDetail implements Serializable {
+    
+    public static final String Qall = "Qall";
 
     private static final long serialVersionUID = 1L;  // シリアルバージョンUIDのバージョン管理
 

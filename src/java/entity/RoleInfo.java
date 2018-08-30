@@ -13,9 +13,14 @@ import javax.validation.constraints.*;
  *
  * @author s20163037
  */
+//@NamedQueries({
+//    @NamedQuery(name = RoleInfo.Qall, query = "SELECT * FROM ROLE_INFO")
+//})
 @Entity
 @Table(name = "role_info")
 public class RoleInfo implements Serializable {
+    
+    public static final String Qall = "Qall";
 
     private static final long serialVersionUID = 1L;  // シリアルバージョンUIDのバージョン管理
 

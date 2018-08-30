@@ -13,9 +13,14 @@ import javax.validation.constraints.*;
  *
  * @author s20163037
  */
+//@NamedQueries({
+//    @NamedQuery(name = DvdInfo.Qall, query = "SELECT * FROM DVD_INFO")
+//})
 @Entity
 @Table(name = "dvd_info")
 public class DvdInfo implements Serializable {
+    
+    public static final String Qall = "Qall";
 
     private static final long serialVersionUID = 1L;  // シリアルバージョンUIDのバージョン管理
 
