@@ -34,6 +34,8 @@ public class MemberBean implements Serializable {
     @Max(Long.MAX_VALUE)
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer member_num;     // 会員番号
+    
+
 
     @Size(max = 30)
     private String member_name;     // 会員名
@@ -109,8 +111,9 @@ public class MemberBean implements Serializable {
         return "/pages/member/create.xhtml";
     }
         
-        public Integer search(){
-            
+        
+        public Member search(){
+            log.info("--------------------------------------------------------------------");
             Member m = (Member) memberDb.search(member_num);
             if(m!=null){
                 this.member_name = m.getMember_name();

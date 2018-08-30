@@ -29,14 +29,14 @@ and open the template in the editor.
                                 <span class="required">*</span>
 
                                 <h:inputText id="memberNum" required="true" value="#{memberBean.member_num}" label="会員番号：" styleClass="form-control">
-                                    <f:ajax event="change" execute="@this" listener="#"/>
+                                    <f:ajax event="change" execute="@this" listener="#{memberBean.search()}"/>
                                 </h:inputText>　
                                 <h:commandButton styleClass="btn btn-default" value="検 索" action="#{memberBean.search()}"/>
-                                <h:message for="memberNum" errorClass="error"/>
+
 
                                 <h:outputLabel styleClass="control-label">会員名：</h:outputLabel>
                                 <h:outputText id="memberName" value="#{memberBean.member_name}" />
-
+                                <h:message for="memberNum" errorClass="error"/>
                                 <h:outputLabel styleClass="control-label">商品番号：</h:outputLabel>
                                 <span class="required">*</span>
 
@@ -44,10 +44,12 @@ and open the template in the editor.
                                     <f:ajax event="change" execute="@this" listener="#"/>
                                 </h:inputText>
                                 <h:commandButton styleClass="btn btn-default" value="追 加" action="#" />
-                                <h:message for="productNum" errorClass="error" />
+
 
                                 <h:outputLabel styleClass="control-label">貸出上限数：</h:outputLabel>
                                 <h:outputText id="rentalMax" value="XX枚" />
+                                 <h:message for="productNum" errorClass="error" />
+
 
 
                             </h:panelGrid>
@@ -60,17 +62,17 @@ and open the template in the editor.
                                              columnClasses="rental_main_num,rental_main_name,rental_main_kbn,rental_main_stay,rental_main_discount,rental_main_delete">
                                     <h:column headerClass="rental_main_num">
                                         <f:facet name="header">番号</f:facet>
-                                        #{t.num}
+                                            #{t.num}
                                     </h:column>
 
                                     <h:column headerClass="rental_main_name">
                                         <f:facet name="header">作品名</f:facet>
-                                        #{t.name}
+                                            #{t.name}
                                     </h:column>
 
                                     <h:column headerClass="rental_main_kbn">
                                         <f:facet name="header">新旧区分</f:facet>
-                                        #{t.kbn}
+                                            #{t.kbn}
                                     </h:column>
 
                                     <h:column headerClass="rental_main_stay">
