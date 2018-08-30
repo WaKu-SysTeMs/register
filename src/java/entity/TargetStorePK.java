@@ -1,5 +1,5 @@
 /*
- * 対象店舗 TARGET_STORE(複合主キー)
+ * 対象店舗 TARGET_STORE(複合主キー)aaa
  */
 package entity;
 
