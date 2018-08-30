@@ -21,6 +21,7 @@ public class DvdInfo implements Serializable {
 
     @Id
     @Size(max = 14)
+    @Column(length = 14)
     private Integer dvd_num;            // DVD番号
 
     @NotNull

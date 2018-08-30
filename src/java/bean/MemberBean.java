@@ -28,17 +28,17 @@ import javax.persistence.TypedQuery;
 @Named
 @SessionScoped
 public class MemberBean implements Serializable {
-    
+
     private Integer memberNum;
-    
-        private String Name;
-    
+
+    private String numberName;
+
     @PersistenceContext
     EntityManager em;
 
     @EJB
     MemberDb memberDb;
-    
+
     @EJB
     BlackMgrDb blackMgrDb;
 
@@ -64,22 +64,42 @@ public class MemberBean implements Serializable {
         return "/pages/member/create.xhtml";
     }
     
-    public List<Member> getAll(){
+        public String getName() {
+        Member name = (Member) memberDb.search(this.memberNum);   // 会員名取得
+        this.numberName= name.getMember_name();
+        return "/pages/member/create.xhtml";
+    }
+
+    public List<Member> getAll() {
         return memberDb.getAll();
     }
-    
-    public void getName(Integer memberNum){
-        Member Name = (Member) memberDb.search(memberNum);   // 会員名取得
-        this.Name = Name.getMember_name();
-    }
-    
-    public List<BlackMgr> findFlg(){
+
+
+
+    public List<BlackMgr> findFlg() {
         Member mN = null;
         mN.getMember_num();
-        
+
         TypedQuery<BlackMgr> q = em.createNamedQuery(BlackMgr.BlackMgrQFlg, BlackMgr.class);
         q.setParameter(1, mN);
         return q.getResultList();
     }
+    public Integer getMemberNum() {
+        return memberNum;
+    }
+
+    public void setMemberNum(Integer memberNum) {
+        this.memberNum = memberNum;
+    }
+
+    public String getNumberName() {
+        return numberName;
+    }
+
+    public void setNumberName(String numberName) {
+        this.numberName = numberName;
+    }
+    
+    
 
 }

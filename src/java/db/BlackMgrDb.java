@@ -19,17 +19,10 @@ import util.TryCatchDb;
 @Stateless
 public class BlackMgrDb extends TryCatchDb {
 
-    @PersistenceContext
-    EntityManager em;
 
     public BlackMgrDb() {
         super(BlackMgr.class);
     }
 
-    public List<BlackMgr> findFlg(Integer memberNum) {
-        TypedQuery<BlackMgr> q = em.createNamedQuery(BlackMgr.BlackMgrQFlg, BlackMgr.class);
-        q.setParameter(1, memberNum);
-        return q.getResultList();
-    }
 
 }
