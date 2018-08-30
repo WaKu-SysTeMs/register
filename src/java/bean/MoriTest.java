@@ -21,7 +21,8 @@ public class MoriTest {
 
     private SelectItem[] langs = {
         new SelectItem(1,"男"),
-        new SelectItem(2, "女")
+        new SelectItem(2, "女"),
+        new SelectItem(3, "すべて")
     };
     
     
@@ -51,8 +52,9 @@ public class MoriTest {
     
     private Integer test5;
     private SelectItem[] langs5 = {
-        new SelectItem(1,"仮入会"),
-        new SelectItem(2,"すべて")
+        new SelectItem(1,"会員"),
+        new SelectItem(2,"仮入会"),
+        new SelectItem(3,"すべて")
     };
     
     private Integer test6;
