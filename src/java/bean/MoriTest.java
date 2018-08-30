@@ -21,7 +21,8 @@ public class MoriTest {
 
     private SelectItem[] langs = {
         new SelectItem(1,"男"),
-        new SelectItem(2, "女")
+        new SelectItem(2, "女"),
+        new SelectItem(3, "すべて")
     };
     
     
@@ -51,8 +52,9 @@ public class MoriTest {
     
     private Integer test5;
     private SelectItem[] langs5 = {
-        new SelectItem(1,"仮入会"),
-        new SelectItem(2,"すべて")
+        new SelectItem(1,"会員"),
+        new SelectItem(2,"仮入会"),
+        new SelectItem(3,"すべて")
     };
     
     private Integer test6;
@@ -60,6 +62,13 @@ public class MoriTest {
         new SelectItem(1,"店舗１"),
         new SelectItem(2,"店舗２"),
         new SelectItem(3,"すべて")
+    };
+    
+    private Integer test7;
+
+    private SelectItem[] langs7 = {
+        new SelectItem(1,"男"),
+        new SelectItem(2, "女")
     };
     
     public MoriTest() {
@@ -164,6 +173,22 @@ public class MoriTest {
 
     public void setLangs6(SelectItem[] langs6) {
         this.langs6 = langs6;
+    }
+
+    public Integer getTest7() {
+        return test7;
+    }
+
+    public void setTest7(Integer test7) {
+        this.test7 = test7;
+    }
+
+    public SelectItem[] getLangs7() {
+        return langs7;
+    }
+
+    public void setLangs7(SelectItem[] langs7) {
+        this.langs7 = langs7;
     }
     
     

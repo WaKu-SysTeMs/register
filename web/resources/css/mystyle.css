@@ -354,7 +354,6 @@ div .member_admission{
 
 div .member_createconfirm{
     font-size: 120%;
-    width: 400px;
     height: 0px;
     top: 100px;
     bottom: 0;
@@ -367,7 +366,13 @@ div .member_createconfirm{
     text-align: right;
 }
 
+.member_create_left{
+    width: 50%;
+}
 
+.member_create_right{
+    width: 50%;
+}
 
 /* 会員一覧　画面 */
 .MLMemberNum {

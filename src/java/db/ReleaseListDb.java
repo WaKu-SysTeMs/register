@@ -1,10 +1,9 @@
 /*
- * 貸出処理　CRUD処理クラス
+ * ブラック会員情報　CRUD処理クラス
  */
 package db;
 
-//import entity.Rental;
-import entity.RentalInfo;
+import entity.ReleaseList;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -18,12 +17,12 @@ import util.TryCatchDb;
  * @author s20163037
  */
 @Stateless
-public class RentalDb extends TryCatchDb{
-    
-    public RentalDb() {
-        super(RentalInfo.class);
+public class ReleaseListDb extends TryCatchDb {
+
+
+    public ReleaseListDb() {
+        super(ReleaseList.class);
     }
- 
-    
+
 
 }
