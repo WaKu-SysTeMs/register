@@ -34,8 +34,6 @@ public class MemberBean implements Serializable {
     @Max(Long.MAX_VALUE)
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer member_num;     // 会員番号
-    
-
 
     @Size(max = 30)
     private String member_name;     // 会員名
@@ -104,14 +102,13 @@ public class MemberBean implements Serializable {
         }
         return "/pages/member/create.xhtml";
     }
-    
-        public String getName() {
-        Member name = (Member) memberDb.search(this.member_num);   // 会員名取得
+
+    public String getName() {
+        Member name = (Member) memberDb.search(member_num);   // 会員名取得
         this.member_name = name.getMember_name();
-        return "/pages/member/create.xhtml";
+        return null;
     }
-        
-        
+
         public Member search(){
             log.info("--------------------------------------------------------------------");
             Member m = (Member) memberDb.search(member_num);
@@ -122,13 +119,10 @@ public class MemberBean implements Serializable {
             return null;
         }
 
+
     public List<Member> getAll() {
         return memberDb.getAll();
     }
-
-
-
-
 
     public Integer getMember_num() {
         return member_num;
@@ -241,11 +235,5 @@ public class MemberBean implements Serializable {
     public void setMemberDb(MemberDb memberDb) {
         this.memberDb = memberDb;
     }
-    
-    
-    
-    
-
-    
 
 }

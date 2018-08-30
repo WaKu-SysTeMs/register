@@ -29,9 +29,9 @@ and open the template in the editor.
                                 <span class="required">*</span>
 
                                 <h:inputText id="memberNum" required="true" value="#{memberBean.member_num}" label="会員番号：" styleClass="form-control">
-                                    <f:ajax event="change" execute="@this" listener="#{memberBean.search()}"/>
+<!--                                    <f:ajax event="change" execute="@this" listener="}"/>-->
                                 </h:inputText>　
-                                <h:commandButton styleClass="btn btn-default" value="検 索" action="#{memberBean.search()}"/>
+                                <h:commandButton styleClass="btn btn-default" value="検 索" action="#{memberBean.getName()}"/>
 
 
                                 <h:outputLabel styleClass="control-label">会員名：</h:outputLabel>
