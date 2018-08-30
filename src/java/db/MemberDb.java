@@ -25,11 +25,11 @@ public class MemberDb extends TryCatchDb {
         super(Member.class);
     }
     
-    public void getName(){
-        TypedQuery q = em.createNamedQuery(Member.QName, Member.class);
-//        q.setParameter("memberName", )
+//    public void getName(){
+//        TypedQuery q = em.createNamedQuery(Member.QName, Member.class);
+//        q.setParameter(1, )
 //        return q.getResultList();
-    }
+//    }
 
 
 }
