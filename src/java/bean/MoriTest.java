@@ -64,6 +64,13 @@ public class MoriTest {
         new SelectItem(3,"すべて")
     };
     
+    private Integer test7;
+
+    private SelectItem[] langs7 = {
+        new SelectItem(1,"男"),
+        new SelectItem(2, "女")
+    };
+    
     public MoriTest() {
     }
 
@@ -166,6 +173,22 @@ public class MoriTest {
 
     public void setLangs6(SelectItem[] langs6) {
         this.langs6 = langs6;
+    }
+
+    public Integer getTest7() {
+        return test7;
+    }
+
+    public void setTest7(Integer test7) {
+        this.test7 = test7;
+    }
+
+    public SelectItem[] getLangs7() {
+        return langs7;
+    }
+
+    public void setLangs7(SelectItem[] langs7) {
+        this.langs7 = langs7;
     }
     
     

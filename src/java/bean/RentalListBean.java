@@ -5,7 +5,7 @@
  */
 package bean;
 
-import db.RentalDb;
+import db.RentalInfoDb;
 //import entity.Rental;
 import java.io.Serializable;
 import java.util.List;
@@ -26,7 +26,7 @@ public class RentalListBean implements Serializable {
 //    private List<Rental> rentalList;
 
     @EJB
-    RentalDb rentalDb;
+    RentalInfoDb rentalDb;
 
     @Inject
     transient Logger log;

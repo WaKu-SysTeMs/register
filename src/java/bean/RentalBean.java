@@ -5,7 +5,7 @@
  */
 package bean;
 
-import db.RentalDb;
+import db.RentalInfoDb;
 import entity.RentalInfo;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -32,7 +32,7 @@ public class RentalBean implements Serializable {
 
 
     @EJB
-    RentalDb rentalDb;
+    RentalInfoDb rentalDb;
     
     @Inject
     transient Logger log;
