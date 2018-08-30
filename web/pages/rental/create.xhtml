@@ -31,7 +31,7 @@ and open the template in the editor.
                                 <h:inputText id="memberNum" required="true" value="#{memberBean.memberNum}" label="会員番号：" styleClass="form-control">
                                     <f:ajax event="change" execute="@this" listener="#"/>
                                 </h:inputText>　
-                                <h:commandButton styleClass="btn btn-default" value="検 索" action="#{memberBean.getName(memberNum)}"/>
+                                <h:commandButton styleClass="btn btn-default" value="検 索" action="#{memberBean.getName()}"/>
                                 <h:message for="memberNum" errorClass="error"/>
 
                                 <h:outputLabel styleClass="control-label">会員名：</h:outputLabel>

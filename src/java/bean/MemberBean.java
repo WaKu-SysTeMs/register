@@ -63,16 +63,18 @@ public class MemberBean implements Serializable {
         }
         return "/pages/member/create.xhtml";
     }
+    
+        public String getName() {
+        Member name = (Member) memberDb.search(this.memberNum);   // 会員名取得
+        this.numberName= name.getMember_name();
+        return "/pages/member/create.xhtml";
+    }
 
     public List<Member> getAll() {
         return memberDb.getAll();
     }
 
-    public String getName(Integer memberNum) {
-        Member name = (Member) memberDb.search(memberNum);   // 会員名取得
-        this.numberName= name.getMember_name();
-        return null;
-    }
+
 
     public List<BlackMgr> findFlg() {
         Member mN = null;
