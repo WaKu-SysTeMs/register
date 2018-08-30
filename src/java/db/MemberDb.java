@@ -3,7 +3,6 @@
  */
 package db;
 
-import entity.BlackMgr;
 import entity.Member;
 import javax.ejb.Stateless;
 import util.TryCatchDb;
@@ -19,5 +18,7 @@ public class MemberDb extends TryCatchDb {
     public MemberDb() {
         super(Member.class);
     }
+    
+
 
 }

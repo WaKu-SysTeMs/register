@@ -28,14 +28,14 @@ and open the template in the editor.
                                 <h:outputLabel styleClass="control-label">会員番号：</h:outputLabel>
                                 <span class="required">*</span>
 
-                                <h:inputText id="memberNum" required="true" value="#" label="会員番号：" styleClass="form-control">
+                                <h:inputText id="memberNum" required="true" value="#{memberBean.memberNum}" label="会員番号：" styleClass="form-control">
                                     <f:ajax event="change" execute="@this" listener="#"/>
                                 </h:inputText>　
-                                <h:commandButton styleClass="btn btn-default" value="検 索" action="#"/>
+                                <h:commandButton styleClass="btn btn-default" value="検 索" action="#{memberBean.getName(memberNum)}"/>
                                 <h:message for="memberNum" errorClass="error"/>
 
                                 <h:outputLabel styleClass="control-label">会員名：</h:outputLabel>
-                                <h:outputText id="memberName" value="#{mem}" />
+                                <h:outputText id="memberName" value="#{memberBean.numberName}" />
 
                                 <h:outputLabel styleClass="control-label">商品番号：</h:outputLabel>
                                 <span class="required">*</span>
