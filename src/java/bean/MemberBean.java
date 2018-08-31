@@ -97,24 +97,20 @@ public class MemberBean implements Serializable {
         return "/pages/member/create.xhtml";
     }
 
-    public String getName() {
-        Member name = (Member) memberDb.search(member_num);   // 会員名取得
-        this.member_name = name.getMember_name();
-        return null;
-    }
 
-    public Member search() {
+    public Member search() {                                // 会員名　取得
         Member m = (Member) memberDb.search(member_num);
         if (m != null) {
             this.member_name = m.getMember_name();
         }
-        log.info(member_name + "*************************************************************************************");
         return null;
     }
 
     public List<Member> getAll() {          // MemberInfo 全件取得
         return memberDb.getAll();
     }
+
+    
 
     /* ゲッター、セッター */
     public Integer getMember_num() {
@@ -221,12 +217,6 @@ public class MemberBean implements Serializable {
         this.temp_flg = temp_flg;
     }
 
-    public MemberDb getMemberDb() {
-        return memberDb;
-    }
 
-    public void setMemberDb(MemberDb memberDb) {
-        this.memberDb = memberDb;
-    }
 
 }
