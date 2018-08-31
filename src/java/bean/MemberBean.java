@@ -19,6 +19,7 @@ import javax.inject.*;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
+
 /**
  *
  * @author s20163037
@@ -27,6 +28,7 @@ import javax.validation.constraints.*;
 @SessionScoped
 public class MemberBean implements Serializable {
 
+    @Size(max = 9)
     private Integer member_num;     // 会員番号
 
     @Size(max = 30)
@@ -38,7 +40,7 @@ public class MemberBean implements Serializable {
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date birth_date;        // 生年月日
 
-    @Size(max = 3)                   // もしくは@patternで
+    @Size(max = 2)                   // もしくは@patternで
     private String sex;             // 性別
 
     @Size(max = 8)                   // もしくは@patternで
@@ -69,17 +71,18 @@ public class MemberBean implements Serializable {
     @PersistenceContext
     EntityManager em;
 
-    @EJB
-    MemberDb memberDb;
-
-    @EJB
-    BlackMgrDb blackMgrDb;
-
     @Inject
     transient Logger log;
 
     @Inject
     Conversation conv;
+    
+    
+    @EJB
+    MemberDb memberDb;
+
+    @EJB
+    BlackMgrDb blackMgrDb;
 
     @PostConstruct
     public void start() {
@@ -97,7 +100,6 @@ public class MemberBean implements Serializable {
         return "/pages/member/create.xhtml";
     }
 
-
     public Member search() {                                // 会員名　取得
         Member m = (Member) memberDb.search(member_num);
         if (m != null) {
@@ -109,8 +111,6 @@ public class MemberBean implements Serializable {
     public List<Member> getAll() {          // MemberInfo 全件取得
         return memberDb.getAll();
     }
-
-    
 
     /* ゲッター、セッター */
     public Integer getMember_num() {
@@ -216,7 +216,5 @@ public class MemberBean implements Serializable {
     public void setTemp_flg(char temp_flg) {
         this.temp_flg = temp_flg;
     }
-
-
 
 }
