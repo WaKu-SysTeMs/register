@@ -526,3 +526,31 @@ div .manyList tbody{    /* 返却メイン画面スクロール調整 */
     width: 150px;
 }
 
+.member_delete_main{
+    height: 120px;
+    width: 840px;
+    border: solid;
+    margin: 30px auto;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.member_delete_memberNum{
+    padding-top: 100px;
+    width: 700px;
+    margin: auto;
+}
+
+.member_delete_memberNum input::-webkit-input-placeholder{
+    color:#555;
+}
+
+.member_delete_button{
+    top: 500px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+}

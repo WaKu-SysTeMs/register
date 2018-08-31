@@ -20,19 +20,16 @@ and open the template in the editor.
                 <div class="container">
                 <h:form>
                     <div class="member_delete_main">
-                        <h1>退会する会員の会員番号を入力してください</h1>
+                        <h2>会員カードをスキャン、または会員番号を入力してください</h2>
                     </div>
                     <div class="member_delete_memberNum">
-                        <h:outputLabel styleClass="control-label">会員番号：</h:outputLabel>
-                            <h:inputText id="memberNum" required="true" value="#" label="会員番号：" styleClass="form-control">
-                                <f:ajax event="change" execute="@this" listener="#"/>
+                            <h:inputText id="memberNum" required="true" p:placeholder="会員カードをスキャン、または会員番号を入力してください" label="会員番号：" styleClass="form-control">
+                                <f:ajax event="change" execute="@this" listener="#" />
                             </h:inputText>
                     </div>
-                    <div class="member_admission_button">
-                    <h:commandButton styleClass="btn btn-default btn-lg"
-                                     value="戻 る" action="create.xhtml?faces-redirect=true"/>
+                    <div class="member_delete_button">
                     <h:commandButton styleClass="btn btn-primary btn-lg"
-                                     value="次 へ" action="createcomplete.xhtml?faces-redirect=true"/>
+                                     value="次 へ" action="deleteconfirm.xhtml?faces-redirect=true"/>
                     </div>
                 </h:form>
             </div>
