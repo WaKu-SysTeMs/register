@@ -366,6 +366,18 @@ div .member_admission{
     text-align: center;
 }
 
+.member_complete_button{
+    width: 250px;
+    height: 0px;
+    top: 500px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+}
+
 .member_create_checkbox{
     text-align: left;
 }
@@ -430,4 +442,66 @@ div .member_createconfirm{
 .MLBlackFlg {
     width: 10%;
     position:  relative;
+}
+
+.rental_list_rentalNum{
+    width: 180px;
+}
+
+.renta_list_memberNum{
+    width: 180px;
+}
+
+.rental_list_storeName{
+    width: 150px;
+}
+
+.rental_list_rentalDate{
+    width: 150px;
+}
+
+.rental_list_planDate{
+    width: 150px;
+}
+
+.rental_list_employeeNum{
+    width: 180px;
+}
+
+.rental_list_amount{
+    width: 140px;
+}
+
+.rental_list_states{
+    width: 120px;
+}
+
+div .manyList tbody{    /* 返却メイン画面スクロール調整 */
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 339px;
+}
+
+.product_list_productNum{
+    width: 180px;
+}
+
+.product_list_title{
+    width: 470px;
+}
+
+.product_list_genre{
+    width: 150px;
+}
+
+.product_list_playtime{
+    width: 150px;
+}
+
+.product_list_director{
+    width: 200px;
+}
+
+.product_list_kbn{
+    width: 100px;
 }
