@@ -29,8 +29,8 @@ public class Member implements Serializable {
 
 
     @Id
-    @Size(max = 12)
-    @Column(length = 12)
+    @Size(max = 9)
+    @Column(length = 9)
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer member_num;     // 会員番号
 

@@ -29,7 +29,7 @@ and open the template in the editor.
                                 <span class="required">*</span>
 
                                 <h:inputText id="memberNum" required="true" value="#{memberBean.member_num}" label="会員番号：" styleClass="form-control">
-<!--                                    <f:ajax event="change" execute="@this" listener="#}"/>-->
+                                    <f:ajax event="change" execute="@this" listener="#{memberBean.search()}"/>
                                 </h:inputText>　
                                 <h:commandButton styleClass="btn btn-default" value="検 索" action="#{memberBean.search()}"/>
 
