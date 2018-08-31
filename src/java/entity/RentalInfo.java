@@ -1,5 +1,5 @@
 /*
- * 貸出処理 RENTAL_INFO
+ * 貸出情報 RENTAL_INFO
  */
 package entity;
 
@@ -31,7 +31,7 @@ public class RentalInfo implements Serializable {
     private Integer rental_num;          // 貸出番号
 
     @NotNull
-    @Size(max = 12)
+    @Size(max = 9)
     @JoinColumn(name = "member_num")
     private Member member_num;           // 会員番号(FK)
 
@@ -47,7 +47,7 @@ public class RentalInfo implements Serializable {
     @JoinColumn(name = "register_id")
     private Register register_id;        // レジ番号(FK)
 
-    @Size(max = 10)
+    @Size(max = 8)
     @JoinColumn(name = "emp_num")
     private Employee emp_num;            // 社員番号(FK)
 

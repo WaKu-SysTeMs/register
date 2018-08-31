@@ -18,7 +18,7 @@ public class DelayListPK implements Serializable {
 
     private static final long serialVersionUID = 1L;  // シリアルバージョンUIDのバージョン管理
 
-    @Size(max = 12)
+    @Size(max = 9)
     private Integer member_num;            // 会員番号(FK)
 
     @Temporal(javax.persistence.TemporalType.DATE)

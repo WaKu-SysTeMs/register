@@ -25,8 +25,8 @@ public class Employee implements Serializable {
     private static final long serialVersionUID = 1L; // シリアルバージョンUIDのバージョン管理
 
     @Id
-    @Size(max = 10)
-    @Column(length = 10)
+    @Size(max =8)
+    @Column(length = 8)
     private Integer emp_num;            // 社員番号
 
     @Size(max = 30)

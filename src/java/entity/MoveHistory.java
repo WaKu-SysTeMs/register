@@ -19,7 +19,7 @@ import javax.validation.constraints.*;
 @Entity
 @Table(name = "move_history")
 public class MoveHistory implements Serializable {
-    
+
     public static final String Qall = "Qall";
 
     private static final long serialVersionUID = 1L;  // シリアルバージョンUIDのバージョン管理
@@ -31,12 +31,12 @@ public class MoveHistory implements Serializable {
     private Date move_date;         // 移動処理日付
 
     @NotNull
-    @Size(max = 13)
+    @Size(max = 6)
     @JoinColumn(name = "product_num")
     private ProductInfo product_num;    // 商品番号(FK)
 
     @NotNull
-    @Size(max = 10)
+    @Size(max = 8)
     @JoinColumn(name = "emp_num")
     private Employee emp_num;           // 社員番号(FK)
 

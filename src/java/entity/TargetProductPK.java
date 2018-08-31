@@ -19,7 +19,7 @@ public class TargetProductPK implements Serializable {
     @Size(max = 7)
     private String sale_id;         // SALE ID(FK)
 
-    @Size(max = 13)
+    @Size(max = 6)
     private Integer product_num;    // 商品番号(FK)
 
     /* コンストラクタ */

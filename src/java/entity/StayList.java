@@ -24,7 +24,7 @@ public class StayList implements Serializable {
     private String stay_num;        // 泊数ID
 
     @Size(max = 4)
-    @Column(length = 6)
+    @Column(length = 4)
     private String stay_name;       // 泊数名
 
     @OneToMany(mappedBy = "stay_num", cascade = CascadeType.ALL)

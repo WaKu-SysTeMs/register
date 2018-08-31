@@ -19,7 +19,7 @@ import javax.validation.constraints.*;
 @Entity
 @Table(name = "inspection")
 public class Inspection implements Serializable {
-    
+
     public static final String Qall = "Qall";
 
     private static final long serialVersionUID = 1L;  // シリアルバージョンUIDのバージョン管理
@@ -46,7 +46,7 @@ public class Inspection implements Serializable {
     @Column(length = 6)
     private Integer misc_pl_amt;            // 雑損益額
 
-    @Size(max = 10)
+    @Size(max = 8)
     @JoinColumn(name = "emp_num")
     private Employee emp_num;               // 社員番号(FK)
 

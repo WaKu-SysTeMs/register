@@ -24,7 +24,7 @@ public class RemarksInfo implements Serializable {
     private static final long serialVersionUID = 1L;  // シリアルバージョンUIDのバージョン管理
 
     @Id
-    @Size(max = 12)
+    @Size(max = 9)
     @JoinColumn(name = "member_num")
     private Member member_num;          // 会員番号
 
