@@ -23,23 +23,23 @@ and open the template in the editor.
                     <h:form>
                         <div class="form-group">
                             <div class="member_admission">
-                                <h:panelGrid columns="2" border="" columnClasses="ma_left,ma_right">
+                                <h:panelGrid columns="2" columnClasses="ma_left,ma_right">
 
                                 <h:outputLabel styleClass="control-label">会員名：</h:outputLabel>
                                 <h:panelGroup>
-                                    <h:inputText id="memberNum" required="true" value="#"
+                                    <h:inputText id="memberNum" required="true" value="#{memberBean.member_name}"
                                                  label="会員名：" styleClass="form-control" />
                                 </h:panelGroup>
 
                                 <h:outputLabel styleClass="control-label">会員名（かな）：</h:outputLabel>
                                 <h:panelGroup>
-                                    <h:inputText id="memberRuby" required="true" value="#"
+                                    <h:inputText id="memberRuby" required="true" value="#{memberBean.member_ruby}"
                                                  label="会員名（かな）：" styleClass="form-control" />
                                 </h:panelGroup>
 
                                 <h:outputLabel styleClass="control-label">生年月日：</h:outputLabel>   
                                 <h:panelGroup>
-                                    <h:inputText p:type="date" required="true" label="生年月日：" styleClass="form-control">
+                                    <h:inputText p:type="date" required="true" label="生年月日：" styleClass="form-control" value="#{memberBean.birth_date}">
                                         <f:convertDateTime pattern="yyyy-M-d" timeZone="Asia/Tokyo"/>
                                     </h:inputText> 
                                 </h:panelGroup>
@@ -56,7 +56,7 @@ and open the template in the editor.
 
                                 <h:outputLabel styleClass="control-label">郵便番号：</h:outputLabel>  
                                 <h:panelGroup>
-                                    <h:inputText id="test1" required="true" value="#"
+                                    <h:inputText id="test1" required="true" value="#{memberBean.postal_code}"
                                                  label="郵便番号：" styleClass="form-control" />
                                 </h:panelGroup>
 
@@ -64,42 +64,42 @@ and open the template in the editor.
 
                                 <h:outputLabel styleClass="control-label">住所：</h:outputLabel>
                                 <h:panelGroup>
-                                    <h:inputText id="test2" required="true" value="#"
+                                    <h:inputText id="test2" required="true" value="#{memberBean.member_add}"
                                                  label="住所：" styleClass="form-control" />
                                 </h:panelGroup>
 
 
                                 <h:outputLabel styleClass="control-label">住所（かな）：</h:outputLabel>
                                 <h:panelGroup>
-                                    <h:inputText id="test3" required="true" value="#"
+                                    <h:inputText id="test3" required="true" value="#{memberBean.add_ruby}"
                                                  label="住所（かな）：" styleClass="form-control" />
                                 </h:panelGroup>
 
 
                                 <h:outputLabel styleClass="control-label">携帯電話番号：</h:outputLabel>
                                 <h:panelGroup>
-                                    <h:inputText id="test4" required="true" value="#"
+                                    <h:inputText id="test4" required="true" value="#{memberBean.member_phone}"
                                                  label="携帯電話番号：" styleClass="form-control" />
                                 </h:panelGroup>
 
 
                                 <h:outputLabel styleClass="control-label">メールアドレス：</h:outputLabel>
                                 <h:panelGroup>
-                                    <h:inputText id="mail" required="true" value="#"
+                                    <h:inputText id="mail" required="true" value="#{memberBean.member_mail}"
                                                  label="メールアドレス：" styleClass="form-control" />
                                 </h:panelGroup>
                                 
                                 <h:outputLabel styleClass="control-label">職業：</h:outputLabel>
-                                
-                                
-                            </h:panelGrid>
                                 <h:panelGroup>
                                     <div class="member_create_checkbox">
-                                        <h:selectOneRadio value="#{moriTest.test2}" required="true" label="職業：" layout="lineDirection">
+                                        <h:selectOneRadio value="#{moriTest.test2}" required="true" label="職業：">
                                             <f:selectItems value="#{moriTest.langs2}" />
                                         </h:selectOneRadio>
                                     </div>
                                 </h:panelGroup>
+                                
+                            </h:panelGrid>
+                                
                             </div>
                         </div>
 

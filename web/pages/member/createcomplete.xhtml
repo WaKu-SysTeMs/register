@@ -15,11 +15,19 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
     <body>
+        <ui:composition template="../../templates/template01.xhtml">
         <ui:define name="title">入会登録完了</ui:define>
         <ui:define name="content">
-            <div class="container">
-                <h1>登録が完了しました <span class="glyphicon glyphicon-save"/></h1>
-            </div>
+            <h:form>
+                    <div class="return_pay_off_main">
+                        <p>会員登録が完了しました</p>
+                    </div>
+                    <div class="member_complete_button">
+                            <h:commandButton styleClass="btn btn-primary btn-lg" value="貸出処理へ" action="../rental/create.xhtml?faces-redirect=true"/>
+                    </div>
+                    
+                </h:form>
         </ui:define>
+        </ui:composition>
     </body>
 </html>
