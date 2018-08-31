@@ -487,11 +487,11 @@ div .manyList tbody{    /* 返却メイン画面スクロール調整 */
 }
 
 .product_list_title{
-    width: 470px;
+    width: 440px;
 }
 
 .product_list_genre{
-    width: 150px;
+    width: 180px;
 }
 
 .product_list_playtime{
@@ -504,4 +504,24 @@ div .manyList tbody{    /* 返却メイン画面スクロール調整 */
 
 .product_list_kbn{
     width: 100px;
+}
+
+.dvd_list_dvdNum{
+    width: 180px;
+}
+
+.dvd_list_title{
+    width: 590px;
+}
+
+.dvd_list_storeName{
+    width: 150px;
+}
+
+.dvd_list_productNum{
+    width: 180px;
+}
+
+.dvd_list_states{
+    width: 150px;
 }
