@@ -27,9 +27,11 @@ public class Job implements Serializable {
     @Id
     @NotNull
     @Size(max = 1)
+    @Column(length = 1)
     private String job_id;      // 職業ID
 
     @Size(max = 20)
+    @Column(length = 20)
     private String job_name;    // 職業名
 
     @OneToMany(mappedBy = "job_id", cascade = CascadeType.ALL)

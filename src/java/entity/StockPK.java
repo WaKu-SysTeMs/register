@@ -12,19 +12,17 @@ public class StockPK implements Serializable {
 
     private static final long serialVersionUID = 1L;  // シリアルバージョンUIDのバージョン管理
 
-    @Size( max = 13 )
+    @Size(max = 6)
     private Integer product_num;       // 商品番号
 
-    @Size( max = 3 )
+    @Size(max = 3)
     private String store_id;                 // 店舗ID
 
     /* コンストラクタ */
-
     public StockPK() {
     }
 
-
-    public StockPK( Integer product_num, String store_id ) {
+    public StockPK(Integer product_num, String store_id) {
         this.product_num = product_num;
         this.store_id = store_id;
     }
@@ -39,9 +37,8 @@ public class StockPK implements Serializable {
         return hash;
     }
 
-
     @Override
-    public boolean equals( Object obj ) {
+    public boolean equals(Object obj) {
         if (obj == null) {
             return false;
         }
@@ -59,23 +56,19 @@ public class StockPK implements Serializable {
     }
 
     /* ゲッター、セッター */
-
     public Integer getProduct_num() {
         return product_num;
     }
 
-
-    public void setProduct_num( Integer product_num ) {
+    public void setProduct_num(Integer product_num) {
         this.product_num = product_num;
     }
-
 
     public String getStore_id() {
         return store_id;
     }
 
-
-    public void setStore_id( String store_id ) {
+    public void setStore_id(String store_id) {
         this.store_id = store_id;
     }
 

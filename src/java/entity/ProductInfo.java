@@ -26,8 +26,8 @@ public class ProductInfo implements Serializable {
     private static final long serialVersionUID = 1L;  // シリアルバージョンUIDのバージョン管理
 
     @Id
-    @Size(max = 13)
-    @Column(length = 13)
+    @Size(max = 6)
+    @Column(length = 6)
     private Integer product_num;    // 商品番号
 
     @Size(max = 100)

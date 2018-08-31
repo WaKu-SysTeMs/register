@@ -34,7 +34,7 @@ public class MoveDetail implements Serializable {
     private Integer move_detail_num;     // 移動明細番号
 
     @NotNull
-    @Size(max = 14)
+    @Size(max = 9)
     @JoinColumn(name = "dvd_num")
     private DvdInfo dvd_num;             // DVD番号(FK)
 

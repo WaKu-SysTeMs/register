@@ -29,8 +29,8 @@ public class ReleaseList implements Serializable {
     @Column(length = 1)
     private String release_kbn;         // 新旧区分
 
-    @Size(max = 9)
-    @Column(length = 9)
+    @Size(max = 6)
+    @Column(length = 6)
     private String release_name;         // 区分名
 
     @OneToMany(mappedBy = "release_kbn", cascade = CascadeType.ALL)

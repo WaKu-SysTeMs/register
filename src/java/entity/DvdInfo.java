@@ -25,12 +25,12 @@ public class DvdInfo implements Serializable {
     private static final long serialVersionUID = 1L;  // シリアルバージョンUIDのバージョン管理
 
     @Id
-    @Size(max = 14)
-    @Column(length = 14)
+    @Size(max = 9)
+    @Column(length = 9)
     private Integer dvd_num;            // DVD番号
 
     @NotNull
-    @Size(max = 13)
+    @Size(max = 6)
     @JoinColumn(name = "product_num")
     private ProductInfo product_num;    // 商品番号(FK)
 

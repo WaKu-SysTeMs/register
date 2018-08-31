@@ -25,7 +25,7 @@ public class TargetProduct implements Serializable {
     private SaleInfo sale_id;            // SALE ID(FK)
 
     @Id
-    @Size(max = 13)
+    @Size(max = 6)
     @JoinColumn(name = "product_num")
     private ProductInfo product_num;    // 商品番号(FK)
 

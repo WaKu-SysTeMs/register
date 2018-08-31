@@ -19,7 +19,7 @@ public class Stock implements Serializable {
     private static final long serialVersionUID = 1L;  // シリアルバージョンUIDのバージョン管理
 
     @Id
-    @Size(max = 13)
+    @Size(max = 6)
     @JoinColumn(name = "product_num")
     private ProductInfo product_num;            // 商品番号
 
