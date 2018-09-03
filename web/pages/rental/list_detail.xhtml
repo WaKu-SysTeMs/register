@@ -13,33 +13,41 @@
             <ui:define name="content">
                 <div class="container">
                     <br/>
-                    
+
                     <h:form><div class="form-group">
                             <h:panelGrid columns="6" border="0">
-                           
+
                                 <h:outputLabel styleClass="control-label">貸出番号：</h:outputLabel>
                                 <h:outputText id="rentalNum" value="XXXXXXXX" />
                                 <h:outputLabel styleClass="control-label">会員名：</h:outputLabel>
                                 <h:outputText id="memberName" value="XX XXX" />
                                 <h:outputLabel styleClass="control-label">貸出日付：</h:outputLabel>
                                 <h:outputText id="rentalDate" value="XXXX/XX/XX" />
-                            
-                        </h:panelGrid>
-                    </div>
+
+                            </h:panelGrid>
+                        </div>
                         <div class="container panel-body return_main" >
                             <fieldset>
                                 <h:dataTable value="#{returnBean.test2}" var="t" styleClass="table table-striped table-bordered table-hover" 
                                              columnClasses="return_main_num,return_main_name,return_list_adjust,return_main_date,return_main_date,return_list_adjust">
                                     <h:column headerClass="return_main_num">
                                         <f:facet name="header">番号</f:facet>
-                                        #{t.num}
+                                            #{t.num}
                                     </h:column>
 
                                     <h:column headerClass="return_main_name">
                                         <f:facet name="header">作品名</f:facet>
-                                        #{t.name}
+                                            #{t.name}
                                     </h:column>
-                                    
+
+                                    <h:column headerClass="">
+                                        <f:facet name="header"></f:facet>
+                                    </h:column>
+
+                                    <h:column headerClass="">
+                                        <f:facet name="header"></f:facet>
+                                    </h:column>
+
                                     <h:column headerClass="">
                                         <f:facet name="header"></f:facet>
                                     </h:column>
@@ -55,20 +63,12 @@
                                     <h:column headerClass="">
                                         <f:facet name="header"></f:facet>
                                     </h:column>
-　
-                                    <h:column headerClass="">
-                                        <f:facet name="header"></f:facet>
-                                    </h:column>
-　
-                                    <h:column headerClass="">
-                                        <f:facet name="header"></f:facet>
-                                    </h:column>
-                                    
+
                                     <h:column headerClass="">
                                         <f:facet name="header"></f:facet>
                                         <h:commandButton styleClass="btn btn-danger btn-xs" value="無 効" action="#"/>
                                     </h:column>
-                                    
+
                                 </h:dataTable>
                             </fieldset>
                         </div>
