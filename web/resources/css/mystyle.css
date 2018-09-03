@@ -563,3 +563,27 @@ div .manyList tbody{    /* 返却メイン画面スクロール調整 */
     text-align: center;
     padding-top: 0px;
 }
+
+.member_list_num{
+    width: 200px;
+}
+
+.member_list_name{
+    width: 250px;
+}
+
+.member_list_ruby{
+    width: 300px;
+}
+
+.member_list_birth_date{
+    width: 250px;
+}
+
+.member_list_sex{
+    width: 100px;
+}
+
+.member_list_states{
+    width: 150px;
+}
