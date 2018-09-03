@@ -563,3 +563,35 @@ div .manyList tbody{    /* 返却メイン画面スクロール調整 */
     text-align: center;
     padding-top: 0px;
 }
+
+
+.login_main{
+    height: 120px;
+    width: 840px;
+    border: solid;
+    margin: 30px auto;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.login_syainNum{
+    padding-top: 70px;
+    width: 700px;
+    margin: auto;
+}
+
+.login_button{
+    top: 500px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+}
+
+.login_regiNum{
+    padding-top: 50px;
+    width: 200px;
+    margin: auto;
+}
