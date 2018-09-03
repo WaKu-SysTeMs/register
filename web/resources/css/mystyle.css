@@ -554,3 +554,12 @@ div .manyList tbody{    /* 返却メイン画面スクロール調整 */
     margin: auto;
     text-align: center;
 }
+
+.member_delete_confirm_main{
+    height: 100px;
+    width: 740px;
+    border: solid;
+    margin: 30px auto;
+    text-align: center;
+    padding-top: 0px;
+}

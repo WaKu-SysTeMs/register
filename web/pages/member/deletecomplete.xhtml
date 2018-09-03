@@ -10,16 +10,39 @@ and open the template in the editor.
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
-    <head>
-        <title>新規会員登録完了ページ</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
-    <body>
-        <ui:define name="title">退会処理</ui:define>
+    <h:head>
+
+        <link rel="stylesheet" type="text/css" href="/resources/css/mystayle.css"/>
+    </h:head>
+    <h:body>
+        <ui:composition template="/templates/template01.xhtml">
+        <ui:define name="title"></ui:define>
         <ui:define name="content">
             <div class="container">
-                <h1>退会が完了しました <span class="glyphicon glyphicon-save"/></h1>
+                <br/>
+                <h:form>
+                    <div class="member_delete_main">
+                        <h2>YEAH!!☆</h2>
+                    </div>
+                    <h:panelGrid columns="2" columnClasses="conf"
+                                 styleClass="">
+                        <f:facet name="header">退会する会員内容確認</f:facet>
+                        <h:outputLabel value="会員番号："></h:outputLabel>
+                        <h:outputText value="#"/>
+                        <h:outputLabel value="会員名："></h:outputLabel>
+                        <h:outputText value="#"/>
+                        <h:outputLabel value="生年月日："></h:outputLabel>
+                        <h:outputText value="#"/>
+                        <h:outputLabel value="性別："></h:outputLabel>
+                        <h:outputText value="#"/>
+                    </h:panelGrid>
+                    <div class="member_delete_button">
+                    <h:commandButton styleClass="btn btn-primary btn-lg"
+                                     value="次 へ" action="deletecomplete.xhtml?faces-redirect=true"/>
+                    </div>
+                </h:form>
             </div>
         </ui:define>
-    </body>
+        </ui:composition>
+    </h:body>
 </html>
