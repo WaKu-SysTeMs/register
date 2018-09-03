@@ -594,11 +594,11 @@ div .manyList tbody{    /* 返却メイン画面スクロール調整 */
     border: solid;
     margin: 30px auto;
     text-align: center;
-    padding-top: 20px;
+    padding-top: 5px;
 }
 
 .login_syainNum{
-    padding-top: 70px;
+    padding-top: 50px;
     width: 700px;
     margin: auto;
 }
