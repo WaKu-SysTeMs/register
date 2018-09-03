@@ -19,7 +19,6 @@ import javax.inject.*;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
-
 /**
  *
  * @author s20163037
@@ -76,8 +75,7 @@ public class MemberBean implements Serializable {
 
     @Inject
     Conversation conv;
-    
-    
+
     @EJB
     MemberDb memberDb;
 
@@ -100,11 +98,19 @@ public class MemberBean implements Serializable {
         return "/pages/member/create.xhtml";
     }
 
+    public Member test() {
+        Member m = (Member) memberDb.search(100000001);
+        System.out.print(m);
+        return null;
+    }
+
     public Member search() {                                // 会員名　取得
         Member m = (Member) memberDb.search(member_num);
+
         if (m != null) {
             this.member_name = m.getMember_name();
         }
+        log.info(this.member_name+"***********************************************************************************************");
         return null;
     }
 
