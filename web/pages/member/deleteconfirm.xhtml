@@ -24,22 +24,23 @@ and open the template in the editor.
                     <div class="member_delete_confirm_top">
                         <h2>この会員でよろしいですか？</h2>
                     </div>
-                    <div class="member_delete_complete_main">
-                        <h:panelGrid columns="2" columnClasses="conf"
-                                     styleClass="">
+                    <div class="member_delete_confirm_main">
+                        <h:panelGrid columns="2" columnClasses="member_delete_complete_left,member_delete_complete_right">
                             <h:outputLabel value="会員番号："></h:outputLabel>
-                            <h:outputText value="#"/>
+                            <h:outputText value="10000000"/>
                             <h:outputLabel value="会員名　："></h:outputLabel>
-                            <h:outputText value="#"/>
+                            <h:outputText value="松前藩"/>
                             <h:outputLabel value="生年月日："></h:outputLabel>
-                            <h:outputText value="#"/>
+                            <h:outputText value="1997年8月7日"/>
                             <h:outputLabel value="性　別　："></h:outputLabel>
-                            <h:outputText value="#"/>
+                            <h:outputText value="男"/>
                         </h:panelGrid>
                     </div>
                     <div class="member_delete_button">
                     <h:commandButton styleClass="btn btn-primary btn-lg"
-                                     value="次 へ" action="deletecomplete.xhtml?faces-redirect=true"/>
+                                     value="戻 る" action="delete.xhtml?faces-redirect=true"/>
+                    <h:commandButton styleClass="btn btn-primary btn-lg"
+                                     value="退 会" action="deletecomplete.xhtml?faces-redirect=true"/>
                     </div>
                 </h:form>
             </div>
