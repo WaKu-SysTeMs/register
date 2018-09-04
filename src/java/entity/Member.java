@@ -29,10 +29,11 @@ public class Member implements Serializable {
 
 
     @Id
+    @NotNull
     @Size(max = 9)
     @Column(length = 9)
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer member_num;     // 会員番号
+    private String member_num;     // 会員番号
 
     @Size(max = 30)
     @Column(length = 30)
@@ -105,7 +106,7 @@ public class Member implements Serializable {
     public Member() {
     }
 
-    public Member(Integer member_num, String member_name, String member_ruby,
+    public Member(String member_num, String member_name, String member_ruby,
             Date birth_date, String sex, String postal_code, String member_add,
             String add_ruby, String member_phone, Job job_id, Category fav_category, char temp_flg) {
         this.member_num = member_num;
@@ -123,11 +124,11 @@ public class Member implements Serializable {
     }
 
     /* ゲッター、セッター */
-    public Integer getMember_num() {
+    public String getMember_num() {
         return member_num;
     }
 
-    public void setMember_num(Integer member_num) {
+    public void setMember_num(String member_num) {
         this.member_num = member_num;
     }
 

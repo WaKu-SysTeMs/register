@@ -27,7 +27,7 @@ public class Employee implements Serializable {
     @Id
     @Size(max =8)
     @Column(length = 8)
-    private Integer emp_num;            // 社員番号
+    private String emp_num;            // 社員番号
 
     @Size(max = 30)
     @Column(length = 30)
