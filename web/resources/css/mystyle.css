@@ -526,7 +526,7 @@ div .manyList tbody{    /* 返却メイン画面スクロール調整 */
     width: 150px;
 }
 
-.member_delete_main{
+.member_delete_top{
     height: 120px;
     width: 840px;
     border: solid;
@@ -555,13 +555,13 @@ div .manyList tbody{    /* 返却メイン画面スクロール調整 */
     text-align: center;
 }
 
-.member_delete_confirm_main{
+.member_delete_confirm_top{
     height: 100px;
     width: 740px;
     border: solid;
-    margin: 30px auto;
+    margin: 20px auto;
     text-align: center;
-    padding-top: 0px;
+    padding-top: 10px;
 }
 
 .member_list_num{
@@ -617,4 +617,13 @@ div .manyList tbody{    /* 返却メイン画面スクロール調整 */
     padding-top: 50px;
     width: 200px;
     margin: auto;
+}
+
+.member_delete_complete_main{
+    color: red;
+    padding-top: 15px;
+    width: 400px;
+    margin: auto;
+    font-size: 120%;
+    line-height: 50px;
 }
