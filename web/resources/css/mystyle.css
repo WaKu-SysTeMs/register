@@ -619,11 +619,29 @@ div .manyList tbody{    /* 返却メイン画面スクロール調整 */
     margin: auto;
 }
 
-.member_delete_complete_main{
-    color: red;
+.member_delete_confirm_main{
     padding-top: 15px;
-    width: 400px;
+    width: 260px;
     margin: auto;
     font-size: 120%;
     line-height: 50px;
+}
+
+.member_delete_complete_left{
+    width: 100px;
+    text-align: right;
+}
+
+.member_delete_complete_right{
+    text-align: left;
+}
+
+.member_delete_complete_main{
+    height: 200px;
+    width: 740px;
+    border: solid;
+    margin: 140px auto;
+    text-align: center;
+    padding-top: 70px;
+    font-size: 350%;
 }
