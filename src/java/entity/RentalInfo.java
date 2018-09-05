@@ -28,7 +28,7 @@ public class RentalInfo implements Serializable {
 
     @Id
     @NotNull
-    private Integer rental_num;          // 貸出番号
+    private String rental_num;          // 貸出番号
 
     @NotNull
     @Size(max = 9)
@@ -61,7 +61,7 @@ public class RentalInfo implements Serializable {
     public RentalInfo() {
     }
 
-    public RentalInfo(Integer rental_num, Member member_num, Date rental_date, int amount, Register register_id, Employee emp_num) {
+    public RentalInfo(String rental_num, Member member_num, Date rental_date, int amount, Register register_id, Employee emp_num) {
         this.rental_num = rental_num;
         this.member_num = member_num;
         this.rental_date = rental_date;
@@ -71,11 +71,11 @@ public class RentalInfo implements Serializable {
     }
 
     /* セッター、ゲッター */
-    public Integer getRental_num() {
+    public String getRental_num() {
         return rental_num;
     }
 
-    public void setRental_num(Integer rental_num) {
+    public void setRental_num(String rental_num) {
         this.rental_num = rental_num;
     }
 

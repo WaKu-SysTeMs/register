@@ -8,7 +8,6 @@ import java.util.Date;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
-
 /**
  *
  * @author s20163060
@@ -33,7 +32,7 @@ public class RentalDetail implements Serializable {
     @Id
     @Size(max = 2)
     @Column(length = 2)
-    private Integer detail_num;                 // 明細番号
+    private String detail_num;                 // 明細番号
 
     @NotNull
     @Size(max = 9)
@@ -76,7 +75,7 @@ public class RentalDetail implements Serializable {
     public RentalDetail() {
     }
 
-    public RentalDetail(RentalInfo rental_num, Integer detail_num, DvdInfo dvd_num, PriceList release_kbn, Date return_plan, Date return_date, SaleInfo sale_id, char discount_flg, Integer subtotal, char invalid_flg) {
+    public RentalDetail(RentalInfo rental_num, String detail_num, DvdInfo dvd_num, PriceList release_kbn, Date return_plan, Date return_date, SaleInfo sale_id, char discount_flg, Integer subtotal, char invalid_flg) {
         this.rental_num = rental_num;
         this.detail_num = detail_num;
         this.dvd_num = dvd_num;
@@ -98,11 +97,11 @@ public class RentalDetail implements Serializable {
         this.rental_num = rental_num;
     }
 
-    public Integer getDetail_num() {
+    public String getDetail_num() {
         return detail_num;
     }
 
-    public void setDetail_num(Integer detail_num) {
+    public void setDetail_num(String detail_num) {
         this.detail_num = detail_num;
     }
 

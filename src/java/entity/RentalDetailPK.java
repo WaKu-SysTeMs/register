@@ -7,19 +7,18 @@ import java.io.Serializable;
 import java.util.Objects;
 import javax.validation.constraints.Size;
 
-
 public class RentalDetailPK implements Serializable {
 
-    private Integer rental_num;          //貸出番号(FK)
+    private String rental_num;          //貸出番号(FK)
 
     @Size(max = 2)
-    private Integer detail_num;          //明細番号
+    private String detail_num;          //明細番号
 
     /* コンストラクタ */
     public RentalDetailPK() {
     }
 
-    public RentalDetailPK(Integer rental_num, Integer detail_num) {
+    public RentalDetailPK(String rental_num, String detail_num) {
         this.rental_num = rental_num;
         this.detail_num = detail_num;
     }
@@ -52,20 +51,19 @@ public class RentalDetailPK implements Serializable {
     }
 
     /* ゲッター、セッター */
-    public Integer getRental_num() {
+    public String getRental_num() {
         return rental_num;
     }
 
-    public void setRental_num(Integer rental_num) {
+    public void setRental_num(String rental_num) {
         this.rental_num = rental_num;
     }
 
-    public Integer getDetail_num() {
+    public String getDetail_num() {
         return detail_num;
     }
 
-    public void setDetail_num(Integer detail_num) {
+    public void setDetail_num(String detail_num) {
         this.detail_num = detail_num;
     }
-
 }
