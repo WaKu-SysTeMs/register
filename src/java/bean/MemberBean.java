@@ -28,7 +28,7 @@ import javax.validation.constraints.*;
 public class MemberBean implements Serializable {
 
     @Size(max = 9)
-    private Integer member_num;     // 会員番号
+    private String member_num;     // 会員番号
 
     @Size(max = 30)
     private String member_name;     // 会員名
@@ -98,34 +98,31 @@ public class MemberBean implements Serializable {
         return "/pages/member/create.xhtml";
     }
 
-    public Member test() {
-        Member m = (Member) memberDb.search(100000001);
-        System.out.print(m);
-        return null;
-    }
-
-    public Member search() {                                // 会員名　取得
-        Member m = (Member) memberDb.search(member_num);
-
+    public String search() {                                // 会員名　取得
+        Member m = (Member) memberDb.search(this.member_num);
         if (m != null) {
             this.member_name = m.getMember_name();
         }
-        log.info(this.member_name+"***********************************************************************************************");
         return null;
     }
+
 
     public List<Member> getAll() {          // MemberInfo 全件取得
         return memberDb.getAll();
     }
 
     /* ゲッター、セッター */
-    public Integer getMember_num() {
+
+    public String getMember_num() {
         return member_num;
     }
 
-    public void setMember_num(Integer member_num) {
+    public void setMember_num(String member_num) {
         this.member_num = member_num;
     }
+
+    
+    
 
     public String getMember_name() {
         return member_name;

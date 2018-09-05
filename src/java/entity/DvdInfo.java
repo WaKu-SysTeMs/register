@@ -27,7 +27,7 @@ public class DvdInfo implements Serializable {
     @Id
     @Size(max = 9)
     @Column(length = 9)
-    private Integer dvd_num;            // DVD番号
+    private String dvd_num;            // DVD番号
 
     @NotNull
     @Size(max = 6)
@@ -55,7 +55,7 @@ public class DvdInfo implements Serializable {
     public DvdInfo() {
     }
 
-    public DvdInfo(Integer dvd_num, ProductInfo product_num, StoreInfo store_id, char rental_status) {
+    public DvdInfo(String dvd_num, ProductInfo product_num, StoreInfo store_id, char rental_status) {
         this.dvd_num = dvd_num;
         this.product_num = product_num;
         this.store_id = store_id;
@@ -63,11 +63,11 @@ public class DvdInfo implements Serializable {
     }
 
     /* ゲッター、セッター */
-    public Integer getDvd_num() {
+    public String getDvd_num() {
         return dvd_num;
     }
 
-    public void setDvd_num(Integer dvd_num) {
+    public void setDvd_num(String dvd_num) {
         this.dvd_num = dvd_num;
     }
 

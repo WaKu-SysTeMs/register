@@ -27,7 +27,7 @@ public class Employee implements Serializable {
     @Id
     @Size(max =8)
     @Column(length = 8)
-    private Integer emp_num;            // 社員番号
+    private String emp_num;            // 社員番号
 
     @Size(max = 30)
     @Column(length = 30)
@@ -63,7 +63,7 @@ public class Employee implements Serializable {
     public Employee() {
     }
 
-    public Employee(Integer emp_num, String emp_name, RoleInfo role_id, String passwd, StoreInfo store_id) {
+    public Employee(String emp_num, String emp_name, RoleInfo role_id, String passwd, StoreInfo store_id) {
         this.emp_num = emp_num;
         this.emp_name = emp_name;
         this.role_id = role_id;
@@ -72,11 +72,11 @@ public class Employee implements Serializable {
     }
 
     /* ゲッター、セッター */
-    public Integer getEmp_num() {
+    public String getEmp_num() {
         return emp_num;
     }
 
-    public void setEmp_num(Integer emp_num) {
+    public void setEmp_num(String emp_num) {
         this.emp_num = emp_num;
     }
 
