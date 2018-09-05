@@ -19,7 +19,6 @@ import javax.inject.*;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
-
 /**
  *
  * @author s20163037
@@ -29,7 +28,7 @@ import javax.validation.constraints.*;
 public class MemberBean implements Serializable {
 
     @Size(max = 9)
-    private Integer member_num;     // 会員番号
+    private String member_num;     // 会員番号
 
     @Size(max = 30)
     private String member_name;     // 会員名
@@ -76,8 +75,7 @@ public class MemberBean implements Serializable {
 
     @Inject
     Conversation conv;
-    
-    
+
     @EJB
     MemberDb memberDb;
 
@@ -100,12 +98,12 @@ public class MemberBean implements Serializable {
         return "/pages/member/create.xhtml";
     }
 
-    public Member search() {                                // 会員名　取得
-        Member m = (Member) memberDb.search(member_num);
+    public String search() {                                // 会員名　取得
+        Member m = (Member) memberDb.search(this.member_num);
         if (m != null) {
             this.member_name = m.getMember_name();
         }
-        return null;
+        return this.member_name;
     }
 
     public List<Member> getAll() {          // MemberInfo 全件取得
@@ -113,13 +111,17 @@ public class MemberBean implements Serializable {
     }
 
     /* ゲッター、セッター */
-    public Integer getMember_num() {
+
+    public String getMember_num() {
         return member_num;
     }
 
-    public void setMember_num(Integer member_num) {
+    public void setMember_num(String member_num) {
         this.member_num = member_num;
     }
+
+    
+    
 
     public String getMember_name() {
         return member_name;

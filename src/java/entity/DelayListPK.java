@@ -19,7 +19,7 @@ public class DelayListPK implements Serializable {
     private static final long serialVersionUID = 1L;  // シリアルバージョンUIDのバージョン管理
 
     @Size(max = 9)
-    private Integer member_num;            // 会員番号(FK)
+    private String member_num;            // 会員番号(FK)
 
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date payment_date;             // 支払日
@@ -29,17 +29,19 @@ public class DelayListPK implements Serializable {
     public DelayListPK() {
     }
 
-    public DelayListPK(Integer member_num, Date payment_date) {
+    public DelayListPK(String member_num, Date payment_date) {
         this.member_num = member_num;
         this.payment_date = payment_date;
     }
 
-    /* ゲッター、セッター */
-    public Integer getMember_num() {
+
+
+    public String getMember_num() {
         return member_num;
     }
 
-    public void setMember_num(Integer member_num) {
+    /* ゲッター、セッター */
+    public void setMember_num(String member_num) {
         this.member_num = member_num;
     }
 

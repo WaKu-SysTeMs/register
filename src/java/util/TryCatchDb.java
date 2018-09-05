@@ -11,6 +11,8 @@ import java.util.List;
  * @author s20163037
  */
 public class TryCatchDb<T> extends SuperDb {
+    
+    
 
     public TryCatchDb(Class entityC) {
         super(entityC);

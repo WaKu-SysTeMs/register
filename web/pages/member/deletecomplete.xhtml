@@ -10,16 +10,23 @@ and open the template in the editor.
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
-    <head>
-        <title>新規会員登録完了ページ</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
-    <body>
-        <ui:define name="title">退会処理</ui:define>
+    <h:head>
+
+        <link rel="stylesheet" type="text/css" href="/resources/css/mystayle.css"/>
+    </h:head>
+    <h:body>
+        <ui:composition template="/templates/template01.xhtml">
+        <ui:define name="title"></ui:define>
         <ui:define name="content">
             <div class="container">
-                <h1>退会が完了しました <span class="glyphicon glyphicon-save"/></h1>
+                <br/>
+                <h:form>
+                    <div class="member_delete_complete_main">
+                        退会が完了しました。
+                    </div>
+                </h:form>
             </div>
         </ui:define>
-    </body>
+        </ui:composition>
+    </h:body>
 </html>

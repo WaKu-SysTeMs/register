@@ -15,31 +15,36 @@ and open the template in the editor.
         <link rel="stylesheet" type="text/css" href="/resources/css/mystayle.css"/>
     </h:head>
     <h:body>
+        <ui:composition template="/templates/template01.xhtml">
         <ui:define name="title"></ui:define>
         <ui:define name="content">
             <div class="container">
-                <h3>退会会員情報確認 <span class="glyphicon glyphicon-check" /></h3>
                 <br/>
                 <h:form>
-                    <h:panelGrid columns="2" columnClasses="conf"
-                                 styleClass="">
-                        <f:facet name="header">退会する会員内容確認</f:facet>
-                        <h:outputLabel value="会員番号："></h:outputLabel>
-                        <h:outputText value="#"/>
-                        <h:outputLabel value="会員名："></h:outputLabel>
-                        <h:outputText value="#"/>
-                        <h:outputLabel value="生年月日："></h:outputLabel>
-                        <h:outputText value="#"/>
-                        <h:outputLabel value="性別："></h:outputLabel>
-                        <h:outputText value="#"/>
-                    </h:panelGrid>
-                    <br/>
-                    <h:commandButton styleClass="btn btn-primary"
-                                     value="退　会" action="#"/>
-                    <h:commandButton styleClass="btn btn-default"
-                                     value="戻る" action="#"/>
+                    <div class="member_delete_confirm_top">
+                        <h2>この会員でよろしいですか？</h2>
+                    </div>
+                    <div class="member_delete_confirm_main">
+                        <h:panelGrid columns="2" columnClasses="member_delete_complete_left,member_delete_complete_right">
+                            <h:outputLabel value="会員番号："></h:outputLabel>
+                            <h:outputText value="10000000"/>
+                            <h:outputLabel value="会員名　："></h:outputLabel>
+                            <h:outputText value="松前藩"/>
+                            <h:outputLabel value="生年月日："></h:outputLabel>
+                            <h:outputText value="1997年8月7日"/>
+                            <h:outputLabel value="性　別　："></h:outputLabel>
+                            <h:outputText value="男"/>
+                        </h:panelGrid>
+                    </div>
+                    <div class="member_delete_button">
+                    <h:commandButton styleClass="btn btn-primary btn-lg"
+                                     value="戻 る" action="delete.xhtml?faces-redirect=true"/>
+                    <h:commandButton styleClass="btn btn-primary btn-lg"
+                                     value="退 会" action="deletecomplete.xhtml?faces-redirect=true"/>
+                    </div>
                 </h:form>
             </div>
         </ui:define>
+        </ui:composition>
     </h:body>
 </html>
