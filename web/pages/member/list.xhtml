@@ -41,32 +41,32 @@
                             </h:panelGrid>
                             <div class="hoge1">
                                 <div class="test1">
-                                    <h:outputLabel styleClass="control-label">性別：</h:outputLabel>
+                                    <h:outputLabel styleClass="control-label">性別：</h:outputLabel><br/>
                                     <h:panelGroup>
-                                        <h:selectOneRadio value="#{moriTest.test}" required="true" label="性別：">
-                                            <f:selectItems value="#{moriTest.langs}" />
-                                        </h:selectOneRadio>
+                                        <input type="radio" name="性別" value="1" />男
+                                        <input type="radio" name="性別" value="0" />女
+                                        <input type="radio" name="性別" value="2" checked="checked" />すべて
                                     </h:panelGroup></div>
                                 <div class="test1">
-                                    <h:outputLabel styleClass="control-label">会員状態：</h:outputLabel>
+                                    <h:outputLabel styleClass="control-label">会員状態：</h:outputLabel><br/>
                                     <h:panelGroup>
-                                        <h:selectOneRadio value="#{moriTest.test3}" required="true" label="会員状態：">
-                                            <f:selectItems value="#{moriTest.langs3}" />
-                                        </h:selectOneRadio>
+                                        <input type="radio" name="会員状態" value="0" />ブラック会員である
+                                        <input type="radio" name="会員状態" value="1" />ブラック会員でない
+                                        <input type="radio" name="会員状態" value="2" checked="checked" />すべて
                                     </h:panelGroup></div>
                                 <div class="test1">
-                                    <h:outputLabel styleClass="control-label">会員状況：</h:outputLabel>
+                                    <h:outputLabel styleClass="control-label">会員状況：</h:outputLabel><br/>
                                     <h:panelGroup>
-                                        <h:selectOneRadio value="#{moriTest.test4}" required="true" label="会員状況：">
-                                            <f:selectItems value="#{moriTest.langs4}" />
-                                        </h:selectOneRadio>
+                                        <input type="radio" name="会員状況" value="1" />退会済みである
+                                        <input type="radio" name="会員状況" value="0" />退会済みでない
+                                        <input type="radio" name="会員状況" value="2" checked="checked" />すべて
                                     </h:panelGroup></div>
                                 <div class="test1">
-                                    <h:outputLabel styleClass="control-label">仮入会：</h:outputLabel>
+                                    <h:outputLabel styleClass="control-label">仮入会：</h:outputLabel><br/>
                                     <h:panelGroup>
-                                        <h:selectOneRadio value="#{moriTest.test5}" required="true" label="仮入会：">
-                                            <f:selectItems value="#{moriTest.langs5}" />
-                                        </h:selectOneRadio>
+                                        <input type="radio" name="仮入会" value="1" />会員
+                                        <input type="radio" name="仮入会" value="0" />仮会員
+                                        <input type="radio" name="仮入会" value="2" checked="checked" />すべて
                                     </h:panelGroup></div><br/><div class="test1">
                                     <h:commandButton styleClass="btn btn-default" value="検 索" action="#" />
                                 </div>
