@@ -6,6 +6,7 @@
 package bean;
 
 import db.RentalInfoDb;
+import entity.RentalInfo;
 //import entity.Rental;
 import java.io.Serializable;
 import java.util.List;
@@ -23,7 +24,8 @@ import javax.inject.Named;
 @SessionScoped
 public class RentalListBean implements Serializable {
 
-//    private List<Rental> rentalList;
+
+    
 
     @EJB
     RentalInfoDb rentalDb;
@@ -31,15 +33,7 @@ public class RentalListBean implements Serializable {
     @Inject
     transient Logger log;
     
-    /**
-     * rentalListへ貸出情報を全件いれる
-     * 
-     * @return 貸出一覧画面表示
-     */
-//    public String list(){
-//        log.info(log.getName() + "| 貸出一覧画面");
-//        rentalList = rentalDb.getAll();
-//        return  "/pages/rental/list.xhtml";
-//    }
-    
+     public List<RentalInfo> getAll() {          // MemberInfo 全件取得
+        return rentalDb.getAll();
+    }
 }
