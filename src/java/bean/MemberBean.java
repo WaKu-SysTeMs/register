@@ -103,8 +103,9 @@ public class MemberBean implements Serializable {
         if (m != null) {
             this.member_name = m.getMember_name();
         }
-        return this.member_name;
+        return null;
     }
+
 
     public List<Member> getAll() {          // MemberInfo 全件取得
         return memberDb.getAll();

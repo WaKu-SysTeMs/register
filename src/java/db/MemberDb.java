@@ -7,6 +7,7 @@ import entity.Member;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TemporalType;
 import javax.persistence.TypedQuery;
 import util.TryCatchDb;
 
@@ -25,11 +26,11 @@ public class MemberDb extends TryCatchDb {
         super(Member.class);
     }
     
-//    public void getName(){
-//        TypedQuery q = em.createNamedQuery(Member.QName, Member.class);
-//        q.setParameter(1, )
-//        return q.getResultList();
-//    }
+    public void getName(){
+        TypedQuery<Member> q = em.createNamedQuery(Member.QName, Member.class);
+        q.setParameter(1, 100000001);
+        q.getResultList();
+    }
 
 
 }
