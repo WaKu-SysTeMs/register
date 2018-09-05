@@ -1,14 +1,44 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package bean;
 
-/**
- *
- * @author s20163022
- */
-public class LoginBean {
+import java.io.Serializable;
+
+public class LoginBean implements Serializable {
+    private String empName;
+    private String regiNum;
+    private boolean authenticated;
     
+    public void login(String empName){
+        this.empName = empName;
+        this.authenticated = true;
+    }
+    
+    public void logout(){
+        this.empName = null;
+        this.authenticated = false;
+    }
+
+    // getter setter
+    public String getEmpName() {
+        return empName;
+    }
+
+    public void setEmpName(String empName) {
+        this.empName = empName;
+    }
+
+    public String getRegiNum() {
+        return regiNum;
+    }
+
+    public void setRegiNum(String regiNum) {
+        this.regiNum = regiNum;
+    }
+    
+    public boolean isAuthenticated() {
+        return authenticated;
+    }
+
+    public void setAuthenticated(boolean authenticated) {
+        this.authenticated = authenticated;
+    }
 }
