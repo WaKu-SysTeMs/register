@@ -21,7 +21,7 @@ and open the template in the editor.
                 <div class="container">
 
                     <h:form><div class="form-group">
-                            <h:panelGrid columns="7">
+                            <h:panelGrid columns="5">
                                 
                                 <h:outputLabel styleClass="control-label">商品番号：</h:outputLabel>
 
@@ -29,23 +29,21 @@ and open the template in the editor.
                                     <f:ajax event="change" execute="@this" listener="#"/>
                                 </h:inputText>
                                 
-                                <h:outputLabel styleClass="control-label">店舗名：</h:outputLabel>
+                                <h:outputLabel styleClass="control-label">店舗名　：</h:outputLabel>
+                                <h:selectOneMenu value="#{moriTest.test6}" styleClass="sel" class="form-control chousei">
+                                    <f:selectItems value="#{moriTest.langs6}"/>
+                                </h:selectOneMenu>
+                                <h:outputText/>
+                                
+                                <h:outputLabel styleClass="control-label">セール名：</h:outputLabel>
                                 <h:selectOneMenu value="#{moriTest.test6}" styleClass="sel" class="form-control">
                                     <f:selectItems value="#{moriTest.langs6}"/>
                                 </h:selectOneMenu>
-                                
-                                <h:outputLabel styleClass="control-label">セール名：</h:outputLabel>
-
-                                <h:inputText id="saleName" required="true" value="#" label="セール名：" styleClass="form-control">
-                                    <f:ajax event="change" execute="@this" listener="#"/>
-                                </h:inputText>
 
                                 <h:outputLabel styleClass="control-label">ジャンル：</h:outputLabel>
-
-                                <h:inputText id="title" required="true" value="#" label="ジャンル：" styleClass="form-control">
-                                    <f:ajax event="change" execute="@this" listener="#"/>
-                                </h:inputText>
-                                <h:outputText/>
+                                <h:selectOneMenu value="#{moriTest.test6}" styleClass="sel" class="form-control">
+                                    <f:selectItems value="#{moriTest.langs6}"/>
+                                </h:selectOneMenu>
                                 
                                 
                                 

@@ -645,3 +645,8 @@ div .manyList tbody{    /* 返却メイン画面スクロール調整 */
     padding-top: 70px;
     font-size: 350%;
 }
+
+.chousei{
+    height: 40px;
+    width: 217px;
+}
