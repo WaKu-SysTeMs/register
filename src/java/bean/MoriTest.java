@@ -19,12 +19,6 @@ public class MoriTest {
 
     private Integer test;
 
-    private SelectItem[] langs = {
-        new SelectItem(1,"男"),
-        new SelectItem(2, "女"),
-        new SelectItem(3, "すべて")
-    };
-    
     
     private Integer test2;
     private SelectItem[] langs2 = {
@@ -36,27 +30,6 @@ public class MoriTest {
         new SelectItem(6,"その他")
     };
     
-    private Integer test3;
-    private SelectItem[] langs3 = {
-        new SelectItem(1,"ブラック会員である"),
-        new SelectItem(2,"ブラック会員でない"),
-        new SelectItem(3,"すべて")
-    };
-    
-    private Integer test4;
-    private SelectItem[] langs4 = {
-        new SelectItem(1,"退会済み"),
-        new SelectItem(2,"退会していない"),
-        new SelectItem(3,"すべて")
-    };
-    
-    private Integer test5;
-    private SelectItem[] langs5 = {
-        new SelectItem(1,"会員"),
-        new SelectItem(2,"仮入会"),
-        new SelectItem(3,"すべて")
-    };
-    
     private Integer test6;
     private SelectItem[] langs6 = {
         new SelectItem(1,"店舗１"),
@@ -64,11 +37,10 @@ public class MoriTest {
         new SelectItem(3,"すべて")
     };
     
-    private Integer test7;
-
-    private SelectItem[] langs7 = {
+    private Integer sex;
+     private SelectItem[] langs1 = {
         new SelectItem(1,"男"),
-        new SelectItem(2, "女")
+        new SelectItem(0,"女")
     };
     
     public MoriTest() {
@@ -77,15 +49,6 @@ public class MoriTest {
     public MoriTest(Integer test) {
         this.test = test;
     }
-
-    public SelectItem[] getLangs() {
-        return langs;
-    }
-
-    public void setLangs(SelectItem[] langs) {
-        this.langs = langs;
-    }
-
 
     public Integer getTest() {
         return test;
@@ -111,54 +74,6 @@ public class MoriTest {
         this.langs2 = langs2;
     }
 
-    public Integer getTest3() {
-        return test3;
-    }
-
-    public void setTest3(Integer test3) {
-        this.test3 = test3;
-    }
-
-    public SelectItem[] getLangs3() {
-        return langs3;
-    }
-
-    public void setLangs3(SelectItem[] langs3) {
-        this.langs3 = langs3;
-    }
-
-    public Integer getTest4() {
-        return test4;
-    }
-
-    public void setTest4(Integer test4) {
-        this.test4 = test4;
-    }
-
-    public SelectItem[] getLangs4() {
-        return langs4;
-    }
-
-    public void setLangs4(SelectItem[] langs4) {
-        this.langs4 = langs4;
-    }
-
-    public Integer getTest5() {
-        return test5;
-    }
-
-    public void setTest5(Integer test5) {
-        this.test5 = test5;
-    }
-
-    public SelectItem[] getLangs5() {
-        return langs5;
-    }
-
-    public void setLangs5(SelectItem[] langs5) {
-        this.langs5 = langs5;
-    }
-
     public Integer getTest6() {
         return test6;
     }
@@ -175,21 +90,21 @@ public class MoriTest {
         this.langs6 = langs6;
     }
 
-    public Integer getTest7() {
-        return test7;
+    public Integer getSex() {
+        return sex;
     }
 
-    public void setTest7(Integer test7) {
-        this.test7 = test7;
+    public void setSex(Integer sex) {
+        this.sex = sex;
     }
 
-    public SelectItem[] getLangs7() {
-        return langs7;
+    public SelectItem[] getLangs1() {
+        return langs1;
     }
 
-    public void setLangs7(SelectItem[] langs7) {
-        this.langs7 = langs7;
+    public void setLangs1(SelectItem[] langs1) {
+        this.langs1 = langs1;
     }
-    
+
     
 }

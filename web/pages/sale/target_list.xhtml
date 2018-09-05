@@ -23,43 +23,31 @@ and open the template in the editor.
                     <h:form><div class="form-group">
                             <h:panelGrid columns="7">
                                 
-                                <h:outputLabel styleClass="control-label">セールＩＤ：</h:outputLabel>
+                                <h:outputLabel styleClass="control-label">商品番号：</h:outputLabel>
 
-                                <h:inputText id="saleId" required="true" value="#" label="セールＩＤ：" styleClass="form-control">
+                                <h:inputText id="saleId" required="true" value="#" label="商品番号：" styleClass="form-control">
                                     <f:ajax event="change" execute="@this" listener="#"/>
                                 </h:inputText>
-                                
-                                <h:outputLabel styleClass="control-label">セール名　：</h:outputLabel>
-
-                                <h:inputText id="saleName" required="true" value="#" label="セール名　：" styleClass="form-control">
-                                    <f:ajax event="change" execute="@this" listener="#"/>
-                                </h:inputText>
-
-                                <h:outputLabel styleClass="control-label">作品名：</h:outputLabel>
-
-                                <h:inputText id="title" required="true" value="#" label="作　品　名：" styleClass="form-control">
-                                    <f:ajax event="change" execute="@this" listener="#"/>
-                                </h:inputText>
-                                <h:outputText/>
-
-                                <h:outputLabel styleClass="control-label">開始年月日：</h:outputLabel>
-                                <h:panelGroup>
-                                    <h:inputText p:type="date" required="true" label="開始年月日：" styleClass="form-control">
-                                        <f:convertDateTime pattern="yyyy-M-d" timeZone="Asia/Tokyo"/>
-                                    </h:inputText> 
-                                </h:panelGroup>
-                                
-                                <h:outputLabel styleClass="control-label">終了年月日：</h:outputLabel>
-                                <h:panelGroup>
-                                    <h:inputText p:type="date" required="true" label="終了年月日：" styleClass="form-control">
-                                        <f:convertDateTime pattern="yyyy-M-d" timeZone="Asia/Tokyo"/>
-                                    </h:inputText> 
-                                </h:panelGroup>
                                 
                                 <h:outputLabel styleClass="control-label">店舗名：</h:outputLabel>
                                 <h:selectOneMenu value="#{moriTest.test6}" styleClass="sel" class="form-control">
                                     <f:selectItems value="#{moriTest.langs6}"/>
                                 </h:selectOneMenu>
+                                
+                                <h:outputLabel styleClass="control-label">セール名：</h:outputLabel>
+
+                                <h:inputText id="saleName" required="true" value="#" label="セール名：" styleClass="form-control">
+                                    <f:ajax event="change" execute="@this" listener="#"/>
+                                </h:inputText>
+
+                                <h:outputLabel styleClass="control-label">ジャンル：</h:outputLabel>
+
+                                <h:inputText id="title" required="true" value="#" label="ジャンル：" styleClass="form-control">
+                                    <f:ajax event="change" execute="@this" listener="#"/>
+                                </h:inputText>
+                                <h:outputText/>
+                                
+                                
                                 
                                 <h:commandButton styleClass="btn btn-default" value="検 索" action="#"/>
 
