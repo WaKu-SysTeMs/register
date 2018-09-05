@@ -9,7 +9,6 @@ import java.util.List;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
-
 /**
  *
  * @author sakura＊
@@ -20,7 +19,7 @@ import javax.validation.constraints.*;
 @Entity
 @Table(name = "product_info")
 public class ProductInfo implements Serializable {
-    
+
     public static final String Qall = "Qall";
 
     private static final long serialVersionUID = 1L;  // シリアルバージョンUIDのバージョン管理
@@ -28,7 +27,7 @@ public class ProductInfo implements Serializable {
     @Id
     @Size(max = 6)
     @Column(length = 6)
-    private Integer product_num;    // 商品番号
+    private String product_num;    // 商品番号
 
     @Size(max = 100)
     @Column(length = 100)
@@ -42,7 +41,7 @@ public class ProductInfo implements Serializable {
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date rental_start_date; // 貸出開始年月日
 
-    @Size(min=1,max = 3)
+    @Size(min = 1, max = 3)
     @Column(length = 3)
     private String play_time;       // 再生時間
 
@@ -74,7 +73,7 @@ public class ProductInfo implements Serializable {
     public ProductInfo() {
     }
 
-    public ProductInfo(Integer product_num, String product_name, Category category_id, Date rental_start_date, String play_time, String director, ReleaseList release_kbn) {
+    public ProductInfo(String product_num, String product_name, Category category_id, Date rental_start_date, String play_time, String director, ReleaseList release_kbn) {
         this.product_num = product_num;
         this.product_name = product_name;
         this.category_id = category_id;
@@ -83,21 +82,13 @@ public class ProductInfo implements Serializable {
         this.director = director;
         this.release_kbn = release_kbn;
     }
-    public ProductInfo(Integer product_num, String product_name, Date rental_start_date, String play_time, String director) {
-        this.product_num = product_num;
-        this.product_name = product_name;
-        this.rental_start_date = rental_start_date;
-        this.play_time = play_time;
-        this.director = director;
-    }
-
 
     /* ゲッター、セッター */
-    public Integer getProduct_num() {
+    public String getProduct_num() {
         return product_num;
     }
 
-    public void setProduct_num(Integer product_num) {
+    public void setProduct_num(String product_num) {
         this.product_num = product_num;
     }
 
