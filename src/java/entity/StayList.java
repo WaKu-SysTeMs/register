@@ -12,6 +12,9 @@ import javax.validation.constraints.Size;
  *
  * @author sakura＊
  */
+//@NamedQueries({
+//    @NamedQuery(name = StayList.Qall, query = "SELECT e FROM STAY_LIST e")
+//})
 @Entity
 @Table(name = "stay_list")
 public class StayList implements Serializable {

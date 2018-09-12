@@ -13,7 +13,7 @@ import javax.validation.constraints.*;
  * @author sakura＊
  */
 //@NamedQueries({
-//    @NamedQuery(name = MoveDetail.Qall, query = "SELECT * FROM MOVE_DETAIL")
+//    @NamedQuery(name = MoveDetail.Qall, query = "SELECT e FROM MOVE_DETAIL e")
 //})
 @Entity
 @Table(name = "move_detail")

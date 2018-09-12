@@ -14,7 +14,7 @@ import javax.validation.constraints.*;
  * @author s20163037
  */
 //@NamedQueries({
-//    @NamedQuery(name = Register.Qall, query = "SELECT * FROM REGISTER")
+//    @NamedQuery(name = Register.Qall, query = "SELECT e FROM REGISTER e")
 //})
 @Entity
 @Table(name = "register")

@@ -14,7 +14,7 @@ import javax.validation.constraints.*;
  * @author sakura＊
  */
 //@NamedQueries({
-//    @NamedQuery(name = MoveHistory.Qall, query = "SELECT * FROM MOVE_HISTORY")
+//    @NamedQuery(name = MoveHistory.Qall, query = "SELECT e FROM MOVE_HISTORY e")
 //})
 @Entity
 @Table(name = "move_history")

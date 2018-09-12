@@ -14,7 +14,7 @@ import javax.validation.constraints.*;
  * @author sakura＊
  */
 //@NamedQueries({
-//    @NamedQuery(name = Inspection.Qall, query = "SELECT * FROM INSPECTION")
+//    @NamedQuery(name = Inspection.Qall, query = "SELECT e FROM INSPECTION e")
 //})
 @Entity
 @Table(name = "inspection")

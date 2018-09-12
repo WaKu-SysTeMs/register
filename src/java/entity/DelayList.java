@@ -14,7 +14,7 @@ import javax.validation.constraints.*;
  * @author s20163037
  */
 //@NamedQueries({
-//    @NamedQuery(name = DelayList.Qall, query = "SELECT * FROM DELAY_LIST")
+//    @NamedQuery(name = DelayList.Qall, query = "SELECT e FROM DELAY_LIST e")
 //})
 @Entity
 @Table(name = "delay_list")
