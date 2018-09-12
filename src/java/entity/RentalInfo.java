@@ -9,14 +9,13 @@ import java.util.List;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
-
 /**
  *
  * @author s20163037
  */
 @NamedQueries({
-    @NamedQuery(name = RentalInfo.RentalQAll,
-            query = "SELECT e FROM RentalInfo e")
+    @NamedQuery(name = RentalInfo.RentalQAll, query = "SELECT e FROM RentalInfo e"),
+    @NamedQuery(name = RentalInfo.RentalFRentaiNum, query = "SELECT r FROM RentalInfo r WHERE r.rental_num = :rentalNum")
 })
 @Entity
 @Table(name = "rental_info")
@@ -25,6 +24,7 @@ public class RentalInfo implements Serializable {
     private static final long serialVersionUID = 1L;  // シリアルバージョンUIDのバージョン管理
 
     public static final String RentalQAll = "RentalQAll";
+    public static final String RentalFRentaiNum = "RentalFRentalNum";   // 会員番号から検索
 
     @Id
     @NotNull
