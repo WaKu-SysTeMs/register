@@ -15,7 +15,7 @@ import javax.validation.constraints.*;
  * @author s20163037
  */
 @NamedQueries({
-    @NamedQuery(name = Member.QAll, query = "SELECT e FROM Member e"),
+    @NamedQuery(name = Member.QAll, query = "SELECT e FROM Member e ORDER BY e.member_num"),
     @NamedQuery(name = Member.QName, query = "SELECT e.member_name FROM Member e WHERE e.member_num = ?1")
 })
 @Entity

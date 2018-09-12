@@ -31,9 +31,20 @@ public class RentalBean implements Serializable {
     @Size(max = 9)
     private String member_num;           // 会員番号(FK)
 
+    @Size(max = 6)
+    private String product_num;    // 商品番号
+
+    @Size(max = 100)
+    private String product_name;    // 作品名
+
+    private boolean sale;
+
     @Size(max = 1)
     protected String release_kbn;         // 新旧区分
     protected Map<String, String> releaseItems;   // 新旧区分の選択肢
+
+    @Size(max = 6)
+    private String release_name;         // 区分名
 //    {
     //        test = new ArrayList<>();x=1;
     //        test.add(new TestRental(x++,"究極の苺","旧作","01"));
@@ -44,6 +55,9 @@ public class RentalBean implements Serializable {
 
     @EJB
     MemberDb memberDb;
+
+    @EJB
+    ProductInfoDb productDb;
 
     @Inject
     transient Logger log;
@@ -84,11 +98,27 @@ public class RentalBean implements Serializable {
         return "create_payment.xhtml?faces-redirect=true";
     }
 
-    public String search() {                                // 会員名　取得
+    /**
+     *  会員名　取得
+     * @return 
+     */
+    public String search() {
         this.member_name = null;
         Member m = (Member) memberDb.search(this.member_num);
         if (m != null) {
             this.member_name = m.getMember_name();
+        }
+        return null;
+    }
+
+    /**
+     *  商品情報取得
+     * @return 
+     */
+    public String searchProduct() {
+        ProductInfo p = (ProductInfo) productDb.search(this.product_num);
+        if (p != null) {
+            this.product_name = p.getProduct_name();
         }
         return null;
     }
@@ -126,6 +156,14 @@ public class RentalBean implements Serializable {
         this.release_kbn = release_kbn;
     }
 
+    public boolean isSale() {
+        return sale;
+    }
+
+    public void setSale(boolean sale) {
+        this.sale = sale;
+    }
+
     public Map<String, String> getReleaseItems() {
         return releaseItems;
     }
@@ -133,7 +171,5 @@ public class RentalBean implements Serializable {
     public void setReleaseItems(Map<String, String> releaseItems) {
         this.releaseItems = releaseItems;
     }
-
-
 
 }

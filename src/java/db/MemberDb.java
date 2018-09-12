@@ -4,6 +4,7 @@
 package db;
 
 import entity.Member;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -25,10 +26,15 @@ public class MemberDb extends TryCatchDb {
         super(Member.class);
     }
     
-    public void getName(){
-        TypedQuery<Member> q = em.createNamedQuery(Member.QName, Member.class);
-        q.setParameter(1, 100000001);
-        q.getResultList();
+
+    /**
+     *  会員番号の昇順で会員一覧を取得し、返す。
+     * @return 会員一覧(昇順)
+     */
+    @Override
+    public List<Member> getAll(){
+        TypedQuery<Member> query = em.createNamedQuery(Member.QAll, Member.class);
+        return query.getResultList();
     }
 
 
