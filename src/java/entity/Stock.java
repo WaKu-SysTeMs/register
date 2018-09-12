@@ -94,4 +94,4 @@ public class Stock implements Serializable {
         this.editable = editable;
     }
 
-}
+    }
