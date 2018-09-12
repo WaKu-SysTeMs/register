@@ -25,24 +25,28 @@ and open the template in the editor.
                             <h:panelGrid columns="7">
 
 
-                                <h:outputLabel styleClass="control-label">会員番号：</h:outputLabel>
+                                <h:outputLabel styleClass="control-label">会員番号:</h:outputLabel>
                                 <span class="required">*</span>
 
-                                <h:inputText id="memberNum" required="true" value="#{memberBean.member_num}" label="会員番号：" styleClass="form-control">
-                                    <!--                                    <f:ajax event="change" execute="@this" listener="#}"/>-->
+                                <h:inputText id="memberNum" required="true" value="#{rentalBean.member_num}" label="会員番号" styleClass="form-control">
+                                    <f:ajax event="change" execute="memberNum" listener="#{rentalBean.search()}"/>
                                 </h:inputText>　
-                                <h:commandButton styleClass="btn btn-default" value="検 索" action="#{memberBean.search()}"/>
+
+                                <h:commandButton styleClass="btn btn-default" value="検 索" action="#{rentalBean.search()}"/>
 
 
                                 <h:outputLabel styleClass="control-label">会員名：</h:outputLabel>
-                                <h:outputText id="memberName" value="#{memberBean.member_name}" />
+                                <h:outputText id="memberName" value="#{rentalBean.member_name}" />
                                 <h:message for="memberNum" errorClass="error"/>
+
+
                                 <h:outputLabel styleClass="control-label">商品番号：</h:outputLabel>
                                 <span class="required">*</span>
 
-                                <h:inputText id="productNum" required="true" value="#" label="商品番号：" styleClass="form-control">
+                                <h:inputText id="productNum" required="true" value="#" label="商品番号" styleClass="form-control">
                                     <f:ajax event="change" execute="@this" listener="#"/>
                                 </h:inputText>
+
                                 <h:commandButton styleClass="btn btn-default" value="追 加" action="#" />
 
 
@@ -50,35 +54,34 @@ and open the template in the editor.
                                 <h:outputText id="rentalMax" value="XX枚" />
                                 <h:message for="productNum" errorClass="error" />
 
-
-
                             </h:panelGrid>
                         </div>
 
 
                         <div class="container panel-body rental_main columHeader" >
                             <fieldset>
-                                <h:dataTable value="#{rentalBean.test}" var="t" styleClass="table table-striped table-bordered table-hover" 
+                                <h:dataTable value="#" var="item" styleClass="table table-striped table-bordered table-hover" 
                                              columnClasses="rental_main_num,rental_main_name,rental_main_kbn,rental_main_stay,rental_main_discount,rental_main_delete">
+
                                     <h:column headerClass="rental_main_num">
                                         <f:facet name="header">番号</f:facet>
-                                            #{t.num}
+                                        <h:outputText value="#"/>
                                     </h:column>
 
                                     <h:column headerClass="rental_main_name">
                                         <f:facet name="header">作品名</f:facet>
-                                            #{t.name}
+                                        <h:outputText value="#"/>
                                     </h:column>
 
                                     <h:column headerClass="rental_main_kbn">
                                         <f:facet name="header">新旧区分</f:facet>
-                                            #{t.kbn}
+                                        <h:outputText value="#"/>
                                     </h:column>
 
                                     <h:column headerClass="rental_main_stay">
                                         <f:facet name="header">泊数</f:facet>
-                                        <h:selectOneMenu value="#" styleClass="sel" class="form-control">
-                                            <f:selectItems value="#{rentalBean.items}"/>
+                                        <h:selectOneMenu value="#{rentalBean.release_kbn}" styleClass="sel" class="form-control">
+                                            <f:selectItems value="#{rentalBean.releaseItems}"/>
                                         </h:selectOneMenu>
                                     </h:column>
 
@@ -99,7 +102,7 @@ and open the template in the editor.
                         </div>
 
                         <div class="return_update_button">
-                            <h:commandButton styleClass="btn btn-primary btn-lg" value="次 へ" action="create_payment.xhtml?faces-redirect=true"/>
+                            <h:commandButton styleClass="btn btn-primary btn-lg" value="次 へ" action="#{rentalBean.create_2()}"/>
                         </div>
                     </h:form>
                 </div>
