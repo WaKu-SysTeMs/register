@@ -24,6 +24,13 @@ public class ReleaseBean {
         this.release_name = release.getRelease_name();
     }
     
+    public void serchRelease(){
+        ReleaseList release = (ReleaseList)this.releasedb.serchName(this.kbn);
+        if(release!=null){
+            this.release_name = release.getRelease_name();
+        }
+    }
+    
     
 
     public String getKbn() {
