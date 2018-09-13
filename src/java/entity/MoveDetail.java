@@ -13,7 +13,7 @@ import javax.validation.constraints.*;
  * @author sakura＊
  */
 //@NamedQueries({
-//    @NamedQuery(name = MoveDetail.Qall, query = "SELECT * FROM MOVE_DETAIL")
+//    @NamedQuery(name = MoveDetail.Qall, query = "SELECT e FROM MOVE_DETAIL e")
 //})
 @Entity
 @Table(name = "move_detail")
@@ -31,7 +31,7 @@ public class MoveDetail implements Serializable {
     @Id
     @Size(max = 2)
     @Column(length = 2)
-    private Integer move_detail_num;     // 移動明細番号
+    private String move_detail_num;     // 移動明細番号
 
     @NotNull
     @Size(max = 9)
@@ -55,7 +55,7 @@ public class MoveDetail implements Serializable {
     public MoveDetail() {
     }
 
-    public MoveDetail(MoveHistory move_num, Integer move_detail_num, DvdInfo dvd_num, StoreInfo before_store_id, StoreInfo after_store_id) {
+    public MoveDetail(MoveHistory move_num, String move_detail_num, DvdInfo dvd_num, StoreInfo before_store_id, StoreInfo after_store_id) {
         this.move_num = move_num;
         this.move_detail_num = move_detail_num;
         this.dvd_num = dvd_num;
@@ -72,11 +72,11 @@ public class MoveDetail implements Serializable {
         this.move_num = move_num;
     }
 
-    public Integer getMove_detail_num() {
+    public String getMove_detail_num() {
         return move_detail_num;
     }
 
-    public void setMove_detail_num(Integer move_detail_num) {
+    public void setMove_detail_num(String move_detail_num) {
         this.move_detail_num = move_detail_num;
     }
 

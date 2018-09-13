@@ -14,6 +14,9 @@ import javax.validation.constraints.*;
  *
  * @author s20163037
  */
+//@NamedQueries({
+//    @NamedQuery(name = SaleInfo.Qall, query = "SELECT e FROM SALE_INFO e")
+//})
 @Entity
 @Table(name = "sale_info")
 public class SaleInfo implements Serializable {

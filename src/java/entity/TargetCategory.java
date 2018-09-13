@@ -12,6 +12,9 @@ import javax.validation.constraints.*;
  *
  * @author sakura＊
  */
+//@NamedQueries({
+//    @NamedQuery(name = TargetCategory.Qall, query = "SELECT e FROM TARGET_CATEGORY e")
+//})
 @Entity
 @Table(name = "target_category")
 @IdClass(value = TargetCategoryPK.class)

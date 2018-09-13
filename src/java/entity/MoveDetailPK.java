@@ -7,7 +7,6 @@ import java.io.Serializable;
 import java.util.Objects;
 import javax.validation.constraints.*;
 
-
 /**
  *
  * @author s20163037
@@ -16,34 +15,34 @@ public class MoveDetailPK implements Serializable {
 
     private static final long serialVersionUID = 1L; // シリアルバージョンUIDのバージョン管理
 
-    private Integer move_num;       // 移動番号(FK)
+    private String move_num;       // 移動番号(FK)
 
     @Size(max = 2)
-    private Integer move_detail_num;     // 移動明細番号
+    private String move_detail_num;     // 移動明細番号
 
     /* コンストラクタ */
     public MoveDetailPK() {
     }
 
-    public MoveDetailPK(Integer move_num, Integer move_detail_num) {
+    public MoveDetailPK(String move_num, String move_detail_num) {
         this.move_num = move_num;
         this.move_detail_num = move_detail_num;
     }
 
     /* ゲッター、セッター */
-    public Integer getMove_num() {
+    public String getMove_num() {
         return move_num;
     }
 
-    public void setMove_num(Integer move_num) {
+    public void setMove_num(String move_num) {
         this.move_num = move_num;
     }
 
-    public Integer getMove_detail_num() {
+    public String getMove_detail_num() {
         return move_detail_num;
     }
 
-    public void setMove_detail_num(Integer move_detail_num) {
+    public void setMove_detail_num(String move_detail_num) {
         this.move_detail_num = move_detail_num;
     }
 

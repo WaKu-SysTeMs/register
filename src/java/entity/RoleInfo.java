@@ -14,7 +14,7 @@ import javax.validation.constraints.*;
  * @author s20163037
  */
 //@NamedQueries({
-//    @NamedQuery(name = RoleInfo.Qall, query = "SELECT * FROM ROLE_INFO")
+//    @NamedQuery(name = RoleInfo.Qall, query = "SELECT e FROM ROLE_INFO e")
 //})
 @Entity
 @Table(name = "role_info")

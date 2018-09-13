@@ -7,13 +7,12 @@ import java.io.Serializable;
 import java.util.Objects;
 import javax.validation.constraints.Size;
 
-
 public class StockPK implements Serializable {
 
     private static final long serialVersionUID = 1L;  // シリアルバージョンUIDのバージョン管理
 
     @Size(max = 6)
-    private Integer product_num;       // 商品番号
+    private String product_num;       // 商品番号
 
     @Size(max = 3)
     private String store_id;                 // 店舗ID
@@ -22,7 +21,7 @@ public class StockPK implements Serializable {
     public StockPK() {
     }
 
-    public StockPK(Integer product_num, String store_id) {
+    public StockPK(String product_num, String store_id) {
         this.product_num = product_num;
         this.store_id = store_id;
     }
@@ -56,11 +55,11 @@ public class StockPK implements Serializable {
     }
 
     /* ゲッター、セッター */
-    public Integer getProduct_num() {
+    public String getProduct_num() {
         return product_num;
     }
 
-    public void setProduct_num(Integer product_num) {
+    public void setProduct_num(String product_num) {
         this.product_num = product_num;
     }
 

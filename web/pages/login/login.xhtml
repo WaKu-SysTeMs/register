@@ -7,38 +7,87 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://xmlns.jcp.org/jsf/passthrough">   
     <h:head>
-        <link rel="stylesheet" type="text/css" href="../../resources/css/mystyle.css"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <h:outputStylesheet name="bootstrap/css/bootstrap.min.css" />
+        <h:outputStylesheet library="css" name="common.css" />
+        <h:outputStylesheet library="css" name="mystyle.css" />
+        <h:outputScript library="js" name="jquery-3.2.0.min.js" />
+        <h:outputScript name="bootstrap/js/bootstrap.min.js" />
+        <title>HCSビデオレンタル-top-</title>
+
+        <div class="header">
+            <div class="container">
+                <div class="col-lg-12" style="font-size: 30px;">
+                    <span class="glyphicon glyphicon-film"></span>
+                    HCSビデオレンタル
+
+
+                </div>
+
+                <div class="col-lg-12">
+                    <div id="regiNum">
+                        レジ：
+                    </div>
+                    <div id="staff">
+                        店員名：
+                    </div>
+
+                    <div id="time"><span id="viewTime"></span>
+
+                        <script type="text/javascript">
+                            timer = setInterval('clock()', 50); //時刻の更新
+
+                            function clock() {
+                                document.getElementById("viewTime").innerHTML = getNow();
+                            }
+
+                            function getNow() {
+                                var now = new Date();
+                                var year = now.getFullYear();
+                                //var mon = now.getMonth()+1; //１を足すこと
+                                var mon = ("0" + (now.getMonth() + 1)).slice(-2);
+                                //var day = now.getDate();
+                                var day = ("0" + (now.getDate())).slice(-2);
+                                //var hour = now.getHours();
+                                var hour = ("0" + (now.getHours())).slice(-2);
+                                //var min = now.getMinutes();
+                                var min = ("0" + (now.getMinutes())).slice(-2);
+
+                                //出力用
+                                var s = year + "/" + mon + "/" + day + " " + hour + ":" + min;
+                                return s;
+
+                            }
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </h:head>
     <h:body>
-        <ui:composition template="/templates/template01.xhtml">
-            <ui:define name="title">HCSビデオレンタル-ログイン-</ui:define>
-            <ui:define name="content">
-                <div class="container">
+       
                 <h:form>
                     <div class="login_main">
                         <h2>社員番号をスキャン、または入力してください<br></br>
                             レジ番号を入力してください</h2>
                     </div>
                     <div class="login_empNum">
-                            <h:inputText id="empNum" required="true" p:placeholder="社員番号をスキャン、または入力してください" label="社員番号：" styleClass="form-control">
-                                <f:ajax event="change" execute="@this" listener="#" />
+                        <h:inputText id="empNum" required="true" p:placeholder="社員番号をスキャン、または入力してください" label="社員番号：" styleClass="form-control" value="#{loginBean.user}">
                             </h:inputText>
                     </div>
                     <div class="login_regiNum">
-                            <h:inputText id="regiNum" required="true" p:placeholder="レジ番号を入力" label="レジ番号：" styleClass="form-control">
-                                <f:ajax event="change" execute="@this" listener="#" />
+                        <h:inputText id="regiNum" required="true" p:placeholder="レジ番号を入力" label="レジ番号：" styleClass="form-control" value="#{loginBean.password}">
                             </h:inputText>
                     </div>
                     
                     <div class="login_button">
                     <h:commandButton styleClass="btn btn-primary btn-lg"
-                                     value="ログイン" action="/pages/index.xhtml?faces-redirect=true"/>
+                                     value="ログイン" action="#{loginBean.login()}"/>
                     </div>
                 </h:form>
-            </div>
 
-
-            </ui:define>
-        </ui:composition>
     </h:body>
 </html>

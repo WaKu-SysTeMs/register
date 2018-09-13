@@ -12,6 +12,9 @@ import javax.validation.constraints.Size;
  *
  * @author s20163037
  */
+//@NamedQueries({
+//    @NamedQuery(name = TargetProduct.Qall, query = "SELECT e FROM TARGET_PRODUCT e")
+//})
 @Entity
 @Table(name = "target_product")
 @IdClass(value = TargetProductPK.class)

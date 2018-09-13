@@ -32,9 +32,9 @@ public class MoriTest {
     
     private Integer test6;
     private SelectItem[] langs6 = {
-        new SelectItem(1,"店舗１"),
-        new SelectItem(2,"店舗２"),
-        new SelectItem(3,"すべて")
+        new SelectItem(1,"すべて"),
+        new SelectItem(2,"菊水店"),
+        new SelectItem(3,"白石店")
     };
     
     private Integer sex;

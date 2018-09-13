@@ -12,6 +12,9 @@ import javax.validation.constraints.*;
  *
  * @author sakura＊
  */
+//@NamedQueries({
+//    @NamedQuery(name = Stock.Qall, query = "SELECT e FROM STOCK e")
+//})
 @Entity
 @IdClass(value = StockPK.class)
 public class Stock implements Serializable {
@@ -91,4 +94,4 @@ public class Stock implements Serializable {
         this.editable = editable;
     }
 
-}
+    }

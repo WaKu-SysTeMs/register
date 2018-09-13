@@ -599,7 +599,7 @@ div .manyList tbody{    /* 返却メイン画面スクロール調整 */
 
 .login_empNum{
     padding-top: 50px;
-    width: 700px;
+    width: 320px;
     margin: auto;
 }
 
@@ -644,4 +644,9 @@ div .manyList tbody{    /* 返却メイン画面スクロール調整 */
     text-align: center;
     padding-top: 70px;
     font-size: 350%;
+}
+
+.chousei{
+    height: 40px;
+    width: 217px;
 }

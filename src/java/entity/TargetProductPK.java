@@ -20,13 +20,13 @@ public class TargetProductPK implements Serializable {
     private String sale_id;         // SALE ID(FK)
 
     @Size(max = 6)
-    private Integer product_num;    // 商品番号(FK)
+    private String product_num;    // 商品番号(FK)
 
     /* コンストラクタ */
     public TargetProductPK() {
     }
 
-    public TargetProductPK(String sale_id, Integer product_num) {
+    public TargetProductPK(String sale_id, String product_num) {
         this.sale_id = sale_id;
         this.product_num = product_num;
     }
@@ -40,11 +40,11 @@ public class TargetProductPK implements Serializable {
         this.sale_id = sale_id;
     }
 
-    public Integer getProduct_num() {
+    public String getProduct_num() {
         return product_num;
     }
 
-    public void setProduct_num(Integer product_num) {
+    public void setProduct_num(String product_num) {
         this.product_num = product_num;
     }
 

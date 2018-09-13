@@ -9,14 +9,13 @@ import java.util.List;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
-
 /**
  *
  * @author s20163037
  */
 @NamedQueries({
-    @NamedQuery(name = RentalInfo.RentalQAll,
-            query = "SELECT e FROM RentalInfo e")
+    @NamedQuery(name = RentalInfo.RentalQAll, query = "SELECT e FROM RentalInfo e"),
+    @NamedQuery(name = RentalInfo.RentalFRentaiNum, query = "SELECT r FROM RentalInfo r WHERE r.rental_num = :rentalNum")
 })
 @Entity
 @Table(name = "rental_info")
@@ -25,10 +24,11 @@ public class RentalInfo implements Serializable {
     private static final long serialVersionUID = 1L;  // シリアルバージョンUIDのバージョン管理
 
     public static final String RentalQAll = "RentalQAll";
+    public static final String RentalFRentaiNum = "RentalFRentalNum";   // 会員番号から検索
 
     @Id
     @NotNull
-    private Integer rental_num;          // 貸出番号
+    private String rental_num;          // 貸出番号
 
     @NotNull
     @Size(max = 9)
@@ -61,7 +61,7 @@ public class RentalInfo implements Serializable {
     public RentalInfo() {
     }
 
-    public RentalInfo(Integer rental_num, Member member_num, Date rental_date, int amount, Register register_id, Employee emp_num) {
+    public RentalInfo(String rental_num, Member member_num, Date rental_date, int amount, Register register_id, Employee emp_num) {
         this.rental_num = rental_num;
         this.member_num = member_num;
         this.rental_date = rental_date;
@@ -71,11 +71,11 @@ public class RentalInfo implements Serializable {
     }
 
     /* セッター、ゲッター */
-    public Integer getRental_num() {
+    public String getRental_num() {
         return rental_num;
     }
 
-    public void setRental_num(Integer rental_num) {
+    public void setRental_num(String rental_num) {
         this.rental_num = rental_num;
     }
 

@@ -13,7 +13,7 @@ import javax.validation.constraints.Size;
  * @author sakura＊
  */
 //@NamedQueries({
-//    @NamedQuery(name = RentalMax.Qall, query = "SELECT * FROM RENTAL_MAX")
+//    @NamedQuery(name = RentalMax.Qall, query = "SELECT e FROM RENTAL_MAX e")
 //})
 @Entity
 @Table(name = "rental_max")

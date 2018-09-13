@@ -14,14 +14,13 @@ import javax.validation.constraints.*;
  * @author sakura＊
  */
 //@NamedQueries({
-//    @NamedQuery(name = ReleaseList.Qall, query = "SELECT * FROM RELEASE_LIST")
+//    @NamedQuery(name = ReleaseList.Qall, query = "SELECT e FROM RELEASE_LIST e")
 //})
 @Entity
 @Table(name = "release_list")
 public class ReleaseList implements Serializable {
 
     private static final long serialVersionUID = 1L;  // シリアルバージョンUIDのバージョン管理
-    
     public static final String Qall = "Qall";
 
     @Id
@@ -91,5 +90,6 @@ public class ReleaseList implements Serializable {
     public void setEditable(boolean editable) {
         this.editable = editable;
     }
+    
 
 }

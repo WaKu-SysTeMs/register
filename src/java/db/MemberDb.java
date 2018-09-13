@@ -4,10 +4,11 @@
 package db;
 
 import entity.Member;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.TemporalType;
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import util.TryCatchDb;
 
@@ -26,10 +27,27 @@ public class MemberDb extends TryCatchDb {
         super(Member.class);
     }
     
-    public void getName(){
-        TypedQuery<Member> q = em.createNamedQuery(Member.QName, Member.class);
-        q.setParameter(1, 100000001);
-        q.getResultList();
+
+    /**
+     *  会員番号の昇順で会員一覧を取得し、返す。
+     * @return 会員一覧(昇順)
+     */
+    @Override
+    public List<Member> getAll(){
+        TypedQuery<Member> query = em.createNamedQuery(Member.QAll, Member.class);
+        return query.getResultList();
+    }
+    
+    public Member searchName(String memberNum){
+        try {
+            Query q=em.createNativeQuery("select * from member_info where member_num = ?1", Member.class);
+            q.setParameter(1, memberNum);
+            return (Member)q.getSingleResult();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+        
     }
 
 

@@ -25,10 +25,13 @@
                 </div>
 
                 <div class="col-lg-12">
-                    <div id="regiNum">レジ：01</div>
+                    <div id="regiNum">
+                        レジ：
+                        <h:outputText value="#{accountManager.password}"/>
+                    </div>
                     <div id="staff">
                         店員名：
-                        <h:outputText value="#"/>
+                        <h:outputText value="#{accountManager.user}"/>
                     </div>
 
                     <div id="time"><span id="viewTime"></span>
@@ -75,7 +78,7 @@
 
                     <div class="col-lg-3">
 
-                        <h:commandLink styleClass="button1" action="/pages/rental/create.xhtml">
+                        <h:commandLink styleClass="button1" action="#{rentalBean.create()}">
                             <span class="glyphicon glyphicon-shopping-cart"></span><br/>
                             貸出処理
                         </h:commandLink>

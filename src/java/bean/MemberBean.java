@@ -99,6 +99,7 @@ public class MemberBean implements Serializable {
     }
 
     public String search() {                                // 会員名　取得
+        this.member_name = null;
         Member m = (Member) memberDb.search(this.member_num);
         if (m != null) {
             this.member_name = m.getMember_name();

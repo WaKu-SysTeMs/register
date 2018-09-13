@@ -13,7 +13,7 @@ import javax.validation.constraints.*;
  * @author sakura＊
  */
 //@NamedQueries({
-//    @NamedQuery(name = RemarksInfo.Qall, query = "SELECT * FROM REMARKS_INFO")
+//    @NamedQuery(name = RemarksInfo.Qall, query = "SELECT e FROM REMARKS_INFO e")
 //})
 @Entity
 @Table(name = "remarks_info")

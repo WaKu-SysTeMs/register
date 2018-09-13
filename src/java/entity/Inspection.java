@@ -14,7 +14,7 @@ import javax.validation.constraints.*;
  * @author sakura＊
  */
 //@NamedQueries({
-//    @NamedQuery(name = Inspection.Qall, query = "SELECT * FROM INSPECTION")
+//    @NamedQuery(name = Inspection.Qall, query = "SELECT e FROM INSPECTION e")
 //})
 @Entity
 @Table(name = "inspection")
@@ -25,8 +25,7 @@ public class Inspection implements Serializable {
     private static final long serialVersionUID = 1L;  // シリアルバージョンUIDのバージョン管理
 
     @Id
-    @Min(1)
-    private Integer inspection_num;         // レジ〆番号
+    private String inspection_num;         // レジ〆番号
 
     @NotNull
     @Size(max = 4)
@@ -57,7 +56,7 @@ public class Inspection implements Serializable {
     public Inspection() {
     }
 
-    public Inspection(Integer inspection_num, Register register_id, Date inspection_date, Integer inspection_sum, Integer misc_pl_amt, Employee emp_num) {
+    public Inspection(String inspection_num, Register register_id, Date inspection_date, Integer inspection_sum, Integer misc_pl_amt, Employee emp_num) {
         this.inspection_num = inspection_num;
         this.register_id = register_id;
         this.inspection_date = inspection_date;
@@ -67,11 +66,11 @@ public class Inspection implements Serializable {
     }
 
     /* ゲッター、セッター */
-    public Integer getInspection_num() {
+    public String getInspection_num() {
         return inspection_num;
     }
 
-    public void setInspection_num(Integer inspection_num) {
+    public void setInspection_num(String inspection_num) {
         this.inspection_num = inspection_num;
     }
 

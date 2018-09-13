@@ -14,7 +14,7 @@ import javax.validation.constraints.*;
  * @author sakura＊
  */
 //@NamedQueries({
-//    @NamedQuery(name = MoveHistory.Qall, query = "SELECT * FROM MOVE_HISTORY")
+//    @NamedQuery(name = MoveHistory.Qall, query = "SELECT e FROM MOVE_HISTORY e")
 //})
 @Entity
 @Table(name = "move_history")
@@ -25,7 +25,7 @@ public class MoveHistory implements Serializable {
     private static final long serialVersionUID = 1L;  // シリアルバージョンUIDのバージョン管理
 
     @Id
-    private Integer move_num;       // 移動番号
+    private String move_num;       // 移動番号
 
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date move_date;         // 移動処理日付
@@ -50,7 +50,7 @@ public class MoveHistory implements Serializable {
     public MoveHistory() {
     }
 
-    public MoveHistory(Integer move_num, Date move_date, ProductInfo product_num, Employee emp_num) {
+    public MoveHistory(String move_num, Date move_date, ProductInfo product_num, Employee emp_num) {
         this.move_num = move_num;
         this.move_date = move_date;
         this.product_num = product_num;
@@ -58,11 +58,11 @@ public class MoveHistory implements Serializable {
     }
 
     /* ゲッター、セッター */
-    public Integer getMove_num() {
+    public String getMove_num() {
         return move_num;
     }
 
-    public void setMove_num(Integer move_num) {
+    public void setMove_num(String move_num) {
         this.move_num = move_num;
     }
 

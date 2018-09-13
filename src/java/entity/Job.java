@@ -14,7 +14,7 @@ import javax.validation.constraints.*;
  * @author s20163037
  */
 //@NamedQueries({
-//    @NamedQuery(name = Job.Qall, query = "SELECT * FROM JOB_LIST")
+//    @NamedQuery(name = Job.Qall, query = "SELECT e FROM JOB_LIST e")
 //})
 @Entity
 @Table(name = "job_list")

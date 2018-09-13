@@ -14,7 +14,7 @@ import javax.validation.constraints.*;
  * @author s20163037
  */
 //@NamedQueries({
-//    @NamedQuery(name = DvdInfo.Qall, query = "SELECT * FROM DVD_INFO")
+//    @NamedQuery(name = DvdInfo.Qall, query = "SELECT e FROM DVD_INFO e")
 //})
 @Entity
 @Table(name = "dvd_info")
