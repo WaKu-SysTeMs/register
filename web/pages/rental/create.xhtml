@@ -43,8 +43,8 @@ and open the template in the editor.
                                 <h:outputLabel styleClass="control-label">DVD番号：</h:outputLabel>
                                 <span class="required">*</span>
 
-                                <h:inputText id="dvdNum" required="true" label="商品番号" styleClass="form-control" value="#{rentalBean.dvd_num}">
-                                    <f:ajax event="change" execute="@this" render="@form" listener="#{rentalBean.searchProduct()}"/>
+                                <h:inputText id="dvdNum" required="true" label="DVD番号" styleClass="form-control" value="#{rentalBean.dvd_num}">
+                                    <f:ajax event="change" execute="@this" render="@form" listener="#{rentalBean.serchProduct()}"/>
                                 </h:inputText>
 
                                 <h:commandButton styleClass="btn btn-default" value="追 加" action="#{rentalBean.searchProduct()}" />

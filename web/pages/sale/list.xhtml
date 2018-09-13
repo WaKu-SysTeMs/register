@@ -25,33 +25,33 @@ and open the template in the editor.
                                 
                                 <h:outputLabel styleClass="control-label">セールＩＤ：</h:outputLabel>
 
-                                <h:inputText id="saleId" required="true" value="#" label="セールＩＤ：" styleClass="form-control">
+                                <h:inputText id="saleId" required="true" value="#" label="セールＩＤ" styleClass="form-control">
                                     <f:ajax event="change" execute="@this" listener="#"/>
                                 </h:inputText>
                                 
                                 <h:outputLabel styleClass="control-label">セール名　：</h:outputLabel>
 
-                                <h:inputText id="saleName" required="true" value="#" label="セール名　：" styleClass="form-control">
+                                <h:inputText id="saleName" required="true" value="#" label="セール名" styleClass="form-control">
                                     <f:ajax event="change" execute="@this" listener="#"/>
                                 </h:inputText>
 
                                 <h:outputLabel styleClass="control-label">作品名：</h:outputLabel>
 
-                                <h:inputText id="title" required="true" value="#" label="作品名：" styleClass="form-control">
+                                <h:inputText id="title" required="true" value="#" label="作品名" styleClass="form-control">
                                     <f:ajax event="change" execute="@this" listener="#"/>
                                 </h:inputText>
                                 <h:outputText/>
 
                                 <h:outputLabel styleClass="control-label">開始年月日：</h:outputLabel>
                                 <h:panelGroup>
-                                    <h:inputText p:type="date" required="true" label="開始年月日：" styleClass="form-control">
+                                    <h:inputText p:type="date" required="true" label="開始年月日" styleClass="form-control">
                                         <f:convertDateTime pattern="yyyy-M-d" timeZone="Asia/Tokyo"/>
                                     </h:inputText> 
                                 </h:panelGroup>
                                 
                                 <h:outputLabel styleClass="control-label">終了年月日：</h:outputLabel>
                                 <h:panelGroup>
-                                    <h:inputText p:type="date" required="true" label="終了年月日：" styleClass="form-control">
+                                    <h:inputText p:type="date" required="true" label="終了年月日" styleClass="form-control">
                                         <f:convertDateTime pattern="yyyy-M-d" timeZone="Asia/Tokyo"/>
                                     </h:inputText> 
                                 </h:panelGroup>
