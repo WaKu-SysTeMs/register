@@ -24,5 +24,6 @@ public class RegisterDb extends TryCatchDb {
         super(Register.class);
     }
 
+    
 
 }

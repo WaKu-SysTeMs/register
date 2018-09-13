@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">   
+    <h:head>
+        <link rel="stylesheet" type="text/css" href="../../resources/css/mystyle.css"/>
+    </h:head>
+    <h:body>
+        <ui:composition template="/templates/template01.xhtml">
+            <ui:define name="title">HCSビデオレンタル-入会処理-</ui:define>
+            <ui:define name="content">
+                <div class="container">
+                <br/>
+                <h:form>
+                    <div class="member_create_confirm">
+                        <h:panelGrid columns="2" columnClasses="cf_left,cf_right">
+                            <h:outputLabel styleClass="control-label">現金収納金額</h:outputLabel>
+                            <h:outputText
+                        </h:panelGrid>
+                    </div>
+                    <br/>
+                    <div class="member_admission_button">
+                    <h:commandButton styleClass="btn btn-default btn-lg"
+                                     value="戻 る" action="create.xhtml?faces-redirect=true"/>
+                    <h:commandButton styleClass="btn btn-primary btn-lg"
+                                     value="登 録" action="createcomplete.xhtml?faces-redirect=true"/>
+                    </div>
+                </h:form>
+            </div>
+
+
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
