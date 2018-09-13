@@ -1,7 +1,9 @@
 package login;
 
 import db.EmployeeDb;
+import db.RegisterDb;
 import entity.Employee;
+import entity.Register;
 import java.io.Serializable;
 import java.util.List;
 import javax.faces.context.FacesContext;
@@ -17,6 +19,8 @@ import javax.servlet.http.HttpServletRequest;
 public class LoginBean implements Serializable {
     @Inject
     EmployeeDb employeeDb;
+    @Inject
+    RegisterDb registerDb;
     @Inject
     private AccountManager accountManager;
     private String user="";
@@ -39,10 +43,9 @@ public class LoginBean implements Serializable {
 
     public String login() {
         Employee singleemp = this.employeeDb.loginemp(this.user);
+        Register register = this.registerDb.loginid(this.password);
         
-        
-      //  if("user".equals(this.user) && "pass").equals(this.password) {
-        if(singleemp!=null){
+        if(singleemp!=null && register!=null){
             // ログイン成功した場合
             this.sessionUpdate();
             this.accountManager.setUser(singleemp.getEmp_name());
@@ -54,10 +57,8 @@ public class LoginBean implements Serializable {
         }
     }
 
+    
     // セッションハイジャック対策
-
-    // セッションを一度破棄して新規セッションを作成する。
-
     private void sessionUpdate() {
         FacesContext facesContext = FacesContext.getCurrentInstance();
         ((HttpServletRequest)facesContext.getExternalContext().getRequest()).changeSessionId();

@@ -21,7 +21,6 @@ import javax.validation.constraints.*;
 public class Register implements Serializable {
     
     public static final String Qall = "Qall";
-
     private static final long serialVersionUID = 1L;  // シリアルバージョンUIDのバージョン管理
 
     @Id
