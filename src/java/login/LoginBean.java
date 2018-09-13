@@ -10,6 +10,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.servlet.http.HttpServletRequest;
 @SuppressWarnings("serial")
 @Named
 @ViewScoped
@@ -59,13 +60,7 @@ public class LoginBean implements Serializable {
 
     private void sessionUpdate() {
         FacesContext facesContext = FacesContext.getCurrentInstance();
-        facesContext.getExternalContext().invalidateSession();
-        facesContext.getExternalContext().getSession(true);
+        ((HttpServletRequest)facesContext.getExternalContext().getRequest()).changeSessionId();
     }
-    
-//     public List<Employee> getUserList(){
-//         retrun em.createnativeQuery().getResultList();
-//     }
-    
-    
+  
 }
