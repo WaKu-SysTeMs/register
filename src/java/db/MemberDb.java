@@ -8,6 +8,7 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import util.TryCatchDb;
 
@@ -35,6 +36,18 @@ public class MemberDb extends TryCatchDb {
     public List<Member> getAll(){
         TypedQuery<Member> query = em.createNamedQuery(Member.QAll, Member.class);
         return query.getResultList();
+    }
+    
+    public Member searchName(String memberNum){
+        try {
+            Query q=em.createNativeQuery("select * from member_info where member_num = ?1", Member.class);
+            q.setParameter(1, memberNum);
+            return (Member)q.getSingleResult();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+        
     }
 
 
