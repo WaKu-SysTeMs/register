@@ -10,11 +10,9 @@ import entity.*;
 import java.io.Serializable;
 import java.util.*;
 import java.util.logging.Logger;
-import javax.ejb.EJB;
 import javax.inject.*;
 import javax.enterprise.context.*;
 import javax.validation.constraints.Size;
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
 /**
  *
@@ -23,6 +21,7 @@ import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 @Named
 @ConversationScoped
 public class RentalBean implements Serializable {
+
     private Integer cnt = 1;
     @Size(max = 30)
     private String member_name;     // 会員名
@@ -54,10 +53,7 @@ public class RentalBean implements Serializable {
     Conversation conv;
 
     List<ProductInfo> productList = new ArrayList<ProductInfo>();
-    
-    
-    
-    
+
     /* *****【初期化】 ************************************* */
     {
         releaseItems = new LinkedHashMap<>();
@@ -92,10 +88,10 @@ public class RentalBean implements Serializable {
     }
 
     /**
-     *  会員名　取得
-     * @return 
+     * 会員名　取得
+     *
+     * @return
      */
-
     public String search() {
         this.member_name = "";
         Member m = (Member) memberDb.search(this.member_num);
@@ -104,22 +100,23 @@ public class RentalBean implements Serializable {
         }
         return null;
     }
+
     /**
-     *  DVD情報取得 
-     * @return 
+     * DVD情報取得
      */
-    public void serchProduct(){ //
-        DvdInfo dvdinfo = (DvdInfo)this.dvdinfodb.search(this.dvd_num);
-        if(dvdinfo!=null){
+    public void searchProduct() { //
+        DvdInfo dvdinfo = (DvdInfo) this.dvdinfodb.search(this.dvd_num);
+        if (dvdinfo != null) {
             productList.add(dvdinfo.getProduct_num());
-        }else{
+        } else {
             System.out.println("aaaa");
         }
     }
 
     /**
-     *  商品情報取得 
-     * @return 
+     * 商品情報取得
+     *
+     * @return
      */
 //    public String searchProduct() {
 //        ProductInfo p = (ProductInfo) productDb.search(this.product_num);
@@ -194,8 +191,6 @@ public class RentalBean implements Serializable {
         this.release_name = release_name;
     }
 
-    
-    
     public boolean isSale() {
         return sale;
     }
@@ -219,7 +214,5 @@ public class RentalBean implements Serializable {
     public void setProductList(List<ProductInfo> productList) {
         this.productList = productList;
     }
-    
-    
 
 }
