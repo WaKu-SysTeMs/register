@@ -47,7 +47,7 @@ and open the template in the editor.
                                     <f:ajax event="change" execute="@this" render="@form" listener="#{rentalBean.serchProduct()}"/>
                                 </h:inputText>
 
-                                <h:commandButton styleClass="btn btn-default" value="追 加" action="#{rentalBean.serchProduct()}" />
+                                <h:commandButton styleClass="btn btn-default" value="追 加" action="#{rentalBean.searchProduct()}" />
 
 
                                 <h:outputLabel styleClass="control-label">貸出上限数：</h:outputLabel>
@@ -75,8 +75,10 @@ and open the template in the editor.
 
                                     <h:column headerClass="rental_main_kbn">
                                         <f:facet name="header">新旧区分</f:facet>
-                                        #{releaseBean.serchName(item.release_kbn)}
-                                        <h:outputText value="#{releaseBean.release_name}"/>
+                                        #{releaseBean.serchName(item.release_kbn.release_kbn)}
+                                        #{releaseBean.serchRelease()}
+                                        <h:outputText value="#{item.release_kbn.release_name}"/>
+                                        
                                     </h:column>
 
                                     <h:column headerClass="rental_main_stay">

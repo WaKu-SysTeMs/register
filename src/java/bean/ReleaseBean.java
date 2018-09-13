@@ -12,20 +12,26 @@ import javax.inject.Named;
 
 @Named
 public class ReleaseBean {
-    String kbn="";
+
+    String kbn = "";
     String release_name;
-    
-    
+
     @Inject
     ReleaseListDb releasedb;
-    
-    public void serchName(String kbn){
+
+    public void serchName(String kbn) {
         ReleaseList release = this.releasedb.serchName(kbn);
         this.release_name = release.getRelease_name();
     }
-    
-    
 
+    public void serchRelease() {
+        ReleaseList release = (ReleaseList) this.releasedb.serchName(this.kbn);
+        if (release != null) {
+            this.release_name = release.getRelease_name();
+        }
+    }
+
+    /* ゲッター、セッター */
     public String getKbn() {
         return kbn;
     }
@@ -49,10 +55,5 @@ public class ReleaseBean {
     public void setReleasedb(ReleaseListDb releasedb) {
         this.releasedb = releasedb;
     }
-    
-    
-    
-    
-    
-    
+
 }
