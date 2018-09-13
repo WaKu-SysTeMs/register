@@ -29,7 +29,7 @@ and open the template in the editor.
                                 <span class="required">*</span>
 
                                 <h:inputText id="memberNum" required="true" value="#{rentalBean.member_num}" label="会員番号" styleClass="form-control">
-                                    <f:ajax event="change" execute="memberNum" listener="#{rentalBean.search()}"/>
+                                    <f:ajax event="change" execute="memberNum" render="@form" listener="#{rentalBean.search()}"/>
                                 </h:inputText>　
 
                                 <h:commandButton styleClass="btn btn-default" value="検 索" action="#{rentalBean.search()}"/>
@@ -40,14 +40,14 @@ and open the template in the editor.
                                 <h:message for="memberNum" errorClass="error"/>
 
 
-                                <h:outputLabel styleClass="control-label">商品番号：</h:outputLabel>
+                                <h:outputLabel styleClass="control-label">DVD番号：</h:outputLabel>
                                 <span class="required">*</span>
 
-                                <h:inputText id="productNum" required="true" value="#" label="商品番号" styleClass="form-control">
-                                    <f:ajax event="change" execute="@this" listener="#"/>
+                                <h:inputText id="dvdNum" required="true" label="商品番号" styleClass="form-control" value="#{rentalBean.dvd_num}">
+                                    <f:ajax event="change" execute="@this" render="@form" listener="#{rentalBean.serchProduct()}"/>
                                 </h:inputText>
 
-                                <h:commandButton styleClass="btn btn-default" value="追 加" action="#" />
+                                <h:commandButton styleClass="btn btn-default" value="追 加" action="#{rentalBean.serchProduct()}" />
 
 
                                 <h:outputLabel styleClass="control-label">貸出上限数：</h:outputLabel>
@@ -60,7 +60,7 @@ and open the template in the editor.
 
                         <div class="container panel-body rental_main columHeader" >
                             <fieldset>
-                                <h:dataTable value="#" var="item" styleClass="table table-striped table-bordered table-hover" 
+                                <h:dataTable value="#{rentalBean.productList}" var="item" styleClass="table table-striped table-bordered table-hover" 
                                              columnClasses="rental_main_num,rental_main_name,rental_main_kbn,rental_main_stay,rental_main_discount,rental_main_delete">
 
                                     <h:column headerClass="rental_main_num">
@@ -70,12 +70,13 @@ and open the template in the editor.
 
                                     <h:column headerClass="rental_main_name">
                                         <f:facet name="header">作品名</f:facet>
-                                        <h:outputText value="#"/>
+                                        <h:outputText value="#{item.product_name}"/>
                                     </h:column>
 
                                     <h:column headerClass="rental_main_kbn">
                                         <f:facet name="header">新旧区分</f:facet>
-                                        <h:outputText value="#"/>
+                                        #{releaseBean.serchName(item.release_kbn)}
+                                        <h:outputText value="#{releaseBean.release_name}"/>
                                     </h:column>
 
                                     <h:column headerClass="rental_main_stay">
@@ -88,7 +89,7 @@ and open the template in the editor.
 
                                     <h:column headerClass="rental_main_discount">
                                         <f:facet name="header">割引</f:facet>
-                                        <h:selectBooleanCheckbox value="#" styleClass="inp"/>
+                                        <h:selectBooleanCheckbox value="#{rentalBean.sale}" styleClass="inp"/>
                                     </h:column>
 
 
@@ -96,6 +97,8 @@ and open the template in the editor.
                                         <f:facet name="header"></f:facet>
                                         <h:commandButton styleClass="btn btn-danger btn-xs" value="削 除" action="#"/>
                                     </h:column>
+                                    
+                                    
 
                                 </h:dataTable>
                             </fieldset>

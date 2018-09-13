@@ -21,7 +21,10 @@
                         <h:link id="menu"  outcome="/index.xhtml"><i><span class="glyphicon glyphicon-tasks"></span> メニューへ</i></h:link>
 
 
-                        <div id="regiNum">レジ：01</div>
+                        <div id="regiNum">
+                            レジ：
+                            <h:outputText value="#{accountManager.password}"/>
+                        </div>
                         <div id="staff">
                             店員名：
                             <h:outputText value="#{accountManager.user}"/>

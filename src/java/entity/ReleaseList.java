@@ -21,7 +21,6 @@ import javax.validation.constraints.*;
 public class ReleaseList implements Serializable {
 
     private static final long serialVersionUID = 1L;  // シリアルバージョンUIDのバージョン管理
-    
     public static final String Qall = "Qall";
 
     @Id
@@ -91,5 +90,6 @@ public class ReleaseList implements Serializable {
     public void setEditable(boolean editable) {
         this.editable = editable;
     }
+    
 
 }

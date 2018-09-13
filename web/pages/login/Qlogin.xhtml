@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:jsf="http://xmlns.jcp.org/jsf">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Login Page</title>
+    </head>
+    <body>
+        <h1>Login Page</h1>
+        <form jsf:id="form">
+            <label for="user">User:</label>
+            <input id="user" type="text" jsf:value="#{loginBean.user}"/>
+            <label for="password">Password:</label>
+            <input id="password" type="password" jsf:value="#{loginBean.password}"/>
+            <input type="submit" value="login" jsf:action="#{loginBean.login()}"/>
+        </form>
+    </body>
+</html>
