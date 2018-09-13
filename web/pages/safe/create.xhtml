@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">   
+    <h:head>
+        <link rel="stylesheet" type="text/css" href="../../resources/css/mystyle.css"/>
+    </h:head>
+    <h:body>
+        <ui:composition template="/templates/template01.xhtml">
+            <ui:define name="title">HCSビデオレンタル-現金収納-</ui:define>
+            <ui:define name="content">
+                <div class="container">
+                <h:form>
+                    <div class="member_delete_top">
+                        <h2>現金収納するお金を入力して下さい</h2>
+                    </div>
+                    <div class="member_delete_memberNum">
+                            <h:inputText id="memberNum" required="true" p:placeholder="現金収納するお金を入力してください" label="現金収納：" styleClass="form-control">
+                                <f:ajax event="change" execute="@this" listener="#" />
+                            </h:inputText>
+                    </div>
+                    <div class="member_delete_button">
+                    <h:commandButton styleClass="btn btn-primary btn-lg"
+                                     value="登録" action="deleteconfirm.xhtml?faces-redirect=true"/>
+                    </div>
+                </h:form>
+            </div>
+
+
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
