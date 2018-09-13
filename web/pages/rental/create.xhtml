@@ -22,7 +22,7 @@ and open the template in the editor.
                 <div class="container">
 
                     <h:form><div class="form-group">
-                            <h:panelGrid columns="7">
+                            <h:panelGrid columns="6">
 
 
                                 <h:outputLabel styleClass="control-label">会員番号:</h:outputLabel>
@@ -31,8 +31,6 @@ and open the template in the editor.
                                 <h:inputText id="memberNum" required="true" value="#{rentalBean.member_num}" label="会員番号" styleClass="form-control">
                                     <f:ajax event="change" execute="memberNum" render="@form" listener="#{rentalBean.search()}"/>
                                 </h:inputText>　
-
-                                <h:commandButton styleClass="btn btn-default" value="検 索" action="#{rentalBean.search()}"/>
 
 
                                 <h:outputLabel styleClass="control-label">会員名：</h:outputLabel>
@@ -44,10 +42,9 @@ and open the template in the editor.
                                 <span class="required">*</span>
 
                                 <h:inputText id="dvdNum" required="true" label="DVD番号" styleClass="form-control" value="#{rentalBean.dvd_num}">
-                                    <f:ajax event="change" execute="@this" render="@form" listener="#{rentalBean.serchProduct()}"/>
+                                    <f:ajax event="change" execute="@this" render="@form" listener="#{rentalBean.searchProduct()}"/>
                                 </h:inputText>
 
-                                <h:commandButton styleClass="btn btn-default" value="追 加" action="#{rentalBean.searchProduct()}" />
 
 
                                 <h:outputLabel styleClass="control-label">貸出上限数：</h:outputLabel>
