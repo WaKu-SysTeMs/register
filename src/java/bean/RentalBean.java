@@ -22,7 +22,7 @@ import javax.validation.constraints.Size;
 @ConversationScoped
 public class RentalBean implements Serializable {
 
-    private Integer cnt = 1;
+    private Integer cnt = 0;
     @Size(max = 30)
     private String member_name;     // 会員名
     @Size(max = 9)
@@ -38,6 +38,10 @@ public class RentalBean implements Serializable {
     protected Map<String, String> releaseItems;   // 新旧区分の選択肢
     @Size(max = 6)
     private String release_name;         // 区分名
+    
+    private int goukei; //合計金額
+    private int waribikicnt=0; //割引数計
+    private int syoukei; //小計
 
     @Inject
     RentalInfoDb rentalDb;
@@ -52,7 +56,9 @@ public class RentalBean implements Serializable {
     @Inject
     Conversation conv;
 
-    List<ProductInfo> productList = new ArrayList<ProductInfo>();
+    List<ProductInfo> productList = new ArrayList();
+    List<DvdInfo> dvdlist = new ArrayList();
+    List<Boolean> waribikilist = new ArrayList();
 
     /* *****【初期化】 ************************************* */
     {
@@ -84,8 +90,16 @@ public class RentalBean implements Serializable {
      * @return 精算画面に遷移
      */
     public String create_2() {
+        this.waribikicnt=0;
+        this.waribikikeisan();
         return "create_payment.xhtml?faces-redirect=true";
     }
+    
+    public String create_1(){
+        this.waribikilist = new ArrayList();
+        return "create.xhtml?faces-redirect=true";
+    }
+    
 
     /**
      * 会員名　取得
@@ -108,23 +122,30 @@ public class RentalBean implements Serializable {
         DvdInfo dvdinfo = (DvdInfo) this.dvdinfodb.search(this.dvd_num);
         if (dvdinfo != null) {
             productList.add(dvdinfo.getProduct_num());
+            dvdlist.add(dvdinfo);
         } else {
             System.out.println("aaaa");
         }
+        dvd_num=null;
     }
-
-    /**
-     * 商品情報取得
-     *
-     * @return
-     */
-//    public String searchProduct() {
-//        ProductInfo p = (ProductInfo) productDb.search(this.product_num);
-//        if (p != null) {
-//            this.product_name = p.getProduct_name();
-//        }
-//        return null;
-//    }
+    
+    //リスト中身1行削除
+    public void ListDelete(DvdInfo item){
+        dvdlist.remove(item);
+    }
+    
+    public void waribikikeisan(){
+        for(boolean bool : waribikilist){
+            if(bool){
+                this.waribikicnt++;
+            }
+        }
+    }
+    
+    
+    public Integer cntup(){
+        return ++cnt;
+    }
 
     /* ゲッター、セッター */
     public Integer getCnt() {
@@ -196,7 +217,7 @@ public class RentalBean implements Serializable {
     }
 
     public void setSale(boolean sale) {
-        this.sale = sale;
+        this.waribikilist.add(sale);
     }
 
     public Map<String, String> getReleaseItems() {
@@ -208,11 +229,53 @@ public class RentalBean implements Serializable {
     }
 
     public List<ProductInfo> getProductList() {
+        cnt=0;
         return productList;
     }
 
     public void setProductList(List<ProductInfo> productList) {
         this.productList = productList;
     }
+
+    public int getGoukei() {
+        return goukei;
+    }
+
+    public void setGoukei(int goukei) {
+        this.goukei = goukei;
+    }
+
+    public int getWaribikicnt() {
+        return waribikicnt;
+    }
+
+    public void setWaribikicnt(int waribikicnt) {
+        this.waribikicnt = waribikicnt;
+    }
+
+    public int getSyoukei() {
+        return syoukei;
+    }
+
+    public void setSyoukei(int syoukei) {
+        this.syoukei = syoukei;
+    }
+
+    public List<DvdInfo> getDvdlist() {
+        cnt=0;
+        return dvdlist;
+    }
+
+    public void setDvdlist(List<DvdInfo> dvdlist) {
+        this.dvdlist = dvdlist;
+    }
+
+    public List<Boolean> getWaribikilist() {
+        return waribikilist;
+    }
+
+    
+    
+    
 
 }

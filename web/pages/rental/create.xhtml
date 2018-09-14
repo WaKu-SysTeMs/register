@@ -41,7 +41,7 @@ and open the template in the editor.
                                 <h:outputLabel styleClass="control-label">DVD番号：</h:outputLabel>
                                 <span class="required">*</span>
 
-                                <h:inputText id="dvdNum" required="true" label="DVD番号" styleClass="form-control" value="#{rentalBean.dvd_num}">
+                                <h:inputText id="dvdNum" label="DVD番号" styleClass="form-control" value="#{rentalBean.dvd_num}">
                                     <f:ajax event="change" execute="@this" render="@form" listener="#{rentalBean.searchProduct()}"/>
                                 </h:inputText>
 
@@ -57,25 +57,22 @@ and open the template in the editor.
 
                         <div class="container panel-body rental_main columHeader" >
                             <fieldset>
-                                <h:dataTable value="#{rentalBean.productList}" var="item" styleClass="table table-striped table-bordered table-hover" 
+                                <h:dataTable value="#{rentalBean.dvdlist}" var="item" styleClass="table table-striped table-bordered table-hover" 
                                              columnClasses="rental_main_num,rental_main_name,rental_main_kbn,rental_main_stay,rental_main_discount,rental_main_delete">
 
                                     <h:column headerClass="rental_main_num">
                                         <f:facet name="header">番号</f:facet>
-                                        <h:outputText value="#"/>
+                                        <h:outputText value="#{rentalBean.cntup()}"/>
                                     </h:column>
 
                                     <h:column headerClass="rental_main_name">
                                         <f:facet name="header">作品名</f:facet>
-                                        <h:outputText value="#{item.product_name}"/>
+                                        <h:outputText value="#{item.product_num.product_name}"/>
                                     </h:column>
 
                                     <h:column headerClass="rental_main_kbn">
                                         <f:facet name="header">新旧区分</f:facet>
-                                        #{releaseBean.serchName(item.release_kbn.release_kbn)}
-                                        #{releaseBean.serchRelease()}
-                                        <h:outputText value="#{item.release_kbn.release_name}"/>
-                                        
+                                        <h:outputText value="#{item.product_num.release_kbn.release_name}"/>  
                                     </h:column>
 
                                     <h:column headerClass="rental_main_stay">
@@ -94,7 +91,7 @@ and open the template in the editor.
 
                                     <h:column headerClass="rental_main_delete">
                                         <f:facet name="header"></f:facet>
-                                        <h:commandButton styleClass="btn btn-danger btn-xs" value="削 除" action="#"/>
+                                        <h:commandButton styleClass="btn btn-danger btn-xs" value="削 除" action="#{rentalBean.ListDelete(item)}"/>
                                     </h:column>
                                     
                                     

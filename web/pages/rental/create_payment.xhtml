@@ -21,7 +21,7 @@
                                 <h:outputLabel styleClass="control-label">円</h:outputLabel>
 
                                 <h:outputLabel styleClass="control-label">割引金額</h:outputLabel>
-                                <h:outputText value="76" class="return_output_delay"/>
+                                <h:outputText value="#{rentalBean.waribikicnt *50}" class="return_output_delay"/>
                                 <h:outputLabel styleClass="control-label">円</h:outputLabel>
 
                                 <h:outputLabel styleClass="control-label">請求金額</h:outputLabel>
@@ -38,7 +38,7 @@
                             </h:panelGrid>
                         </div>
                         <div class="return_delay_button">
-                            <h:commandButton styleClass="btn btn-primary btn-lg" value="戻 る" action="create.xhtml?faces-redirect=true" immediate="true"/>
+                            <h:commandButton styleClass="btn btn-primary btn-lg" value="戻 る" action="#{rentalBean.create_1()}" immediate="true"/>
                             <h:commandButton styleClass="btn btn-primary btn-lg" value="清 算" action="create_pay_check.xhtml?faces-redirect=true"/>
                         </div>
                     </h:form>
