@@ -17,24 +17,24 @@
                         <div class="rental_payment_main">
                             <h:panelGrid columns="3" class="return_delay_display" columnClasses=",return_output_money">
                             <h:outputLabel  styleClass="control-label">合計金額</h:outputLabel>
-                            <h:outputText value="420"/>
+                            <h:outputText value="#{rentalBean.goukei}"/>
                             <h:outputLabel styleClass="control-label">円</h:outputLabel>
                             <h:outputLabel styleClass="control-label">割引金額</h:outputLabel>
-                            <h:outputText value="76" class="return_output_delay"/>
+                            <h:outputText value="#{rentalBean.waribikicnt *50}" class="return_output_delay"/>
                             <h:outputLabel styleClass="control-label">円</h:outputLabel>
                             <h:outputLabel styleClass="control-label">請求金額</h:outputLabel>
-                            <h:outputText value="344"/>
+                            <h:outputText value="#{rentalBean.seikyuu}"/>
                             <h:outputLabel styleClass="control-label">円</h:outputLabel>
                             <h:outputLabel styleClass="control-label">現金支払額</h:outputLabel>
-                            <h:outputText value="504"/>
+                            <h:outputText value="#{rentalBean.siharaigaku}"/>
                             <h:outputLabel styleClass="control-label">円</h:outputLabel>
                             <h:outputLabel styleClass="control-label">おつり</h:outputLabel>
-                            <h:outputText value="160"/>
+                            <h:outputText value="#{rentalBean.oturi}"/>
                             <h:outputLabel styleClass="control-label">円</h:outputLabel>
                         </h:panelGrid>
                         </div>
                             <div class="return_delay_button">
-                                <h:commandButton styleClass="btn btn-primary btn-lg" value="戻 る" action="create_payment.xhtml?faces-redirect=true" immediate="true"/>
+                                <h:commandButton styleClass="btn btn-primary btn-lg" value="戻 る" action="#{rentalBean.create_2()}" immediate="true"/>
                                 <h:commandButton styleClass="btn btn-primary btn-lg" value="次 へ" action="create_pay_off_pass.xhtml?faces-redirect=true"/>
                             </div>
                     </h:form>

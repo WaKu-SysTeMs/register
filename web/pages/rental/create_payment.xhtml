@@ -17,7 +17,7 @@
                         <div class="rental_payment_main">
                             <h:panelGrid columns="3" class="return_delay_display" columnClasses=",return_output_money">
                                 <h:outputLabel  styleClass="control-label">合計金額</h:outputLabel>
-                                <h:outputText value="420"/>
+                                <h:outputText value="#{rentalBean.goukei}"/>
                                 <h:outputLabel styleClass="control-label">円</h:outputLabel>
 
                                 <h:outputLabel styleClass="control-label">割引金額</h:outputLabel>
@@ -25,14 +25,11 @@
                                 <h:outputLabel styleClass="control-label">円</h:outputLabel>
 
                                 <h:outputLabel styleClass="control-label">請求金額</h:outputLabel>
-                                <h:outputText value="344"/>
+                                <h:outputText value="#{rentalBean.seikyuu}"/>
                                 <h:outputLabel styleClass="control-label">円</h:outputLabel>
 
                                 <h:outputLabel styleClass="control-label">現金支払額</h:outputLabel>
-
-                                <h:inputText id="money" required="true" label="money" class="return_input_delay">
-                                    <f:ajax event="change" execute="@this" listener="#"/>
-                                </h:inputText>
+                                <h:inputText id="money" required="true" label="money" class="return_input_delay" value="#{rentalBean.siharaigaku}"/>
                                 <h:outputLabel styleClass="control-label">円</h:outputLabel>
 
                             </h:panelGrid>

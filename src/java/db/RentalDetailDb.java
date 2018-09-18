@@ -23,6 +23,10 @@ public class RentalDetailDb extends TryCatchDb{
     public RentalDetailDb() {
         super(RentalDetail.class);
     }
+    
+    public void insert(){
+        
+    }
  
     
 

@@ -13,6 +13,7 @@ import java.util.logging.Logger;
 import javax.inject.*;
 import javax.enterprise.context.*;
 import javax.validation.constraints.Size;
+import login.AccountManager;
 
 /**
  *
@@ -41,7 +42,13 @@ public class RentalBean implements Serializable {
     
     private int goukei; //合計金額
     private int waribikicnt=0; //割引数計
-    private int syoukei; //小計
+    private int seikyuu; //請求金額
+    private int wk;
+    private String wks;
+    private String wks2;
+    private String kubun;
+    private Integer siharaigaku;
+    private int oturi;
 
     @Inject
     RentalInfoDb rentalDb;
@@ -52,21 +59,27 @@ public class RentalBean implements Serializable {
     @Inject
     DvdInfoDb dvdinfodb;
     @Inject
+    RentalDetailDb rentaldetaildb;
+    @Inject
     transient Logger log;
     @Inject
     Conversation conv;
+    @Inject
+    AccountManager AM;
 
     List<ProductInfo> productList = new ArrayList();
     List<DvdInfo> dvdlist = new ArrayList();
     List<Boolean> waribikilist = new ArrayList();
+    List<String> kingakulist = new ArrayList();
+    
 
     /* *****【初期化】 ************************************* */
     {
         releaseItems = new LinkedHashMap<>();
-        releaseItems.put("当日", "1");
-        releaseItems.put("1泊2日", "2");
-        releaseItems.put("2泊3日", "3");
-        releaseItems.put("7泊8日", "4");
+        releaseItems.put("当日", "0");
+        releaseItems.put("1泊2日", "1");
+        releaseItems.put("2泊3日", "2");
+        releaseItems.put("7泊8日", "7");
     }
 
     /**
@@ -92,12 +105,17 @@ public class RentalBean implements Serializable {
     public String create_2() {
         this.waribikicnt=0;
         this.waribikikeisan();
-        return "create_payment.xhtml?faces-redirect=true";
+        return "/pages/rental/create_payment.xhtml?faces-redirect=true";
     }
     
     public String create_1(){
         this.waribikilist = new ArrayList();
-        return "create.xhtml?faces-redirect=true";
+        this.kingakulist = new ArrayList();
+        return "/pages/rental/create.xhtml?faces-redirect=true";
+    }
+    
+    public String create_list(){
+        return "list.xhtml?faces-redirect=true";
     }
     
 
@@ -130,7 +148,7 @@ public class RentalBean implements Serializable {
     }
     
     //リスト中身1行削除
-    public void ListDelete(DvdInfo item){
+    public void listDelete(DvdInfo item){
         dvdlist.remove(item);
     }
     
@@ -139,6 +157,24 @@ public class RentalBean implements Serializable {
             if(bool){
                 this.waribikicnt++;
             }
+        }
+    }
+    
+    //Rental_Infoに登録(DB)
+    public void infotouroku(){
+        Date kasidasihizuke = new Date();
+        this.dvdinfodb.insert(this.seikyuu,kasidasihizuke,AM.getUser(),this.member_num,AM.getPassword());
+    }
+    
+    //Rental_Detailに登録(DB)   DVDループで回して要素取得 Detaildbにinsert
+    public void detailtouroku(){
+        DvdInfo dvdinfo;
+        boolean b;
+        for(int i=0;i<dvdlist.size();i++){
+            dvdinfo = dvdlist.get(i);
+            b = waribikilist.get(i);
+            
+        //    rentaldetaildb.insert();
         }
     }
     
@@ -238,6 +274,21 @@ public class RentalBean implements Serializable {
     }
 
     public int getGoukei() {
+        goukei=0;
+        for(String wklist: kingakulist){
+            this.wks = wklist;
+            if(wks.equals("0")){
+                this.goukei += 200;
+            }else if(wks.equals("1")){
+                this.goukei +=260;
+            }else if(wks.equals("2")){
+                this.goukei +=300;
+            }else if(wks.equals("7")){
+                this.goukei +=160;
+            }
+        }
+        
+        
         return goukei;
     }
 
@@ -253,13 +304,15 @@ public class RentalBean implements Serializable {
         this.waribikicnt = waribikicnt;
     }
 
-    public int getSyoukei() {
-        return syoukei;
+    public int getSeikyuu() {
+        seikyuu = goukei - waribikicnt*50;
+        return seikyuu;
     }
 
-    public void setSyoukei(int syoukei) {
-        this.syoukei = syoukei;
+    public void setSeikyuu(int seikyuu) {
+        this.seikyuu = seikyuu;
     }
+
 
     public List<DvdInfo> getDvdlist() {
         cnt=0;
@@ -273,6 +326,66 @@ public class RentalBean implements Serializable {
     public List<Boolean> getWaribikilist() {
         return waribikilist;
     }
+
+    public List<String> getKingakulist() {
+        return kingakulist;
+    }
+
+    public void setKingakulist(List<String> kingakulist) {
+        this.kingakulist = kingakulist;
+    }
+
+    public int getWk() {
+        return wk;
+    }
+
+    public void setWk(int wk) {
+        this.wk = wk;
+    }
+
+    public String getWks() {
+        return wks;
+    }
+
+    public void setWks(String wks) {
+        this.wks = wks;
+    }
+
+    public String getWks2() {
+        return wks2;
+    }
+
+    public void setWks2(String wks2) {
+        this.wks2 = wks2;
+    }
+
+    public String getKubun() {
+        return kubun;
+    }
+
+    public void setKubun(String kubun) {
+        this.kingakulist.add(kubun);
+    }
+
+    public Integer getSiharaigaku() {
+        return siharaigaku;
+    }
+
+    public void setSiharaigaku(Integer siharaigaku) {
+        this.siharaigaku = siharaigaku;
+    }
+
+    public int getOturi() {
+        oturi=0;
+        oturi = siharaigaku - seikyuu;
+        return oturi;
+    }
+
+    public void setOturi(int oturi) {
+        this.oturi = oturi;
+    }
+
+
 
     
     

@@ -41,6 +41,9 @@ public class LoginBean implements Serializable {
         return this.password;
     }
 
+    
+    
+
     public String login() {
         Employee singleemp = this.employeeDb.loginemp(this.user);
         Register register = this.registerDb.loginid(this.password);
@@ -48,7 +51,8 @@ public class LoginBean implements Serializable {
         if(singleemp!=null && register!=null){
             // ログイン成功した場合
             this.sessionUpdate();
-            this.accountManager.setUser(singleemp.getEmp_name());
+            this.accountManager.setUser(this.user);
+            this.accountManager.setUsername(singleemp.getEmp_name());
             this.accountManager.setPassword(this.password);
             return "/index.xhtml"; //?faces-redirect=true
         } else {
