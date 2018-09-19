@@ -59,6 +59,8 @@ public class RentalBean implements Serializable {
     @Inject
     DvdInfoDb dvdinfodb;
     @Inject
+    RentalInfoDb rentalinfodb;
+    @Inject
     RentalDetailDb rentaldetaildb;
     @Inject
     transient Logger log;
@@ -71,6 +73,7 @@ public class RentalBean implements Serializable {
     List<DvdInfo> dvdlist = new ArrayList();
     List<Boolean> waribikilist = new ArrayList();
     List<String> kingakulist = new ArrayList();
+    Date kasidasihizuke = new Date();
     
 
     /* *****【初期化】 ************************************* */
@@ -162,19 +165,23 @@ public class RentalBean implements Serializable {
     
     //Rental_Infoに登録(DB)
     public void infotouroku(){
-        Date kasidasihizuke = new Date();
-        this.dvdinfodb.insert(this.seikyuu,kasidasihizuke,AM.getUser(),this.member_num,AM.getPassword());
+        this.rentalinfodb.insert(this.seikyuu,this.kasidasihizuke,AM.getUser(),this.member_num,AM.getPassword());
     }
     
     //Rental_Detailに登録(DB)   DVDループで回して要素取得 Detaildbにinsert
     public void detailtouroku(){
         DvdInfo dvdinfo;
         boolean b;
+        int ii;
+        String haku;
+        Integer hakusuu;
         for(int i=0;i<dvdlist.size();i++){
             dvdinfo = dvdlist.get(i);
             b = waribikilist.get(i);
-            
-        //    rentaldetaildb.insert();
+            haku = kingakulist.get(i);
+            hakusuu = Integer.parseInt(haku);
+            ii = i+1;
+            rentaldetaildb.insert(ii,b,seikyuu,kasidasihizuke,hakusuu,dvdinfo.getDvd_num(),dvdinfo.getProduct_num().getRelease_kbn().getRelease_kbn(),haku);
         }
     }
     
@@ -287,8 +294,6 @@ public class RentalBean implements Serializable {
                 this.goukei +=160;
             }
         }
-        
-        
         return goukei;
     }
 
@@ -383,6 +388,14 @@ public class RentalBean implements Serializable {
 
     public void setOturi(int oturi) {
         this.oturi = oturi;
+    }
+
+    public Date getKasidasihizuke() {
+        return kasidasihizuke;
+    }
+
+    public void setKasidasihizuke(Date kasidasihizuke) {
+        this.kasidasihizuke = kasidasihizuke;
     }
 
 

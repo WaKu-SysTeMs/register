@@ -38,18 +38,4 @@ public class DvdInfoDb extends TryCatchDb {
         }
     }
 
-    public void insert(int seikyuu, Date kasidasihizuke, String user, String member_num, String password) {
-        try {
-            Query q = em.createNativeQuery("insert into rental_info values('999',?2,?3,?4,?5,?6)");
-     //     q.setParameter(1,自動採番された数値をあStringに変換した値);
-            q.setParameter(2,seikyuu);
-            q.setParameter(3,kasidasihizuke);
-            q.setParameter(4,user);
-            q.setParameter(5,member_num);
-            q.setParameter(6,password);
-            q.executeUpdate();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 }
