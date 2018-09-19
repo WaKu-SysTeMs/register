@@ -99,7 +99,7 @@ public class MemberBean implements Serializable {
     }
     
     public void touroku(){
-        memberdb.insert();
+//        memberdb.insert();
     }
     
     
