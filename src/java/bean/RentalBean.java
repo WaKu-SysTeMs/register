@@ -185,6 +185,12 @@ public class RentalBean implements Serializable {
         }
     }
     
+    public void dvdupdate(){
+        String status;
+        for(DvdInfo d : dvdlist){
+            dvdinfodb.statusupdte(d.getDvd_num());
+        }
+    }
     
     public Integer cntup(){
         return ++cnt;
