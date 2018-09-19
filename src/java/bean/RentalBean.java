@@ -195,6 +195,14 @@ public class RentalBean implements Serializable {
     public Integer cntup(){
         return ++cnt;
     }
+    
+    
+    //こっから一覧系
+    private String memberNumL;
+    private String storeIdL;
+    private Date rentalDateL;
+    private String rentalStatusL;
+    
 
     /* ゲッター、セッター */
     public Integer getCnt() {

@@ -26,78 +26,65 @@ import javax.validation.constraints.*;
 @Named
 @SessionScoped
 public class MemberBean implements Serializable {
-
     @Size(max = 9)
     private String member_num;     // 会員番号
-
     @Size(max = 30)
     private String member_name;     // 会員名
-
     @Size(max = 40)
     private String member_ruby;     // 会員名 かな表記
-
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date birth_date;        // 生年月日
-
     @Size(max = 2)                   // もしくは@patternで
     private String sex;             // 性別
-
     @Size(max = 8)                   // もしくは@patternで
     private String postal_code;     // 郵便番号
-
     @Size(max = 80)
     private String member_add;      // 住所
-
     @Size(max = 200)
     private String add_ruby;        // 住所 かな表記
-
     @Size(max = 20)
     private String member_phone;    // 携帯番号
-
     @Size(max = 40)
     private String member_mail;     // メールアドレス
-
     @NotNull
     @Size(max = 1)
-    private Job job_id;          // 職業ID(FK)
-
+    private String job_id;          // 職業ID(FK)
     @Size(max = 3)
-    private Category fav_category;    // 好みのジャンル(FK)
-
+    private String fav_category;    // 好みのジャンル(FK)
     @Size(max = 1)
-    private char temp_flg;          // 仮会員フラグ
-
+    private String temp_flg;          // 仮会員フラグ
     @PersistenceContext
     EntityManager em;
-
     @Inject
     transient Logger log;
-
     @Inject
     Conversation conv;
-
     @EJB
     MemberDb memberDb;
-
     @EJB
     BlackMgrDb blackMgrDb;
 
-    @PostConstruct
-    public void start() {
-        if (!conv.isTransient()) {
-            log.info(log.getName() + "| 会話スコープ終了");
-            conv.end();
-        }
-    }
+//    @PostConstruct
+//    public void start() {
+//        if (conv.isTransient()) {
+//            log.info(log.getName() + "| 会話スコープ終了");
+//            conv.end();
+//        }
+//    }
 
     public String create() {
-        log.info(log.getName() + "| 会員登録画面");
         if (conv.isTransient()) {
             conv.begin();
+            log.info(log.getName() + " | 会員入会会話スコープ開始 ****");
+        } else {
+            log.info(log.getName() + " | 会員入会スコープ ****");
         }
-        return "/pages/member/create.xhtml";
+        return "/pages/member/create.xhtml?faces-redirect=true";
     }
-
+    
+    public String create1(){
+        return "/pages/member/createconfirm.xhtml?faces-redirect=true";
+    }
     public String search() {                                // 会員名　取得
         this.member_name = null;
         Member m = (Member) memberDb.search(this.member_num);
@@ -111,7 +98,13 @@ public class MemberBean implements Serializable {
     public List<Member> getAll() {          // MemberInfo 全件取得
         return memberDb.getAll();
     }
+    
 
+
+    
+    
+    
+    
     /* ゲッター、セッター */
 
     public String getMember_num() {
@@ -121,9 +114,6 @@ public class MemberBean implements Serializable {
     public void setMember_num(String member_num) {
         this.member_num = member_num;
     }
-
-    
-    
 
     public String getMember_name() {
         return member_name;
@@ -197,28 +187,11 @@ public class MemberBean implements Serializable {
         this.member_mail = member_mail;
     }
 
-    public Job getJob_id() {
+    public String getJob_id() {
         return job_id;
     }
 
-    public void setJob_id(Job job_id) {
+    public void setJob_id(String job_id) {
         this.job_id = job_id;
     }
-
-    public Category getFav_category() {
-        return fav_category;
-    }
-
-    public void setFav_category(Category fav_category) {
-        this.fav_category = fav_category;
-    }
-
-    public char getTemp_flg() {
-        return temp_flg;
-    }
-
-    public void setTemp_flg(char temp_flg) {
-        this.temp_flg = temp_flg;
-    }
-
 }

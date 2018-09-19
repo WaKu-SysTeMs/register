@@ -10,11 +10,7 @@ import javax.enterprise.context.ConversationScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-/**
- * 
- *
- * @author s20163060
- */
+
 @Named
 @ConversationScoped
 public class ReturnBean implements Serializable{

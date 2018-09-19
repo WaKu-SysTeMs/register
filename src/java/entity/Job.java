@@ -19,9 +19,8 @@ import javax.validation.constraints.*;
 @Entity
 @Table(name = "job_list")
 public class Job implements Serializable {
-    
     public static final String Qall = "Qall";
-    
+
     private static final long serialVersionUID = 1L; // シリアルバージョンUIDのバージョン管理
 
     @Id

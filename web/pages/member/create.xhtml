@@ -40,7 +40,7 @@ and open the template in the editor.
                                 <h:outputLabel styleClass="control-label">生年月日：</h:outputLabel>   
                                 <h:panelGroup>
                                     <h:inputText p:type="date" required="true" label="生年月日" styleClass="form-control" value="#{memberBean.birth_date}">
-                                        <f:convertDateTime pattern="yyyy-M-d" timeZone="Asia/Tokyo"/>
+                                        <f:convertDateTime pattern="yyyy-MM-DD" timeZone="Asia/Tokyo"/>
                                     </h:inputText> 
                                 </h:panelGroup>
 
@@ -48,7 +48,7 @@ and open the template in the editor.
 
                                 <h:outputLabel styleClass="control-label">性別：</h:outputLabel>
                                 <h:panelGroup>
-                                    <h:selectOneRadio value="#{moriTest.sex}" required="true" label="性別">
+                                    <h:selectOneRadio value="#{memberBean.sex}" required="true" label="性別">
                                         <f:selectItems value="#{moriTest.langs1}" />
                                     </h:selectOneRadio>
                                 </h:panelGroup>
@@ -92,7 +92,7 @@ and open the template in the editor.
                                 <h:outputLabel styleClass="control-label">職業：</h:outputLabel>
                                 <h:panelGroup>
                                     <div class="member_create_checkbox">
-                                        <h:selectOneRadio value="#{moriTest.test2}" required="true" label="職業">
+                                        <h:selectOneRadio value="#{memberBean.job_id}" required="true" label="職業">
                                             <f:selectItems value="#{moriTest.langs2}" />
                                         </h:selectOneRadio>
                                     </div>
@@ -104,7 +104,7 @@ and open the template in the editor.
                         </div>
 
                         <div class="member_admission_button">
-                            <h:commandButton value="送　信"  action="createconfirm.xhtml?faces-redirect=true" styleClass="btn btn-primary btn-lg"/>
+                            <h:commandButton value="送　信"  action="#{memberBean.create1()}" styleClass="btn btn-primary btn-lg"/>
                         </div>
 
                     </h:form>
