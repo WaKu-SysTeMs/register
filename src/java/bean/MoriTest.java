@@ -18,9 +18,8 @@ import javax.faces.model.SelectItem;
 public class MoriTest {
 
     private Integer test;
-
-    
     private Integer test2;
+    
     private SelectItem[] langs2 = {
         new SelectItem(1,"会社員・公務員"),
         new SelectItem(2,"派遣・アルバイト"),

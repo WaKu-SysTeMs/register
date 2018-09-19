@@ -27,9 +27,9 @@ and open the template in the editor.
                             <h:outputLabel styleClass="control-label">会員名（かな）：</h:outputLabel>
                             <h:outputText value="#{memberBean.member_ruby}"/>
                             <h:outputLabel styleClass="control-label">生年月日：</h:outputLabel>
-                            <h:outputText value="#{memberBean.birth_date}"/>
+                            <h:outputText value="#{memberBean.dateformat(memberBean.birth_date)}"/>
                             <h:outputLabel styleClass="control-label">性別：</h:outputLabel>
-                            <h:outputText value="#{memberBean.sex}"/>
+                            <h:outputText value="#{memberBean.sex_name}"/>
                             <h:outputLabel styleClass="control-label">郵便番号：</h:outputLabel>
                             <h:outputText value="#{memberBean.postal_code}"/>
                             <h:outputLabel styleClass="control-label">住所：</h:outputLabel>
@@ -41,7 +41,7 @@ and open the template in the editor.
                             <h:outputLabel styleClass="control-label">メールアドレス：</h:outputLabel>
                             <h:outputText value="#{memberBean.member_mail}"/>
                             <h:outputLabel styleClass="control-label">職業：</h:outputLabel>
-                            <h:outputText value="#{memberBean.job_id}"/>
+                            <h:outputText value="#{memberBean.job_name}"/>
                         </h:panelGrid>
                     </div>
                     <br/>

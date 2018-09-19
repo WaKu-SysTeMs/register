@@ -4,11 +4,13 @@
 package bean;
 
 import db.BlackMgrDb;
+import db.JobDb;
 import db.MemberDb;
 import entity.Category;
 import entity.Job;
 import entity.Member;
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.logging.Logger;
 import javax.annotation.PostConstruct;
@@ -53,8 +55,6 @@ public class MemberBean implements Serializable {
     private String fav_category;    // 好みのジャンル(FK)
     @Size(max = 1)
     private String temp_flg;          // 仮会員フラグ
-    @PersistenceContext
-    EntityManager em;
     @Inject
     transient Logger log;
     @Inject
@@ -63,14 +63,13 @@ public class MemberBean implements Serializable {
     MemberDb memberDb;
     @EJB
     BlackMgrDb blackMgrDb;
+    @Inject
+    JobDb jobdb;
+    @Inject
+    MemberDb memberdb;
 
-//    @PostConstruct
-//    public void start() {
-//        if (conv.isTransient()) {
-//            log.info(log.getName() + "| 会話スコープ終了");
-//            conv.end();
-//        }
-//    }
+    private String job_name;
+    private String sex_name;
 
     public String create() {
         if (conv.isTransient()) {
@@ -85,6 +84,11 @@ public class MemberBean implements Serializable {
     public String create1(){
         return "/pages/member/createconfirm.xhtml?faces-redirect=true";
     }
+    
+    public String create2(){
+        return "/pages/member/createcomplete.xhtml?faces-redirect=true";
+    }
+    
     public String search() {                                // 会員名　取得
         this.member_name = null;
         Member m = (Member) memberDb.search(this.member_num);
@@ -93,18 +97,27 @@ public class MemberBean implements Serializable {
         }
         return null;
     }
-
+    
+    public void touroku(){
+        memberdb.insert();
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    public String dateformat(Date date){
+        return (new SimpleDateFormat("yyyy年MM月dd日")).format(date);
+    }
+    
 
     public List<Member> getAll() {          // MemberInfo 全件取得
         return memberDb.getAll();
     }
-    
 
-
-    
-    
-    
-    
     /* ゲッター、セッター */
 
     public String getMember_num() {
@@ -145,6 +158,11 @@ public class MemberBean implements Serializable {
 
     public void setSex(String sex) {
         this.sex = sex;
+        if(sex.equals("1")){
+            setSex_name("男");
+        }else{
+            setSex_name("女");
+        }
     }
 
     public String getPostal_code() {
@@ -193,5 +211,24 @@ public class MemberBean implements Serializable {
 
     public void setJob_id(String job_id) {
         this.job_id = job_id;
+        setJob_name(((Job)jobdb.search(job_id)).getJob_name());
     }
+
+    public String getJob_name() {
+        return job_name;
+    }
+
+    public void setJob_name(String job_name) {
+        this.job_name = job_name;
+    }
+
+    public String getSex_name() {
+        return sex_name;
+    }
+
+    public void setSex_name(String sex_name) {
+        this.sex_name = sex_name;
+    }
+    
+    
 }
