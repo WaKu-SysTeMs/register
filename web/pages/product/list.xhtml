@@ -16,27 +16,12 @@ and open the template in the editor.
     </h:head>
     <h:body>
         <ui:composition template="/templates/template01.xhtml">
-            <ui:define name="title">HCSビデオレンタル-貸出c-</ui:define>>
+            <ui:define name="title">HCSビデオレンタル-貸出-</ui:define>
             <ui:define name="content"><br/>
                 <div class="container">
 
                     <h:form><div class="form-group">
-                            <h:panelGrid columns="5">
-
-
-                                <h:outputLabel styleClass="control-label">作品名　：</h:outputLabel>
-
-                                <h:inputText id="title" required="true" value="#" label="作品名" styleClass="form-control">
-                                    <f:ajax event="change" execute="@this" listener="#"/>
-                                </h:inputText>
-
-
-                                <h:outputLabel styleClass="control-label">監　督　：</h:outputLabel>
-
-                                <h:inputText id="director" required="true" value="#" label="監督" styleClass="form-control">
-                                    <f:ajax event="change" execute="@this" listener="#"/>
-                                </h:inputText>
-                                <h:outputText/>
+                            <h:panelGrid columns="3">
 
 
                                 <h:outputLabel styleClass="control-label">商品番号：</h:outputLabel>
@@ -44,14 +29,13 @@ and open the template in the editor.
                                 <h:inputText id="productNum" required="true" value="#" label="商品番号" styleClass="form-control">
                                     <f:ajax event="change" execute="@this" listener="#"/>
                                 </h:inputText>
+                                <h:outputText/>
+                                
+                                <h:outputLabel styleClass="control-label">作品名　：</h:outputLabel>
 
-
-                                <h:outputLabel styleClass="control-label">ジャンル：</h:outputLabel>
-
-                                <h:inputText id="genre" required="true" value="#" label="ジャンル" styleClass="form-control">
+                                <h:inputText id="title" required="true" value="#" label="作品名" styleClass="form-control">
                                     <f:ajax event="change" execute="@this" listener="#"/>
                                 </h:inputText>
-
 
                                 <h:commandButton styleClass="btn btn-default" value="検 索" action="#"/>
 
@@ -60,7 +44,7 @@ and open the template in the editor.
                         </div>
 
 
-                        <div class="container panel-body manyList" >
+                        <div class="container panel-body manyList columHeader" >
                             <fieldset>
                                 <h:dataTable value="#" var="t" styleClass="table table-striped table-bordered table-hover" 
                                              columnClasses="product_list_productNum,product_list_title,product_list_genre,product_list_playtime,product_list_director,product_list_kbn">

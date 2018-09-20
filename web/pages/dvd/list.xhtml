@@ -16,43 +16,28 @@ and open the template in the editor.
     </h:head>
     <h:body>
         <ui:composition template="/templates/template01.xhtml">
-            <ui:define name="title">HCSビデオレンタル-貸出c-</ui:define>>
+            <ui:define name="title">HCSビデオレンタル-貸出-</ui:define>
             <ui:define name="content"><br/>
                 <div class="container">
 
                     <h:form><div class="form-group">
-                            <h:panelGrid columns="5">
+                            <h:panelGrid columns="3">
 
 
-                                <h:outputLabel styleClass="control-label">ＤＶＤ番号：</h:outputLabel>
+                                <h:outputLabel styleClass="control-label">DVD番号：</h:outputLabel>
 
-                                <h:inputText id="memberNum" required="true" value="#" label="ＤＶＤ番号" styleClass="form-control">
-                                    <f:ajax event="change" execute="@this" listener="#"/>
-                                </h:inputText>
-
-
-                                <h:outputLabel styleClass="control-label">商品番号：</h:outputLabel>
-
-                                <h:inputText id="storeId" required="true" value="#" label="商品番号" styleClass="form-control">
+                                <h:inputText id="memberNum" required="true" value="#" label="DVD番号" styleClass="form-control">
                                     <f:ajax event="change" execute="@this" listener="#"/>
                                 </h:inputText>
                                 <h:outputText/>
 
 
-                                <h:outputLabel styleClass="control-label">作　品　名：</h:outputLabel>
+                                <h:outputLabel styleClass="control-label">商品番号 ：</h:outputLabel>
 
-                                <h:inputText id="rentalDate" required="true" value="#" label="作品名" styleClass="form-control">
+                                <h:inputText id="storeId" required="true" value="#" label="商品番号" styleClass="form-control">
                                     <f:ajax event="change" execute="@this" listener="#"/>
                                 </h:inputText>
-
-
-                                <h:outputLabel styleClass="control-label">店舗名　：</h:outputLabel>
-
-                                <h:inputText id="rentalStatus" required="true" value="#" label="店舗名" styleClass="form-control">
-                                    <f:ajax event="change" execute="@this" listener="#"/>
-                                </h:inputText>
-
-
+                                
                                 <h:commandButton styleClass="btn btn-default" value="検 索" action="#"/>
 
 
@@ -60,20 +45,16 @@ and open the template in the editor.
                         </div>
 
 
-                        <div class="container panel-body manyList" >
+                        <div class="container panel-body manyList columHeader" >
                             <fieldset>
                                 <h:dataTable value="#" var="t" styleClass="table table-striped table-bordered table-hover" 
-                                             columnClasses="dvd_list_dvdNum,dvd_list_title,dvd_list_storeName,dvd_list_productNum,dvd_list_states">
+                                             columnClasses="dvd_list_dvdNum,dvd_list_title,dvd_list_productNum,dvd_list_states">
                                     <h:column headerClass="dvd_list_dvdNum">
                                         <f:facet name="header">DVD番号</f:facet>
                                     </h:column>
 
                                     <h:column headerClass="dvd_list_title">
                                         <f:facet name="header">作品名</f:facet>
-                                    </h:column>
-
-                                    <h:column headerClass="dvd_list_storeName">
-                                        <f:facet name="header">店舗名</f:facet>
                                     </h:column>
 
                                     <h:column headerClass="dvd_list_productNum">
