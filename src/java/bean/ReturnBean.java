@@ -32,11 +32,10 @@ public class ReturnBean implements Serializable {
 
     @Size(max = 100)
     private String product_name;    // 作品名
-    
-        List<ProductInfo> productList = new ArrayList();
-    List<DvdInfo> dvdlist = new ArrayList();
 
-    DvdBean dvdBean ;
+    List<ProductInfo> productList = new ArrayList();
+    List<DvdInfo> dvdlist = new ArrayList();
+    List<RentalDetail> rDetailList = new ArrayList();
 
     @Inject
     transient Logger log;
@@ -46,7 +45,15 @@ public class ReturnBean implements Serializable {
 
     @Inject
     AccountManager AM;
+
+    @Inject
+    DvdInfoDb dvdInfoDb;
+
+    @Inject
+    RentalDetailDb rentalDetailDb;
     
+    @Inject
+    RentalDb rentalDb;
 
     /**
      * 返却処理
@@ -79,12 +86,19 @@ public class ReturnBean implements Serializable {
         return "update_pay_off_miss.xhtml?faces-redirect=true";
     }
 
+    /**
+     * DVD情報取得
+     */
     public void searchProduct() {
-        try {
-            dvdBean.searchProduct();
-        } catch (Exception e) {
-            log.info(dvd_num + "が見つかりません");
+        DvdInfo dvdInfo = (DvdInfo) this.dvdInfoDb.search(this.dvd_num);
+        
+        if (dvdInfo != null) {
+            productList.add(dvdInfo.getProduct_num());
+            dvdlist.add(dvdInfo);
+        } else {
+            log.info(dvd_num + "が見つかりません。************");
         }
+        dvd_num = null;
     }
 
     public Integer getCnt() {
@@ -142,7 +156,14 @@ public class ReturnBean implements Serializable {
     public void setDvdlist(List<DvdInfo> dvdlist) {
         this.dvdlist = dvdlist;
     }
-    
+
+    public List<RentalDetail> getrDetailList() {
+        return rDetailList;
+    }
+
+    public void setrDetailList(List<RentalDetail> rDetailList) {
+        this.rDetailList = rDetailList;
+    }
     
 
 }
