@@ -20,8 +20,6 @@
                 <div class="col-lg-12" style="font-size: 30px;">
                     <span class="glyphicon glyphicon-film"></span>
                     HCSビデオレンタル
-
-
                 </div>
 
                 <div class="col-lg-12">
@@ -87,7 +85,7 @@
 
                     <div class="col-lg-3">
 
-                        <h:commandLink styleClass="button1" action="/pages/return/update.xhtml?faces-redirect=true">
+                        <h:commandLink styleClass="button1" action="#{returnBean.update()}">
                             <span class="glyphicon glyphicon-inbox"></span><br/>
                             返却処理
                         </h:commandLink>

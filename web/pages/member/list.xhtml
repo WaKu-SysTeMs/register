@@ -17,60 +17,20 @@
                     <br/>
 
                     <h:form><div class="form-group">
-                            <h:panelGrid columns="4" border="0" class="hoge999">
+                            <h:panelGrid columns="3" border="0">
 
-                                <h:outputLabel styleClass="control-label">会員番号：</h:outputLabel>
+                                <h:outputLabel styleClass="control-label">会　員　番　号：</h:outputLabel>
                                 <h:inputText id="memberNum" required="true" value="#"
                                              label="会員番号" styleClass="form-control" />
-
-                                <h:outputLabel styleClass="control-label">会　員　名　　：</h:outputLabel>
-                                <h:inputText id="memberName" required="true" value="#"
-                                             label="会員名" styleClass="form-control" />
-
-                                <h:outputLabel styleClass="control-label">生年月日：</h:outputLabel>
-                                <h:panelGroup>
-                                    <h:inputText p:type="date" required="true" label="生年月日" styleClass="form-control">
-                                        <f:convertDateTime pattern="yyyy-M-d" timeZone="Asia/Tokyo"/>
-                                    </h:inputText> 
-                                </h:panelGroup>
+                                <h:outputText/>
 
                                 <h:outputLabel styleClass="control-label">会員名（かな）：</h:outputLabel>
                                 <h:inputText id="memberNamePhonetic" required="true" value="#"
                                              label="会員名（かな）" styleClass="form-control" />
+                                
+                                <h:commandButton styleClass="btn btn-default" value="検 索" action="#"/>
 
                             </h:panelGrid>
-                            <div class="hoge1">
-                                <div class="test1">
-                                    <h:outputLabel styleClass="control-label">性別：</h:outputLabel><br/>
-                                    <h:panelGroup>
-                                        <input type="radio" name="性別" value="1" />男
-                                        <input type="radio" name="性別" value="0" />女
-                                        <input type="radio" name="性別" value="2" checked="checked" />すべて
-                                    </h:panelGroup></div>
-                                <div class="test1">
-                                    <h:outputLabel styleClass="control-label">会員状態：</h:outputLabel><br/>
-                                    <h:panelGroup>
-                                        <input type="radio" name="会員状態" value="0" />ブラック会員である
-                                        <input type="radio" name="会員状態" value="1" />ブラック会員でない
-                                        <input type="radio" name="会員状態" value="2" checked="checked" />すべて
-                                    </h:panelGroup></div>
-                                <div class="test1">
-                                    <h:outputLabel styleClass="control-label">会員状況：</h:outputLabel><br/>
-                                    <h:panelGroup>
-                                        <input type="radio" name="会員状況" value="1" />退会済みである
-                                        <input type="radio" name="会員状況" value="0" />退会済みでない
-                                        <input type="radio" name="会員状況" value="2" checked="checked" />すべて
-                                    </h:panelGroup></div>
-                                <div class="test1">
-                                    <h:outputLabel styleClass="control-label">仮入会：</h:outputLabel><br/>
-                                    <h:panelGroup>
-                                        <input type="radio" name="仮入会" value="1" />会員
-                                        <input type="radio" name="仮入会" value="0" />仮会員
-                                        <input type="radio" name="仮入会" value="2" checked="checked" />すべて
-                                    </h:panelGroup></div><br/><div class="test1">
-                                    <h:commandButton styleClass="btn btn-default" value="検 索" action="#" />
-                                </div>
-                            </div>
 
                         </div>
                         <div class="container panel-body columHeader" >
