@@ -39,10 +39,10 @@ and open the template in the editor.
                         </div>
 
 
-                        <div class="container panel-body manyList" >
+                        <div class="container panel-body manyList columHeader" >
                             <fieldset>
                                 <h:dataTable value="#{rentalListBean.all}" var="t" styleClass="table table-striped table-bordered table-hover" 
-                                             columnClasses="rental_list_rentalNum,renta_list_memberNum,rental_list_storeName,rental_list_rentalDate,rental_list_planDate,rental_list_employeeNum,rental_list_amount,rental_list_states">
+                                             columnClasses="rental_list_rentalNum,renta_list_memberNum,rental_list_rentalDate,rental_list_planDate,rental_list_employeeNum,rental_list_amount,rental_list_states">
                                     <h:column headerClass="rental_list_rentalNum">
                                         <f:facet name="header">貸出番号</f:facet>
                                         <h:outputText value="#{t.rental_num}"/>
@@ -51,11 +51,6 @@ and open the template in the editor.
                                     <h:column headerClass="renta_list_memberNum">
                                         <f:facet name="header">会員番号</f:facet>
                                         <h:outputText value="#{t.member_num}"/>
-                                    </h:column>
-
-                                    <h:column headerClass="rental_list_storeName">
-                                        <f:facet name="header">店舗名</f:facet>
-                                        <h:outputText value="#"/>
                                     </h:column>
 
                                     <h:column headerClass="rental_list_rentalDate">

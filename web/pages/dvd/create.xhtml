@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">   
+    <h:head>
+        <link rel="stylesheet" type="text/css" href="../../resources/css/mystyle.css"/>
+    </h:head>
+    <h:body>
+        <ui:composition template="/templates/template01.xhtml">
+            <ui:define name="title">HCSビデオレンタル-入会処理-</ui:define>
+            <ui:define name="content">
+                <div class="container">
+                    <br/>
+
+                    <h:form>
+                        <div class="form-group">
+                            <div class="member_admission">
+                                <h:panelGrid columns="2" columnClasses="ma_left,ma_right">
+
+                                <h:outputLabel styleClass="control-label">作品名：</h:outputLabel>  
+                                <h:panelGroup>
+                                    <h:inputText id="test1" required="true" value="#{memberBean.postal_code}"
+                                                 label="作品名" styleClass="form-control" />
+                                </h:panelGroup>    
+                                    
+                                <h:outputLabel styleClass="control-label">　監　督：</h:outputLabel>
+                                <h:panelGroup>
+                                    <h:inputText id="memberNum" required="true" value="#{memberBean.member_name}"
+                                                 label="監督" styleClass="form-control" />
+                                </h:panelGroup>
+
+                                <h:outputLabel styleClass="control-label">再生時間：</h:outputLabel>
+                                <h:panelGroup>
+                                    <h:inputText id="memberRuby" required="true" value="#{memberBean.member_ruby}"
+                                                 label="再生時間" styleClass="form-control" />
+                                </h:panelGroup>
+
+                                <h:outputLabel styleClass="control-label">貸出開始日：</h:outputLabel>   
+                                <h:panelGroup>
+                                    <h:inputText p:type="date" required="true" label="貸出開始日" styleClass="form-control" value="#{memberBean.birth_date}">
+                                        <f:convertDateTime pattern="yyyy-MM-DD" timeZone="Asia/Tokyo"/>
+                                    </h:inputText> 
+                                </h:panelGroup>
+
+
+
+                                <h:outputLabel styleClass="control-label">カテゴリーID：</h:outputLabel>
+                                <h:panelGroup>
+                                    <h:selectOneListbox value="#{memberBean.sex}" required="true" label="カテゴリーID">
+                                        <f:selectItems value="#{moriTest.langs1}" />
+                                    </h:selectOneListbox>
+                                </h:panelGroup>
+
+
+                               
+                                
+                            </h:panelGrid>
+                                
+                            </div>
+                        </div>
+
+                        <div class="member_admission_button">
+                            <h:commandButton value="送　信"  action="#{memberBean.create1()}" styleClass="btn btn-primary btn-lg"/>
+                        </div>
+
+                    </h:form>
+
+                </div>
+
+
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
