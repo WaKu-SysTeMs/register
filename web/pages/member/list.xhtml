@@ -33,13 +33,17 @@
                             </h:panelGrid>
 
                         </div>
-                        <div class="container panel-body columHeader" >
+                        <div class="container panel-body manyList columHeader" >
                             <fieldset>
                                 <h:dataTable value="#" var="item" styleClass="table table-striped table-bordered table-hover"
                                              columnClasses="member_list_num,member_list_name,member_list_ruby,member_list_birth_date,member_list_sex,member_list_states">
                                     <h:column headerClass="member_list_num">
-                                        <f:facet name="header">会員番号</f:facet>
-                                        <h:outputText value="#"/>
+                                        <f:facet name="header">
+                                            会員番号
+                                        </f:facet>
+                                        <h:commandLink action="member_detail.xhtml?faces-redirect=true">
+                                            <h:outputText value="#"/>
+                                        </h:commandLink>
                                     </h:column>
 
                                     <h:column headerClass="member_list_name">

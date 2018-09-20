@@ -16,27 +16,22 @@ and open the template in the editor.
     </h:head>
     <h:body>
         <ui:composition template="/templates/template01.xhtml">
-            <ui:define name="title">HCSビデオレンタル-貸出-</ui:define>
+            <ui:define name="title">HCSビデオレンタル-会員-</ui:define>
             <ui:define name="content"><br/>
                 <div class="container">
 
                     <h:form><div class="form-group">
-                            <h:panelGrid columns="3">
+                            <h:panelGrid columns="6" border="2">
 
-                                <h:outputLabel styleClass="control-label">商品番号：</h:outputLabel>
-
-                                <h:inputText id="storeId" required="true" value="#" label="商品番号" styleClass="form-control">
-                                    <f:ajax event="change" execute="@this" listener="#"/>
-                                </h:inputText>
-                                <h:outputText/>
+                                <h:outputLabel styleClass="control-label">会員番号</h:outputLabel>
+                                <h:outputText value="森"/>
                                 
-                                <h:outputLabel styleClass="control-label">作品名　：</h:outputLabel>
-
-                                <h:inputText id="memberNum" required="true" value="#" label="作品名" styleClass="form-control">
-                                    <f:ajax event="change" execute="@this" listener="#"/>
-                                </h:inputText>
-
-                                <h:commandButton styleClass="btn btn-default" value="検 索" action="#"/>
+                                <h:outputLabel styleClass="control-label">会員名</h:outputLabel>
+                                <h:outputText value="絶対"/>
+                                
+                                <h:outputLabel styleClass="control-label">会員名（かな）</h:outputLabel>
+                                <h:outputText value="殺すマン"/>
+                                
 
 
                             </h:panelGrid>
