@@ -20,6 +20,12 @@ and open the template in the editor.
         <ui:define name="content">
             <h:form>
                     <div class="return_pay_off_main">
+                        
+                        #{memberBean.memnumhakkou()}
+                        #{memberBean.infotouroku()}
+                        #{memberBean.nyuutaikaitouroku()}
+                        
+                        
                         <p>会員登録が完了しました</p>
                     </div>
                     <div class="member_complete_button">
