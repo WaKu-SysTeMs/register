@@ -26,7 +26,7 @@ public class MoriTest {
         new SelectItem(3,"自営業"),
         new SelectItem(4,"専業主婦"),
         new SelectItem(5,"学生"),
-        new SelectItem(6,"その他")
+        new SelectItem(9,"その他")
     };
     
     private Integer test6;

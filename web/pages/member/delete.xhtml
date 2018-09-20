@@ -23,13 +23,11 @@ and open the template in the editor.
                         <h2>会員カードをスキャン、または会員番号を入力してください</h2>
                     </div>
                     <div class="member_delete_memberNum">
-                            <h:inputText id="memberNum" required="true" p:placeholder="会員カードをスキャン、または会員番号を入力してください" label="会員番号" styleClass="form-control">
-                                <f:ajax event="change" execute="@this" listener="#" />
-                            </h:inputText>
+                        <h:inputText id="memberNum" required="true" p:placeholder="会員カードをスキャン、または会員番号を入力してください" label="会員番号" styleClass="form-control" value="#{memberBean.member_num}"/>
                     </div>
                     <div class="member_delete_button">
                     <h:commandButton styleClass="btn btn-primary btn-lg"
-                                     value="次 へ" action="deleteconfirm.xhtml?faces-redirect=true"/>
+                                     value="次 へ" action="#{memberBean.delete1()}"/>
                     </div>
                 </h:form>
             </div>

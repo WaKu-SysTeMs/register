@@ -11,7 +11,7 @@
     </h:head>
     <h:body>
         <ui:composition template="/templates/template01.xhtml">
-            <ui:define name="title">HCSビデオレンタル-返却-</ui:define>
+            <ui:define name="title">HCSビデオレンタル 会員一覧-</ui:define>
             <ui:define name="content">
                 <div class="container">
                     <br/>
@@ -20,53 +20,55 @@
                             <h:panelGrid columns="3" border="0">
 
                                 <h:outputLabel styleClass="control-label">会　員　番　号：</h:outputLabel>
-                                <h:inputText id="memberNum" required="true" value="#"
+                                <h:inputText id="memberNum" required="true" value="#{memberBean.member_num}"
                                              label="会員番号" styleClass="form-control" />
-                                <h:outputText/>
+                                <br/>
 
                                 <h:outputLabel styleClass="control-label">会員名（かな）：</h:outputLabel>
-                                <h:inputText id="memberNamePhonetic" required="true" value="#"
+                                <h:inputText id="memberNamePhonetic" required="true" value="#{memberBean.member_ruby}"
                                              label="会員名（かな）" styleClass="form-control" />
                                 
-                                <h:commandButton styleClass="btn btn-default" value="検 索" action="#"/>
+                                <h:commandButton styleClass="btn btn-default" value="検 索" action="#{memberBean.kensaku()}"/>
 
                             </h:panelGrid>
 
                         </div>
                         <div class="container panel-body columHeader" >
                             <fieldset>
-                                <h:dataTable value="#" var="item" styleClass="table table-striped table-bordered table-hover"
+                                <h:dataTable value="#{memberBean.kensakulist}" var="item" styleClass="table table-striped table-bordered table-hover"
                                              columnClasses="member_list_num,member_list_name,member_list_ruby,member_list_birth_date,member_list_sex,member_list_states">
                                     <h:column headerClass="member_list_num">
                                         <f:facet name="header">会員番号</f:facet>
-                                        <h:outputText value="#"/>
+                                        
+                                        <h:outputText value="#{item.member_num}"/>
+                                        
                                     </h:column>
 
                                     <h:column headerClass="member_list_name">
                                         <f:facet name="header">会員名</f:facet>
-                                        <h:outputText value="#"/>
+                                        <h:outputText value="#{item.member_name}"/>
                                     </h:column>
 
                                     <h:column headerClass="member_list_ruby">
                                         <f:facet name="header">会員名（かな）</f:facet>
-                                        <h:outputText value="#"/>
+                                        <h:outputText value="#{item.member_ruby}"/>
                                     </h:column>
 
                                     <h:column headerClass="member_list_birth_date">
                                         <f:facet name="header">生年月日</f:facet>
-                                        <h:outputText value="">
+                                        <h:outputText value="#{item.birth_date}">
                                             <f:convertDateTime pattern="yyyy月MM月dd日"/>
                                         </h:outputText>
                                     </h:column>
 
                                     <h:column headerClass="member_list_sex">
                                         <f:facet name="header">性別</f:facet>
-                                        <h:outputText value="#"/>
+                                        <h:outputText value="#{memberBean.sexhantei('#{item.sex}')}"/>
                                     </h:column>
 
                                     <h:column headerClass="member_list_states">
                                         <f:facet name="header">会員状況</f:facet>
-                                        <h:outputText value="#"/>
+                                        <h:outputText value="#{memberBean.kaiinjoukyou('#{item.member_num}')}"/>
                                     </h:column>
 
                                 </h:dataTable>

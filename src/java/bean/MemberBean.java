@@ -5,15 +5,15 @@ package bean;
 
 import db.BlackMgrDb;
 import db.JobDb;
+import db.JoinListDb;
 import db.MemberDb;
-import entity.Category;
 import entity.Job;
+import entity.JoinList;
 import entity.Member;
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.logging.Logger;
-import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.enterprise.context.Conversation;
 import javax.enterprise.context.SessionScoped;
@@ -67,9 +67,12 @@ public class MemberBean implements Serializable {
     JobDb jobdb;
     @Inject
     MemberDb memberdb;
+    @Inject
+    JoinListDb joinlistdb;
 
     private String job_name;
     private String sex_name;
+    List<Member> kensakulist = new ArrayList();
 
     public String create() {
         if (conv.isTransient()) {
@@ -80,13 +83,31 @@ public class MemberBean implements Serializable {
         }
         return "/pages/member/create.xhtml?faces-redirect=true";
     }
-    
+
     public String create1(){
         return "/pages/member/createconfirm.xhtml?faces-redirect=true";
     }
     
     public String create2(){
         return "/pages/member/createcomplete.xhtml?faces-redirect=true";
+    }
+    
+    public String delete(){
+        if (conv.isTransient()) {
+            conv.begin();
+            log.info(log.getName() + " | 退会入会会話スコープ開始 ****");
+        } else {
+            log.info(log.getName() + " | 退会入会スコープ ****");
+        }
+        return "/pages/member/delete.xhtml?faces-redirect=true";
+    }
+    
+    public String delete1(){
+        return "/pages/member/deleteconfirm.xhtml?faces-redirect=true";
+    }
+    
+    public String delete2(){
+        return "/pages/member/deletecomplete.xhtml?faces-redirect=true";
     }
     
     public String search() {                                // 会員名　取得
@@ -98,22 +119,66 @@ public class MemberBean implements Serializable {
         return null;
     }
     
-    public void touroku(){
-//        memberdb.insert();
+    public void searchset(){
+        Member m = (Member) memberDb.search(this.getMember_num());
+        this.setMember_name(m.getMember_name());
+        this.setBirth_date(m.getBirth_date());
+        this.setSex(m.getSex());
     }
     
+    public void memnumhakkou(){
+        memberdb.cntall();
+        this.member_num = String.format("%09d",memberdb.getSaibangou()+1);
+    }
     
+    public void infotouroku(){
+        memberdb.insert(this.member_num,this.add_ruby,this.birth_date,this.member_add,this.member_mail,this.member_name,this.member_phone,this.member_ruby,this.postal_code,this.sex_name,this.job_id);
+    }
     
+    public void nyuutaikaitouroku(){
+        Date d = new Date();
+        joinlistdb.insert(d,this.member_num);
+    }
     
+    public void taikaisyori(){
+        joinlistdb.taikai(getMember_num());
+    }
     
+    public void kensaku(){
+        
+        if(getMember_num().equals("")){
+            if(getMember_ruby().equals("")){
+            }else{
+                kensakulist = memberdb.rubykensaku(getMember_ruby());
+            }
+        }else{
+            kensakulist.add(memberdb.kensaku(getMember_num()));
+        }     
+    }
     
+    public String sexhantei(String x){
+        if(x.equals("1")){
+            return "男";
+        }else{
+            return "女";
+        }
+    }
     
+    public String kaiinjoukyou(String s){
+        
+        JoinList j = (JoinList)joinlistdb.search(s);
+        String str = String.valueOf(j.getResign_flg());
+        if(str.equals("0")){
+            return "";
+        }else{
+            return "退会";
+        }
+    }
     
     public String dateformat(Date date){
         return (new SimpleDateFormat("yyyy年MM月dd日")).format(date);
     }
     
-
     public List<Member> getAll() {          // MemberInfo 全件取得
         return memberDb.getAll();
     }
@@ -229,6 +294,14 @@ public class MemberBean implements Serializable {
     public void setSex_name(String sex_name) {
         this.sex_name = sex_name;
     }
-    
+
+    public List<Member> getKensakulist() {
+        return kensakulist;
+    }
+
+    public void setKensakulist(List<Member> kensakulist) {
+        this.kensakulist = kensakulist;
+    }
+
     
 }
