@@ -644,3 +644,8 @@ div .manyList tbody{    /* 返却メイン画面スクロール調整 */
     height: 40px;
     width: 217px;
 }
+
+.member_detail_just{
+    display: inline-block;
+    padding-top: 15px;
+}
