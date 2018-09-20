@@ -24,5 +24,9 @@ public class JobDb extends TryCatchDb {
         super(Job.class);
     }
 
+    public void searchname(String job_id) {
+        
+    }
+
 
 }
