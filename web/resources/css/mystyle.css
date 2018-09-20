@@ -454,11 +454,11 @@ div .member_createconfirm{
 }
 
 .rental_list_rentalDate{
-    width: 150px;
+    width: 200px;
 }
 
 .rental_list_planDate{
-    width: 150px;
+    width: 200px;
 }
 
 .rental_list_employeeNum{
@@ -466,11 +466,11 @@ div .member_createconfirm{
 }
 
 .rental_list_amount{
-    width: 140px;
+    width: 160px;
 }
 
 .rental_list_states{
-    width: 120px;
+    width: 150px;
 }
 
 div .manyList tbody{    /* 返却メイン画面スクロール調整 */
@@ -508,19 +508,16 @@ div .manyList tbody{    /* 返却メイン画面スクロール調整 */
 }
 
 .dvd_list_title{
-    width: 590px;
+    width: 700px;
 }
 
-.dvd_list_storeName{
-    width: 150px;
-}
 
 .dvd_list_productNum{
-    width: 180px;
+    width: 200px;
 }
 
 .dvd_list_states{
-    width: 150px;
+    width: 170px;
 }
 
 .member_delete_top{

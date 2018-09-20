@@ -16,7 +16,7 @@ and open the template in the editor.
     </h:head>
     <h:body>
         <ui:composition template="/templates/template01.xhtml">
-            <ui:define name="title">HCSビデオレンタル-貸出c-</ui:define>>
+            <ui:define name="title">HCSビデオレンタル-貸出-</ui:define>
             <ui:define name="content"><br/>
                 <div class="container">
 
@@ -48,17 +48,13 @@ and open the template in the editor.
                         <div class="container panel-body manyList columHeader" >
                             <fieldset>
                                 <h:dataTable value="#" var="t" styleClass="table table-striped table-bordered table-hover" 
-                                             columnClasses="dvd_list_dvdNum,dvd_list_title,dvd_list_storeName,dvd_list_productNum,dvd_list_states">
+                                             columnClasses="dvd_list_dvdNum,dvd_list_title,dvd_list_productNum,dvd_list_states">
                                     <h:column headerClass="dvd_list_dvdNum">
                                         <f:facet name="header">DVD番号</f:facet>
                                     </h:column>
 
                                     <h:column headerClass="dvd_list_title">
                                         <f:facet name="header">作品名</f:facet>
-                                    </h:column>
-
-                                    <h:column headerClass="dvd_list_storeName">
-                                        <f:facet name="header">店舗名</f:facet>
                                     </h:column>
 
                                     <h:column headerClass="dvd_list_productNum">
