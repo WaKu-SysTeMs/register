@@ -33,8 +33,11 @@ public class ReturnBean implements Serializable {
     @Size(max = 100)
     private String product_name;    // 作品名
     
-        List<ProductInfo> productList = new ArrayList();
+    
+    List<Integer> entaikin = new ArrayList();   
+    List<ProductInfo> productList = new ArrayList();
     List<DvdInfo> dvdlist = new ArrayList();
+    
 
     DvdBean dvdBean ;
 

@@ -20,13 +20,16 @@
                             <h:panelGrid columns="6" border="0">
 
                                 <h:outputLabel styleClass="control-label">会員名：</h:outputLabel>
-                                <h:outputText id="memberName" value="XX XXX" />
+                                <h:outputText id="memberName" value="#{returnBean.member_name}" />
+                                <h:outputText/>
 
                                 <h:outputLabel styleClass="control-label">DVD番号：</h:outputLabel>
                                 <h:inputText id="productNum" required="true" value="#{returnBean.searchProduct()}"
                                              label="DVD番号" styleClass="form-control" />
 
-                                <h:commandButton styleClass="btn btn-default" value="追 加" action="#" />
+                                <h:commandButton styleClass="btn btn-default" value="追 加" action="#" >
+                                    
+                                </h:commandButton>
                                 <h:message for="productNum" errorClass="error" />
 
                             </h:panelGrid>
