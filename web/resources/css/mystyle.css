@@ -647,7 +647,8 @@ div .manyList tbody{    /* 返却メイン画面スクロール調整 */
 
 .member_detail_just{
     display: inline-block;
-    padding-top: 15px;
+    padding-top: 10px;
+    font-weight: bold;
 }
 
 .hoge000{
