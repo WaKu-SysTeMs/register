@@ -2,6 +2,7 @@ package db;
 
 //import entity.Rental;
 import entity.ProductInfo;
+import java.util.Collection;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -29,6 +30,28 @@ public class ProductInfoDb extends TryCatchDb{
             Query q=em.createNativeQuery("select * from ProductInfo where product_num = ?1", ProductInfo.class);
             q.setParameter(1, productnum);
             return (ProductInfo)q.getSingleResult();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public ProductInfo serchProduct(String product_num) {
+        try {
+            Query q=em.createNativeQuery("select * from product_info where product_num = ?1", ProductInfo.class);
+            q.setParameter(1, product_num);
+            return (ProductInfo)q.getSingleResult();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public List<ProductInfo> prokensaku(String product_name) {
+        try {
+            Query q = em.createNativeQuery("select * from product_info where product_name like ?1",ProductInfo.class);
+            q.setParameter(1, ("%"+product_name+"%"));
+            return q.getResultList();
         } catch (Exception e) {
             e.printStackTrace();
             return null;

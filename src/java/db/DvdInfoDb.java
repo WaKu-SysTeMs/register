@@ -4,6 +4,7 @@
 package db;
 
 import entity.DvdInfo;
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 import javax.ejb.Stateless;
@@ -37,6 +38,7 @@ public class DvdInfoDb extends TryCatchDb {
             return null;
         }
     }
+    
 
 
     public void statusupdte(String dvd_num) {
@@ -48,5 +50,18 @@ public class DvdInfoDb extends TryCatchDb {
             e.printStackTrace();
         }
     }
+
+    public List<DvdInfo> kensaku(String product_num) {
+        try {
+            Query q = em.createNativeQuery("select * from dvd_info where product_num = ?1",DvdInfo.class);
+            q.setParameter(1, product_num);
+            return q.getResultList();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+
 
 }
