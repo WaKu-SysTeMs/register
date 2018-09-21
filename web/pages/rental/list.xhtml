@@ -29,7 +29,12 @@ and open the template in the editor.
                                 <br/>
 
                                 <h:outputLabel styleClass="control-label">貸出状況：</h:outputLabel>
-                                <h:inputText id="rentalStatus" required="true" value="#{rentalBean.rental_status}" label="貸出状況 " styleClass="form-control"/>
+                                <select name="rental_status" class="form-control">
+                                    <option value="0" selected="selected">貸出可</option>
+                                    <option value="1" class="hoge000">貸出中</option>
+                                    <option value="2" class="hoge000">貸出不可</option>
+                                    <option value="3" class="hoge000">貸出保留</option>
+                                </select>
 
                                 <h:commandButton styleClass="btn btn-default" value="検 索" action="#">
                                     <f:ajax execute="memberNum rentalStatus" render="@all"/>
