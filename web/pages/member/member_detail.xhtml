@@ -21,49 +21,32 @@ and open the template in the editor.
                 <div class="container">
 
                     <h:form><div class="form-group">
-                            <h:panelGrid columns="6" border="0">
+                            <h:panelGrid columns="8">
 
-                                <h:outputLabel styleClass="control-label">会員番号</h:outputLabel>
-                                <h:outputText value="森" class="member_detail_just"/>
+                                <h:outputLabel styleClass="control-label member_detail_head1">会員番号</h:outputLabel>
+                                <h:outputText value="1234567890" class="member_detail_just member_detail_head2"/>
+                                <h:outputText value="　　　　　　"/>
                                 
-                                <h:outputLabel styleClass="control-label">会員名</h:outputLabel>
-                                <h:outputText value="絶対" class="member_detail_just"/>
+                                <h:outputLabel styleClass="control-label member_detail_head1">会員名</h:outputLabel>
+                                <h:outputText value="勘解由小路彦摩呂" class="member_detail_just member_detail_head2"/>
+                                <h:outputText value="　　　　　　"/>
                                 
-                                <h:outputLabel styleClass="control-label">会員名（かな）</h:outputLabel>
-                                <h:outputText value="殺すマン" class="member_detail_just"/>
-                                
-
+                                <h:outputLabel styleClass="control-label member_detail_head1">会員名（かな）</h:outputLabel>
+                                <h:outputText value="かでのこうじひこまろ" class="member_detail_just member_detail_head2"/>
 
                             </h:panelGrid>
                         </div>
 
 
-                        <div class="container panel-body manyList columHeader" >
-                            <fieldset>
-                                <h:dataTable value="#" var="t" styleClass="table table-striped table-bordered table-hover" 
-                                             columnClasses="dvd_list_dvdNum,dvd_list_title,dvd_list_storeName,dvd_list_productNum,dvd_list_states">
-                                    <h:column headerClass="dvd_list_dvdNum">
-                                        <f:facet name="header">DVD番号</f:facet>
-                                    </h:column>
-
-                                    <h:column headerClass="dvd_list_title">
-                                        <f:facet name="header">作品名</f:facet>
-                                    </h:column>
-
-                                    <h:column headerClass="dvd_list_storeName">
-                                        <f:facet name="header">店舗名</f:facet>
-                                    </h:column>
-
-                                    <h:column headerClass="dvd_list_productNum">
-                                        <f:facet name="header">商品番号</f:facet>
-                                    </h:column>
-
-                                    <h:column headerClass="dvd_list_states">
-                                        <f:facet name="header">貸出状況</f:facet>
-                                    </h:column>
-
-                                </h:dataTable>
-                            </fieldset>
+                        <div class="member_detail_main">
+                            <h:outputLabel value="テスト"/>
+                            <h:outputText value="test"/>
+                        </div>
+                        <div style="margin: 15px 0px;">
+                            <h:commandButton styleClass="btn btn-primary btn-lg" value="会員カード再発行" action="#"/>
+                            <h:commandButton styleClass="btn btn-primary btn-lg" value="　貸　出　" action="#"/>
+                            <h:commandButton styleClass="btn btn-primary btn-lg" value="　変　更　" action="#"/>
+                            <h:commandButton styleClass="btn btn-primary btn-lg member_detail_button_right" value="　戻　る　" action="#"/>
                         </div>
                         
                     </h:form>
