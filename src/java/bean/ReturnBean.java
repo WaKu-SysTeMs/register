@@ -32,14 +32,12 @@ public class ReturnBean implements Serializable {
 
     @Size(max = 100)
     private String product_name;    // 作品名
-    
-    
-    List<Integer> entaikin = new ArrayList();   
-    List<ProductInfo> productList = new ArrayList();
-    List<DvdInfo> dvdlist = new ArrayList();
-    
 
-    DvdBean dvdBean ;
+    List<Integer> entaikin = new ArrayList();
+    List<ProductInfo> productList = new ArrayList();
+    List<DvdInfo> dvdList = new ArrayList();
+    List<RentalDetail> DetailList = new ArrayList<>();
+    List<RentalInfo> rentalInfo = new ArrayList<>();
 
     @Inject
     transient Logger log;
@@ -50,6 +48,17 @@ public class ReturnBean implements Serializable {
     @Inject
     AccountManager AM;
     
+    @Inject
+    MemberDb memberDb;
+
+    @Inject
+    DvdInfoDb dvdInfoDb;
+
+    @Inject
+    RentalInfoDb rentalInfoDb;
+
+    @Inject
+    RentalDetailDb rentalDetailDb;
 
     /**
      * 返却処理
@@ -84,7 +93,13 @@ public class ReturnBean implements Serializable {
 
     public void searchProduct() {
         try {
-            dvdBean.searchProduct();
+            DvdInfo dvdInfo = (DvdInfo) this.dvdInfoDb.search(this.dvd_num);
+            if (dvdInfo != null) {
+                productList.add(dvdInfo.getProduct_num());
+                dvdList.add(dvdInfo);
+                
+                System.out.print(dvdList + "**********************!");
+            }
         } catch (Exception e) {
             log.info(dvd_num + "が見つかりません");
         }
@@ -138,14 +153,20 @@ public class ReturnBean implements Serializable {
         this.productList = productList;
     }
 
-    public List<DvdInfo> getDvdlist() {
-        return dvdlist;
+    public List<DvdInfo> getDvdList() {
+        return dvdList;
     }
 
-    public void setDvdlist(List<DvdInfo> dvdlist) {
-        this.dvdlist = dvdlist;
+    public void setDvdList(List<DvdInfo> dvdList) {
+        this.dvdList = dvdList;
     }
-    
-    
+
+    public List<RentalDetail> getDetailList() {
+        return DetailList;
+    }
+
+    public void setrDetailList(List<RentalDetail> DetailList) {
+        this.DetailList = DetailList;
+    }
 
 }
