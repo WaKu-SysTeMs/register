@@ -676,6 +676,7 @@ div .manyList tbody{    /* 返却メイン画面スクロール調整 */
     width: 100%;
     border: solid 2px;
     font-size: 120%;
+    text-height: 40px;
 }
 
 .member_detail_button_right{
