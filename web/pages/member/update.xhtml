@@ -39,36 +39,34 @@ and open the template in the editor.
 
 
                         <div class="member_detail_main">
-                            <h:panelGrid columns="2">
+                            <h:panelGrid columns="2" class="member_detail_input">
                                 <h:outputLabel value="・郵便番号"/>
-                                <h:outputText value="test"/>
+                                <h:inputText p:placeholder="test"/>
                                 <h:outputLabel value="・住所"/>
-                                <h:outputText value="test"/>
+                                <h:inputText p:placeholder="test"/>
                                 <h:outputLabel value="・住所（かな）"/>
-                                <h:outputText value="test"/>
+                                <h:inputText p:placeholder="test"/>
                                 <h:outputLabel value="・電話番号"/>
-                                <h:outputText value="test"/>
+                                <h:inputText p:placeholder="test"/>
                                 <h:outputLabel value="・メールアドレス　　　"/>
-                                <h:outputText value="test"/>
+                                <h:inputText p:placeholder="test"/>
                                 <h:outputLabel value="・生年月日"/>
-                                <h:outputText value="test"/>
+                                <h:inputText p:placeholder="test"/>
                                 <h:outputLabel value="・職業"/>
-                                <h:outputText value="test"/>
+                                <h:inputText p:placeholder="test"/>
                                 <h:outputLabel value="・入会年月日"/>
-                                <h:outputText value="test"/>
+                                <h:inputText p:placeholder="test"/>
                                 <h:outputLabel value="・好みのジャンル"/>
                                 <h:outputText value="test"/>
                                 <h:outputLabel value="・延滞料金合計"/>
                                 <h:outputText value="test"/>
                                 <h:outputLabel value="・会員区分"/>
-                                <h:outputText value="test"/>
+                                <h:inputText p:placeholder="test"/>
                             </h:panelGrid>
                         </div>
                         <div style="margin: 15px 0px;">
-                            <h:commandButton styleClass="btn btn-primary btn-lg" value="会員カード再発行" action="#"/>
-                            <h:commandButton styleClass="btn btn-primary btn-lg" value="　貸　出　" action="#"/>
-                            <h:commandButton styleClass="btn btn-primary btn-lg" value="　変　更　" action="update.xhtml?faces-redirect=true"/>
-                            <h:commandButton styleClass="btn btn-primary btn-lg member_detail_button_right" value="　戻　る　" action="#"/>
+                            <h:commandButton styleClass="btn btn-primary btn-lg member_detail_button_right" value="　決　定　" action="#"/>
+                            <h:commandButton styleClass="btn btn-primary btn-lg member_detail_button_right" value="　戻　る　" action="member_detail.xhtml?faces-redirect=true"/>
                         </div>
                         
                     </h:form>
