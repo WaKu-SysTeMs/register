@@ -1,8 +1,10 @@
 package db;
 
 //import entity.Rental;
+import entity.DvdInfo;
 import entity.ReleaseList;
 import entity.RentalDetail;
+import entity.RentalInfo;
 import java.math.BigDecimal;
 import java.util.Calendar;
 import java.util.Date;
@@ -70,11 +72,14 @@ public class RentalDetailDb extends TryCatchDb {
     }
 
     
-    public void searchDetail(){
+    public RentalDetail searchDetail(){
         try{
-            
+            DvdInfo dvdInfo = new DvdInfo();
+            Query q = em.createNamedQuery(RentalDetail.RentalDetailQdvdNum, RentalDetail.class);
+            q.setParameter(1, dvdInfo.getDvd_num());
         }catch(Exception e){
-            
+            e.printStackTrace();
         }
+        return null;
     }
 }
