@@ -672,9 +672,12 @@ div .manyList tbody{    /* 返却メイン画面スクロール調整 */
 }
 
 .member_detail_main{
-    height: 380px;
+    padding-top: 10px;
+    height: 400px;
     width: 100%;
     border: solid 2px;
+    font-size: 120%;
+    line-height: 30px;
 }
 
 .member_detail_button_right{

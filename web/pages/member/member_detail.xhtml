@@ -21,10 +21,11 @@ and open the template in the editor.
                 <div class="container">
 
                     <h:form><div class="form-group">
+                            <h:dataTable value="#{memberBean}"  
                             <h:panelGrid columns="8">
 
                                 <h:outputLabel styleClass="control-label member_detail_head1">会員番号</h:outputLabel>
-                                <h:outputText value="1234567890" class="member_detail_just member_detail_head2"/>
+                                <h:outputText value="#" class="member_detail_just member_detail_head2"/>
                                 <h:outputText value="　　　　　　"/>
                                 
                                 <h:outputLabel styleClass="control-label member_detail_head1">会員名</h:outputLabel>
@@ -39,8 +40,30 @@ and open the template in the editor.
 
 
                         <div class="member_detail_main">
-                            <h:outputLabel value="テスト"/>
-                            <h:outputText value="test"/>
+                            <h:panelGrid columns="2">
+                                <h:outputLabel value="・郵便番号"/>
+                                <h:outputText value="test"/>
+                                <h:outputLabel value="・住所"/>
+                                <h:outputText value="test"/>
+                                <h:outputLabel value="・住所（かな）"/>
+                                <h:outputText value="test"/>
+                                <h:outputLabel value="・電話番号"/>
+                                <h:outputText value="test"/>
+                                <h:outputLabel value="・メールアドレス　　　"/>
+                                <h:outputText value="test"/>
+                                <h:outputLabel value="・生年月日"/>
+                                <h:outputText value="test"/>
+                                <h:outputLabel value="・職業"/>
+                                <h:outputText value="test"/>
+                                <h:outputLabel value="・入会年月日"/>
+                                <h:outputText value="test"/>
+                                <h:outputLabel value="・好みのジャンル"/>
+                                <h:outputText value="test"/>
+                                <h:outputLabel value="・延滞料金合計"/>
+                                <h:outputText value="test"/>
+                                <h:outputLabel value="・会員区分"/>
+                                <h:outputText value="test"/>
+                            </h:panelGrid>
                         </div>
                         <div style="margin: 15px 0px;">
                             <h:commandButton styleClass="btn btn-primary btn-lg" value="会員カード再発行" action="#"/>
