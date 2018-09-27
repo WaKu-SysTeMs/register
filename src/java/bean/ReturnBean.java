@@ -119,9 +119,7 @@ public class ReturnBean implements Serializable {
 //                System.out.print(DetailList + "================================");
 //            }
             
-            RentalDetail rentalDetail;
-            
-            rentalDetail = (RentalDetail) this.rentalDetailDb.lkkkkkkjj(this.dvd_num);
+            RentalDetail rentalDetail = (RentalDetail) this.rentalDetailDb.lkkkkkkjj(this.dvd_num);
             System.out.print(rentalDetail.getRental_num());
 
         } catch (Exception e) {

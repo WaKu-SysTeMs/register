@@ -83,7 +83,7 @@ public class RentalDetailDb extends TryCatchDb {
         return null;
     }
     public RentalDetail lkkkkkkjj(String num){
-        Query q = em.createNativeQuery("select * from rental_detail where dvd_num = ?1 ");
+        Query q = em.createNativeQuery("select * from rental_detail rd where dvd_num = ?1 and rd.return_plan IN (select MAX(rd2.return_plan) from rental_detail rd2 where rd.dvd_num=rd2.dvd_num group by rd.dvd_num)");
         q.setParameter(1, num);
         return (RentalDetail)q.getSingleResult();
     }

@@ -20,7 +20,10 @@ import javax.validation.constraints.*;
 @Table(name = "dvd_info")
 @NamedQueries({
     @NamedQuery(name = DvdInfo.DvdInfoQAll, query = "SELECT r FROM DvdInfo r"),
-    @NamedQuery(name = DvdInfo.DvdInfoQReturnSearch, query = "SELECT di.dvd_num, di.product_num, rd.rental_num, rd.return_plan FROM DvdInfo di JOIN RentalDetail rd ON di.dvd_num = rd.dvd_num WHERE di.dvd_num = ?1")
+    @NamedQuery(name = DvdInfo.DvdInfoQReturnSearch, query = "SELECT di.dvd_num, di.product_num, rd.rental_num, rd.return_plan, ri.rental_date FROM DvdInfo di "
+            + "JOIN RentalDetail rd ON di.dvd_num = rd.dvd_num "
+            + "JOIN RentalInfo ri ON rd.rental_num = ri.rental_num "
+            + "WHERE di.dvd_num = ?1")
 })
 public class DvdInfo implements Serializable {
     
