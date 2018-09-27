@@ -3,6 +3,7 @@
  */
 package db;
 
+import bean.ReturnBean;
 import entity.DvdInfo;
 import java.util.Collection;
 import java.util.Date;
@@ -60,6 +61,17 @@ public class DvdInfoDb extends TryCatchDb {
             e.printStackTrace();
             return null;
         }
+    }
+    
+    public List<ReturnBean> searchReturn(String dvd_num){
+        try{
+            TypedQuery q = em.createNamedQuery(DvdInfo.DvdInfoQReturnSearch, DvdInfo.class);
+            q.setParameter(1, dvd_num);
+            return q.getResultList();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return null;
     }
 
 

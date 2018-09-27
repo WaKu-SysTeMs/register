@@ -53,7 +53,7 @@
 
                                     <h:column headerClass="return_main_date">
                                         <f:facet name="header">貸出年月日</f:facet>
-                                        <h:outputText value="#{item.product_num.rental_start_date}">
+                                        <h:outputText value="#{returnBean.rental_date}">
                                             <f:convertDateTime pattern="yyyy月MM月dd日"/>
                                         </h:outputText>
                                     </h:column>

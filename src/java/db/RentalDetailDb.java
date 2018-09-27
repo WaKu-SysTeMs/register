@@ -82,4 +82,11 @@ public class RentalDetailDb extends TryCatchDb {
         }
         return null;
     }
+    public RentalDetail lkkkkkkjj(String num){
+        Query q = em.createNativeQuery("select * from rental_detail where dvd_num = ?1 ");
+        q.setParameter(1, num);
+        return (RentalDetail)q.getSingleResult();
+    }
+    
+    
 }
