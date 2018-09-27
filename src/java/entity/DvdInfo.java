@@ -3,6 +3,7 @@
  */
 package entity;
 
+import entity.RentalInfo;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.*;
@@ -18,9 +19,15 @@ import javax.validation.constraints.*;
 //})
 @Entity
 @Table(name = "dvd_info")
+@NamedQueries({
+    @NamedQuery(name = DvdInfo.QAll, query = "SELECT r FROM DvdInfo r"),
+    @NamedQuery(name = DvdInfo.QReturnSearch, query = "SELECT di.dvd_num, di.product_num, rd.rental_num, rd.return_plan "
+            + "FROM DvdInfo di JOIN RentalDetail rd ON di.dvd_num = rd.dvd_num WHERE di.dvd_num = ?1")
+})
 public class DvdInfo implements Serializable {
     
-    public static final String Qall = "Qall";
+    public static final String QAll = "QAll";
+    public static final String QReturnSearch = "QReturnSearch";
 
     private static final long serialVersionUID = 1L;  // シリアルバージョンUIDのバージョン管理
 
