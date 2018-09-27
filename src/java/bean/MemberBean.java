@@ -153,20 +153,7 @@ public class MemberBean implements Serializable {
             kensakulist.addAll(memberdb.rubykensaku(getMember_ruby()));
         }
     }
-    
-    
-    public void detail(){
-        kensakulist = new ArrayList();
-        
-        if(!getMember_num().equals("")){
-            kensakulist.add((Member)this.memberdb.search(getMember_num()));
-        }else if(!getMember_ruby().equals("")){
-            kensakulist.addAll(memberdb.rubykensaku(getMember_ruby()));
-        }
-    }
-    
-    
-    
+
     
     public String kaiinjoukyou(String s){
         
