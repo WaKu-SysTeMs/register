@@ -35,7 +35,7 @@
 
                         <div class="container panel-body return_main" >
                             <fieldset>
-                                <h:dataTable value="#{returnBean.getrDetailList}" var="item" styleClass="table table-striped table-bordered table-hover" 
+                                <h:dataTable value="#{returnBean.dvdlist}" var="item" styleClass="table table-striped table-bordered table-hover" 
                                              columnClasses="return_main_num,return_main_name,return_main_date,return_main_date,return_main_delay,return_main_delete">
 
                                     <h:column headerClass="return_main_num">
@@ -45,23 +45,23 @@
 
                                     <h:column headerClass="return_main_name">
                                         <f:facet name="header">作品名</f:facet>
-                                        <h:outputText value="#{item.dvd_num.product_num.product_name}"/>
+                                        <h:outputText value="#{item.product_num.product_name}"/>
                                     </h:column>
 
                                     <h:column headerClass="return_main_date">
                                         <f:facet name="header">貸出年月日</f:facet>
-                                        <h:outputText value="#{item.dvd_num.product_num.rental_start_date}"/>
+                                        <h:outputText value="#{item.product_num.rental_start_date}"/>
                                     </h:column>
 
                                     <h:column headerClass="return_main_date">
                                         <f:facet name="header">返却予定日</f:facet>
-                                        <h:outputText value="#{item.return_plan}"/>
+                                        <h:outputText value="#" />
                                     </h:column>
 
 
                                     <h:column headerClass="return_main_delay">
                                         <f:facet name="header">延滞金</f:facet>
-                                    <h:outputText value="#{item.rental_num.amount}"/>
+                                    <h:outputText value="#}"/>
                                     </h:column>
 
 
