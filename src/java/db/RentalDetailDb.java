@@ -71,22 +71,27 @@ public class RentalDetailDb extends TryCatchDb {
         }
     }
 
-    
-    public RentalDetail searchDetail(){
-        try{
+    public RentalDetail searchDetail() {
+        try {
             DvdInfo dvdInfo = new DvdInfo();
             Query q = em.createNamedQuery(RentalDetail.RentalDetailQdvdNum, RentalDetail.class);
             q.setParameter(1, dvdInfo.getDvd_num());
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return null;
     }
-    public RentalDetail lkkkkkkjj(String num){
-        Query q = em.createNativeQuery("select * from rental_detail rd where dvd_num = ?1 and rd.return_plan IN (select MAX(rd2.return_plan) from rental_detail rd2 where rd.dvd_num=rd2.dvd_num group by rd.dvd_num)");
-        q.setParameter(1, num);
-        return (RentalDetail)q.getSingleResult();
+
+    public RentalDetail dvdReturnMax(String num) {
+        try {
+            Query q = em.createNativeQuery("SELECT * FROM rental_detail WHERE dvd_num = ?1 "
+                    + "AND return_plan IN (SELECT MAX(rd2.return_plan) FROM rental_detail rd2 WHERE rd2.dvd_num = ?1)", RentalDetail.class);
+            q.setParameter(1, num);
+            return (RentalDetail) q.getSingleResult();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
-    
-    
+
 }
