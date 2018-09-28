@@ -18,9 +18,17 @@ import javax.validation.constraints.*;
 //})
 @Entity
 @Table(name = "dvd_info")
+@NamedQueries({
+    @NamedQuery(name = DvdInfo.DvdInfoQAll, query = "SELECT r FROM DvdInfo r"),
+    @NamedQuery(name = DvdInfo.DvdInfoQReturnSearch, query = "SELECT di.dvd_num, di.product_num, rd.rental_num, rd.return_plan, ri.rental_date FROM DvdInfo di "
+            + "JOIN RentalDetail rd ON di.dvd_num = rd.dvd_num "
+            + "JOIN RentalInfo ri ON rd.rental_num = ri.rental_num "
+            + "WHERE di.dvd_num = ?1")
+})
 public class DvdInfo implements Serializable {
     
-    public static final String Qall = "Qall";
+    public static final String DvdInfoQAll = "DvdInfoQAll";
+    public static final String DvdInfoQReturnSearch = "DvdInfoQReturnSearch";
 
     private static final long serialVersionUID = 1L;  // シリアルバージョンUIDのバージョン管理
 
@@ -50,6 +58,9 @@ public class DvdInfo implements Serializable {
 
     @Transient                           // シリアライズしない
     private boolean editable;
+    
+    @Transient
+    private String rental_num;
 
     /* コンストラクタ */
     public DvdInfo() {
@@ -118,5 +129,14 @@ public class DvdInfo implements Serializable {
     public void setEditable(boolean editable) {
         this.editable = editable;
     }
+
+    public String getRental_num() {
+        return rental_num;
+    }
+
+    public void setRental_num(String rental_num) {
+        this.rental_num = rental_num;
+    }
+    
 
 }
