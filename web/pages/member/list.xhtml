@@ -20,15 +20,17 @@
                             <h:panelGrid columns="3" border="0">
 
                                 <h:outputLabel styleClass="control-label">会　員　番　号：</h:outputLabel>
-                                <h:inputText id="memberNum" required="true" value="#{memberBean.member_num}"
+                                <h:inputText id="memberNum"  value="#{memberBean.member_num}"
                                              label="会員番号" styleClass="form-control" />
                                 <br/>
 
                                 <h:outputLabel styleClass="control-label">会員名（かな）：</h:outputLabel>
-                                <h:inputText id="memberNamePhonetic" required="true" value="#{memberBean.member_ruby}"
+                                <h:inputText id="memberNamePhonetic"  value="#{memberBean.member_ruby}"
                                              label="会員名（かな）" styleClass="form-control" />
                                 
-                                <h:commandButton styleClass="btn btn-default" value="検 索" action="#{memberBean.kensaku()}"/>
+                                <h:commandButton styleClass="btn btn-default" value="検 索" action="#{memberBean.kensaku()}">
+                                    <f:ajax execute="memberNum memberNamePhonetic" render="@all"/>
+                                </h:commandButton>
 
                             </h:panelGrid>
 
@@ -41,13 +43,8 @@
                                         <f:facet name="header">
                                             会員番号
                                         </f:facet>
-                                        <h:commandLink action="member_detail.xhtml?faces-redirect=true">
-                                            <h:outputText value="#"/>
+                                        <h:commandLink action="member_detail.xhtml?faces-redirect=true" value="#{item.member_num}">
                                         </h:commandLink>
-                                        <f:facet name="header">会員番号</f:facet>
-                                        
-                                        <h:outputText value="#{item.member_num}"/>
-                                        
                                     </h:column>
 
                                     <h:column headerClass="member_list_name">
@@ -69,12 +66,12 @@
 
                                     <h:column headerClass="member_list_sex">
                                         <f:facet name="header">性別</f:facet>
-                                        <h:outputText value="#{memberBean.sexhantei('#{item.sex}')}"/>
+                                        <h:outputText value="#{item.sex}"/>
                                     </h:column>
 
                                     <h:column headerClass="member_list_states">
                                         <f:facet name="header">会員状況</f:facet>
-                                        <h:outputText value="#{memberBean.kaiinjoukyou('#{item.member_num}')}"/>
+                                        <h:outputText value="#{memberBean.kaiinjoukyou(item.member_num)}"/>
                                     </h:column>
 
                                 </h:dataTable>

@@ -646,6 +646,50 @@ div .manyList tbody{    /* 返却メイン画面スクロール調整 */
 }
 
 .member_detail_just{
+    
+}
+
+.hoge000{
+    height: 200px;
+}
+
+.member_detail_head1{
+    width: 120px;
+    text-align: center;
+    border: solid 2px;
+    padding: 8px;
+}
+
+.member_detail_head2{
+    width: 200px;
+    text-align: center;
+    border: solid 2px;
     display: inline-block;
     padding-top: 15px;
+    font-weight: bold;
+    margin-top: -5px;
+    padding: 8px;
+}
+
+.member_detail_main{
+    padding-top: 10px;
+    height: 400px;
+    width: 100%;
+    border: solid 2px;
+    font-size: 120%;
+    line-height: 30px;
+}
+
+.member_detail_button_right{
+    float: right;
+}
+
+.member_detail_input input{
+    padding-top: -10px;
+    height: 30px;
+    width: 450%;
+}
+
+.member_detail_right{
+    padding-bottom: 5px;
 }

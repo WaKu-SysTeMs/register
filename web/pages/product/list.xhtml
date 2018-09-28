@@ -16,7 +16,7 @@ and open the template in the editor.
     </h:head>
     <h:body>
         <ui:composition template="/templates/template01.xhtml">
-            <ui:define name="title">HCSビデオレンタル-貸出-</ui:define>
+            <ui:define name="title">HCSビデオレンタル-商品一覧-</ui:define>
             <ui:define name="content"><br/>
                 <div class="container">
 
@@ -26,52 +26,53 @@ and open the template in the editor.
 
                                 <h:outputLabel styleClass="control-label">商品番号：</h:outputLabel>
 
-                                <h:inputText id="productNum" required="true" value="#" label="商品番号" styleClass="form-control">
-                                    <f:ajax event="change" execute="@this" listener="#"/>
-                                </h:inputText>
-                                <h:outputText/>
+                                <h:inputText id="productNum"  value="#{dvdBean.product_num}" label="商品番号" styleClass="form-control"/>
+                                <br/>
                                 
                                 <h:outputLabel styleClass="control-label">作品名　：</h:outputLabel>
+                                <h:inputText id="product_name"  value="#{dvdBean.product_name}" label="作品名" styleClass="form-control"/>
 
-                                <h:inputText id="title" required="true" value="#" label="作品名" styleClass="form-control">
-                                    <f:ajax event="change" execute="@this" listener="#"/>
-                                </h:inputText>
-
-                                <h:commandButton styleClass="btn btn-default" value="検 索" action="#"/>
-
-
+                                <h:commandButton styleClass="btn btn-default" value="検 索" action="#{dvdBean.prokensaku()}">
+                                <f:ajax execute="productNum product_name" render="@all"/>
+                                </h:commandButton>
                             </h:panelGrid>
                         </div>
 
 
                         <div class="container panel-body manyList columHeader" >
                             <fieldset>
-                                <h:dataTable value="#" var="t" styleClass="table table-striped table-bordered table-hover" 
+                                <h:dataTable value="#{dvdBean.prokensakulist}" var="item" styleClass="table table-striped table-bordered table-hover" 
                                              columnClasses="product_list_productNum,product_list_title,product_list_genre,product_list_playtime,product_list_director,product_list_kbn">
                                     <h:column headerClass="product_list_productNum">
                                         <f:facet name="header">商品番号</f:facet>
+                                        <h:outputText value="#{item.product_num}"/>
                                     </h:column>
 
                                     <h:column headerClass="product_list_title">
                                         <f:facet name="header">作品名</f:facet>
+                                        <h:outputText value="#{item.product_name}"/>
                                     </h:column>
 
                                     <h:column headerClass="product_list_genre">
                                         <f:facet name="header">ジャンル</f:facet>
+                                        <h:outputText value="#{item.category_id.category_name}"/>
                                     </h:column>
 
                                     <h:column headerClass="product_list_playtime">
                                         <f:facet name="header">再生時間</f:facet>
+                                        <h:outputText value="#{item.play_time}"/>
                                     </h:column>
 
 
                                     <h:column headerClass="product_list_director">
                                         <f:facet name="header">監督</f:facet>
+                                        <h:outputText value="#{item.director}"/>
                                     </h:column>
 
                                     
                                     <h:column headerClass="product_list_kbn">
                                         <f:facet name="header">新旧区分</f:facet>
+                                        <h:outputText value="#{item.release_kbn.release_name}"/>
                                     </h:column>
 
                                 </h:dataTable>

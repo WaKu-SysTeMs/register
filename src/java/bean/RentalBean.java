@@ -49,6 +49,7 @@ public class RentalBean implements Serializable {
     private String kubun;
     private Integer siharaigaku;
     private int oturi;
+    private String rental_status;
 
     @Inject
     RentalInfoDb rentalDb;
@@ -196,11 +197,6 @@ public class RentalBean implements Serializable {
     }
     
     
-    //こっから一覧系
-    private String memberNumL;
-    private String storeIdL;
-    private Date rentalDateL;
-    private String rentalStatusL;
     
 
     /* ゲッター、セッター */
@@ -409,6 +405,14 @@ public class RentalBean implements Serializable {
 
     public void setKasidasihizuke(Date kasidasihizuke) {
         this.kasidasihizuke = kasidasihizuke;
+    }
+
+    public String getRental_status() {
+        return rental_status;
+    }
+
+    public void setRental_status(String rental_status) {
+        this.rental_status = rental_status;
     }
 
 

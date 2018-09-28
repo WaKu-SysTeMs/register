@@ -13,8 +13,9 @@ import javax.validation.constraints.*;
  * @author s20163060
  */
 @NamedQueries({
-    @NamedQuery(name = RentalDetail.RentalDetailQAll,
-            query = "SELECT r FROM RentalDetail r")
+    @NamedQuery(name = RentalDetail.RentalDetailQAll, query = "SELECT r FROM RentalDetail r"),
+    @NamedQuery(name = RentalDetail.RentalDetailQdvdNum,
+            query = "SELECT rd FROM RentalDetail rd  WHERE rd.dvd_num=?1")
 })
 @Entity
 @Table(name = "rental_detail")
@@ -24,6 +25,7 @@ public class RentalDetail implements Serializable {
     private static final long serialVersionUID = 1L;  // シリアルバージョンUIDのバージョン管理
 
     public static final String RentalDetailQAll = "RentalDetailQAll";
+    public static final String RentalDetailQdvdNum = "RentalDetailQdvdNum";
 
     @Id
     @JoinColumn(name = "rental_num")

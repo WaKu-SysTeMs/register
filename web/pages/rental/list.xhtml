@@ -16,7 +16,7 @@ and open the template in the editor.
     </h:head>
     <h:body>
         <ui:composition template="/templates/template01.xhtml">
-            <ui:define name="title">HCSビデオレンタル-貸出-</ui:define>
+            <ui:define name="title">HCSビデオレンタル-貸出一覧-</ui:define>
             <ui:define name="content"><br/>
                 <div class="container">
 
@@ -25,16 +25,20 @@ and open the template in the editor.
 
 
                                 <h:outputLabel styleClass="control-label">会員番号：</h:outputLabel>
-                                <h:inputText id="memberNum" required="true" value="#" label="会員番号" styleClass="form-control">
-                                </h:inputText>
-                                <h:outputText/>
-
+                                <h:inputText id="memberNum" required="true" value="#{rentalBean.member_num}" label="会員番号" styleClass="form-control"/>
+                                <br/>
 
                                 <h:outputLabel styleClass="control-label">貸出状況：</h:outputLabel>
-                                <h:inputText id="rentalStatus" required="true" value="#" label="貸出状況 " styleClass="form-control">
-                                </h:inputText>
+                                <select name="rental_status" class="form-control">
+                                    <option value="0" selected="selected">貸出可</option>
+                                    <option value="1" class="hoge000">貸出中</option>
+                                    <option value="2" class="hoge000">貸出不可</option>
+                                    <option value="3" class="hoge000">貸出保留</option>
+                                </select>
 
-                                <h:commandButton styleClass="btn btn-default" value="検 索" action="#"/>
+                                <h:commandButton styleClass="btn btn-default" value="検 索" action="#">
+                                    <f:ajax execute="memberNum rentalStatus" render="@all"/>
+                                </h:commandButton>
                             </h:panelGrid>
                         </div>
 

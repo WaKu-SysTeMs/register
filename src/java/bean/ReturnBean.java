@@ -7,6 +7,7 @@ import db.*;
 import entity.*;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.logging.Logger;
 import javax.enterprise.context.Conversation;
@@ -22,20 +23,28 @@ public class ReturnBean implements Serializable {
     Integer cnt = 0;            // カウントアップ用
 
     @Size(max = 9)
+    private String dvd_num;    // DVD番号
+
+    private String rental_num;          // 貸出番号
+
+    @Size(max = 9)
     private String member_num;           // 会員番号
 
     @Size(max = 30)
     private String member_name;     // 会員名
 
-    @Size(max = 9)
-    private String dvd_num;    // DVD番号
-
     @Size(max = 100)
     private String product_name;    // 作品名
 
+    private Date rental_date;            // 貸出年月日
+
+    private Date return_plan;           //返却予定日
+
+    List<Integer> entaikin = new ArrayList();
     List<ProductInfo> productList = new ArrayList();
-    List<DvdInfo> dvdlist = new ArrayList();
-    List<RentalDetail> rDetailList = new ArrayList();
+    List<DvdInfo> dvdList = new ArrayList();
+    List<RentalDetail> DetailList = new ArrayList<>();
+    List<RentalInfo> rentalList = new ArrayList<>();
 
     @Inject
     transient Logger log;
@@ -47,13 +56,18 @@ public class ReturnBean implements Serializable {
     AccountManager AM;
 
     @Inject
+    RentalDetailDb rentalDetailDb;
+
+    @Inject
+    RentalDb rentalDb;
+
+    MemberDb memberDb;
+
+    @Inject
     DvdInfoDb dvdInfoDb;
 
     @Inject
-    RentalDetailDb rentalDetailDb;
-    
-    @Inject
-    RentalDb rentalDb;
+    RentalInfoDb rentalInfoDb;
 
     /**
      * 返却処理
@@ -90,23 +104,54 @@ public class ReturnBean implements Serializable {
      * DVD情報取得
      */
     public void searchProduct() {
-        DvdInfo dvdInfo = (DvdInfo) this.dvdInfoDb.search(this.dvd_num);
-        
-        if (dvdInfo != null) {
-            productList.add(dvdInfo.getProduct_num());
-            dvdlist.add(dvdInfo);
-        } else {
-            log.info(dvd_num + "が見つかりません。************");
+        try {
+            DvdInfo dvdInfo = (DvdInfo) this.dvdInfoDb.search(this.dvd_num);
+
+            if (dvdInfo != null) {
+                productList.add(dvdInfo.getProduct_num());
+                dvdList.add(dvdInfo);
+            }
+////            DvdInfo dvdInfo = (DvdInfo) this.dvdInfoDb.search(this.dvd_num);
+//            DvdInfo dvdInfo = (DvdInfo) this.dvdInfoDb.searchReturn(this.dvd_num);
+//            System.out.print(dvdInfo.getRental_num());
+//            System.out.print(dvdInfo.getProduct_num());
+//
+//            productList.add(dvdInfo.getProduct_num());
+//            dvdList.add(dvdInfo);
+//            RentalDetail r = (RentalDetail) this.rentalDetailDb.search(dvdInfo.getRental_num());
+//            RentalDetail rentalDetail = (RentalDetail) this.rentalDetailDb.searchDetail();
+//            System.out.print(r + "+++++++++++++++++++++++++++++++++++");
+//            System.out.print(rentalDetail + "+++++++++++++++++++++++++++++++++++");
+//            if (r != null) {
+//                DetailList.add(rentalDetail);
+//                RentalInfo rentalInfo = (RentalInfo) this.rentalInfoDb.search(rentalDetail.getRental_num());
+//
+//                System.out.print(dvdList + "**********************!");
+//                System.out.print(DetailList + "================================");
+//            }
+
+            RentalDetail rentalDetail = (RentalDetail) this.rentalDetailDb.lkkkkkkjj(this.dvd_num);
+            System.out.print(rentalDetail.getRental_num());
+
+        } catch (Exception e) {
+            log.info(dvd_num + "が見つかりません");
         }
-        dvd_num = null;
     }
 
-    public Integer getCnt() {
-        return cnt;
+    public String getDvd_num() {
+        return dvd_num;
     }
 
-    public void setCnt(Integer cnt) {
-        this.cnt = cnt;
+    public void setDvd_num(String dvd_num) {
+        this.dvd_num = dvd_num;
+    }
+
+    public String getRental_num() {
+        return rental_num;
+    }
+
+    public void setRental_num(String rental_num) {
+        this.rental_num = rental_num;
     }
 
     public String getMember_num() {
@@ -125,20 +170,44 @@ public class ReturnBean implements Serializable {
         this.member_name = member_name;
     }
 
-    public String getDvd_num() {
-        return dvd_num;
-    }
-
-    public void setDvd_num(String dvd_num) {
-        this.dvd_num = dvd_num;
-    }
-
     public String getProduct_name() {
         return product_name;
     }
 
     public void setProduct_name(String product_name) {
         this.product_name = product_name;
+    }
+
+    public Date getRental_date() {
+        return rental_date;
+    }
+
+    public void setRental_date(Date rental_date) {
+        this.rental_date = rental_date;
+    }
+
+    public Date getReturn_plan() {
+        return return_plan;
+    }
+
+    public void setReturn_plan(Date return_plan) {
+        this.return_plan = return_plan;
+    }
+
+    public List<Integer> getEntaikin() {
+        return entaikin;
+    }
+
+    public void setEntaikin(List<Integer> entaikin) {
+        this.entaikin = entaikin;
+    }
+
+    public List<RentalInfo> getRentalList() {
+        return rentalList;
+    }
+
+    public void setRentalList(List<RentalInfo> rentalList) {
+        this.rentalList = rentalList;
     }
 
     public List<ProductInfo> getProductList() {
@@ -149,21 +218,12 @@ public class ReturnBean implements Serializable {
         this.productList = productList;
     }
 
-    public List<DvdInfo> getDvdlist() {
-        return dvdlist;
+    public List<DvdInfo> getDvdList() {
+        return dvdList;
     }
 
-    public void setDvdlist(List<DvdInfo> dvdlist) {
-        this.dvdlist = dvdlist;
+    public void setDvdList(List<DvdInfo> dvdList) {
+        this.dvdList = dvdList;
     }
-
-    public List<RentalDetail> getrDetailList() {
-        return rDetailList;
-    }
-
-    public void setrDetailList(List<RentalDetail> rDetailList) {
-        this.rDetailList = rDetailList;
-    }
-    
 
 }

@@ -18,18 +18,15 @@ and open the template in the editor.
         <ui:composition template="../../templates/template01.xhtml">
         <ui:define name="title">入会登録完了</ui:define>
         <ui:define name="content">
+             #{memberBean.memnumhakkou()}
+             #{memberBean.infotouroku()}
+             #{memberBean.nyuutaikaitouroku()}
             <h:form>
-                    <div class="return_pay_off_main">
-                        
-                        #{memberBean.memnumhakkou()}
-                        #{memberBean.infotouroku()}
-                        #{memberBean.nyuutaikaitouroku()}
-                        
-                        
+                    <div class="return_pay_off_main">  
                         <p>会員登録が完了しました</p>
                     </div>
                     <div class="member_complete_button">
-                            <h:commandButton styleClass="btn btn-primary btn-lg" value="貸出処理へ" action="rental/create.xhtml?faces-redirect=true"/>
+                            <h:commandButton styleClass="btn btn-primary btn-lg" value="メニューへ" action="/index.xhtml?faces-redirect=true"/>
                     </div>
                     
                 </h:form>

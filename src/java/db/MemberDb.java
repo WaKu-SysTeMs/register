@@ -93,7 +93,7 @@ public class MemberDb extends TryCatchDb {
 
     public List<Member> rubykensaku(String member_ruby) {
             try {
-               Query q = em.createNativeQuery("select * from member_info where member_ruby like ?1");
+               Query q = em.createNativeQuery("select * from member_info where member_ruby like ?1 order by 1",Member.class);
                q.setParameter(1, ("%"+member_ruby+"%"));
                return q.getResultList();
             } catch (Exception e) {
@@ -104,7 +104,7 @@ public class MemberDb extends TryCatchDb {
 
     public Member kensaku(String member_num) {
             try {
-                Query q = em.createNativeQuery("select * from member_info where member_num = ?1");
+                Query q = em.createNativeQuery("select * from member_info where member_num = ?1",Member.class);
                 q.setParameter(1, member_num);
                 return (Member)q.getSingleResult();
             } catch (Exception e) {

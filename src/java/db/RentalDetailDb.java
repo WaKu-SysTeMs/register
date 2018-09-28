@@ -1,8 +1,10 @@
 package db;
 
 //import entity.Rental;
+import entity.DvdInfo;
 import entity.ReleaseList;
 import entity.RentalDetail;
+import entity.RentalInfo;
 import java.math.BigDecimal;
 import java.util.Calendar;
 import java.util.Date;
@@ -68,7 +70,23 @@ public class RentalDetailDb extends TryCatchDb {
             e.printStackTrace();
         }
     }
-    
-    
 
+    
+    public RentalDetail searchDetail(){
+        try{
+            DvdInfo dvdInfo = new DvdInfo();
+            Query q = em.createNamedQuery(RentalDetail.RentalDetailQdvdNum, RentalDetail.class);
+            q.setParameter(1, dvdInfo.getDvd_num());
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+    public RentalDetail lkkkkkkjj(String num){
+        Query q = em.createNativeQuery("select * from rental_detail rd where dvd_num = ?1 and rd.return_plan IN (select MAX(rd2.return_plan) from rental_detail rd2 where rd.dvd_num=rd2.dvd_num group by rd.dvd_num)");
+        q.setParameter(1, num);
+        return (RentalDetail)q.getSingleResult();
+    }
+    
+    
 }

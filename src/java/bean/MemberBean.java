@@ -145,24 +145,15 @@ public class MemberBean implements Serializable {
     }
     
     public void kensaku(){
+        kensakulist = new ArrayList();
         
-        if(getMember_num().equals("")){
-            if(getMember_ruby().equals("")){
-            }else{
-                kensakulist = memberdb.rubykensaku(getMember_ruby());
-            }
-        }else{
-            kensakulist.add(memberdb.kensaku(getMember_num()));
-        }     
-    }
-    
-    public String sexhantei(String x){
-        if(x.equals("1")){
-            return "男";
-        }else{
-            return "女";
+        if(!getMember_num().equals("")){
+            kensakulist.add((Member)this.memberdb.search(getMember_num()));
+        }else if(!getMember_ruby().equals("")){
+            kensakulist.addAll(memberdb.rubykensaku(getMember_ruby()));
         }
     }
+
     
     public String kaiinjoukyou(String s){
         
