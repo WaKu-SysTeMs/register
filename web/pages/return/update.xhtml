@@ -43,7 +43,7 @@
 
                                     <h:column headerClass="return_main_num">
                                         <f:facet name="header">番号</f:facet>
-                                        <h:outputText value="#"/>
+                                        <h:outputText value="#{returnBean.cnt}"/>
                                     </h:column>{
 
                                     <h:column headerClass="return_main_name">
@@ -68,13 +68,13 @@
 
                                     <h:column headerClass="return_main_delay">
                                         <f:facet name="header">延滞金</f:facet>
-                                    <h:outputText value="#}"/>
+                                        <h:outputText value="#{returnBean.delay}"/>
                                     </h:column>
 
 
                                     <h:column headerClass="return_main_delete">
                                         <f:facet name="header"></f:facet>
-                                        <h:commandButton styleClass="btn btn-danger btn-xs" value="削 除" action="#"/>
+                                        <h:commandButton styleClass="btn btn-danger btn-xs" value="削 除" action="#{returnBean.clear(item)}"/>
                                     </h:column>
 
                                 </h:dataTable>

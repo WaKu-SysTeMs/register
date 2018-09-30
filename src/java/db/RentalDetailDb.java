@@ -1,20 +1,15 @@
 package db;
 
-//import entity.Rental;
 import entity.DvdInfo;
-import entity.ReleaseList;
 import entity.RentalDetail;
-import entity.RentalInfo;
 import java.math.BigDecimal;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.List;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-import javax.persistence.TypedQuery;
 import util.TryCatchDb;
 
 /**
@@ -82,11 +77,17 @@ public class RentalDetailDb extends TryCatchDb {
         return null;
     }
 
-    public RentalDetail dvdReturnMax(String num) {
+    /**
+     * SQLで一致するDVD番号(dvd_num)から返却予定日が最新(副問い合わせ)のデータを1件取得
+     * 
+     * @param dvd_num
+     * @return null
+     */
+    public RentalDetail dvdReturnMax(String dvd_num) {
         try {
             Query q = em.createNativeQuery("SELECT * FROM rental_detail WHERE dvd_num = ?1 "
                     + "AND return_plan IN (SELECT MAX(rd2.return_plan) FROM rental_detail rd2 WHERE rd2.dvd_num = ?1)", RentalDetail.class);
-            q.setParameter(1, num);
+            q.setParameter(1, dvd_num);
             return (RentalDetail) q.getSingleResult();
         } catch (Exception e) {
             e.printStackTrace();
