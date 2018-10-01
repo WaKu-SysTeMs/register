@@ -508,16 +508,20 @@ div .manyList tbody{    /* 返却メイン画面スクロール調整 */
 }
 
 .dvd_list_title{
-    width: 700px;
+    width: 590px;
+}
+
+.dvd_list_storeName{
+    width: 150px;
 }
 
 
 .dvd_list_productNum{
-    width: 200px;
+    width: 180px;
 }
 
 .dvd_list_states{
-    width: 170px;
+    width: 150px;
 }
 
 .member_delete_top{
