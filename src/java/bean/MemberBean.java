@@ -153,15 +153,6 @@ public class MemberBean implements Serializable {
             kensakulist.addAll(memberdb.rubykensaku(getMember_ruby()));
         }
     }
-    
-    public String sexhantei(String x){
-        if(x.equals("1")){
-            return "男";
-        }else{
-            return "女";
-        }
-    }
-    
 
     
     public String kaiinjoukyou(String s){
