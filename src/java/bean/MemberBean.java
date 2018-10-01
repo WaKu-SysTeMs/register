@@ -95,9 +95,6 @@ public class MemberBean implements Serializable {
     public String delete(){
         if (conv.isTransient()) {
             conv.begin();
-            log.info(log.getName() + " | 退会入会会話スコープ開始 ****");
-        } else {
-            log.info(log.getName() + " | 退会入会スコープ ****");
         }
         return "/pages/member/delete.xhtml?faces-redirect=true";
     }
@@ -214,11 +211,6 @@ public class MemberBean implements Serializable {
 
     public void setSex(String sex) {
         this.sex = sex;
-        if(sex.equals("1")){
-            setSex_name("男");
-        }else{
-            setSex_name("女");
-        }
     }
 
     public String getPostal_code() {
