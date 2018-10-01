@@ -50,7 +50,7 @@ public class RentalBean implements Serializable {
     private Integer siharaigaku;
     private int oturi;
     private String rental_status;
-    private int kasidasijougen;
+    private Integer kasidasijougen;
 
     @Inject
     RentalInfoDb rentalDb;
@@ -110,6 +110,7 @@ public class RentalBean implements Serializable {
      * @return 精算画面に遷移
      */
     public String create_2() {
+        if(this.kasidasijougen < this.dvdlist.size())return null;
         this.waribikicnt = 0;
         this.waribikikeisan();
         return "/pages/rental/create_payment.xhtml?faces-redirect=true";
@@ -138,7 +139,7 @@ public class RentalBean implements Serializable {
         }
         
         this.kasidasijougen =0;
-        RentalMax rm = (RentalMax) rentalmaxdb.search(this.member_num);
+        RentalMax rm = (RentalMax) rentalmaxdb.syutoku(this.member_num);
         if(rm != null){
             this.kasidasijougen = rm.getBorrowing_cnt();
         }
@@ -170,6 +171,18 @@ public class RentalBean implements Serializable {
                 this.waribikicnt++;
             }
         }
+    }
+    
+    public void jougengenzan(){
+        rentalmaxdb.genzan(this.member_num,this.dvdlist.size(),this.kasidasijougen);
+        productList = new ArrayList();
+        dvdlist = new ArrayList();
+        waribikilist = new ArrayList();
+        kingakulist = new ArrayList();
+        kasidasihizuke = new Date();
+        member_num = null;
+        member_name = null;
+        kasidasijougen = null;
     }
     
 
@@ -287,7 +300,6 @@ public class RentalBean implements Serializable {
     }
 
     public List<ProductInfo> getProductList() {
-        cnt = 0;
         return productList;
     }
 
@@ -420,11 +432,11 @@ public class RentalBean implements Serializable {
         this.rental_status = rental_status;
     }
 
-    public int getKasidasijougen() {
+    public Integer getKasidasijougen() {
         return kasidasijougen;
     }
 
-    public void setKasidasijougen(int kasidasijougen) {
+    public void setKasidasijougen(Integer kasidasijougen) {
         this.kasidasijougen = kasidasijougen;
     }
 
