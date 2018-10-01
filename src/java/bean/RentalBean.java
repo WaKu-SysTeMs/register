@@ -50,6 +50,7 @@ public class RentalBean implements Serializable {
     private Integer siharaigaku;
     private int oturi;
     private String rental_status;
+    private int kasidasijougen;
 
     @Inject
     RentalInfoDb rentalDb;
@@ -69,6 +70,8 @@ public class RentalBean implements Serializable {
     Conversation conv;
     @Inject
     AccountManager AM;
+    @Inject
+    RentalMaxDb rentalmaxdb;
 
     List<ProductInfo> productList = new ArrayList();
     List<DvdInfo> dvdlist = new ArrayList();
@@ -133,6 +136,12 @@ public class RentalBean implements Serializable {
         if (m != null) {
             this.member_name = m.getMember_name();
         }
+        
+        this.kasidasijougen =0;
+        RentalMax rm = (RentalMax) rentalmaxdb.search(this.member_num);
+        if(rm != null){
+            this.kasidasijougen = rm.getBorrowing_cnt();
+        }
         return null;
     }
 
@@ -162,6 +171,7 @@ public class RentalBean implements Serializable {
             }
         }
     }
+    
 
     //Rental_Infoに登録(DB)
     public void infotouroku() {
@@ -408,6 +418,14 @@ public class RentalBean implements Serializable {
 
     public void setRental_status(String rental_status) {
         this.rental_status = rental_status;
+    }
+
+    public int getKasidasijougen() {
+        return kasidasijougen;
+    }
+
+    public void setKasidasijougen(int kasidasijougen) {
+        this.kasidasijougen = kasidasijougen;
     }
 
 }
