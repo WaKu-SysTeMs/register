@@ -38,40 +38,43 @@
 
                         <div class="container panel-body return_main" >
                             <fieldset>
-                                <h:dataTable value="#{returnBean.dvdList}" var="item" styleClass="table table-striped table-bordered table-hover" 
+                                <h:dataTable value="#{returnBean.detailList}" var="item" styleClass="table table-striped table-bordered table-hover" 
                                              columnClasses="return_main_num,return_main_name,return_main_date,return_main_date,return_main_delay,return_main_delete">
 
                                     <h:column headerClass="return_main_num">
                                         <f:facet name="header">番号</f:facet>
-                                        <h:outputText value="#"/>
+                                        <h:outputText value="#{returnBean.cnt}"/>
                                     </h:column>{
 
                                     <h:column headerClass="return_main_name">
                                         <f:facet name="header">作品名</f:facet>
-                                        <h:outputText value="#{item.product_num.product_name}"/>
+                                        <h:outputText value="#{item.dvd_num.product_num.product_name}"/>
                                     </h:column>
 
                                     <h:column headerClass="return_main_date">
                                         <f:facet name="header">貸出年月日</f:facet>
-                                        <h:outputText value="#{returnBean.rental_date}">
+                                        <h:outputText value="#{item.rental_num.rental_date}">
                                             <f:convertDateTime pattern="yyyy月MM月dd日"/>
                                         </h:outputText>
                                     </h:column>
 
                                     <h:column headerClass="return_main_date">
                                         <f:facet name="header">返却予定日</f:facet>
-                                        <h:outputText value="#{returnBean.return_plan}"/>
+                                        <h:outputText value="#{item.return_plan}">
+                                             <f:convertDateTime pattern="yyyy月MM月dd日"/>
+                                        </h:outputText>
                                     </h:column>
 
 
                                     <h:column headerClass="return_main_delay">
                                         <f:facet name="header">延滞金</f:facet>
+                                        <h:outputText value="#{returnBean.delay}"/>
                                     </h:column>
 
 
                                     <h:column headerClass="return_main_delete">
                                         <f:facet name="header"></f:facet>
-                                        <h:commandButton styleClass="btn btn-danger btn-xs" value="削 除" action="#"/>
+                                        <h:commandButton styleClass="btn btn-danger btn-xs" value="削 除" action="#{returnBean.clear(item)}"/>
                                     </h:column>
 
                                 </h:dataTable>
