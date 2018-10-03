@@ -43,7 +43,8 @@
                                         <f:facet name="header">
                                             会員番号
                                         </f:facet>
-                                        <h:commandLink action="member_detail.xhtml?faces-redirect=true" value="#{item.member_num}">
+                                        <h:commandLink action="#{memberBean.detail()}" value="#{item.member_num}">
+                                            <f:param name="member_num" value="#{item.member_num}"/>
                                         </h:commandLink>
                                     </h:column>
 

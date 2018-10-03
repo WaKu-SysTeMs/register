@@ -17,6 +17,7 @@ import java.util.logging.Logger;
 import javax.ejb.EJB;
 import javax.enterprise.context.Conversation;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.context.FacesContext;
 import javax.inject.*;
 import javax.persistence.*;
 import javax.validation.constraints.*;
@@ -108,6 +109,24 @@ public class MemberBean implements Serializable {
     
     public String delete2(){
         return "/pages/member/deletecomplete.xhtml?faces-redirect=true";
+    }
+    
+    public String detail(){
+        FacesContext fc=FacesContext.getCurrentInstance();
+        Map<String,String> params=fc.getExternalContext().getRequestParameterMap();
+        this.setMember_num(params.get("member_num"));
+        Member m = (Member) memberDb.search(this.member_num);
+        this.setMember_name(m.getMember_name());
+        this.setMember_ruby(m.getMember_ruby());
+        this.setBirth_date(m.getBirth_date());
+        this.setSex(m.getSex());
+        this.setPostal_code(m.getPostal_code());
+        this.setMember_add(m.getMember_add());
+        this.setAdd_ruby(m.getAdd_ruby());
+        this.setMember_phone(m.getMember_phone());
+        this.setMember_mail(m.getMember_mail());
+        
+        return "/pages/member/member_detail.xhtml?faces-redirect=true";
     }
     
     public String search() {                                // 会員名　取得
