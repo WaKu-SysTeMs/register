@@ -112,4 +112,17 @@ public class MemberDb extends TryCatchDb {
                 return null;
             }
     }
+    
+    public Member detail(String member_num) {
+            try {
+                Query q = em.createNativeQuery("select * from member_info where member_num = ?1",Member.class);
+                q.setParameter(1, member_num);
+                return (Member)q.getSingleResult();
+            } catch (Exception e) {
+                e.printStackTrace();
+                return null;
+            }
+    }
+    
+    
 }

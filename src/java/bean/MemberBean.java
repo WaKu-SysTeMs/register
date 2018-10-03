@@ -74,6 +74,10 @@ public class MemberBean implements Serializable {
     private String job_name;
     private String sex_name;
     List<Member> kensakulist = new ArrayList();
+    
+    private Date member_start;
+    private String delay_total;
+    private String member_kbn;
 
     public String create() {
         if (conv.isTransient()) {
