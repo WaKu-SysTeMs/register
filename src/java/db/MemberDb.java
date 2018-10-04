@@ -115,7 +115,11 @@ public class MemberDb extends TryCatchDb {
     
     public Member detail(String member_num) {
             try {
-                Query q = em.createNativeQuery("select * from member_info where member_num = ?1",Member.class);
+                Query q = em.createNativeQuery("SELECT MI.MEMBER_NUM,MI.MEMBER_NAME,MI.MEMBER_RUBY,MI.POSTAL_CODE,MI.MEMBER_ADD,"
+                        + "MI.ADD_RUBY,MI.MEMBER_PHONE,MI.MEMBER_MAIL,MI.BIRTH_DATE,JOB_JOB_NAME,JL.JOIN_DATE BM.BLK_FLG "
+                        + "FROM MEMBER_INFO MI JOIN JOIN_LIST JL ON MI.MEMBER_NUM = JL.MEMBER_NUM "
+                        + "JOIN BLACK_MGR BM ON MI.MEMBER_NUM = BM.MEMBER_NUM JOIN JOB_LIST JOB ON MI.JOB_ID = JOB_ID "
+                        + "JOIN WHERE member_num = ?1",Member.class);
                 q.setParameter(1, member_num);
                 return (Member)q.getSingleResult();
             } catch (Exception e) {
@@ -123,6 +127,6 @@ public class MemberDb extends TryCatchDb {
                 return null;
             }
     }
-    
+
     
 }

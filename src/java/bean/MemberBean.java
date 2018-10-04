@@ -119,13 +119,14 @@ public class MemberBean implements Serializable {
         Member m = (Member) memberDb.search(this.member_num);
         this.setMember_name(m.getMember_name());
         this.setMember_ruby(m.getMember_ruby());
-        this.setBirth_date(m.getBirth_date());
         this.setSex(m.getSex());
         this.setPostal_code(m.getPostal_code());
         this.setMember_add(m.getMember_add());
         this.setAdd_ruby(m.getAdd_ruby());
         this.setMember_phone(m.getMember_phone());
         this.setMember_mail(m.getMember_mail());
+        this.setBirth_date(m.getBirth_date());
+        this.setJob_name(m.getJob_name());
         
         return "/pages/member/member_detail.xhtml?faces-redirect=true";
     }
