@@ -309,5 +309,31 @@ public class MemberBean implements Serializable {
         this.kensakulist = kensakulist;
     }
 
+    public Date getMember_start() {
+        return member_start;
+    }
+
+    public void setMember_start(Date member_start) {
+        this.member_start = member_start;
+    }
+
+    public String getDelay_total() {
+        return delay_total;
+    }
+
+    public void setDelay_total(String delay_total) {
+        this.delay_total = delay_total;
+    }
+
+    public String getMember_kbn() {
+        return member_kbn;
+    }
+
+    public void setMember_kbn(String member_kbn) {
+        this.member_kbn = member_kbn;
+    }
+    
+    
+
     
 }
