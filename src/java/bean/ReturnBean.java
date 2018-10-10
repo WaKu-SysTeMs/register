@@ -7,6 +7,7 @@ import db.*;
 import entity.*;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.logging.Logger;
@@ -19,31 +20,22 @@ import login.AccountManager;
 @Named
 @ConversationScoped
 public class ReturnBean implements Serializable {
-
-    Integer cnt = 0;            // カウントアップ用
-
+    private Integer cnt = 0;            // カウントアップ用
     @Size(max = 9)
     private String dvd_num;    // DVD番号
-
     private String rental_num;          // 貸出番号
-
     @Size(max = 9)
     private String member_num;           // 会員番号
-
     @Size(max = 30)
     private String member_name;     // 会員名
-
     @Size(max = 100)
     private String product_name;    // 作品名
-
     private Date rental_date;            // 貸出年月日
-
     private Date return_plan;           //返却予定日
-
     @Size(max = 9)
     private Integer delay;                 // 延滞料金
 
-    List<Integer> entaikin = new ArrayList();
+    List<Integer> entaikinlist = new ArrayList();
     List<ProductInfo> productList = new ArrayList();        // 商品情報List
     List<DvdInfo> dvdList = new ArrayList();                // DVD情報List
     List<Member> memberList = new ArrayList<>();              // 会員情報List
@@ -53,30 +45,24 @@ public class ReturnBean implements Serializable {
 
     @Inject
     transient Logger log;
-
     @Inject
     Conversation conv;
-
     @Inject
     AccountManager AM;
-
     @Inject
     RentalDetailDb rentalDetailDb;
-
     @Inject
     RentalDb rentalDb;
-
     @Inject
     MemberDb memberDb;
-
     @Inject
     DvdInfoDb dvdInfoDb;
-
     @Inject
     RentalInfoDb rentalInfoDb;
-
     @Inject
     DelayListDb delayListDb;
+    
+    private Integer goukei;  //延滞金合計格納場所
 
     /**
      * 返却処理
@@ -84,6 +70,9 @@ public class ReturnBean implements Serializable {
      * @return 返却処理へ
      */
     public String update() {
+        setGoukei(0);
+        entaikinlist = new ArrayList();
+        this.setDelay(0);
         if (conv.isTransient()) {
             conv.begin();
             log.info(log.getName() + " | 返却処理開始 ****");
@@ -98,7 +87,7 @@ public class ReturnBean implements Serializable {
      * @return 延滞金精算画面
      */
     public String update_1() {
-        return "update_delay.xhtml?faces-redirect=true";
+        return "/pages/return/update_delay.xhtml?faces-redirect=true";
     }
 
     /**
@@ -106,7 +95,7 @@ public class ReturnBean implements Serializable {
      * @return 次へ
      */
     public String update_2() {
-        return "update_pay_off_miss.xhtml?faces-redirect=true";
+        return "/pages/return/update_pay_off_pass.xhtml?faces-redirect=true";
     }
 
     /**
@@ -114,30 +103,21 @@ public class ReturnBean implements Serializable {
      */
     public void searchProduct() {
         try {
-
             RentalDetail rentalDetail = (RentalDetail) this.rentalDetailDb.dvdReturnMax(this.dvd_num);    // 返却予定日が最新の貸出明細情報を取得
             DvdInfo dvdInfo = (DvdInfo) this.dvdInfoDb.search(this.dvd_num);                              // dvd番号からDVD情報を取得
-
             if (rentalDetail != null) {
                 RentalInfo rentalInfo = (RentalInfo) this.rentalInfoDb.search(rentalDetail.getRental_num().getRental_num());    // 貸出番号から貸出情報取得
                 detailList.add(rentalDetail);
                 rentalList.add(rentalDetail.getRental_num());
-
                 if (rentalInfo != null) {
-
 //                    if (this.member_name != rentalInfo.getMember_num().getMember_name()) {
-//
 //                    } else {
                     this.member_name = rentalInfo.getMember_num().getMember_name();
-
                     DelayList delayL = (DelayList) this.delayListDb.searchDelay(rentalInfo.getMember_num().getMember_num());    // 会員番号から延滞情報取得
-
-                    if (delayL == null) {           // 延滞情報がnullなら0
-                        this.delay = 0;
+                    if (delayL == null) {           // 延滞情報がnullなら
                     } else {
-                        this.delay = delayL.getDelay();// nullでないなら延滞金を格納
+                        this.delay += delayL.getDelay();// nullでないなら延滞金を格納
                     }
-
                     if (dvdInfo != null) {
                         productList.add(dvdInfo.getProduct_num());
                         dvdList.add(dvdInfo);
@@ -148,27 +128,66 @@ public class ReturnBean implements Serializable {
         } catch (Exception e) {
             log.info("** " + this.dvd_num + " が見つかりません *****");
         }
+        dvd_num = null;
     }
 
     /**
-     * 貸出枚数のカウントアップ
-     *
-     * @return
+     * 返却枚数のカウントアップ
      */
     public Integer cntUp() {
-        return ++this.cnt;
+        return ++cnt;
     }
 
     /**
      * 返却情報を1件削除
-     *
-     * @param item
      */
     public void clear(RentalDetail item) {
         detailList.remove(item);
+        entaikinlist.remove(mokkaikeisann(item.getReturn_plan()));
         this.delay = null;
+        this.cnt=0;
     }
-
+    
+    public Integer entaikin(Date yoteibi){
+        Integer entaikin=0;
+        Date d = new Date();
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(d);
+        long l1 = d.getTime();
+        long l2 = yoteibi.getTime();
+        long datetime = 1000 * 60 * 60 * 24;
+        long entainissuu = (l1 -l2) / datetime;
+        if(entainissuu >= 0){
+            entaikin = ((int)entainissuu +1) *300;
+        }
+        this.entaikinlist.add(entaikin);
+        return entaikin;
+    }
+    
+    public Integer mokkaikeisann(Date yoteibi){
+        Integer entaikin=0;
+        Date d = new Date();
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(d);
+        long l1 = d.getTime();
+        long l2 = yoteibi.getTime();
+        long datetime = 1000 * 60 * 60 * 24;
+        long entainissuu = (l1 -l2) / datetime;
+        if(entainissuu >= 0){
+            entaikin = ((int)entainissuu +1) *300;
+        }
+        return entaikin;
+    }
+    
+    public Integer entaikingoukei(){
+        setGoukei(0);
+        for(Integer hoge :entaikinlist){
+            this.goukei +=hoge;
+        }
+        return this.goukei;
+    }
+    
+    
     /* ゲッター、セッター */
     public Integer getCnt() {
         return cnt;
@@ -267,6 +286,7 @@ public class ReturnBean implements Serializable {
     }
 
     public List<RentalDetail> getDetailList() {
+        setCnt(0);
         return detailList;
     }
 
@@ -290,4 +310,21 @@ public class ReturnBean implements Serializable {
         this.delayList = delayList;
     }
 
+    public List<Integer> getEntaikin() {
+        return entaikinlist;
+    }
+
+    public void setEntaikin(List<Integer> entaikin) {
+        this.entaikinlist = entaikin;
+    }
+
+    public Integer getGoukei() {
+        return goukei;
+    }
+
+    public void setGoukei(Integer goukei) {
+        this.goukei = goukei;
+    }
+
+    
 }

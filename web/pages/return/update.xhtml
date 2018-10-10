@@ -24,12 +24,10 @@
                                 <h:outputText/>
 
                                 <h:outputLabel styleClass="control-label">DVD番号：</h:outputLabel>
-                                <h:inputText id="productNum" required="true" value="#{returnBean.dvd_num}"
-                                             label="DVD番号" styleClass="form-control" />
-
-                                <h:commandButton styleClass="btn btn-default" value="追 加" action="#{returnBean.searchProduct()}" >
-
-                                </h:commandButton>
+                                <h:inputText id="productNum" value="#{returnBean.dvd_num}" label="DVD番号" styleClass="form-control">
+                                    <f:ajax event="change" execute="memberNum" render="@form" listener="#{returnBean.searchProduct()}"/>
+                                </h:inputText>
+                                
                                 <h:message for="productNum" errorClass="error" />
 
                             </h:panelGrid>
@@ -43,7 +41,7 @@
 
                                     <h:column headerClass="return_main_num">
                                         <f:facet name="header">番号</f:facet>
-                                        <h:outputText value="#{returnBean.cnt}"/>
+                                        <h:outputText value="#{returnBean.cntUp()}"/>
                                     </h:column>{
 
                                     <h:column headerClass="return_main_name">
@@ -68,7 +66,7 @@
 
                                     <h:column headerClass="return_main_delay">
                                         <f:facet name="header">延滞金</f:facet>
-                                        <h:outputText value="#{returnBean.delay}"/>
+                                        <h:outputText value="#{returnBean.entaikin(item.return_plan)}"/>
                                     </h:column>
 
 
