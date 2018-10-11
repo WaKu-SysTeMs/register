@@ -126,7 +126,6 @@ public class MemberBean implements Serializable {
         this.setMember_phone(m.getMember_phone());
         this.setMember_mail(m.getMember_mail());
         this.setBirth_date(m.getBirth_date());
-        this.setJob_name(m.getJob_name());
         
         return "/pages/member/member_detail.xhtml?faces-redirect=true";
     }
