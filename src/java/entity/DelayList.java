@@ -1,71 +1,62 @@
 /*
- * 延滞料金 DELAY_LIST
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package entity;
 
 import java.io.Serializable;
 import java.util.Date;
-import javax.persistence.*;
-import javax.validation.constraints.*;
-
+import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author s20163037
+ * @author s20163022
  */
-//@NamedQueries({
-//    @NamedQuery(name = DelayList.Qall, query = "SELECT e FROM DELAY_LIST e")
-//})
 @Entity
-@Table(name = "delay_list")
-@IdClass(value = DelayListPK.class)
+@Table(name = "DELAY_LIST")
+@XmlRootElement
+@NamedQueries({
+    @NamedQuery(name = "DelayList.findAll", query = "SELECT d FROM DelayList d"),
+    @NamedQuery(name = "DelayList.findByRentalNum", query = "SELECT d FROM DelayList d WHERE d.delayListPK.rentalNum = :rentalNum"),
+    @NamedQuery(name = "DelayList.findByDetailNum", query = "SELECT d FROM DelayList d WHERE d.delayListPK.detailNum = :detailNum"),
+    @NamedQuery(name = "DelayList.findByDelay", query = "SELECT d FROM DelayList d WHERE d.delay = :delay"),
+    @NamedQuery(name = "DelayList.findByPaymentDate", query = "SELECT d FROM DelayList d WHERE d.paymentDate = :paymentDate")})
 public class DelayList implements Serializable {
-    
-    public static final String Qall = "Qall";
+    private static final long serialVersionUID = 1L;
+    @EmbeddedId
+    protected DelayListPK delayListPK;
+    @Column(name = "DELAY")
+    private Integer delay;
+    @Column(name = "PAYMENT_DATE")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date paymentDate;
 
-    private static final long serialVersionUID = 1L;  // シリアルバージョンUIDのバージョン管理
-
-    @Id
-    @Size(max = 9)
-    @JoinColumn(name = "member_num")
-    private Member member_num;             // 会員番号(FK)
-
-    @Id
-    @Temporal(javax.persistence.TemporalType.DATE)
-    private Date payment_date;             // 支払日
-
-    @Size(max = 9)
-    @Column(length = 9)
-    private Integer delay;                 // 延滞料金
-
-    @Transient                  // シリアライズしない
-    private boolean editable;
-
-    /* コンストラクタ */
     public DelayList() {
     }
 
-    public DelayList(Member member_num, Date payment_date, Integer delay) {
-        this.member_num = member_num;
-        this.payment_date = payment_date;
-        this.delay = delay;
+    public DelayList(DelayListPK delayListPK) {
+        this.delayListPK = delayListPK;
     }
 
-    /* ゲッター、セッター */
-    public Member getMember_num() {
-        return member_num;
+    public DelayList(String rentalNum, String detailNum) {
+        this.delayListPK = new DelayListPK(rentalNum, detailNum);
     }
 
-    public void setMember_num(Member member_num) {
-        this.member_num = member_num;
+    public DelayListPK getDelayListPK() {
+        return delayListPK;
     }
 
-    public Date getPayment_date() {
-        return payment_date;
-    }
-
-    public void setPayment_date(Date payment_date) {
-        this.payment_date = payment_date;
+    public void setDelayListPK(DelayListPK delayListPK) {
+        this.delayListPK = delayListPK;
     }
 
     public Integer getDelay() {
@@ -76,12 +67,37 @@ public class DelayList implements Serializable {
         this.delay = delay;
     }
 
-    public boolean isEditable() {
-        return editable;
+    public Date getPaymentDate() {
+        return paymentDate;
     }
 
-    public void setEditable(boolean editable) {
-        this.editable = editable;
+    public void setPaymentDate(Date paymentDate) {
+        this.paymentDate = paymentDate;
     }
 
+    @Override
+    public int hashCode() {
+        int hash = 0;
+        hash += (delayListPK != null ? delayListPK.hashCode() : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        // TODO: Warning - this method won't work in the case the id fields are not set
+        if (!(object instanceof DelayList)) {
+            return false;
+        }
+        DelayList other = (DelayList) object;
+        if ((this.delayListPK == null && other.delayListPK != null) || (this.delayListPK != null && !this.delayListPK.equals(other.delayListPK))) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "entity.DelayList[ delayListPK=" + delayListPK + " ]";
+    }
+    
 }

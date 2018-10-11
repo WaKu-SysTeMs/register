@@ -96,8 +96,7 @@ public class Member implements Serializable {
     @OneToMany(mappedBy = "member_num", cascade = CascadeType.ALL)
     private List<RentalMax> rentalMaxList;
 
-    @OneToMany(mappedBy = "member_num", cascade = CascadeType.ALL)
-    private List<DelayList> delayList;
+
 
     @Transient                  // シリアライズしない
     private boolean editable;
@@ -258,14 +257,6 @@ public class Member implements Serializable {
 
     public void setRentalMaxList(List<RentalMax> rentalMaxList) {
         this.rentalMaxList = rentalMaxList;
-    }
-
-    public List<DelayList> getDelayList() {
-        return delayList;
-    }
-
-    public void setDelayList(List<DelayList> delayList) {
-        this.delayList = delayList;
     }
 
     public boolean isEditable() {
