@@ -74,6 +74,17 @@ public class DvdInfoDb extends TryCatchDb {
         return null;
     }
 
+    public void henkyaku(String dvd_num) {
+        try {
+            Query q = em.createNativeQuery("update dvd_info set rental_status='0' where dvd_num = ?1");
+            q.setParameter(1, dvd_num);
+            q.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+            
+    }
+
 
 
 }

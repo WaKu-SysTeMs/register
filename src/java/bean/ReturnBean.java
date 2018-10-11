@@ -34,6 +34,10 @@ public class ReturnBean implements Serializable {
     private Date return_plan;           //返却予定日
     @Size(max = 9)
     private Integer delay;                 // 延滞料金
+    private Integer goukei;          //延滞金合計格納場所 
+    private Integer siharaigaku;     //現金支払い額格納
+    private Integer oturi=0;           //おつり
+    
 
     List<Integer> entaikinlist = new ArrayList();
     List<ProductInfo> productList = new ArrayList();        // 商品情報List
@@ -62,7 +66,7 @@ public class ReturnBean implements Serializable {
     @Inject
     DelayListDb delayListDb;
     
-    private Integer goukei;  //延滞金合計格納場所
+    
 
     /**
      * 返却処理
@@ -72,6 +76,13 @@ public class ReturnBean implements Serializable {
     public String update() {
         setGoukei(0);
         entaikinlist = new ArrayList();
+        productList = new ArrayList();
+        dvdList = new ArrayList();    
+        memberList = new ArrayList<>();
+        detailList = new ArrayList<>();
+        rentalList = new ArrayList<>(); 
+        delayList = new ArrayList<>(); 
+        setMember_name(null);
         this.setDelay(0);
         if (conv.isTransient()) {
             conv.begin();
@@ -79,6 +90,11 @@ public class ReturnBean implements Serializable {
         } else {
             log.info(log.getName() + " | 貸出会話スコープ ****");
         }
+        return "/pages/return/update.xhtml?faces-redirect=true";
+    }
+    public String updateback() {
+        setGoukei(0);
+        entaikinlist = new ArrayList();
         return "/pages/return/update.xhtml?faces-redirect=true";
     }
 
@@ -90,11 +106,11 @@ public class ReturnBean implements Serializable {
         return "/pages/return/update_delay.xhtml?faces-redirect=true";
     }
 
-    /**
-     *
-     * @return 次へ
-     */
     public String update_2() {
+        return "/pages/return/update_delay_check.xhtml?faces-redirect=true";
+    }
+    
+    public String update_3() {
         return "/pages/return/update_pay_off_pass.xhtml?faces-redirect=true";
     }
 
@@ -113,11 +129,11 @@ public class ReturnBean implements Serializable {
 //                    if (this.member_name != rentalInfo.getMember_num().getMember_name()) {
 //                    } else {
                     this.member_name = rentalInfo.getMember_num().getMember_name();
-                    DelayList delayL = (DelayList) this.delayListDb.searchDelay(rentalInfo.getMember_num().getMember_num());    // 会員番号から延滞情報取得
-                    if (delayL == null) {           // 延滞情報がnullなら
-                    } else {
-                        this.delay += delayL.getDelay();// nullでないなら延滞金を格納
-                    }
+//                    DelayList delayL = (DelayList) this.delayListDb.searchDelay(rentalInfo.getMember_num().getMember_num());    // 会員番号から延滞情報取得
+//                    if (delayL == null) {           // 延滞情報がnullなら
+//                    } else {
+//                        this.delay += delayL.getDelay();// nullでないなら延滞金を格納
+//                    }
                     if (dvdInfo != null) {
                         productList.add(dvdInfo.getProduct_num());
                         dvdList.add(dvdInfo);
@@ -143,7 +159,7 @@ public class ReturnBean implements Serializable {
      */
     public void clear(RentalDetail item) {
         detailList.remove(item);
-        entaikinlist.remove(mokkaikeisann(item.getReturn_plan()));
+        entaikinlist.remove(entaikin(item.getReturn_plan()));
         this.delay = null;
         this.cnt=0;
     }
@@ -160,32 +176,43 @@ public class ReturnBean implements Serializable {
         if(entainissuu >= 0){
             entaikin = ((int)entainissuu +1) *300;
         }
-        this.entaikinlist.add(entaikin);
         return entaikin;
     }
-    
-    public Integer mokkaikeisann(Date yoteibi){
-        Integer entaikin=0;
-        Date d = new Date();
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(d);
-        long l1 = d.getTime();
-        long l2 = yoteibi.getTime();
-        long datetime = 1000 * 60 * 60 * 24;
-        long entainissuu = (l1 -l2) / datetime;
-        if(entainissuu >= 0){
-            entaikin = ((int)entainissuu +1) *300;
-        }
-        return entaikin;
-    }
+   
     
     public Integer entaikingoukei(){
         setGoukei(0);
-        for(Integer hoge :entaikinlist){
-            this.goukei +=hoge;
+        Integer kanigoukei=0;
+        for(RentalDetail dlist :detailList){
+            entaikinkeisan(dlist.getReturn_plan());
         }
-        return this.goukei;
+        for(Integer hoge :entaikinlist){
+            kanigoukei += hoge;
+        }
+        this.setGoukei(kanigoukei);
+        return this.getGoukei();
     }
+    
+    public void entaikinkeisan(Date yoteibi){
+        entaikinlist.add(entaikin(yoteibi));
+    } 
+    
+    
+    public void dvdflghenkou(){
+        for(RentalDetail rd :detailList){
+            dvdInfoDb.henkyaku(rd.getDvd_num().getDvd_num());
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     /* ゲッター、セッター */
@@ -324,6 +351,22 @@ public class ReturnBean implements Serializable {
 
     public void setGoukei(Integer goukei) {
         this.goukei = goukei;
+    }
+
+    public Integer getSiharaigaku() {
+        return siharaigaku;
+    }
+
+    public void setSiharaigaku(Integer siharaigaku) {
+        this.siharaigaku = siharaigaku;
+    }
+
+    public Integer getOturi() {
+        return (this.getSiharaigaku()-this.getGoukei());
+    }
+
+    public void setOturi(Integer oturi) {
+        this.oturi = oturi;
     }
 
     

@@ -21,20 +21,5 @@ public class DelayListDb extends TryCatchDb {
         super(DelayList.class);
     }
 
-    /**
-     *
-     * @param member_num
-     * @return
-     */
-    public DelayList searchDelay(String member_num) {
-        try {
-            Query q = em.createNativeQuery("SELECT * FROM delay_list WHERE member_num = ?1", DelayList.class);
-            q.setParameter(1, member_num);
-            return (DelayList) q.getSingleResult();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
 
 }
