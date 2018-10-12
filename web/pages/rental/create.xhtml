@@ -42,7 +42,7 @@ and open the template in the editor.
                                 <span class="required">*</span>
 
                                 <h:inputText id="dvdNum" label="DVD番号" styleClass="form-control" value="#{rentalBean.dvd_num}">
-                                    <f:ajax event="change" execute="@this" render="@form" listener="#{rentalBean.searchProduct()}"/>
+                                    <f:ajax event="change" execute="dvdNum" render="@form" listener="#{rentalBean.searchProduct()}"/>
                                 </h:inputText>
 
 
@@ -93,15 +93,15 @@ and open the template in the editor.
                                         <f:facet name="header"></f:facet>
                                         <h:commandButton styleClass="btn btn-danger btn-xs" value="削 除" action="#{rentalBean.listDelete(item)}"/>
                                     </h:column>
-                                    
-                                    
+
+
 
                                 </h:dataTable>
                             </fieldset>
                         </div>
 
                         <div class="return_update_button">
-                            <h:commandButton styleClass="btn btn-primary btn-lg" value="次 へ" action="#{rentalBean.create_2()}"/>
+                            <h:commandButton onkeypress="return event.keyCode != 13;" styleClass="btn btn-primary btn-lg" value="次 へ"  action="#{rentalBean.create_2()}"/>
                         </div>
                     </h:form>
                 </div>
