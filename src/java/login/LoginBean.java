@@ -25,6 +25,7 @@ public class LoginBean implements Serializable {
     private AccountManager accountManager;
     private String user="";
     private String password="";
+    
     public void setUser(String user) {
         this.user = user;
     }
@@ -47,6 +48,8 @@ public class LoginBean implements Serializable {
     public String login() {
         Employee singleemp = this.employeeDb.loginemp(this.user);
         Register register = this.registerDb.loginid(this.password);
+        
+        System.out.println(singleemp + "+++" + register + "****************************************111");
         
         if(singleemp!=null && register!=null){
             // ログイン成功した場合
