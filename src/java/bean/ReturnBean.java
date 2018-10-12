@@ -20,6 +20,7 @@ import login.AccountManager;
 @Named
 @ConversationScoped
 public class ReturnBean implements Serializable {
+
     private Integer cnt = 0;            // カウントアップ用
     @Size(max = 9)
     private String dvd_num;    // DVD番号
@@ -36,8 +37,7 @@ public class ReturnBean implements Serializable {
     private Integer delay;                 // 延滞料金
     private Integer goukei;          //延滞金合計格納場所 
     private Integer siharaigaku;     //現金支払い額格納
-    private Integer oturi=0;           //おつり
-
+    private Integer oturi = 0;           //おつり
 
     List<Integer> entaikinlist = new ArrayList();
     List<ProductInfo> productList = new ArrayList();        // 商品情報List
@@ -90,6 +90,7 @@ public class ReturnBean implements Serializable {
         }
         return "/pages/return/update.xhtml?faces-redirect=true";
     }
+
     public String updateback() {
         setGoukei(0);
         entaikinlist = new ArrayList();
@@ -174,34 +175,32 @@ public class ReturnBean implements Serializable {
         long l1 = d.getTime();
         long l2 = yoteibi.getTime();
         long datetime = 1000 * 60 * 60 * 24;
-        long entainissuu = (l1 -l2) / datetime;
-        if(entainissuu >= 0){
-            entaikin = ((int)entainissuu) *300;
+        long entainissuu = (l1 - l2) / datetime;
+        if (entainissuu >= 0) {
+            entaikin = ((int) entainissuu + 1) * 300;
         }
         return entaikin;
     }
 
-    
-    public Integer entaikingoukei(){
+    public Integer entaikingoukei() {
         setGoukei(0);
-        Integer kanigoukei=0;
-        for(RentalDetail dlist :detailList){
+        Integer kanigoukei = 0;
+        for (RentalDetail dlist : detailList) {
             entaikinkeisan(dlist.getReturn_plan());
         }
-        for(Integer hoge :entaikinlist){
+        for (Integer hoge : entaikinlist) {
             kanigoukei += hoge;
         }
         this.setGoukei(kanigoukei);
         return this.getGoukei();
     }
 
-    public void entaikinkeisan(Date yoteibi){
+    public void entaikinkeisan(Date yoteibi) {
         entaikinlist.add(entaikin(yoteibi));
     }
 
-    
-    public void dvdflghenkou(){
-        for(RentalDetail rd :detailList){
+    public void dvdflghenkou() {
+        for (RentalDetail rd : detailList) {
             dvdInfoDb.henkyaku(rd.getDvd_num().getDvd_num());
         }
     }    
@@ -211,23 +210,7 @@ public class ReturnBean implements Serializable {
             delayListDb.tourokuall(rd.getRental_num().getRental_num(),rd.getDetail_num(),entaikin(rd.getReturn_plan()));
         }
     }
-    
-    public void delaytouroku(){
-        for(RentalDetail rd :detailList){
-            if(entaikin(rd.getReturn_plan()) == 0){
-            }else{
-                delayListDb.touroku(rd.getRental_num().getRental_num(),rd.getDetail_num(),entaikin(rd.getReturn_plan()));
-            }
-        }
-    }
-    
-    
-    
-    
-    
-    
-    
-    
+
     /* ゲッター、セッター */
     public Integer getCnt() {
         return cnt;
@@ -375,12 +358,11 @@ public class ReturnBean implements Serializable {
     }
 
     public Integer getOturi() {
-        return (this.getSiharaigaku()-this.getGoukei());
+        return (this.getSiharaigaku() - this.getGoukei());
     }
 
     public void setOturi(Integer oturi) {
         this.oturi = oturi;
     }
 
-    
 }
