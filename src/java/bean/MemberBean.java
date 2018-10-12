@@ -17,7 +17,7 @@ import java.util.*;
 import java.util.logging.Logger;
 import javax.ejb.EJB;
 import javax.enterprise.context.Conversation;
-import javax.enterprise.context.SessionScoped;
+import javax.enterprise.context.ConversationScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.*;
 import javax.persistence.*;
@@ -28,7 +28,7 @@ import javax.validation.constraints.*;
  * @author s20163037
  */
 @Named
-@SessionScoped
+@ConversationScoped
 public class MemberBean implements Serializable {
     @Size(max = 9)
     private String member_num;     // 会員番号
