@@ -210,6 +210,15 @@ public class ReturnBean implements Serializable {
             delayListDb.tourokuall(rd.getRental_num().getRental_num(),rd.getDetail_num(),entaikin(rd.getReturn_plan()));
         }
     }
+    
+    public void delaytouroku(){
+        for(RentalDetail rd :detailList){
+            if(entaikin(rd.getReturn_plan()) == 0){
+            }else{
+                delayListDb.touroku(rd.getRental_num().getRental_num(),rd.getDetail_num(),entaikin(rd.getReturn_plan()));
+            }
+        }
+    }
 
     /* ゲッター、セッター */
     public Integer getCnt() {

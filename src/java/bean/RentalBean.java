@@ -122,8 +122,12 @@ public class RentalBean implements Serializable {
         return "/pages/rental/create.xhtml?faces-redirect=true";
     }
 
-    public String create_list() {
-        return "list.xhtml?faces-redirect=true";
+    public String list() {
+        return"/pages/rental/list.xhtml?faces-redirect=true";
+    }
+    
+    public String update(){
+        return "/pages/rental/update.xhtml?faces-redirect=true";
     }
 
     /**
@@ -188,7 +192,7 @@ public class RentalBean implements Serializable {
 
     //Rental_Infoに登録(DB)
     public void infotouroku() {
-        this.rentalinfodb.insert(this.seikyuu, this.kasidasihizuke, AM.getUser(), this.member_num, AM.getPassword());
+        this.rentalinfodb.insert(this.seikyuu, AM.getUser(), this.member_num, AM.getPassword());
     }
 
     //Rental_Detailに登録(DB)   DVDループで回して要素取得 Detaildbにinsert

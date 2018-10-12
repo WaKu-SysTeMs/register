@@ -66,8 +66,8 @@ and open the template in the editor.
                         <div style="margin: 15px 0px;">
                             <h:commandButton styleClass="btn btn-primary btn-lg" value="会員カード再発行" action="#"/>
                             <h:commandButton styleClass="btn btn-primary btn-lg" value="　貸　出　" action="#{rentalBean.create()}"/>
-                            <h:commandButton styleClass="btn btn-primary btn-lg" value="　変　更　" action="update.xhtml?faces-redirect=true"/>
-                            <h:commandButton styleClass="btn btn-primary btn-lg member_detail_button_right" value="　戻　る　" action="list.xhtml?faces-redirect=true"/>
+                            <h:commandButton styleClass="btn btn-primary btn-lg" value="　変　更　" action="#{rentalBean.update()}"/>
+                            <h:commandButton styleClass="btn btn-primary btn-lg member_detail_button_right" value="　戻　る　" action="#{rentalBean.list()}"/>
                         </div>
                         
                     </h:form>
