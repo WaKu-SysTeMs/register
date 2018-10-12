@@ -37,7 +37,7 @@ public class ReturnBean implements Serializable {
     private Integer goukei;          //延滞金合計格納場所 
     private Integer siharaigaku;     //現金支払い額格納
     private Integer oturi=0;           //おつり
-    
+
 
     List<Integer> entaikinlist = new ArrayList();
     List<ProductInfo> productList = new ArrayList();        // 商品情報List
@@ -65,8 +65,6 @@ public class ReturnBean implements Serializable {
     RentalInfoDb rentalInfoDb;
     @Inject
     DelayListDb delayListDb;
-    
-    
 
     /**
      * 返却処理
@@ -77,11 +75,11 @@ public class ReturnBean implements Serializable {
         setGoukei(0);
         entaikinlist = new ArrayList();
         productList = new ArrayList();
-        dvdList = new ArrayList();    
+        dvdList = new ArrayList();
         memberList = new ArrayList<>();
         detailList = new ArrayList<>();
-        rentalList = new ArrayList<>(); 
-        delayList = new ArrayList<>(); 
+        rentalList = new ArrayList<>();
+        delayList = new ArrayList<>();
         setMember_name(null);
         this.setDelay(0);
         if (conv.isTransient()) {
@@ -109,7 +107,7 @@ public class ReturnBean implements Serializable {
     public String update_2() {
         return "/pages/return/update_delay_check.xhtml?faces-redirect=true";
     }
-    
+
     public String update_3() {
         return "/pages/return/update_pay_off_pass.xhtml?faces-redirect=true";
     }
@@ -165,11 +163,11 @@ public class ReturnBean implements Serializable {
         detailList.remove(item);
         entaikinlist.remove(entaikin(item.getReturn_plan()));
         this.delay = null;
-        this.cnt=0;
+        this.cnt = 0;
     }
-    
-    public Integer entaikin(Date yoteibi){
-        Integer entaikin=0;
+
+    public Integer entaikin(Date yoteibi) {
+        Integer entaikin = 0;
         Date d = new Date();
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(d);
@@ -182,7 +180,7 @@ public class ReturnBean implements Serializable {
         }
         return entaikin;
     }
-   
+
     
     public Integer entaikingoukei(){
         setGoukei(0);
@@ -196,17 +194,17 @@ public class ReturnBean implements Serializable {
         this.setGoukei(kanigoukei);
         return this.getGoukei();
     }
-    
+
     public void entaikinkeisan(Date yoteibi){
         entaikinlist.add(entaikin(yoteibi));
-    } 
-    
+    }
+
     
     public void dvdflghenkou(){
         for(RentalDetail rd :detailList){
             dvdInfoDb.henkyaku(rd.getDvd_num().getDvd_num());
         }
-    }
+    }    
     
     public void delaytourokuall(){
         for(RentalDetail rd :detailList){
