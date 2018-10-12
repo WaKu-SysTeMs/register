@@ -112,6 +112,10 @@ public class ReturnBean implements Serializable {
     public String update_3() {
         return "/pages/return/update_pay_off_pass.xhtml?faces-redirect=true";
     }
+    
+    public String end(){
+        return "/pages/return/update_end.xhtml?faces-redirect=true";
+    }
 
     /**
      * DVD情報、貸出情報、貸出明細、延滞情報の取得
@@ -173,7 +177,7 @@ public class ReturnBean implements Serializable {
         long datetime = 1000 * 60 * 60 * 24;
         long entainissuu = (l1 - l2) / datetime;
         if (entainissuu >= 0) {
-            entaikin = ((int) entainissuu + 1) * 300;
+            entaikin = ((int) entainissuu) * 300;
         }
         return entaikin;
     }
@@ -198,6 +202,21 @@ public class ReturnBean implements Serializable {
     public void dvdflghenkou() {
         for (RentalDetail rd : detailList) {
             dvdInfoDb.henkyaku(rd.getDvd_num().getDvd_num());
+        }
+    }    
+    
+    public void delaytourokuall(){
+        for(RentalDetail rd :detailList){
+            delayListDb.tourokuall(rd.getRental_num().getRental_num(),rd.getDetail_num(),entaikin(rd.getReturn_plan()));
+        }
+    }
+    
+    public void delaytouroku(){
+        for(RentalDetail rd :detailList){
+            if(entaikin(rd.getReturn_plan()) == 0){
+            }else{
+                delayListDb.touroku(rd.getRental_num().getRental_num(),rd.getDetail_num(),entaikin(rd.getReturn_plan()));
+            }
         }
     }
 

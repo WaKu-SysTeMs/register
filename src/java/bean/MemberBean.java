@@ -7,7 +7,6 @@ import db.BlackMgrDb;
 import db.JobDb;
 import db.JoinListDb;
 import db.MemberDb;
-import entity.BlackMgr;
 import entity.Job;
 import entity.JoinList;
 import entity.Member;
@@ -71,9 +70,6 @@ public class MemberBean implements Serializable {
     MemberDb memberdb;
     @Inject
     JoinListDb joinlistdb;
-    @Inject
-    BlackMgrDb blackmgrdb;
-            
 
     private String job_name;
     private String sex_name;
@@ -81,7 +77,7 @@ public class MemberBean implements Serializable {
     
     private Date member_start;
     private String delay_total;
-    private char member_kbn;
+    private String member_kbn;
 
     public String create() {
         if (conv.isTransient()) {
@@ -121,8 +117,6 @@ public class MemberBean implements Serializable {
         Map<String,String> params=fc.getExternalContext().getRequestParameterMap();
         this.setMember_num(params.get("member_num"));
         Member m = (Member) memberDb.search(this.member_num);
-        JoinList jl = (JoinList) joinlistdb.search(getMember_num());
-        BlackMgr bm = (BlackMgr) blackmgrdb.search(getMember_num());
         this.setMember_name(m.getMember_name());
         this.setMember_ruby(m.getMember_ruby());
         this.setSex(m.getSex());
@@ -132,10 +126,7 @@ public class MemberBean implements Serializable {
         this.setMember_phone(m.getMember_phone());
         this.setMember_mail(m.getMember_mail());
         this.setBirth_date(m.getBirth_date());
-//       this.setJob_name(m.getJob_name());
-        this.setMember_start(jl.getJoin_date());
-        this.setMember_kbn(bm.getBlk_flg());
-
+        this.setJob_name(m.getJob_name());
         
         return "/pages/member/member_detail.xhtml?faces-redirect=true";
     }
@@ -203,18 +194,7 @@ public class MemberBean implements Serializable {
     public List<Member> getAll() {          // MemberInfo 全件取得
         return memberDb.getAll();
     }
-    
-    public JoinList joinlistgetall(){
-        JoinList jl = (JoinList) joinlistdb.search(getMember_num());
-        return jl;
-    }
-    
-    public BlackMgr blackmgrgetall(){
-        BlackMgr bm = (BlackMgr) blackmgrdb.search(getMember_num());
-        return bm;
-    }
-    
-    
+
     /* ゲッター、セッター */
 
     public String getMember_num() {
@@ -346,14 +326,13 @@ public class MemberBean implements Serializable {
         this.delay_total = delay_total;
     }
 
-    public char getMember_kbn() {
+    public String getMember_kbn() {
         return member_kbn;
     }
 
-    public void setMember_kbn(char member_kbn) {
+    public void setMember_kbn(String member_kbn) {
         this.member_kbn = member_kbn;
     }
-
     
     
 

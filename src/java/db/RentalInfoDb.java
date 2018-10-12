@@ -6,6 +6,7 @@ package db;
 //import entity.Rental;
 import entity.RentalInfo;
 import java.math.BigDecimal;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import javax.ejb.Stateless;
@@ -32,7 +33,7 @@ public class RentalInfoDb extends TryCatchDb{
         super(RentalInfo.class);
     }
 
-    public void insert(int seikyuu, Date kasidasihizuke, String user, String member_num, String password) {
+    public void insert(int seikyuu, String user, String member_num, String password) {
         try {
             Query q = em.createNativeQuery("select count(*) from rental_info");
             cnt = ((BigDecimal)q.getSingleResult()).intValue();
@@ -41,6 +42,10 @@ public class RentalInfoDb extends TryCatchDb{
         } catch (Exception e) {
              e.printStackTrace();
         }
+        Date d = new Date();
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(d);
+
         String s;
         s = Integer.toString(this.getCnt());
         
@@ -48,7 +53,7 @@ public class RentalInfoDb extends TryCatchDb{
             Query q = em.createNativeQuery("insert into rental_info values(?1,?2,?3,?4,?5,?6)");
             q.setParameter(1,s);
             q.setParameter(2,seikyuu);
-            q.setParameter(3,kasidasihizuke);
+            q.setParameter(3,d);
             q.setParameter(4,user);
             q.setParameter(5,member_num);
             q.setParameter(6,password);
