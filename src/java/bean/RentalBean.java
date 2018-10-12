@@ -12,7 +12,7 @@ import java.util.*;
 import java.util.logging.Logger;
 import javax.inject.*;
 import javax.enterprise.context.*;
-import javax.validation.constraints.*;
+import javax.validation.constraints.Size;
 import login.AccountManager;
 
 /**
@@ -26,7 +26,6 @@ public class RentalBean implements Serializable {
     private Integer cnt = 0;
     @Size(max = 30)
     private String member_name;     // 会員名
-    @NotNull
     @Size(max = 9)
     private String member_num;           // 会員番号(FK)
     @Size(max = 9)
@@ -51,7 +50,7 @@ public class RentalBean implements Serializable {
     private Integer siharaigaku;
     private int oturi;
     private String rental_status;
-    private Integer kasidasijougen = 0;
+    private Integer kasidasijougen;
 
     @Inject
     RentalInfoDb rentalDb;

@@ -22,22 +22,20 @@ and open the template in the editor.
                 <div class="container">
 
                     <h:form><div class="form-group">
-                            <h:panelGrid columns="5">
+                            <h:panelGrid columns="6">
 
 
                                 <h:outputLabel styleClass="control-label">会員番号：</h:outputLabel>
                                 <span class="required">*</span>
 
-
                                 <h:inputText id="memberNum" required="true" value="#{rentalBean.member_num}" label="会員番号" styleClass="form-control">
-                                    <f:ajax event="change" execute="memberNum" render="@this" listener="#{rentalBean.search()}"/>
+                                    <f:ajax event="change" execute="memberNum" render="@form" listener="#{rentalBean.search()}"/>
                                 </h:inputText>
-
 
 
                                 <h:outputLabel styleClass="control-label">会員名：</h:outputLabel>
                                 <h:outputText id="memberName" value="#{rentalBean.member_name}" />
-
+                                <h:message for="memberName" errorClass="error"/>
 
 
                                 <h:outputLabel styleClass="control-label">DVD番号：</h:outputLabel>
@@ -47,16 +45,13 @@ and open the template in the editor.
                                     <f:ajax event="change" execute="@this" render="@form" listener="#{rentalBean.searchProduct()}"/>
                                 </h:inputText>
 
+
+
                                 <h:outputLabel styleClass="control-label">貸出上限数：</h:outputLabel>
                                 <h:outputText id="rentalMax" value="#{rentalBean.kasidasijougen}枚" />
+                                <h:message for="rentalMax" errorClass="error" />
 
                             </h:panelGrid>
-
-                            <h:message for="memberNum" errorClass="error"/>
-                            <h:message for="memberName" errorClass="error"/>
-                            <h:message for="rentalMax" errorClass="error"/>
-
-
                         </div>
 
 
@@ -98,8 +93,8 @@ and open the template in the editor.
                                         <f:facet name="header"></f:facet>
                                         <h:commandButton styleClass="btn btn-danger btn-xs" value="削 除" action="#{rentalBean.listDelete(item)}"/>
                                     </h:column>
-
-
+                                    
+                                    
 
                                 </h:dataTable>
                             </fieldset>

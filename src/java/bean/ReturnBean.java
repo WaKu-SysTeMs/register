@@ -177,7 +177,7 @@ public class ReturnBean implements Serializable {
         long datetime = 1000 * 60 * 60 * 24;
         long entainissuu = (l1 - l2) / datetime;
         if (entainissuu >= 0) {
-            entaikin = ((int) entainissuu + 1) * 300;
+            entaikin = ((int) entainissuu) * 300;
         }
         return entaikin;
     }
