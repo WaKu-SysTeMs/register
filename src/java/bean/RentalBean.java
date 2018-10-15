@@ -110,7 +110,9 @@ public class RentalBean implements Serializable {
      * @return 精算画面に遷移
      */
     public String create_2() {
-        if(this.kasidasijougen < this.dvdlist.size())return null;
+        if (this.kasidasijougen < this.dvdlist.size()) {
+            return null;
+        }
         this.waribikicnt = 0;
         this.waribikikeisan();
         return "/pages/rental/create_payment.xhtml?faces-redirect=true";
@@ -123,10 +125,10 @@ public class RentalBean implements Serializable {
     }
 
     public String list() {
-        return"/pages/rental/list.xhtml?faces-redirect=true";
+        return "/pages/rental/list.xhtml?faces-redirect=true";
     }
-    
-    public String update(){
+
+    public String update() {
         return "/pages/rental/update.xhtml?faces-redirect=true";
     }
 
@@ -141,10 +143,10 @@ public class RentalBean implements Serializable {
         if (m != null) {
             this.member_name = m.getMember_name();
         }
-        
-        this.kasidasijougen =0;
+
+        this.kasidasijougen = 0;
         RentalMax rm = (RentalMax) rentalmaxdb.syutoku(this.member_num);
-        if(rm != null){
+        if (rm != null) {
             this.kasidasijougen = rm.getBorrowing_cnt();
         }
         return null;
@@ -158,6 +160,7 @@ public class RentalBean implements Serializable {
         if (dvdinfo != null) {
             productList.add(dvdinfo.getProduct_num());
             dvdlist.add(dvdinfo);
+
         } else {
             System.out.println("aaaa");
         }
@@ -176,9 +179,9 @@ public class RentalBean implements Serializable {
             }
         }
     }
-    
-    public void jougengenzan(){
-        rentalmaxdb.genzan(this.member_num,this.dvdlist.size(),this.kasidasijougen);
+
+    public void jougengenzan() {
+        rentalmaxdb.genzan(this.member_num, this.dvdlist.size(), this.kasidasijougen);
         productList = new ArrayList();
         dvdlist = new ArrayList();
         waribikilist = new ArrayList();
@@ -188,7 +191,6 @@ public class RentalBean implements Serializable {
         member_name = null;
         kasidasijougen = null;
     }
-    
 
     //Rental_Infoに登録(DB)
     public void infotouroku() {

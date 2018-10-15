@@ -7,6 +7,7 @@ import db.BlackMgrDb;
 import db.JobDb;
 import db.JoinListDb;
 import db.MemberDb;
+import entity.BlackMgr;
 import entity.Job;
 import entity.JoinList;
 import entity.Member;
@@ -16,7 +17,7 @@ import java.util.*;
 import java.util.logging.Logger;
 import javax.ejb.EJB;
 import javax.enterprise.context.Conversation;
-import javax.enterprise.context.SessionScoped;
+import javax.enterprise.context.ConversationScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.*;
 import javax.persistence.*;
@@ -27,7 +28,7 @@ import javax.validation.constraints.*;
  * @author s20163037
  */
 @Named
-@SessionScoped
+@ConversationScoped
 public class MemberBean implements Serializable {
     @Size(max = 9)
     private String member_num;     // 会員番号
@@ -70,6 +71,8 @@ public class MemberBean implements Serializable {
     MemberDb memberdb;
     @Inject
     JoinListDb joinlistdb;
+    @Inject
+    BlackMgrDb blackmgrdb;
 
     private String job_name;
     private String sex_name;
@@ -95,6 +98,13 @@ public class MemberBean implements Serializable {
     
     public String create2(){
         return "/pages/member/createcomplete.xhtml?faces-redirect=true";
+    }
+    
+    public String list(){
+        if (conv.isTransient()) {
+            conv.begin();
+        }
+        return "/pages/member/list.xhtml?faces-redirect=true";
     }
     
     public String delete(){
@@ -125,6 +135,8 @@ public class MemberBean implements Serializable {
         Map<String,String> params=fc.getExternalContext().getRequestParameterMap();
         this.setMember_num(params.get("member_num"));
         Member m = (Member) memberDb.search(this.member_num);
+        JoinList jl = (JoinList) joinlistdb.search(getMember_num());
+        BlackMgr bm = (BlackMgr) blackmgrdb.search(getMember_num());
         this.setMember_name(m.getMember_name());
         this.setMember_ruby(m.getMember_ruby());
         this.setSex(m.getSex());
@@ -134,7 +146,10 @@ public class MemberBean implements Serializable {
         this.setMember_phone(m.getMember_phone());
         this.setMember_mail(m.getMember_mail());
         this.setBirth_date(m.getBirth_date());
-        this.setJob_name(m.getJob_name());
+//       this.setJob_name(m.getJob_name());
+        this.setMember_start(jl.getJoin_date());
+        this.setMember_kbn(String.valueOf(bm.getBlk_flg()));
+
         
         return "/pages/member/member_detail.xhtml?faces-redirect=true";
     }
