@@ -8,6 +8,11 @@
         <locale-config>
             <default-locale>ja</default-locale>
         </locale-config>
+       
+        <message-bundle>
+            msg/MyMsg
+        </message-bundle>
+           
     </application>
     
 

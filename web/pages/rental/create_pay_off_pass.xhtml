@@ -17,19 +17,19 @@
             <ui:define name="content">
                 <h:form>
                     <div class="return_pay_off_main">
-                        
+
                         #{rentalBean.infotouroku()}
                         #{rentalBean.detailtouroku()}
                         #{rentalBean.dvdupdate()}
                         #{rentalBean.jougengenzan()}
-                        
+
                         <p>正常に処理を完了しました。<br/></p>
                     </div>
                     <div class="return_pay_off_pass_button">
                         <h:commandButton styleClass="btn btn-primary btn-lg" value="貸出状況一覧へ" action="#{rentalBean.list()}"/>
-                            <h:commandButton styleClass="btn btn-primary btn-lg" value="貸出処理へ" action="#{rentalBean.create_1()}"/>
+                        <h:commandLink styleClass="btn btn-primary btn-lg" value="貸出処理へ" action="#{rentalBean.create_1()}"/>
                     </div>
-                    
+
                 </h:form>
             </ui:define>
         </ui:composition>

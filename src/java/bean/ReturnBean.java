@@ -72,6 +72,7 @@ public class ReturnBean implements Serializable {
      * @return 返却処理へ
      */
     public String update() {
+        this.dvd_num = null;
         setGoukei(0);
         entaikinlist = new ArrayList();
         productList = new ArrayList();
@@ -112,8 +113,8 @@ public class ReturnBean implements Serializable {
     public String update_3() {
         return "/pages/return/update_pay_off_pass.xhtml?faces-redirect=true";
     }
-    
-    public String end(){
+
+    public String end() {
         return "/pages/return/update_end.xhtml?faces-redirect=true";
     }
 
@@ -129,14 +130,9 @@ public class ReturnBean implements Serializable {
                 detailList.add(rentalDetail);
                 rentalList.add(rentalDetail.getRental_num());
                 if (rentalInfo != null) {
-//                    if (this.member_name != rentalInfo.getMember_num().getMember_name()) {
-//                    } else {
+
                     this.member_name = rentalInfo.getMember_num().getMember_name();
-//                    DelayList delayL = (DelayList) this.delayListDb.searchDelay(rentalInfo.getMember_num().getMember_num());    // 会員番号から延滞情報取得
-//                    if (delayL == null) {           // 延滞情報がnullなら
-//                    } else {
-//                        this.delay += delayL.getDelay();// nullでないなら延滞金を格納
-//                    }
+
                     if (dvdInfo != null) {
                         productList.add(dvdInfo.getProduct_num());
                         dvdList.add(dvdInfo);
@@ -147,7 +143,7 @@ public class ReturnBean implements Serializable {
         } catch (Exception e) {
             log.info("** " + this.dvd_num + " が見つかりません *****");
         }
-        dvd_num = null;
+        this.dvd_num = null;
     }
 
     /**
@@ -203,19 +199,19 @@ public class ReturnBean implements Serializable {
         for (RentalDetail rd : detailList) {
             dvdInfoDb.henkyaku(rd.getDvd_num().getDvd_num());
         }
-    }    
-    
-    public void delaytourokuall(){
-        for(RentalDetail rd :detailList){
-            delayListDb.tourokuall(rd.getRental_num().getRental_num(),rd.getDetail_num(),entaikin(rd.getReturn_plan()));
+    }
+
+    public void delaytourokuall() {
+        for (RentalDetail rd : detailList) {
+            delayListDb.tourokuall(rd.getRental_num().getRental_num(), rd.getDetail_num(), entaikin(rd.getReturn_plan()));
         }
     }
-    
-    public void delaytouroku(){
-        for(RentalDetail rd :detailList){
-            if(entaikin(rd.getReturn_plan()) == 0){
-            }else{
-                delayListDb.touroku(rd.getRental_num().getRental_num(),rd.getDetail_num(),entaikin(rd.getReturn_plan()));
+
+    public void delaytouroku() {
+        for (RentalDetail rd : detailList) {
+            if (entaikin(rd.getReturn_plan()) == 0) {
+            } else {
+                delayListDb.touroku(rd.getRental_num().getRental_num(), rd.getDetail_num(), entaikin(rd.getReturn_plan()));
             }
         }
     }

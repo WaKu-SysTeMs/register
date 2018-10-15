@@ -138,10 +138,14 @@ public class RentalBean implements Serializable {
      * @return
      */
     public String search() {
-        this.member_name = "";
-        Member m = (Member) memberDb.search(this.member_num);
-        if (m != null) {
-            this.member_name = m.getMember_name();
+        try {
+            this.member_name = "";
+            Member m = (Member) memberDb.search(this.member_num);
+            if (m != null) {
+                this.member_name = m.getMember_name();
+            }
+        } catch (Exception e) {
+            e.getMessage();
         }
 
         this.kasidasijougen = 0;

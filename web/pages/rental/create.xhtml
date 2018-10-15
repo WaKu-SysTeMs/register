@@ -91,7 +91,7 @@ and open the template in the editor.
 
                                     <h:column headerClass="rental_main_delete">
                                         <f:facet name="header"></f:facet>
-                                        <h:commandButton styleClass="btn btn-danger btn-xs" value="削 除" action="#{rentalBean.listDelete(item)}"/>
+                                        <h:commandLink styleClass="btn btn-danger btn-xs" value="削 除" action="#{rentalBean.listDelete(item)}"/>
                                     </h:column>
 
 
@@ -101,7 +101,7 @@ and open the template in the editor.
                         </div>
 
                         <div class="return_update_button">
-                            <h:commandButton onkeypress="return event.keyCode != 13;" styleClass="btn btn-primary btn-lg" value="次 へ"  action="#{rentalBean.create_2()}"/>
+                            <h:commandLink styleClass="btn btn-primary btn-lg" value="次 へ"  action="#{rentalBean.create_2()}"/>
                         </div>
                     </h:form>
                 </div>
