@@ -126,9 +126,7 @@ public class MemberBean implements Serializable {
         return "/pages/member/update.xhtml?faces-redirect=true";
     }
     
-    public String list(){
-        return "/pages/member/list.xhtml?faces-redirect=true";
-    }
+
     
     public String detail(){
         FacesContext fc=FacesContext.getCurrentInstance();
