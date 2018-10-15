@@ -135,6 +135,7 @@ public class MemberBean implements Serializable {
         Member m = (Member) memberDb.search(this.member_num);
         JoinList jl = (JoinList) joinlistdb.search(getMember_num());
         BlackMgr bm = (BlackMgr) blackmgrdb.search(getMember_num());
+        Job job = (Job) jobdb.search(m.getJob_id().getJob_id());
         this.setMember_name(m.getMember_name());
         this.setMember_ruby(m.getMember_ruby());
         this.setSex(m.getSex());
@@ -144,7 +145,7 @@ public class MemberBean implements Serializable {
         this.setMember_phone(m.getMember_phone());
         this.setMember_mail(m.getMember_mail());
         this.setBirth_date(m.getBirth_date());
-//       this.setJob_name(m.getJob_name());
+        this.setJob_name(job.getJob_name());
         this.setMember_start(jl.getJoin_date());
         this.setMember_kbn(String.valueOf(bm.getBlk_flg()));
 
@@ -207,6 +208,7 @@ public class MemberBean implements Serializable {
             return "退会";
         }
     }
+    
     
     public String dateformat(Date date){
         return (new SimpleDateFormat("yyyy年MM月dd日")).format(date);

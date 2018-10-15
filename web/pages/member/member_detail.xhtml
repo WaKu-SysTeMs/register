@@ -54,13 +54,13 @@ and open the template in the editor.
                                 <h:outputLabel value="・生年月日"/>
                                 <h:outputText value="#{memberBean.dateformat(memberBean.birth_date)}"/>
                                 <h:outputLabel value="・職業"/>
-                                <h:outputText value=""/>
+                                <h:outputText value="#{memberBean.job_name}"/>
                                 <h:outputLabel value="・入会年月日"/>
-                                <h:outputText value="test"/>
+                                <h:outputText value="#{memberBean.dateformat(memberBean.member_start)}"/>
                                 <h:outputLabel value="・好みのジャンル"/>
-                                <h:outputText value="test"/>
-                                <h:outputLabel value="・会員区分"/>
-                                <h:outputText value="test"/>
+                                <h:outputText value=""/>
+                                <h:outputLabel value="・会員状況"/>
+                                <h:outputText value="#{memberBean.kaiinjoukyou(memberBean.member_num)}"/>
                             </h:panelGrid>
                         </div>
                         <div style="margin: 15px 0px;">
