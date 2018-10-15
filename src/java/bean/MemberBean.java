@@ -112,6 +112,14 @@ public class MemberBean implements Serializable {
         return "/pages/member/deletecomplete.xhtml?faces-redirect=true";
     }
     
+    public String update(){
+        return "/pages/member/update.xhtml?faces-redirect=true";
+    }
+    
+    public String list(){
+        return "/pages/member/list.xhtml?faces-redirect=true";
+    }
+    
     public String detail(){
         FacesContext fc=FacesContext.getCurrentInstance();
         Map<String,String> params=fc.getExternalContext().getRequestParameterMap();
