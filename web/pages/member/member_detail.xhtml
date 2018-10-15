@@ -54,20 +54,20 @@ and open the template in the editor.
                                 <h:outputLabel value="・生年月日"/>
                                 <h:outputText value="#{memberBean.dateformat(memberBean.birth_date)}"/>
                                 <h:outputLabel value="・職業"/>
-                                <h:outputText value="test"/>
+                                <h:outputText value="#{memberBean.job_name}"/>
                                 <h:outputLabel value="・入会年月日"/>
-                                <h:outputText value="test"/>
+                                <h:outputText value="#{memberBean.dateformat(memberBean.member_start)}"/>
                                 <h:outputLabel value="・好みのジャンル"/>
-                                <h:outputText value="test"/>
-                                <h:outputLabel value="・会員区分"/>
-                                <h:outputText value="test"/>
+                                <h:outputText value=""/>
+                                <h:outputLabel value="・会員状況"/>
+                                <h:outputText value="#{memberBean.kaiinjoukyou(memberBean.member_num)}"/>
                             </h:panelGrid>
                         </div>
                         <div style="margin: 15px 0px;">
                             <h:commandButton styleClass="btn btn-primary btn-lg" value="会員カード再発行" action="#"/>
-                            <h:commandButton styleClass="btn btn-primary btn-lg" value="　貸　出　" action="#{rentalBean.create()}"/>
-                            <h:commandButton styleClass="btn btn-primary btn-lg" value="　変　更　" action="#{rentalBean.update()}"/>
-                            <h:commandButton styleClass="btn btn-primary btn-lg member_detail_button_right" value="　戻　る　" action="#{rentalBean.list()}"/>
+                            <h:commandButton styleClass="btn btn-primary btn-lg" value="　貸　出　" action="#{memberBean.create()}"/>
+                            <h:commandButton styleClass="btn btn-primary btn-lg" value="　変　更　" action="#{memberBean.update()}"/>
+                            <h:commandButton styleClass="btn btn-primary btn-lg member_detail_button_right" value="　戻　る　" action="#{memberBean.list()}"/>
                         </div>
                         
                     </h:form>
