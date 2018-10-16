@@ -15,7 +15,7 @@ and open the template in the editor.
     </h:head>
     <h:body>
         <ui:composition template="/templates/template01.xhtml">
-            <ui:define name="title">HCSビデオレンタル-入会処理-</ui:define>
+            <ui:define name="title">HCSビデオレンタル-入庫処理-</ui:define>
             <ui:define name="content">
                 <div class="container">
                     <br/>
@@ -27,19 +27,19 @@ and open the template in the editor.
 
                                 <h:outputLabel styleClass="control-label">作品名：</h:outputLabel>  
                                 <h:panelGroup>
-                                    <h:inputText id="test1" required="true" value="#{memberBean.postal_code}"
+                                    <h:inputText id="test1" required="true" value="#"
                                                  label="作品名" styleClass="form-control" />
                                 </h:panelGroup>    
                                     
                                 <h:outputLabel styleClass="control-label">　監　督：</h:outputLabel>
                                 <h:panelGroup>
-                                    <h:inputText id="memberNum" required="true" value="#{memberBean.member_name}"
+                                    <h:inputText id="memberNum" required="true" value="#"
                                                  label="監督" styleClass="form-control" />
                                 </h:panelGroup>
 
                                 <h:outputLabel styleClass="control-label">再生時間：</h:outputLabel>
                                 <h:panelGroup>
-                                    <h:inputText id="memberRuby" required="true" value="#{memberBean.member_ruby}"
+                                    <h:inputText id="memberRuby" required="true" value="#"
                                                  label="再生時間" styleClass="form-control" />
                                 </h:panelGroup>
 
@@ -54,9 +54,9 @@ and open the template in the editor.
 
                                 <h:outputLabel styleClass="control-label">カテゴリーID：</h:outputLabel>
                                 <h:panelGroup>
-                                    <h:selectOneListbox value="#{memberBean.sex}" required="true" label="カテゴリーID">
-                                        <f:selectItems value="#{moriTest.langs1}" />
-                                    </h:selectOneListbox>
+                                    <h:selectOneRadio value="#{memberBean.sex}" required="true" label="カテゴリーID">
+                                        <f:selectItems value="#{moriTest.langs2}" />
+                                    </h:selectOneRadio>
                                 </h:panelGroup>
 
 
@@ -68,7 +68,7 @@ and open the template in the editor.
                         </div>
 
                         <div class="member_admission_button">
-                            <h:commandButton value="送　信"  action="#{memberBean.create1()}" styleClass="btn btn-primary btn-lg"/>
+                            <h:commandButton value="送　信"  action="#" styleClass="btn btn-primary btn-lg"/>
                         </div>
 
                     </h:form>
